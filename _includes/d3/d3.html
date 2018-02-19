@@ -11,7 +11,7 @@ var canvas = document.querySelector("canvas"),
 
 var n = 800,
     tau = 2 * Math.PI,
-    nodes = d3.range(n).map(function() { return {radius: Math.random() * 6 + 2}; });
+    nodes = d3.range(n).map(function() { return {radius: Math.random() * 8 + 2}; });
 
 var force = d3.layout.force()
     .charge(0.5)
