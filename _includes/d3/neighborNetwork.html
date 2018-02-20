@@ -30,26 +30,18 @@ text {
 #end-arrow {
   fill: #88A;
 }
-  #graph {
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding: 0;
-    /* padding-bottom will be overwritten by JavaScript later */
-    padding-bottom: 100%;
-}
-#graph > svg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-}
+      #graph {
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+      }
 
 </style>
 <div id="graph"></div>
 <script>
-
+function redraw(){
 d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, graph) => {
   const width = 960;
   const height = 700;
@@ -168,16 +160,12 @@ d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, g
       link.attr('marker-end', o => (opacity === 1 || o.source === d || o.target === d ? 'url(#end-arrow)' : 'url(#end-arrow-fade)'));
     };
   }
-})
+});
+}
 
+      // Draw for the first time to initialize.
+      redraw();
 
-$(window).on("resize", function() {
-    wrapper = d3.select("#graph")
-        .attr(
-            "style",
-            "padding-bottom: " + Math.ceil(height * 100 / width) + "%"
-        )
-        .append("svg")
-        .attr("viewBox", "0 0 " + width + " " + height);
-}).trigger("resize");
+      // Redraw based on the new size whenever the browser window is resized.
+      window.addEventListener("resize", redraw);
 </script>
