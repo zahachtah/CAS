@@ -1,13 +1,10 @@
-
- <script src='https://d3js.org/d3.v4.js'></script>
+<script src='https://d3js.org/d3.v4.js'></script>
 <style>
-
 .node circle {
   fill: #DDD;
   stroke: #777;
   stroke-width: 0px;
 }
-
 .node text {
   font-family: sans-serif;
   text-anchor: middle;
@@ -15,58 +12,55 @@
   user-select: none;
   -webkit-user-select: none;
 }
-
 .link {
   stroke: #18A;
   stroke-width: 2px;
 }
-
-
 text {
   font: 18px sans-serif;
   pointer-events: none;
 }
-
 #end-arrow {
   fill: #88A;
 }
-      #graph {
-        position: fixed;
-        left: 0px;
-        right: 0px;
-        top: 0px;
-        bottom: 0px;
-      }
-
+  #graph {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0;
+    /* padding-bottom will be overwritten by JavaScript later */
+    padding-bottom: 100%;
+}
+#graph > svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
 </style>
 <div id="graph"></div>
 <script>
-function redraw(){
 d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, graph) => {
   const width = 960;
   const height = 700;
   
-
   const simulation = d3.forceSimulation()
     .nodes(graph.nodes)
     .force('link', d3.forceLink().id(d => d.id))
     .force('charge', d3.forceManyBody().strength([-150]))
     .force('center', d3.forceCenter(width / 2, height / 2))
     .on('tick', ticked);
-
   simulation.force('link')
     .links(graph.links)
     .distance([85]);
-
   const R = 8;
-
   const svg = d3.select("#graph").append('svg')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox',"0 0 960 700")
     .attr('perserveAspectRatio',"xMinYMid")
     .attr('id',"chart");
-
   // add defs-marker
   // add defs-markers
   /*svg.append('svg:defs').selectAll('marker')
@@ -82,21 +76,17 @@ d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, g
       .append('svg:path')
         .attr('d', 'M0,0 L0,10 L10,5 z')
         .style('opacity', d => d.opacity);*/
-
   let link = svg.selectAll('line')
     .data(graph.links)
     .enter().append('line');
-
   link
     .attr('class', 'link') //
     .attr('marker-end', 'url(#end-arrow)')
     .on('mouseout', fade(1));
-
   let node = svg.selectAll('.node')
     .data(graph.nodes)
     .enter().append('g')
     .attr('class', 'node');
-
   node.append('circle')
     .attr('r', R)
     .on('mouseover', fade(0.1))
@@ -105,49 +95,40 @@ d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, g
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended));
-
   node.append('text')
     .attr('x', 0)
     .attr('dy', '.35em')
     .text(d => d.name);
-
   function ticked() {
     link
       .attr('x1', d => d.source.x)
       .attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x)
       .attr('y2', d => d.target.y);
-
     node
       .attr('transform', d => `translate(${d.x},${d.y})`);
   }
-
   function dragstarted(d) {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d.x;
     d.fy = d.y;
   }
-
   function dragged(d) {
     d.fx = d3.event.x;
     d.fy = d3.event.y;
   }
-
   function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(0);
     d.fx = null;
     d.fy = null;
   }
-
   const linkedByIndex = {};
   graph.links.forEach(d => {
     linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
   });
-
   function isConnected(a, b) {
     return linkedByIndex[`${a.index},${b.index}`] || linkedByIndex[`${b.index},${a.index}`] || a.index === b.index;
   }
-
   function fade(opacity) {
     return d => {
       node.style('stroke-opacity', function (o) {
@@ -155,17 +136,18 @@ d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, g
         this.setAttribute('fill-opacity', thisOpacity);
         return thisOpacity;
       });
-
       link.style('stroke-opacity', o => (o.source === d || o.target === d ? 1 : opacity));
       link.attr('marker-end', o => (opacity === 1 || o.source === d || o.target === d ? 'url(#end-arrow)' : 'url(#end-arrow-fade)'));
     };
   }
-});
-}
-
-      // Draw for the first time to initialize.
-      redraw();
-
-      // Redraw based on the new size whenever the browser window is resized.
-      window.addEventListener("resize", redraw);
+})
+$(window).on("resize", function() {
+    wrapper = d3.select("#graph")
+        .attr(
+            "style",
+            "padding-bottom: " + Math.ceil(height * 100 / width) + "%"
+        )
+        .append("svg")
+        .attr("viewBox", "0 0 " + width + " " + height);
+}).trigger("resize");
 </script>
