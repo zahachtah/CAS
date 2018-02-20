@@ -32,7 +32,7 @@ text {
 }
 
 </style>
-
+<div id="graph"></div>
 <script>
 d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, graph) => {
   const width = 960;
@@ -51,7 +51,7 @@ d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, g
 
   const R = 8;
 
-  const svg = d3.select('body').append('svg')
+  const svg = d3.select('graph').append('svg')
     .attr('width', width)
     .attr('height', height);
 
