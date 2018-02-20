@@ -30,6 +30,21 @@ text {
 #end-arrow {
   fill: #88A;
 }
+  #graph {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0;
+    /* padding-bottom will be overwritten by JavaScript later */
+    padding-bottom: 100%;
+}
+#graph > svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
 
 </style>
 <div id="graph"></div>
@@ -38,6 +53,7 @@ text {
 d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, graph) => {
   const width = 960;
   const height = 700;
+  
 
   const simulation = d3.forceSimulation()
     .nodes(graph.nodes)
@@ -154,12 +170,14 @@ d3.json('https://zahachtah.github.io/CAS/assets/json/miserables.json', (error, g
   }
 })
 
-var chart = $("#chart"),
-    aspect = chart.width() / chart.height(),
-    container = chart.parent();
+
 $(window).on("resize", function() {
-    var targetWidth = container.width();
-    chart.attr("width", targetWidth);
-    chart.attr("height", Math.round(targetWidth / aspect));
+    wrapper = d3.select("#graph")
+        .attr(
+            "style",
+            "padding-bottom: " + Math.ceil(height * 100 / width) + "%"
+        )
+        .append("svg")
+        .attr("viewBox", "0 0 " + width + " " + height);
 }).trigger("resize");
 </script>
