@@ -6,7 +6,7 @@ header:
   overlay_image: /images/cas2.jpeg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 
-excerpt: "This part of my site is devoted to exploring Complex Adaptive Systems, what they are, how they work, and how one can learn to understand them. I will focus on three iconic examples:
+excerpt: "This part of my site is devoted to exploring Complex Adaptive Systems, what they are, how they work, and how one can learn to understand them. I will focus on three iconic examples:"
 
 
 intro:
