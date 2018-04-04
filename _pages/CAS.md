@@ -13,6 +13,31 @@ intro:
   alt: "placeholder image 1"
   excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the scales of **connections** and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. My friend and post-doc host [Simon Levin](https://www.princeton.edu/~slevin/) likes to describe complex adaptive systems as localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
 
+feature_row0:
+  - image_path: /images/variation.jpg
+    alt: "placeholder image 1"
+    title: "Eco-Evo"
+    excerpt: "Evolution generates all the species on the planet, and ecology determines their distribution. These are without doubt the most profound and iconic examples of complex adaptive system"
+    url: "/_pages/Variation"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+
+  - image_path: /images/scale.jpg
+    alt: "placeholder image 2"
+    title: "Learning"
+    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut. Learning means that mistakes don't have to made twice, and with social learning, deadly mistakes can be avoided. Since evolution "feeds" on deadly mistakes, the emergence of learning is the second major complex adaptive system, giving rise to societies, science and most likely art"
+    url: "/_pages/Scale"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+
+  - image_path: /images/response.png
+    title: "Markets"
+    excerpt: "Markets are really just the consequence of learned expectations, but considering that humans could not have transformed the planet into a new geological era, the Anthropocene, without using markets this phenomenon is here awarded the third place for iconic complex adaptive systems"
+    url: "/_pages/Response"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+
+
 feature_row1:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
@@ -70,6 +95,8 @@ CAS:
 ---
 
 {% include feature_row id="intro" type="right" %}
+
+{% include feature_row id="feature_row0"%}
 
 {% include feature_row id="feature_row1"%}
 
