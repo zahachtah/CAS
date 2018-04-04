@@ -1,5 +1,5 @@
 ---
-title: "Complex adaptive systems"
+title: "Understanding Complex Adaptive Systems"
 layout: splash
 date: 2016-08-02
 header:
@@ -16,7 +16,7 @@ intro:
 feature_row1:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
-    title: "Var*iation*"
+    title: "Variation"
     excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -24,14 +24,14 @@ feature_row1:
 
   - image_path: /images/scale.jpg
     alt: "placeholder image 2"
-    title: "Con*nection*"
+    title: "Connection"
     excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
   - image_path: /images/response.png
-    title: "Res*ponse*"
+    title: "Response"
     excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
     url: "/_pages/Response"
     btn_label: "Explore"
@@ -41,16 +41,16 @@ feature_row1:
 feature_row2:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
-    title: "Variation and Connection"
-    excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
+    title: "Var+Con"
+    excerpt: "What is the inherent difference between a system om homogenous components vs a system of heterogenous components? Does a flock of identical individuals behave differently than a flock with both bold and cowardize individuals? Does a workplace work better with diversity? How does one measure diversity over scales?"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
   - image_path: /images/Wbeest_Mara.jpg
     alt: "placeholder image 2"
-    title: "Connection and Response"
-    excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
+    title: "Connection(s) and Response"
+    excerpt: "If response to some other entity is the basic unit of dynamics, then response to connecting to many people is the basic unit of social dynamics. How does response scale to group size?"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
