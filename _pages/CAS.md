@@ -25,8 +25,8 @@ feature_row0:
 
   - image_path: /images/scale.jpg
     alt: "placeholder image 2"
-    title: "Learning"
-    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut. Learning means that mistakes don't have to made twice, and with social learning, deadly mistakes can be avoided. Since evolution "feeds" on deadly mistakes, the emergence of learning is the second major complex adaptive system, giving rise to societies, science and most likely art"
+    title: "Connection"
+    excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
