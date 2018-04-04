@@ -18,21 +18,21 @@ feature_row_intro:
       * Get ready!'
 
 feature_row:
-  - image_path: /images/settingTheScene.jpg
+  - image_path: /images/settingTheScene.jpeg
     alt: "placeholder image 1"
     title: "Setting the Scene"
     excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
-  - image_path: /images/theAnthroposcene.jpg
+  - image_path: /images/theAnthroposcene2.jpeg
     alt: "placeholder image 2"
     title: "The Anthroposcene"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
-  - image_path: /images/Reconnecting.png
+  - image_path: /images/reconnecting2.jpg
     title: "Reconnecting to the Biosphere"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
@@ -40,7 +40,7 @@ feature_row:
     btn_class: "btn--inverse"
 
 feature_row2:
-  - image_path: /images/sustainability.jpg
+  - image_path: /images/sustainability2.jpg
     alt: "placeholder image 1"
     title: "Sustainability"
     excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
@@ -62,7 +62,7 @@ feature_row2:
     btn_class: "btn--inverse"
 
 feature_row3:
-  - image_path: /images/change.jpg
+  - image_path: /images/change2.jpg
     alt: "placeholder image 1"
     title: "Invoking change"
     excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
@@ -76,7 +76,7 @@ feature_row3:
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
-  - image_path: /images/cases.png
+  - image_path: /images/cases.jpg
     title: "All case studies"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
