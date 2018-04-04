@@ -25,7 +25,7 @@ feature_row0:
 
   - image_path: /images/scale.jpg
     alt: "placeholder image 2"
-    title: "Connection"
+    title: "Eco-Evo"
     excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
     url: "/_pages/Scale"
     btn_label: "Explore"
