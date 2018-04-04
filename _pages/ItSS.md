@@ -25,7 +25,7 @@ feature_row:
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
-  - image_path: /images/theAnthroposcene2.jpeg
+  - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 2"
     title: "The Anthroposcene"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
@@ -76,7 +76,7 @@ feature_row3:
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
-  - image_path: /images/cases.jpg
+  - image_path: /images/cases.jpeg
     title: "All case studies"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
