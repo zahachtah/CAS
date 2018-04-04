@@ -14,11 +14,11 @@ intro:
   alt: "placeholder image 1"
   excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the scales of **connections** and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. My friend and post-doc host [Simon Levin](https://www.princeton.edu/~slevin/) likes to describe complex adaptive systems as localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
 
-feature_row1:
+feature_row0:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
     title: "Variation"
-    excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
+    excerpt: "Evolution generates all the species on the planet, and ecology determines their distribution. These are without doubt the most profound and iconic examples of complex adaptive system"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
