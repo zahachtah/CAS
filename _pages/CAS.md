@@ -1,5 +1,5 @@
 ---
-title: "Understanding Complex Adaptive Systems"
+title: "exploring Complex Adaptive Systems"
 layout: splash
 date: 2016-08-02
 header:
