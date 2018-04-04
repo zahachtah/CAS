@@ -16,7 +16,7 @@ intro:
 feature_row1:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
-    title: "Variation"
+    title: "Var*iation*"
     excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -24,14 +24,14 @@ feature_row1:
 
   - image_path: /images/scale.jpg
     alt: "placeholder image 2"
-    title: "Scale"
+    title: "Con*nection*"
     excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
   - image_path: /images/response.png
-    title: "Response"
+    title: "Res*ponse*"
     excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
     url: "/_pages/Response"
     btn_label: "Explore"
@@ -41,7 +41,7 @@ feature_row1:
 feature_row2:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
-    title: "Variation+Scale"
+    title: "Variation and Connection"
     excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -49,14 +49,14 @@ feature_row2:
 
   - image_path: /images/Wbeest_Mara.jpg
     alt: "placeholder image 2"
-    title: "Scale+Response"
+    title: "Connection and Response"
     excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
   - image_path: /images/response.png
-    title: "Response+Variation"
+    title: "Response and Variation"
     excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
     url: "/_pages/Response"
     btn_label: "Explore"
@@ -65,7 +65,7 @@ feature_row2:
 CAS:
 - image_path: /images/variation.jpg
   alt: "placeholder image 1"
-  title: "Variation+Scale+Response"
+  title: "Variation, Connection and Response = CAS"
   excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the **scales** of interaction and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. My friend and post-doc host [Simon Levin](https://www.princeton.edu/~slevin/) likes to describe complex adaptive systems as localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
 ---
 
