@@ -3,7 +3,7 @@ title: "exploring Complex Adaptive Systems"
 layout: splash
 date: 2016-08-02
 header:
-  overlay_image: /images/cas2.jpeg
+  overlay_image: /images/cas3.jpeg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 
 excerpt: "This part of my site is devoted to exploring Complex Adaptive Systems, what they are, how they work, and how one can learn to understand them. I will focus on three iconic examples:"
