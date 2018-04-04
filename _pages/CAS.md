@@ -33,7 +33,7 @@ feature_row0:
 
   - image_path: /images/markets.jpg
     title: "Economy"
-    excerpt: "Markets are really just the consequence of learned expectations, but considering that humans could not have transformed the planet into a new geological era, the Anthropocene, without using markets this phenomenon is here awarded the third place for iconic complex adaptive systems"
+    excerpt: "Humans could not have become the most dominant force on the planet next to the sun and tectonics, without using markets and economic tools. For this a third place for iconic complex adaptive systems is awarded"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
