@@ -17,7 +17,7 @@ intro:
 feature_row0:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
-    title: "Eco-Evo"
+    title: "EcoEvo"
     excerpt: "Evolution generates all the species on the planet, and ecology determines their distribution. These are without doubt the most profound and iconic examples of complex adaptive system"
     url: "/_pages/Variation"
     btn_label: "Explore"
