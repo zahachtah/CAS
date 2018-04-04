@@ -17,7 +17,7 @@ intro:
 feature_row0:
   - image_path: /images/evolution.jpg
     alt: "placeholder image 1"
-    title: "EcoEvo"
+    title: "Eco-Evo"
     excerpt: "Evolution generates all the species on the planet, and ecology determines their distribution. These are without doubt the most profound and iconic examples of complex adaptive system"
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -25,7 +25,7 @@ feature_row0:
 
   - image_path: /images/learning.jpg
     alt: "placeholder image 2"
-    title: "Eco-Evo"
+    title: "Learning"
     excerpt: "The evolution of the brain was in some respects an evolutionary shortcut. Learning means that mistakes don't have to made twice, and with social learning, deadly mistakes can be avoided. Since evolution feeds on deadly mistakes, the emergence of learning is the second major complex adaptive system, giving rise to societies, science and most likely art"
     url: "/_pages/Scale"
     btn_label: "Explore"
