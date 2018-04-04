@@ -26,7 +26,7 @@ feature_row0:
   - image_path: /images/learning.jpg
     alt: "placeholder image 2"
     title: "Learning"
-    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut as deadly mistakes can be avoided by anticipation and communication. Both the human brain as well as recent computer learning algorithms show remarkable CAS characteristics"
+    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut as deadly mistakes can be avoided by anticipation and communication. Both the human and artificial intelligence show remarkable CAS characteristics"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
