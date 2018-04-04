@@ -32,8 +32,8 @@ feature_row0:
     btn_class: "btn--inverse"
 
   - image_path: /images/response.png
-    title: "Markets"
-    excerpt: "Markets are really just the consequence of learned expectations, but considering that humans could not have transformed the planet into a new geological era, the Anthropocene, without using markets this phenomenon is here awarded the third place for iconic complex adaptive systems"
+    title: "Response"
+    excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
