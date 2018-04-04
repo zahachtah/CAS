@@ -7,6 +7,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 
 excerpt: "This part of my site is devoted to exploring Complex Adaptive Systems, what they are, how they work, and how one can approach any system with a complex adaptive systems perspective *Sincerely, Jon Norberg*"
+---
 
 intro:
 - image_path: /images/variation.jpg
