@@ -6,12 +6,12 @@ header:
   overlay_image: /images/cas2.jpeg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 
-excerpt: "Thanks for stopping by! Here I collect most of what I am professionally interested in and currently pursuing. I hope you will find something useful or entertaining. **Sincerely, Jon Norberg**"
+excerpt: "This part of my site is devoted to exploring Complex Adaptive Systems, what they are, how they work, and how one can approach any system with a complex adaptive systems perspective *Sincerely, Jon Norberg*"
 
 intro:
 - image_path: /images/variation.jpg
   alt: "placeholder image 1"
-  excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the **scales** of interaction and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. My friend and post-doc host [Simon Levin](https://www.princeton.edu/~slevin/) likes to describe complex adaptive systems as localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
+  excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the scales of **connections** and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. My friend and post-doc host [Simon Levin](https://www.princeton.edu/~slevin/) likes to describe complex adaptive systems as localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
 
 feature_row1:
   - image_path: /images/variation.jpg
