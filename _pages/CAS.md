@@ -17,7 +17,7 @@ intro:
 feature_row0:
   - image_path: /images/evolution.jpg
     alt: "placeholder image 1"
-    title: "Eco-Evo"
+    title: "Biology"
     excerpt: "Evolution generates all the species on the planet, and ecology determines their distribution. These are without doubt the most profound and iconic examples of complex adaptive system"
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -26,13 +26,13 @@ feature_row0:
   - image_path: /images/learning.jpg
     alt: "placeholder image 2"
     title: "Learning"
-    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut. Learning means that mistakes don't have to made twice, and with social learning, deadly mistakes can be avoided. Since evolution feeds on deadly mistakes, the emergence of learning is the second major complex adaptive system, giving rise to societies, science and most likely art"
+    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut as deadly mistakes can be avoided by anticipation and communication. Both the human brain as well as recent computer learning algorithms show remarkable CAS characteristics"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
   - image_path: /images/markets.jpg
-    title: "Markets"
+    title: "Economy"
     excerpt: "Markets are really just the consequence of learned expectations, but considering that humans could not have transformed the planet into a new geological era, the Anthropocene, without using markets this phenomenon is here awarded the third place for iconic complex adaptive systems"
     url: "/_pages/Response"
     btn_label: "Explore"
