@@ -26,14 +26,14 @@ feature_row0:
   - image_path: /images/scale.jpg
     alt: "placeholder image 2"
     title: "Eco-Evo"
-    excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
+    excerpt: "The evolution of the brain was in some respects an evolutionary shortcut. Learning means that mistakes don't have to made twice, and with social learning, deadly mistakes can be avoided. Since evolution feeds on deadly mistakes, the emergence of learning is the second major complex adaptive system, giving rise to societies, science and most likely art"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
   - image_path: /images/response.png
-    title: "Response"
-    excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
+    title: "Markets"
+    excerpt: "Markets are really just the consequence of learned expectations, but considering that humans could not have transformed the planet into a new geological era, the Anthropocene, without using markets this phenomenon is here awarded the third place for iconic complex adaptive systems"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
