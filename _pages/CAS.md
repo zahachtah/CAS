@@ -38,6 +38,29 @@ feature_row1:
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
+feature_row1:
+  - image_path: /images/variation.jpg
+    alt: "placeholder image 1"
+    title: "Variation"
+    excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
+    url: "/_pages/Variation"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+
+  - image_path: /images/scale.jpg
+    alt: "placeholder image 2"
+    title: "Connection"
+    excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
+    url: "/_pages/Scale"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+
+  - image_path: /images/response.png
+    title: "Response"
+    excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
+    url: "/_pages/Response"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
 
 feature_row2:
   - image_path: /images/variation.jpg
