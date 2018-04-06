@@ -20,23 +20,17 @@ feature_row0:
     title: "Biology"
     excerpt: "Evolution generates all the species on the planet, and ecology determines their distribution. These are without doubt the most profound and iconic examples of complex adaptive system"
     url: "/_pages/Variation"
-    btn_label: "Explore"
-    btn_class: "btn--inverse"
 
   - image_path: /images/learning.jpg
     alt: "placeholder image 2"
     title: "Learning"
     excerpt: "The evolution of the brain was in some respects an evolutionary shortcut as deadly mistakes can be avoided by anticipation and communication. Both the human and artificial intelligence show remarkable CAS characteristics"
     url: "/_pages/Scale"
-    btn_label: "Explore"
-    btn_class: "btn--inverse"
 
   - image_path: /images/markets.jpg
     title: "Economy"
     excerpt: "Humans could not have become the most dominant force on the planet next to the sun and tectonics, without using markets and economic tools. For this a third place for iconic complex adaptive systems is awarded"
     url: "/_pages/Response"
-    btn_label: "Explore"
-    btn_class: "btn--inverse"
 
 feature_row1:
   - image_path: /images/variation.jpg
