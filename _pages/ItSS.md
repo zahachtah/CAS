@@ -16,6 +16,12 @@ feature_row_intro:
       * Read the syllabus!
       * Sign the agreement and send it to me!
       * Get ready!'
+  - image_path: /images/cases.jpeg
+    title: "All case studies"
+    excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
+    url: "/_pages/Response"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
 
 feature_row:
   - image_path: /images/theAnthroposcene.jpeg
@@ -55,13 +61,20 @@ feature_row2:
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/tools.jpg
-    title: "Adaptation"
+    title: "Options"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
 feature_row3:
+  - image_path: /images/adaptation.jpg
+    alt: "placeholder image 2"
+    title: "Adaptation"
+    excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
+    url: "/_pages/Scale"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
   - image_path: /images/change2.jpg
     alt: "placeholder image 1"
     title: "Transformation"
@@ -71,15 +84,9 @@ feature_row3:
     btn_class: "btn--inverse"
   - image_path: /images/concluding.jpg
     alt: "placeholder image 2"
-    title: "Concluding the course"
+    title: "Conclusion"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
     url: "/_pages/Scale"
-    btn_label: "Explore"
-    btn_class: "btn--inverse"
-  - image_path: /images/cases.jpeg
-    title: "All case studies"
-    excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
-    url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 ---
