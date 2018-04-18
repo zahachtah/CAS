@@ -20,7 +20,7 @@ feature_row_intro:
 feature_row:
   - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 2"
-    title: "The Anthroposcene"
+    title: "The Anthropocene"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
     url: "/_pages/Scale"
     btn_label: "Explore"
