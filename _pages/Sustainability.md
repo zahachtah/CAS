@@ -3,7 +3,7 @@ title: "CAS: Sustainability"
 layout: splash
 date: 2016-08-14
 header:
-  overlay_image: sustainability.jpg
+  overlay_image: images/sustainability2.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 
 excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
