@@ -32,19 +32,19 @@ feature_row:
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
-  - image_path: /images/reconnecting2.jpg
-    title: "Reconnecting to the Biosphere"
-    excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
-    url: "/_pages/Response"
-    btn_label: "Explore"
-    btn_class: "btn--inverse"
-
-feature_row2:
   - image_path: /images/sustainability2.jpg
     alt: "placeholder image 1"
     title: "Sustainability"
     excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
     url: "/_pages/Variation"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+
+feature_row2:
+  - image_path: /images/reconnecting2.jpg
+    title: "Reconnecting to the Biosphere"
+    excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
+    url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/systems.jpg
