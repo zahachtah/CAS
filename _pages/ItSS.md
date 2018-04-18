@@ -42,20 +42,20 @@ feature_row:
 
 feature_row2:
   - image_path: /images/reconnecting2.jpg
-    title: "Reconnecting to the Biosphere"
+    title: "Reconnecting"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/systems.jpg
     alt: "placeholder image 2"
-    title: "Systems Dynamics"
+    title: "Systems"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/tools.jpg
-    title: "Tools of the trade"
+    title: "Adaptation"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
     btn_label: "Explore"
@@ -64,7 +64,7 @@ feature_row2:
 feature_row3:
   - image_path: /images/change2.jpg
     alt: "placeholder image 1"
-    title: "Invoking change"
+    title: "Transformation"
     excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
     url: "/_pages/Variation"
     btn_label: "Explore"
