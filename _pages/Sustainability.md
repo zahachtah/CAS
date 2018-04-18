@@ -14,7 +14,7 @@ intro:
 feature_row_Source:
   - image_path: variation.jpg
     alt: "placeholder image 1"
-    title: "What is 'Variation'"
+    title: "What is the goal?"
     excerpt: "Somehting about measuring the relevant variation"
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -23,7 +23,7 @@ feature_row_Source:
 feature_row_Sink:
   - image_path: scale.jpg
     alt: "placeholder image 2"
-    title: "The sources of Variation"
+    title: "Whos goal?"
     excerpt: "What creates variation"
     url: "/_pages/Scale"
     btn_label: "Explore"
@@ -31,7 +31,7 @@ feature_row_Sink:
 
 feature_row_Traits:
   - image_path: response.png
-    title: "The sinks of Variation"
+    title: "Wellbeing or happiness?"
     excerpt: "Related to the outcomes of interactions and responses"
     url: "/_pages/Response"
     btn_label: "Explore"
@@ -40,7 +40,7 @@ feature_row_Traits:
 feature_row_Source2:
   - image_path: variation.jpg
     alt: "placeholder image 1"
-    title: "What is 'Variation'"
+    title: "Defining sustainability"
     excerpt: "Somehting about measuring the relevant variation"
     url: "/_pages/Variation"
     btn_label: "Explore"
@@ -49,19 +49,12 @@ feature_row_Source2:
 feature_row_Sink2:
   - image_path: scale.jpg
     alt: "placeholder image 2"
-    title: "The sources of Variation"
+    title: "Valuing the future"
     excerpt: "What creates variation"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
-feature_row_Traits2:
-  - image_path: response.png
-    title: "The sinks of Variation"
-    excerpt: "Related to the outcomes of interactions and responses"
-    url: "/_pages/Response"
-    btn_label: "Explore"
-    btn_class: "btn--inverse"
 ---
 
 {% include feature_row id="feature_row_Source" type="left" %}
@@ -74,4 +67,3 @@ feature_row_Traits2:
 
 {% include feature_row id="feature_row_Sink2" type="left" %}
 
-{% include feature_row id="feature_row_Traits2" type="left" %}
