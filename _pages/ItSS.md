@@ -28,14 +28,14 @@ feature_row:
   - image_path: /images/settingTheScene.jpeg
     alt: "placeholder image 1"
     title: "Perspectives"
-    excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
+    excerpt: "As we move into the challenge of both understanding the problem, as well as how to arrive at solutions, we are first going to make a stop and think about perspectives. From a fundamental mechanism of learning, to the transdisciplinary approach, the ability to change perspective provides both understanding as well as empathy"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/sustainability2.jpg
     alt: "placeholder image 1"
     title: "Sustainability"
-    excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
+    excerpt: "Sustainability is really about the needs of our and future generations. To be able to state this clearly so that it can affect actions efficiently is more difficult than one might hope. "
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
