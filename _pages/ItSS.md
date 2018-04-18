@@ -16,6 +16,8 @@ feature_row_intro:
       * Read the syllabus!
       * Sign the agreement and send it to me!
       * Get ready!'
+    
+feature_row_cases:
   - image_path: /images/cases.jpeg
     title: "All case studies"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
@@ -98,5 +100,7 @@ feature_row3:
 {% include feature_row id="feature_row2" %}
 
 {% include feature_row id="feature_row3" %}
+
+{% include feature_row id="feature_row_cases" type="right" %}
 
 {% include base_path %}
