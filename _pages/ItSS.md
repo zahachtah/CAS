@@ -91,15 +91,12 @@ feature_row3:
 
 {% include feature_row id="feature_row_intro" type="right" %}
 
-## On being aware about the situation
 
 {% include feature_row %}
 
-## On understanding the options
 
 {% include feature_row id="feature_row2" %}
 
-## On making change:
 
 {% include feature_row id="feature_row3" %}
 
