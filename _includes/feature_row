@@ -30,9 +30,6 @@
             alt="{% if f.alt %}{{ f.alt }}{% endif %}">
           </div>
         {% endif %}
-        {% if f.url %}
-          </a>
-        {% endif %}
         <div class="archive__item-body">
           {% if f.title %}
             <h2 class="archive__item-title">{{ f.title }}</h2>
@@ -44,6 +41,9 @@
             </div>
           {% endif %}
         </div>
+        {% if f.url %}
+          </a>
+        {% endif %}
       </div>
     </div>
   {% endfor %}
