@@ -72,14 +72,14 @@ feature_row2:
 feature_row3:
   - image_path: /images/adaptation.jpg
     alt: "placeholder image 2"
-    title: "Adaptation"
+    title: "Adaptative"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/change2.jpg
     alt: "placeholder image 1"
-    title: "Transformation"
+    title: "Transformative"
     excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
     url: "/_pages/Variation"
     btn_label: "Explore"
