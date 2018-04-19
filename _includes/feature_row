@@ -27,10 +27,11 @@
             alt="{% if f.alt %}{{ f.alt }}{% endif %}">
           </div>
         {% endif %}
-        {% if f.url %}
-            <a href="{{ f_url }}">
-        {% endif %}
+
         <div class="archive__item-body">
+          {% if f.url %}
+            <a href="{{ f_url }}">
+          {% endif %}
           {% if f.title %}
             <h2 class="archive__item-title">{{ f.title }}</h2>
           {% endif %}
@@ -40,7 +41,6 @@
               {{ f.excerpt | markdownify }}
             </div>
           {% endif %}
-
           {% if f.url %}
             </a>
           {% endif %}
