@@ -10,12 +10,8 @@ excerpt: "Thanks for stopping by! Here I collect most of what I am professionall
 feature_row_intro:
   - image_path: /images/admin.jpg
     alt: "placeholder image 1"
-    title: "The admin part"
-    excerpt: 'Ok, we need to get some things sorted out.
-      * Are you registered?
-      * Read the syllabus!
-      * Sign the agreement and send it to me!
-      * Get ready!'
+    title: "Welcome"
+    excerpt: 'About the idea behind this site/course, how I have structured it and what I hope to communicate. Also, if you are enrolled at SU for course credits, here's some information'
     
 feature_row_cases:
   - image_path: /images/cases.jpeg
