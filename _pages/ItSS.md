@@ -11,7 +11,7 @@ feature_row_intro:
   - image_path: /images/admin.jpg
     alt: "placeholder image 1"
     title: "Welcome"
-    excerpt: 'About the idea behind this site/course, how I have structured it and what I hope to communicate. Also, if you are enrolled at SU for course credits, here's some information'
+    excerpt: "About the idea behind this site/course, how I have structured it and what I hope to communicate. Also, if you are enrolled at SU for course credits, here's some information"
     
 feature_row_cases:
   - image_path: /images/cases.jpeg
