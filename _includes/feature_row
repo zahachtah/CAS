@@ -29,6 +29,9 @@
               {% endif %}
             alt="{% if f.alt %}{{ f.alt }}{% endif %}">
           </div>
+          {% if f.url %}
+            </a>
+          {% endif %}
         {% endif %}
         <div class="archive__item-body">
           {% if f.title %}
@@ -41,9 +44,6 @@
             </div>
           {% endif %}
         </div>
-        {% if f.url %}
-          </a>
-        {% endif %}
       </div>
     </div>
   {% endfor %}
