@@ -66,6 +66,13 @@
   font-size: $type-size-4;
 }
 
+.feature_row {
+  a {
+      color: #fff;
+      text-decoration: none;
+  }
+}
+
 .page__content {
   h2 {
     padding-bottom: 0.5em;
