@@ -27,7 +27,9 @@
             alt="{% if f.alt %}{{ f.alt }}{% endif %}">
           </div>
         {% endif %}
-
+        {% if f.url %}
+            <a href="{{ f_url }}">
+        {% endif %}
         <div class="archive__item-body">
           {% if f.title %}
             <h2 class="archive__item-title">{{ f.title }}</h2>
@@ -40,7 +42,7 @@
           {% endif %}
 
           {% if f.url %}
-            <p><a href="{{ f_url }}" class="btn {{ f.btn_class }}">{{ f.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+            </a>
           {% endif %}
         </div>
       </div>
