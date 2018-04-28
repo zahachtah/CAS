@@ -43,7 +43,7 @@ feature_row1:
     alt: "placeholder image 1"
     title: "Variation"
     excerpt: "The 'adaptive' part of CAS requires options, something to select from, wether it is genes, organisms traits, policies, products etc. Variation, and thus options, is the prerequisite of adaptation."
-    url: "/_pages/Variation"
+    url: "/_pages/CAS/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
