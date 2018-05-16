@@ -59,6 +59,9 @@ var i;
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
+    console.log(this.nextElementSibling);
+    console.log(this.nextSibling);
+    console.log(this.firstChild);
     var collapse_content = this.nextElementSibling;
     if (collapse_content.style.maxHeight){
       collapse_content.style.maxHeight = null;
