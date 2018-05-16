@@ -42,6 +42,7 @@
 <ul>
   {% for post in site.posts %}
     {% if post.title == include.title %}
+    {% assign title=post.title %}
     <li>
       <h2>{{ post.title }}</h2>
     </li>
@@ -50,7 +51,7 @@
 </ul>
 
 <div>
-<button class="collapsible">Open Collapsible</button>
+<button class="collapsible">{{ post.title }}</button>
 <div class="collapse_content">
 Lorem ipsum...
 Lorem ipsum...
