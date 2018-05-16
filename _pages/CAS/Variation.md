@@ -16,7 +16,7 @@ feature_row_Source:
     alt: "placeholder image 1"
     title: "What is 'Variation'"
     excerpt: "Somehting about measuring the relevant variation"
-    url: "/_pages/Variation"
+    url: "/_pages/variation/What_is.md"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
