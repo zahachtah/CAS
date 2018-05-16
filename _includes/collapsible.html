@@ -43,20 +43,20 @@
   {% for post in site.posts %}
     {% if post.title == include.title %}
     {% assign title = post.title %}
-    <li>
-      <h2>{{ post.title }}</h2>
-    </li>
+    {% assign con = post.content %}
+
     {% endif %}
   {% endfor %}
 </ul>
 
 <div>
-<button class="collapsible">{{ title | markdownify }}</button>
+<button class="collapsible">{{ title | markdownify | remove: "<p>" | remove: "</p>" }}</button>
 <div class="collapse_content">
 Lorem ipsum...
 Lorem ipsum...
 Lorem ipsum...
 Lorem ipsum...
+  {{ con | markdownify }}
 </div>
 </div>
 
