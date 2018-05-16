@@ -1,8 +1,9 @@
 yes I am here!
 
-{% for thispost in site.posts %}
-   
-      <h3> {% thispost.title %} </h3>
-      blablabla
-   
-{% endfor %}
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
