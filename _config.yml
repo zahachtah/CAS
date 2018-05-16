@@ -184,6 +184,8 @@ sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
+head_scripts:
+  - /assets/js/collapse.js
 
 # Outputting
 permalink: /:categories/:title/
