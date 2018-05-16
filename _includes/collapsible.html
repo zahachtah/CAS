@@ -43,11 +43,10 @@
   {% for post in site.posts %}
     {% if post.title == include.title %}
       {{ post.title }}
-      <button class="collapsible">{{ post.title }}</button>
-
     {% endif %}
   {% endfor %}
 
+      <button class="collapsible">{{ post.title }}</button>
       <div class="collapse_content">
         Lorem ipsum...
         Lorem ipsum...
