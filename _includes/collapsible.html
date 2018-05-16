@@ -1,5 +1,12 @@
-
-
+<ul>
+  {% for post in site.posts %}
+    {% if post.title == include.title %}
+    <li>
+      <h2>{{ post.title }}</h2>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
 <style>
   .collapsible {
@@ -13,24 +20,9 @@
     outline: none;
     font-size: 15px;
 }
-  
-.collapsible:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: white;
-  float: right;
-  margin-left: 5px;
-}
-
 .active, .collapsible:hover {
     background-color: #555;
-    border: none;
 }
-  
-.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-
 .collapse_content {
     padding: 0 18px;
     display: none;
@@ -39,25 +31,19 @@
 }
 </style>
 
-  {% for post in site.posts %}
-    {% if post.title == include.title %}
-      {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
-    {% endif %}
-  {% endfor %}
-
-
-<button class="collapsible">something</button>
+<div>
+<button class="collapsible">Open Collapsible</button>
 <div class="collapse_content">
 Lorem ipsum...
 Lorem ipsum...
 Lorem ipsum...
+Lorem ipsum...
 </div>
-
+</div>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
-
 for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
