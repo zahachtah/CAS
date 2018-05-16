@@ -41,12 +41,12 @@
 
   {% for post in site.posts %}
     {% if post.title == include.title %}
-      {{ post.title }}
+      {{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}
     {% endif %}
   {% endfor %}
 
 
-<button class="collapsible">"something"</button>
+<button class="collapsible">something</button>
 <div class="collapse_content">
 Lorem ipsum...
 Lorem ipsum...
