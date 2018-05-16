@@ -60,10 +60,9 @@ for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     console.log(this.nextElementSibling);
-    
-    console.log(this.style.maxHeight);
     var collapse_content = this.nextElementSibling;
     console.log(collapse_content);
+    console.log(collapse_content.style.maxHeight)
     if (collapse_content.style.maxHeight){
       collapse_content.style.maxHeight = null;
     } else {
