@@ -68,4 +68,6 @@ feature_row_Traits2:
 
 {% include collapsible.html title="What is variation?" %}
 
+
+{% include collapsible.html title="test2" %}
 and hello one more time!
