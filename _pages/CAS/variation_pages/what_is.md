@@ -66,6 +66,6 @@ feature_row_Traits2:
 
 {% include feature_row id="feature_row_Source" type="left" %}
 
-
+{% include collapsible.html title="What is variation?" %}
 
 and hello one more time!
