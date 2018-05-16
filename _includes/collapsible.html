@@ -1,7 +1,13 @@
-yes I am here!
 
-
-
+<ul>
+  {% for post in site.posts %}
+    {% if post.title == include.title %}
+    <li>
+      <h2>{{ post.title }}</h2>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
 
 <style>
 .collapsible {
@@ -15,11 +21,9 @@ yes I am here!
     outline: none;
     font-size: 15px;
 }
-
 .active, .collapsible:hover {
     background-color: #555;
 }
-
 .collapsible:after {
     content: '\002B';
     color: white;
@@ -27,11 +31,9 @@ yes I am here!
     float: right;
     margin-left: 5px;
 }
-
 .active:after {
     content: "\2212";
 }
-
 .collapse_content {
     padding: 0 18px;
     max-height: 0;
@@ -40,24 +42,6 @@ yes I am here!
     background-color: #f1f1f1;
 }
 </style>
-
-
-
-<ul>
-  {% for post in site.posts %}
-    {% if post.title == include.title %}
-    <li>
-      <h2>{{ post.title }}</h2>
-    </li>
-    {% endif %}
-  {% endfor %}
-</ul>
-
-<button class="collapsible">Open Collapsible</button>
-<div class="collapse_content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
 <button class="collapsible">Open Collapsible</button>
 <div class="collapse_content">
   <p>Lorem ipsum...</p>
@@ -66,15 +50,10 @@ yes I am here!
   <p>Lorem ipsum...</p>
   <p>Lorem ipsum...</p>
 </div>
-
-"What is variation?"
-
-<p>Lorem ipsum...</p>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
