@@ -14,7 +14,7 @@ feature_row_intro:
     
 feature_row_cases:
   - image_path: /images/cases.jpeg
-    title: "All case studies"
+    title: "Case studies"
     excerpt: "This is my primary teaching at Stockholm University. We have some amazing people at my department and an amazing Master program. For those that cannot get into that one, I have compressed parts of it into an online course (that you can get university credits for)."
     url: "/_pages/Response"
     btn_label: "Explore"
