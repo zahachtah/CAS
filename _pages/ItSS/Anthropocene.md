@@ -1,5 +1,5 @@
 ---
-title: "CAS: Scale"
+title: "Anthropocene"
 layout: splash_ItSS
 date: 2016-08-14
 header:
