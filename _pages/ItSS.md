@@ -24,7 +24,7 @@ feature_row:
   - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 2"
     title: "Anthropocene"
-    excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
+    excerpt: "The anthropocene can be summarized with two insights: For the first time in human history we know that 1) we are overusing this planets capacity to sustain society as we know it and 2) we are the last generation to do something about it. Shall we get started?"
     url: "/_pages/ItSS/Anthropocene"
     btn_label: "Explore"
     btn_class: "btn--inverse"
