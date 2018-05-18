@@ -31,7 +31,7 @@ feature_row_Sink:
 feature_row_Traits:
   - image_path: /images/theAnthroposcene.jpeg
     title: "The Seascapes"
-    excerpt: "Fishing trends, plastic, currents"
+    excerpt: "Fishing trends, plastic, currents, jellyfish"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
