@@ -2,8 +2,7 @@
 title: "Introduction to sustainability science"
 layout: splash
 header:
-  overlay_image: sustainability.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  overlay_image: /images/ben-neale-245472-unsplash.jpg
 
 excerpt: "Thanks for stopping by! Here I collect most of what I am professionally interested in and currently pursuing. I hope you will find something useful or entertaining. **Sincerely, Jon Norberg**"
 
