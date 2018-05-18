@@ -23,7 +23,7 @@ feature_row_Sink:
   - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 2"
     title: "Patterns of the Anthropocene"
-    excerpt: "What creates variation"
+    excerpt: "Great acceleration, Quadrupel squeeze, urbanizations, technorevolution, energy-turnover, the social change, use of resources (minerals + food)"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
@@ -31,7 +31,7 @@ feature_row_Sink:
 feature_row_Traits:
   - image_path: /images/theAnthroposcene.jpeg
     title: "The Seascapes"
-    excerpt: "Related to the outcomes of interactions and responses"
+    excerpt: "Fishing trends, plastic, currents"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
@@ -40,7 +40,7 @@ feature_row_Source2:
   - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 1"
     title: "The Landscapes"
-    excerpt: "Somehting about measuring the relevant variation"
+    excerpt: "biodiversity, fragmentation, leakage"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
@@ -49,7 +49,7 @@ feature_row_Sink2:
   - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 2"
     title: "Urban systems"
-    excerpt: "What creates variation"
+    excerpt: "energy per capita, recycling efficiency, innovation"
     url: "/_pages/Scale"
     btn_label: "Explore"
     btn_class: "btn--inverse"
@@ -57,7 +57,7 @@ feature_row_Sink2:
 feature_row_Traits2:
   - image_path: /images/theAnthroposcene.jpeg
     title: "Future trends"
-    excerpt: "Related to the outcomes of interactions and responses"
+    excerpt: "Visions"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
