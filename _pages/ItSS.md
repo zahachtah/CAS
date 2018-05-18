@@ -32,7 +32,7 @@ feature_row:
     alt: "placeholder image 1"
     title: "Perspectives"
     excerpt: "As we move into the challenge of both understanding the problem, as well as how to arrive at solutions, we are first going to make a stop and think about perspectives. From a fundamental mechanism of learning, to the transdisciplinary approach, the ability to change perspective provides both understanding as well as empathy"
-    url: "/_pages/Variation"
+    url: "/_pages/ItSS/Perspectives"
     btn_label: "Explore"
     btn_class: "btn--inverse"
   - image_path: /images/sustainability2.jpg
