@@ -76,7 +76,7 @@ feature_row3:
   - image_path: /images/change2.jpg
     alt: "placeholder image 1"
     title: "Transformative"
-    excerpt: "I finally realized that knowledge not online is just temporally archived (inside me). So, for the better or worse, here is where I put thoughts and ideas to share"
+    excerpt: "Sometimes a realization starts growing that tells one that the current situation is not desirable nor neccessary but seems overwhelmingly difficult to change. But it doesn't have to be that way there is the possibility of transformative change. But change into what? How? Who? And most importantly, WHY?"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
