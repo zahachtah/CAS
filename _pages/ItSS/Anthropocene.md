@@ -29,7 +29,7 @@ feature_row_Sink:
     btn_class: "btn--inverse"
 
 feature_row_Traits:
-  - image_path: /images/theAnthroposcene.jpeg
+  - image_path: /images/nasa-53883-unsplash.jpg
     title: "The Seascapes"
     excerpt: "Fishing trends, plastic, currents, jellyfish"
     url: "/_pages/Response"
@@ -37,7 +37,7 @@ feature_row_Traits:
     btn_class: "btn--inverse"
 
 feature_row_Source2:
-  - image_path: /images/theAnthroposcene.jpeg
+  - image_path: /images/LandUseInstitution.jpg
     alt: "placeholder image 1"
     title: "The Landscapes"
     excerpt: "biodiversity, fragmentation, leakage"
@@ -46,7 +46,7 @@ feature_row_Source2:
     btn_class: "btn--inverse"
 
 feature_row_Sink2:
-  - image_path: /images/theAnthroposcene.jpeg
+  - image_path: /images/nasa-43569-unsplash.jpg
     alt: "placeholder image 2"
     title: "Urban systems"
     excerpt: "energy per capita, recycling efficiency, innovation"
