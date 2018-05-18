@@ -46,7 +46,7 @@ feature_row:
 feature_row2:
   - image_path: /images/reconnecting2.jpg
     title: "Reconnecting"
-    excerpt: "The pathology of the Anthropocene has been the deconnection from action and consequences. What seems like a glorious solution has often unintended consequences that commulatively erode the support-system we depend on. Reconnecting is about linking actions to consequences in an informed and preferably un-authorian way"
+    excerpt: "The pathology of the Anthropocene has been the deconnection between action and consequences. What seems like a glorious solution has often unintended consequences that commulatively erode the support-system we depend on. Reconnecting is about linking actions to consequences in an informed and preferably un-authorian way"
     url: "/_pages/Response"
     btn_label: "Explore"
     btn_class: "btn--inverse"
