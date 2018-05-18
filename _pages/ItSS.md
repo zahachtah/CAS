@@ -10,8 +10,8 @@ excerpt: "Thanks for stopping by! Here I collect most of what I am professionall
 feature_row_intro:
   - image_path: /images/admin.jpg
     alt: "placeholder image 1"
-    title: "Welcome"
-    excerpt: "About the idea behind this site/course, how I have structured it and what I hope to communicate. Also, if you are enrolled at SU for course credits, here's some information"
+    title: "Meta"
+    excerpt: "Here I will give the admin info for those taking credits, write about the idea behind this site/course, how I have structured it and what I hope to communicate. Also, if you are enrolled at SU for course credits, here's some information"
     
 feature_row_cases:
   - image_path: /images/cases.jpeg
@@ -24,7 +24,7 @@ feature_row_cases:
 feature_row:
   - image_path: /images/theAnthroposcene.jpeg
     alt: "placeholder image 2"
-    title: "The Anthropocene"
+    title: "Anthropocene"
     excerpt: "I have a long passion for studying the extraordinary powerful and beautiful processes that make up complex adaptive systems. I primarlily use this knowledge to understand the criteria for selforganized sustainability. I use this material to teach a graduate course"
     url: "/_pages/Scale"
     btn_label: "Explore"
