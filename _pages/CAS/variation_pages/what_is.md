@@ -21,7 +21,7 @@ feature_row_Source:
     btn_class: "btn--inverse"
 
 feature_row_Sink:
-  - image_path: images/Pappa1.jpg
+  - image_path: /images/Pappa1.jpg
     alt: "placeholder image 2"
     title: "The sources of Variation"
     excerpt: "What creates variation"
