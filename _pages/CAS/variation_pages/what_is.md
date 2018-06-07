@@ -12,7 +12,7 @@ intro:
   - excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the **scales** of interaction and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. My friend and post-doc host [Simon Levin](https://www.princeton.edu/~slevin/) likes to describe complex adaptive systems as localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
 
 feature_row_Source:
-  - image_path: variation.jpg
+  - image_path: /images/Pappa1.jpg
     alt: "placeholder image 1"
     title: "What is 'Variation'"
     excerpt: "Somehting about measuring the relevant variation"
