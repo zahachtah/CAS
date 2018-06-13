@@ -1,5 +1,5 @@
 ---
-title: "About me"
+title: "Some windows from my perspective"
 layout: single
 author_profile: true
 
@@ -34,8 +34,28 @@ gallery:
     image_path: /images/chloe-leis-334258-unsplash.jpg
     alt: "placeholder image 4"
     title: "Image 4 title caption"
+  - url: /assets/images/unsplash-gallery-image-4.jpg
+    image_path: /images/tom-podmore-357694.jpg
+    alt: "placeholder image 4"
+    title: "Image 4 title caption"
+  - url: /assets/images/unsplash-gallery-image-4.jpg
+    image_path: /images/robert-collins-513140-unsplash.jpg
+    alt: "placeholder image 4"
+    title: "Image 4 title caption"
     
 ---
-Nothing has no perspective. This site was created from my perspective. This is *my*
+My places
+
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+
+My senses
+
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+
+My needs
+
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+
+My loves
 
 {% include gallery caption="This is a sample gallery with **Markdown support**." %}
