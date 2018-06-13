@@ -15,7 +15,7 @@ intro:
   title: "Complex Adaptive Systems:"
   excerpt: 'I have found it quite useful to think of complex adaptive systems by applying at least three different lenses to any problem: How is the **variation** of components expressed, what are the scales of **connections** and how do the components **respond** to these interactions. But it is when we put these ingredients together in a stew we get the dynamics of complex adaptive systems. Complex adaptive systems are localized interactions that result in selection processes which manifests in patterns at higher levels that in turn determine the nature of the local interactions. Thus, in this website I will explore both the ingrediences of complex adaptive systems as well as the resulting patterns when all processes work in concert'
 
-feature_row0:
+feature_rowA:
   - image_path: /images/evolution.jpg
     alt: "placeholder image 1"
     title: "Biology"
@@ -32,6 +32,8 @@ feature_row0:
     btn_label: "Explore"
     btn_class: "btn--inverse"
     
+    
+feature_rowB:    
   - image_path: /images/markets.jpg
     title: "Economy"
     excerpt: "Humans could not have become the most dominant force on the planet next to the sun and tectonics, without using markets and economic tools. For this a third place for iconic complex adaptive systems is awarded"
@@ -70,9 +72,11 @@ feature_row1:
     btn_label: "Explore"
     btn_class: "btn--inverse"
 ---
-{% include feature_row id="feature_row0"%}
-
 {% include feature_row id="intro" type="right" %}
+
+{% include feature_row id="feature_rowA"%}
+
+{% include feature_row id="feature_rowB"%}
 
 {% include feature_row id="feature_row1"%}
 
