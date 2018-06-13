@@ -11,7 +11,7 @@ gallery:
     alt: "placeholder image 1"
     title: "Image 1 title caption"
   - url: /assets/images/unsplash-gallery-image-2.jpg
-    image_path: /images/change.jpg
+    image_path: /images/change2.jpg
     alt: "placeholder image 2"
     title: "Image 2 title caption"
   - url: /assets/images/unsplash-gallery-image-3.jpg
@@ -20,6 +20,18 @@ gallery:
     title: "Image 3 title caption"
   - url: /assets/images/unsplash-gallery-image-4.jpg
     image_path: /images/reconnecting.jpg
+    alt: "placeholder image 4"
+    title: "Image 4 title caption"
+  - url: /assets/images/unsplash-gallery-image-4.jpg
+    image_path: /images/teemu-paananen-283670-unsplash.jpg
+    alt: "placeholder image 4"
+    title: "Image 4 title caption"
+  - url: /assets/images/unsplash-gallery-image-4.jpg
+    image_path: /images/photo-1500635523027-2f05e513f066.jpeg
+    alt: "placeholder image 4"
+    title: "Image 4 title caption"
+  - url: /assets/images/unsplash-gallery-image-4.jpg
+    image_path: /images/chloe-leis-334258-unsplash.jpg
     alt: "placeholder image 4"
     title: "Image 4 title caption"
     
