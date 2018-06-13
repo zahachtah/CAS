@@ -36,6 +36,6 @@ gallery:
     title: "Image 4 title caption"
     
 ---
-
+Nothing has no perspective. This site was created from my perspective. This is *my*
 
 {% include gallery caption="This is a sample gallery with **Markdown support**." %}
