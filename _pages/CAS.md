@@ -63,7 +63,7 @@ feature_row1:
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
-  - image_path: /images/response.png
+  - image_path: /images/photo-1500635523027-2f05e513f066.jpeg
     title: "Response"
     excerpt: "Components may respond to the interaction with other components by changing some aspect of their internal system which in turn affect the nature of this components interactions"
     url: "/_pages/Response"
