@@ -39,6 +39,13 @@ feature_row0:
     btn_label: "Explore"
     btn_class: "btn--inverse"
     
+  - image_path: /images/robert-collins-513140-unsplash.jpg
+    title: "Culture"
+    excerpt: "Wether x-isms, religions, patriarchy or traditions, culture permeates the social context we make decisions in. Culture is a great example of an entity that forms the parts its made of"
+    url: "/_pages/Response"
+    btn_label: "Explore"
+    btn_class: "btn--inverse"
+    
 feature_row1:
   - image_path: /images/variation.jpg
     alt: "placeholder image 1"
