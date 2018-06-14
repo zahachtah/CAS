@@ -39,7 +39,7 @@ feature_row:
     alt: "placeholder image 1"
     title: "Sustainability"
     excerpt: "Sustainability is really about the needs of our and future generations. To be able to state this clearly so that it can affect actions efficiently is more difficult than one might hope. "
-    url: "/_pages/Sustainability"
+    url: "/_pages/ItSS/Sustainability"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
