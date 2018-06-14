@@ -47,7 +47,7 @@ feature_row_Source2:
     btn_class: "btn--inverse"
 
 feature_row_Sink2:
-  - image_path: scale.jpg
+  - image_path: /images/Global-inequality-in-1800-1975-and-2015.png
     alt: "placeholder image 2"
     title: "Valuing the future"
     excerpt: "What creates variation"
