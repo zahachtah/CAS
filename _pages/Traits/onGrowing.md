@@ -23,7 +23,7 @@ feature_row_Source:
   - image_path: /images/eric-murray-613693-unsplash.jpg
     alt: "placeholder image 1"
     title: "Leaving the Holocene"
-    excerpt: "Somehting about measuring the relevant variation"
+    excerpt: "Ontogenetic development is fuelled by metabolism and occurs primarily by cell division. Incoming energy and materials from the environment are transported through hierarchical branching network systems to supply all cells. These resources are transformed into metabolic energy, which is used for life-sustaining activities. During growth, some fraction of this energy is allocated to the production of new tissue. Thus, the rate of energy transformation is the sum of two terms, one of which represents the maintenance of existing tissue, and the other, the creation of new tissue. This is expressed by the conservation of energy equation: (West et al 2001)"
     url: "/_pages/Variation"
     btn_label: "Explore"
     btn_class: "btn--inverse"
