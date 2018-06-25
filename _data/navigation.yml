@@ -4,12 +4,12 @@ main:
     url: https://zahachtah.github.io/CAS/_pages/CAS/
   - title: "Sustainability"
     url: https://zahachtah.github.io/CAS/_pages/ItSS/
-  - title: "Trait-based"
+  - title: "Biology: Traits & Scales"
     url: https://zahachtah.github.io/CAS/_pages/Traits/
   - title: "Blog"
     url: https://zahachtah.github.io/CAS/_pages/Blog/
-  - title: "About"
-    url: https://zahachtah.github.io/CAS/
+  # - title: "About"
+  #   url: https://zahachtah.github.io/CAS/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
