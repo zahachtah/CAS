@@ -11,7 +11,7 @@ feature_row_intro:
   - image_path: /images/admin.jpg
     alt: "placeholder image 1"
     title: "Trait-based?"
-    excerpt: 'Why would you rather talk about traits than identity of species?'
+    excerpt: "Why would you rather talk about traits than identity of species?"
 
 feature_row:
   - image_path: /images/settingTheScene.jpeg
