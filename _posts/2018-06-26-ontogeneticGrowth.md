@@ -2,6 +2,7 @@
 title: "A minimal model of ontogenetic growth"
 last_modified_at: 2016-03-09T16:20:02-05:00
 teaser: "images/WestEtAl2001Fig2.jpg"
+mathjax: true
 tags:
   - traits
   - theory
@@ -18,12 +19,12 @@ One of the most important traits, if not THE most important trait, is body size.
 
 The size of the organism is given as the number of cells of type $i$ times the biomass, $b$ of these celltypes, 
 
-$$ m=\sum_{i} N_i b_i$$
+$ m=\sum_{i} N_i b_i $
 
 
 The general relation of food energy and material balance is for any unit, $u$:
 
-$$F^u=B^u+\frac{dE_i^u}{dt}$$
+$F^u=B^u+\frac{dE_i^u}{dt}$
 
 {% capture notice-2 %}
 The human growth curve cannot be forced to coincide with growth curves of other organisms by any change of variables (see, for example, Figs. 16.7 and 19.6 in Brody (1945)). This is because Homo sapiens has growth efficiency ε0 from 4 to 7 times lower than other mammals and animals in general, a feature thought to be associated with brain development (Makarieva et al 2004)
