@@ -16,12 +16,12 @@ One of the most important traits, if not THE most important trait, is body size.
 * The material and energy costs of transforming these into different cell types or tissues
 * the cost of maintaining these cells and tissues
 
-The size of the organism is given as the number of cells of type \(i\), times the biomass \(b\), of these celltypes, 
+The size of the organism is given as the number of cells of type $$i$$, times the biomass $$b$$, of these celltypes, 
 
 $$ m=\sum_{i} N_i b_i $$
 
 
-The general relation of food energy and material balance is for any unit, \(u\):
+The general relation of food energy and material balance is for any unit, $$u$$:
 
 $$F^u=B^u+\frac{dE_i^u}{dt}$$
 
