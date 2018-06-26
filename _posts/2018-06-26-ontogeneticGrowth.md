@@ -2,7 +2,6 @@
 title: "A minimal model of ontogenetic growth"
 last_modified_at: 2016-03-09T16:20:02-05:00
 teaser: "images/WestEtAl2001Fig2.jpg"
-mathjax: true
 tags:
   - traits
   - theory
@@ -31,6 +30,17 @@ The human growth curve cannot be forced to coincide with growth curves of other 
 {% endcapture %}
 <div class="notice--info">{{ notice-2 | markdownify }}</div>
 
+{% capture notice-1 %}
+Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimensionless parameter that reflects the activity level of the organism [11]. For wild mammals and birds, the value of f ranges from 2 to 3 with an average of 2.7. For caged animals, f is usually below 2 [11]. This relationship between total and resting metabolic rate is strongly supported by empirical data (Hou et al. 2011)
+{% endcapture %}
+<div class="notice--info">{{ notice-1 | markdownify }}</div>
+
 References:
 
+Hou, Chen, Kendra M. Bolt, and Aviv Bergman. 2011. “A General Model for Ontogenetic Growth under Food Restriction.” Proceedings. Biological Sciences / The Royal Society 278 (1720): 2881–90.
+
 Makarieva, Anastassia M., Victor G. Gorshkov, and Bai-Lian Li. 2004. “Ontogenetic Growth: Models and Theory.” Ecological Modelling 176 (1): 15–26.
+
+Ricklefs, R. E. 2003. “Is Rate of Ontogenetic Growth Constrained by Resource Supply or Tissue Growth Potential? A Comment on West et Al.’s Model.” Functional Ecology 17 (3): 384–93.
+
+West, G. B., J. H. Brown, and B. J. Enquist. 2001. “A General Model for Ontogenetic Growth.” Nature 413 (6856): 628–31.
