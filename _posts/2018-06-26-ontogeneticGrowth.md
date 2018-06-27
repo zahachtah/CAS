@@ -1,7 +1,7 @@
 ---
 title: "A minimal model of ontogenetic growth"
 last_modified_at: 2016-03-09T16:20:02-05:00
-teaser: "images/WestEtAl2001Fig2.jpg"
+teaser: "/images/WestEtAl2001Fig2.jpg"
 tags:
   - traits
   - theory
@@ -35,6 +35,8 @@ Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimension
 {% endcapture %}
 <div class="notice--info">{{ notice-1 | markdownify }}</div>
 
+<div id="drawing"></div>
+
 References:
 
 Hou, Chen, Kendra M. Bolt, and Aviv Bergman. 2011. “A General Model for Ontogenetic Growth under Food Restriction.” Proceedings. Biological Sciences / The Royal Society 278 (1720): 2881–90.
@@ -44,3 +46,15 @@ Makarieva, Anastassia M., Victor G. Gorshkov, and Bai-Lian Li. 2004. “Ontogene
 Ricklefs, R. E. 2003. “Is Rate of Ontogenetic Growth Constrained by Resource Supply or Tissue Growth Potential? A Comment on West et Al.’s Model.” Functional Ecology 17 (3): 384–93.
 
 West, G. B., J. H. Brown, and B. J. Enquist. 2001. “A General Model for Ontogenetic Growth.” Nature 413 (6856): 628–31.
+
+
+
+ <script type="text/javascript" xlink:href="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+ <script type="text/javascript" xlink:href="/assets/js/colorbrewer.min.js"></script>
+<script>
+  // initialize SVG.js
+var draw = SVG('drawing')
+
+// draw pink square
+draw.rect(100, 100).move(100, 50).fill('#f06')
+</script>
