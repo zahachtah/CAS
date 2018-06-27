@@ -50,7 +50,7 @@ West, G. B., J. H. Brown, and B. J. Enquist. 2001. “A General Model for Ontoge
 
 
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
- <script type="text/javascript" src="CAS/assets/js/colorbrewer.min.js"></script>
+ <script type="text/javascript" src="https://zahachtah.github.io/CAS/assets/js/colorbrewer.min.js"></script>
 <script>
   // initialize SVG.js
 var draw = SVG('drawing')
