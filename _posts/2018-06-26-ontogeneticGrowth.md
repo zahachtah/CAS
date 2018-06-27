@@ -56,8 +56,8 @@ West, G. B., J. H. Brown, and B. J. Enquist. 2001. “A General Model for Ontoge
 var draw = SVG('drawing')
 
 // draw pink square
-draw.rect(50, 50).move(100, 50).fill(colorbrewer.YlGn[1][2])
-draw.rect(50, 50).move(200, 50).fill(colorbrewer.YlGn[2][2])
-draw.rect(50, 50).move(300, 50).fill(colorbrewer.YlGn[3][2])
-draw.rect(50, 50).move(400, 50).fill(colorbrewer.YlGn[4][2])
+draw.rect(50, 50).move(100, 50).fill(colorbrewer.YlGn[4][1])
+draw.rect(50, 50).move(200, 50).fill(colorbrewer.YlGn[4][2])
+draw.rect(50, 50).move(300, 50).fill(colorbrewer.YlGn[4][3])
+draw.rect(50, 50).move(400, 50).fill(colorbrewer.YlGn[4][4])
 </script>
