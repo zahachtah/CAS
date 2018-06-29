@@ -80,8 +80,8 @@ var svg = d3.select("#another")
   .attrs({ width: 500, height: 200 });
 
 var text = svg.append("text")
-    .attr("x", 480)
-    .attr("y", 250)
+    .attr("x", 50)
+    .attr("y", 100)
     .attr("dy", ".35em")
     .attr("text-anchor", "middle")
     .style("font", "300 128px Helvetica Neue")
