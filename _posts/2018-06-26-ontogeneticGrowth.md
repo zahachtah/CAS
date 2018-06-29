@@ -85,6 +85,21 @@ draw.rect(50, 50).move(550, 50).fill(colorbrewer.YlGn[6][6])
            .attrs({ x: 460, y: 150, width: 40, height: 40, fill: "#31a354" });
 </script>
 
+
+
+
+<script>
+     var svg = d3.select("#another")
+                    .append('svg')
+                    .attrs({ width: 500, height: 200 });
+        svg.append('rect')
+           .attrs({ x: 10, y: 10, width: 200, height: 100, fill: "#ffffcc" })
+        svg.append("text")
+	        .attr({ x:10, y:10})
+	        .text("something")
+
+</script>
+
 <script>
 var width = 800,
     height = 600;
@@ -114,33 +129,4 @@ function mousemove(d) {
 function mouseup() {
     svg.on("mousemove", null);
 }
-</script>
-
-
-<script>
-     var svg = d3.select("#experiment")
-                    .append('svg')
-                    .attrs({ width: 500, height: 400 });
-json={"nodes":[
-  {"x":80, "r":40, "label":"Node 1"}, 
-  {"x":200, "r":60, "label":"Node 2"},
-  {"x":120, "r":20, "label":"M"},
-  {"x":380, "r":80, "label":"Node 3"}
-]}
-    /* Define the data for the circles */
-    var elem = svg.selectAll("g myCircleText")
-        .data(json.nodes)
-  
-   var elemEnter = elem.enter()
-	    .append("g")
-	    .attr("transform", function(d){return "translate("+d.x+",80)"})
-
-   var circle = elemEnter.append("circle")
-	    .attr("r", function(d){return d.r} )
-	    .attr("stroke","black")
-	    .attr("fill", "white")
-    elemEnter.append("text")
-	    .attr("dx", function(d){return -20})
-	    .text(function(d){return d.label})
-
 </script>
