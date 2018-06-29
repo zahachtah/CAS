@@ -86,6 +86,7 @@ draw.rect(50, 50).move(550, 50).fill(colorbrewer.YlGn[6][6])
 <script>
 var width = 800,
     height = 600;
+  var k=1
 var svg = d3.select("#drawingD3").append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -98,8 +99,10 @@ function mousedown() {
         .attr("x", m[0])
         .attr("y", m[1])
         .attr("height", 0)
+        .attr("fill",colorbrewer.YlGn[6][k])
         .attr("width", 0);
     svg.on("mousemove", mousemove);
+    k=k+1;
 }
 function mousemove(d) {
     var m = d3.mouse(this);
