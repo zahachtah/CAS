@@ -75,14 +75,30 @@ draw.rect(50, 50).move(550, 50).fill(colorbrewer.YlGn[6][6])
 
 <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
 <script>
-     var svg = d3.select("#another")
-                    .append('svg')
-                    .attrs({ width: 500, height: 200 });
-        svg.append('rect')
-           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: "#ffffcc" })
-           .transition()
-           .duration(5000)
-           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: "#31a354" });
+var svg = d3.select("#another")
+  .append('svg')
+  .attrs({ width: 500, height: 200 });
+
+var text = svg.append("text")
+    .attr("x", 480)
+    .attr("y", 250)
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle")
+    .style("font", "300 128px Helvetica Neue")
+    .text("Hello");
+    
+var bbox = text.node().getBBox();
+
+var rect = svg.append("rect")
+    .attr("x", bbox.x)
+    .attr("y", bbox.y)
+    .attr("width", bbox.width)
+    .attr("height", bbox.height)
+    .style("fill", "#ffffcc")
+    .style("fill-opacity", ".3")
+    .style("stroke", "#31a354")
+    .style("stroke-width", "1.5px");
+
 </script>
 
 
@@ -130,3 +146,8 @@ function mouseup() {
     svg.on("mousemove", null);
 }
 </script>
+        svg.append('rect')
+           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: "#ffffcc" })
+           .transition()
+           .duration(5000)
+           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: "#31a354" });
