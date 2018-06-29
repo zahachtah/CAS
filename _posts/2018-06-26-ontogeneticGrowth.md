@@ -80,11 +80,11 @@ var svg = d3.select("#another")
   .attrs({ width: 500, height: 200 });
 
 var text = svg.append("text")
-    .attr("x", 50)
+    .attr("x", 150)
     .attr("y", 100)
-    .attr("dy", ".35em")
+    .attr("dy", ".15em")
     .attr("text-anchor", "middle")
-    .style("font", "300 128px Helvetica Neue")
+    .style("font", "300 80px Helvetica Neue")
     .text("Hello");
     
 var bbox = text.node().getBBox();
