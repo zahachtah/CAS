@@ -77,10 +77,10 @@ draw.rect(50, 50).move(550, 50).fill(colorbrewer.YlGn[6][6])
                     .append('svg')
                     .attrs({ width: 500, height: 200 });
         svg.append('rect')
-           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: 'red' })
+           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: colorbrewer.YlGn[6][1] })
            .transition()
            .duration(5000)
-           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: 'blue' });
+           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: colorbrewer.YlGn[6][6] });
 </script>
 
 <script>
