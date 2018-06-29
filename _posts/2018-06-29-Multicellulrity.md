@@ -1,9 +1,9 @@
 ---
-title: "A minimal model of ontogenetic growth"
+title: "Evolution of Multicellularity"
 last_modified_at: 2016-03-09T16:20:02-05:00
 teaser: "/images/WestEtAl2001Fig2.jpg"
 header:
-  overlay_image: /images/Ratcliff2015Fig1.jpg"
+  overlay_image: images/Ratcliff2015Fig1.jpg"
 tags:
   - traits
   - theory
