@@ -37,8 +37,9 @@ Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimension
 
 <div id="drawing"></div>
 <div id="another"></div>
-<div id="drawingD3"></div>
 <div id="experiment"></div>
+<div id="drawingD3"></div>
+
 
 
 References:
@@ -122,7 +123,8 @@ function mouseup() {
                     .attrs({ width: 500, height: 400 });
 json={"nodes":[
   {"x":80, "r":40, "label":"Node 1"}, 
-  {"x":200, "r":60, "label":"Node 2"}, 
+  {"x":200, "r":60, "label":"Node 2"},
+  {"x":120, "r":20, "label":"M"},
   {"x":380, "r":80, "label":"Node 3"}
 ]}
     /* Define the data for the circles */
