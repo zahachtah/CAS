@@ -36,8 +36,9 @@ Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimension
 <div class="notice--info">{{ notice-1 | markdownify }}</div>
 
 <div id="drawing"></div>
-<div id="drawingD3"></div>
 <div id="another"></div>
+<div id="drawingD3"></div>
+
 
 References:
 
@@ -68,6 +69,20 @@ draw.rect(50, 50).move(550, 50).fill(colorbrewer.YlGn[6][6])
 
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+<script>
+     var svg = d3.select("#another")
+                    .append('svg')
+                    .attrs({ width: 500, height: 200 });
+        svg.append('rect')
+           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: 'red' })
+           .transition()
+           .duration(5000)
+           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: 'blue' });
+</script>
+
 <script>
 var width = 800,
     height = 600;
@@ -94,16 +109,4 @@ function mousemove(d) {
 function mouseup() {
     svg.on("mousemove", null);
 }
-</script>
-
-<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
-<script>
-     var svg = d3.select("#another")
-                    .append('svg')
-                    .attrs({ width: 500, height: 200 });
-        svg.append('rect')
-           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: 'red' })
-           .transition()
-           .duration(5000)
-           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: 'blue' });
 </script>
