@@ -36,6 +36,7 @@ Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimension
 <div class="notice--info">{{ notice-1 | markdownify }}</div>
 
 <div id="drawing"></div>
+<div id="drawingD3"></div>
 
 References:
 
@@ -62,4 +63,34 @@ draw.rect(50, 50).move(250, 50).fill(colorbrewer.YlGn[6][3])
 draw.rect(50, 50).move(350, 50).fill(colorbrewer.YlGn[6][4])
 draw.rect(50, 50).move(450, 50).fill(colorbrewer.YlGn[6][5])
 draw.rect(50, 50).move(550, 50).fill(colorbrewer.YlGn[6][6])
+</script>
+
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var width = 800,
+    height = 600;
+var svg = d3.select("#drawingD3").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .on("mousedown", mousedown)
+    .on("mouseup", mouseup);
+function mousedown() {
+    var m = d3.mouse(this);
+  
+    rect = svg.append("rect")
+        .attr("x", m[0])
+        .attr("y", m[1])
+        .attr("height", 0)
+        .attr("width", 0);
+    svg.on("mousemove", mousemove);
+}
+function mousemove(d) {
+    var m = d3.mouse(this);
+    rect.attr("width", Math.max(0, m[0] - +rect.attr("x")))
+        .attr("height", Math.max(0, m[1] - +rect.attr("y")));
+}
+function mouseup() {
+    svg.on("mousemove", null);
+}
 </script>
