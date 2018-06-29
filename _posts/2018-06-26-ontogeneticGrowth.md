@@ -79,15 +79,15 @@ var svg = d3.select("#another")
   .append('svg')
   .attrs({ width: 500, height: 200 });
 
-var text = svg.append("text")
-    .attr("x", 150)
+var text1 = svg.append("text")
+    .attr("x", 100)
     .attr("y", 100)
     .attr("dy", ".15em")
     .attr("text-anchor", "middle")
     .style("font", "300 80px Helvetica Neue")
     .text("Hello");
     
-var bbox = text.node().getBBox();
+var bbox = text1.node().getBBox();
 
 var rect = svg.append("rect")
     .attr("x", bbox.x)
@@ -99,6 +99,25 @@ var rect = svg.append("rect")
     .style("stroke", "#31a354")
     .style("stroke-width", "1.5px");
 
+var text2 = svg.append("text")
+    .attr("x", 300)
+    .attr("y", 100)
+    .attr("dy", ".15em")
+    .attr("text-anchor", "middle")
+    .style("font", "300 80px Helvetica Neue")
+    .text("Hello");
+    
+var bbox = text2.node().getBBox();
+
+var rect = svg.append("rect")
+    .attr("x", bbox.x)
+    .attr("y", bbox.y)
+    .attr("width", bbox.width)
+    .attr("height", bbox.height)
+    .style("fill", "#31a354")
+    .style("fill-opacity", ".3")
+    .style("stroke", "#31a354")
+    .style("stroke-width", "0.0px");
 </script>
 
 
