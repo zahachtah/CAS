@@ -118,6 +118,7 @@ var rect = svg.append("rect")
     .style("fill-opacity", ".3")
     .style("stroke", "#31a354")
     .style("stroke-width", "0.0px");
+    
 </script>
 
 
@@ -128,10 +129,10 @@ var rect = svg.append("rect")
                     .append('svg')
                     .attrs({ width: 500, height: 200 });
         svg.append('rect')
-           .attrs({ x: 10, y: 10, width: 200, height: 100, fill: "#ffffcc" })
-        svg.append("text")
-	        .attr({ x:10, y:10})
-	        .text("something")
+           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: "#ffffcc" })
+           .transition()
+           .duration(5000)
+           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: "#31a354" });
 
 </script>
 
@@ -165,8 +166,4 @@ function mouseup() {
     svg.on("mousemove", null);
 }
 </script>
-        svg.append('rect')
-           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: "#ffffcc" })
-           .transition()
-           .duration(5000)
-           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: "#31a354" });
+
