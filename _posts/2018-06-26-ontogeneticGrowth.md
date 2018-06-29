@@ -37,6 +37,7 @@ Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimension
 
 <div id="drawing"></div>
 <div id="drawingD3"></div>
+<div id="drawingD32"></div>
 
 References:
 
@@ -93,4 +94,16 @@ function mousemove(d) {
 function mouseup() {
     svg.on("mousemove", null);
 }
+</script>
+
+<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+<script>
+     var svg = d3.select("#drawingD32")
+                    .append('svg')
+                    .attrs({ width: 500, height: 200 });
+        svg.append('rect')
+           .attrs({ x: 10, y: 10, width: 80, height: 80, fill: 'red' })
+           .transition()
+           .duration(5000)
+           .attrs({ x: 460, y: 150, width: 40, height: 40, fill: 'blue' });
 </script>
