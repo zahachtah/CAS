@@ -38,6 +38,7 @@ Btot can be expressed as Btot ¼ Brest þ Bact ¼ fBrest, where f is a dimension
 <div id="drawing"></div>
 <div id="another"></div>
 <div id="drawingD3"></div>
+<div id="experiment"></div>
 
 
 References:
@@ -112,4 +113,32 @@ function mousemove(d) {
 function mouseup() {
     svg.on("mousemove", null);
 }
+</script>
+
+
+<script>
+     var svg = d3.select("#experiment")
+                    .append('svg')
+                    .attrs({ width: 500, height: 400 });
+json={"nodes":[
+  {"x":80, "r":40, "label":"Node 1"}, 
+  {"x":200, "r":60, "label":"Node 2"}, 
+  {"x":380, "r":80, "label":"Node 3"}
+]}
+    /* Define the data for the circles */
+    var elem = svg.selectAll("g myCircleText")
+        .data(json.nodes)
+  
+   var elemEnter = elem.enter()
+	    .append("g")
+	    .attr("transform", function(d){return "translate("+d.x+",80)"})
+
+   var circle = elemEnter.append("circle")
+	    .attr("r", function(d){return d.r} )
+	    .attr("stroke","black")
+	    .attr("fill", "white")
+    elemEnter.append("text")
+	    .attr("dx", function(d){return -20})
+	    .text(function(d){return d.label})
+
 </script>
