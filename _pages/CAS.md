@@ -74,10 +74,12 @@ feature_row1:
 ---
 {% include feature_row id="intro" type="right" %}
 
+{% include feature_row id="feature_row1"%}
+
 {% include feature_row id="feature_rowA"%}
 
 {% include feature_row id="feature_rowB"%}
 
-{% include feature_row id="feature_row1"%}
+
 
 {% include base_path %}
