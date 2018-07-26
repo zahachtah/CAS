@@ -102,7 +102,11 @@ feature_row1:
 ---
 {% include feature_row id="intro" type="right" %}
 
+## The main ingredients of complex adaptive systems:
+
 {% include feature_row id="feature_row1"%}
+
+## Four perspectives on complex adaptive systems
 
 {% include feature_row_4 id="feature_row4"%}
 
