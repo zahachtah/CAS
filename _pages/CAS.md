@@ -104,10 +104,6 @@ feature_row1:
 
 {% include feature_row id="feature_row1"%}
 
-{% include feature_row id="feature_rowA"%}
-
-{% include feature_row id="feature_rowB"%}
-
 {% include feature_row_4 id="feature_row4"%}
 
 {% include base_path %}
