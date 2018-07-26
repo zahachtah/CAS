@@ -51,7 +51,7 @@ feature_row1:
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
-  - image_path: /images/scale.jpg
+  - image_path: /images/reconnecting2.jpg
     alt: "placeholder image 2"
     title: "Connection"
     excerpt: "Scale encompasses the network of interactions among components in space time and organizational level. Cross-scale interactions are cause of some of the more unexpected dynamics"
