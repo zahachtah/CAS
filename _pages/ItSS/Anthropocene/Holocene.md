@@ -9,4 +9,9 @@ excerpt: "The Holocene is the only state of the planet that we know can sustain 
 
 ---
 
+<figure>
+  <img src="/images/HotHouse.png" alt="this is a placeholder image">
+  <figcaption>This is a figure caption.</figcaption>
+</figure>
+
 <iframe width="640" height="360" src="https://www.youtube.com/embed/gKYhLEaOgKs?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
