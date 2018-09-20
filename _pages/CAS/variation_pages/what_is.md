@@ -66,8 +66,10 @@ feature_row_Traits2:
 
 {% include feature_row id="feature_row_Source" type="left" %}
 
-{% include collapsible.html title="What is variation?" %}
+{% include collapsible2.html title="What is variation?"  name="id2" color="#711" %}
 
 
-{% include collapsible.html title="test2" %}
+{% include collapsible2.html title="test2" name="id1" color="#117" %}
+
+
 and hello one more time!
