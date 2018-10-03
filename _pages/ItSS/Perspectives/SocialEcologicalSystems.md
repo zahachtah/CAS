@@ -13,7 +13,7 @@ In this lecture we welcome Carl Folke, Science Director at the Stockholm Resilie
 
 # Social ecological systems
 
-<iframe width="700" height="394" src="https://www.youtube.com/embed/AONZkofXko4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/AONZkofXko4" frameborder="0" allowfullscreen></iframe>
 
 [Direct Link](https://www.youtube.com/embed/AONZkofXko4)
 
