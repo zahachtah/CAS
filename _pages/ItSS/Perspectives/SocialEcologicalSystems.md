@@ -5,15 +5,14 @@ date: 2016-08-14
 header:
   overlay_image: /images/eric-murray-613693-unsplash.jpg
 
-excerpt: "Humans are beings of nature. While we have an unproportional impact on the planet since some centuries back, we still need food, water, air, shelter and connection. To understand that our wellbeing is unseparabale from the health of the ecosystems around us is embedded in taking a social-ecological systems view."
+excerpt: "One of the most important perspectives to take is that of seeing humans are being a part of nature. While we have an unproportional impact on the planet since some centuries back, we still need food, water, air, shelter and connection. To understand that our wellbeing is unseparabale from the health of the ecosystems around us is embedded in taking a social-ecological systems view."
 
 ---
-
-A short introduction to the interactions and dependencies between humans and nature, or __Social-Ecological-Systems__, and what it means when we call them "complex adaptive systems"
-
 Resilience starts from the belief that humans and nature are strongly coupled to the point that they should be conceived as one social-ecological system. This means that in our globalized society, there are virtually no ecosystems that are not shaped by people and no people without the need for ecosystems and the services they provide. People and nature are truly intertwined in what we refer to as social-ecological systems.
 
 Social ecological systems are in turn complex adaptive systems composed of many diverse human and non-human entities that interact. They adapt to changes in their environment and their environment changes as a result.
+
+A short introduction to the interactions and dependencies between humans and nature, or __Social-Ecological-Systems__, and what it means when we call them "complex adaptive systems"
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1WrMK-cqmkc" frameborder="0" allowfullscreen></iframe>
 
