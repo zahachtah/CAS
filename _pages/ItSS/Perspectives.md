@@ -15,7 +15,7 @@ feature_row_Source:
     alt: "placeholder image 1"
     title: "Transdisciplinarity"
     excerpt: "Somehting about measuring the relevant variation"
-    url: "/_pages/Variation"
+    url: "/_pages/ItSS/Perspectives/Transdisciplinary"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
@@ -30,8 +30,8 @@ feature_row_Sink:
 
 feature_row_Traits:
   - image_path: /images/settingTheScene.jpeg
-    title: "Transdisciplinary"
-    excerpt: "Fishing trends, plastic, currents, jellyfish"
+    title: "Changing Perspectives"
+    excerpt: "To foster the ability and desire to see the world from other perspectives"
     url: "/_pages/ItSS/Perspectives/Transdisciplinary"
     btn_label: "Explore"
     btn_class: "btn--inverse"
