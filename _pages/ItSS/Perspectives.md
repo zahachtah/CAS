@@ -32,7 +32,7 @@ feature_row_Traits:
   - image_path: /images/settingTheScene.jpeg
     title: "Changing Perspectives"
     excerpt: "To foster the ability and desire to see the world from other perspectives"
-    url: "/_pages/ItSS/Perspectives/Transdisciplinary"
+    url: "/_pages/ItSS/Perspectives/ChangingPerspectives"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
