@@ -1,5 +1,5 @@
 ---
-title: "Holocene"
+title: "Social Ecological Systems"
 layout: splash_ItSS
 date: 2016-08-14
 header:
