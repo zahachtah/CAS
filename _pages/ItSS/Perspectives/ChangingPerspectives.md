@@ -1,5 +1,5 @@
 ---
-title: "Social Ecological Systems"
+title: "Changing Perspectives: Empathy"
 layout: splash_ItSS
 date: 2016-08-14
 header:
