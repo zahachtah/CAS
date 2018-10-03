@@ -41,7 +41,7 @@ feature_row_Source2:
     alt: "placeholder image 1"
     title: "Social science concepts"
     excerpt: "biodiversity, fragmentation, leakage"
-    url: "/_pages/Variation"
+    url: "/_pages/ItSS/Perspectives/SocialScienceConcepts"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
@@ -50,7 +50,7 @@ feature_row_Sink2:
     alt: "placeholder image 2"
     title: "Natural science concepts"
     excerpt: "energy per capita, recycling efficiency, innovation"
-    url: "/_pages/Scale"
+    url: "/_pages/ItSS/Perspectives/NaturalScienceConcepts"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
