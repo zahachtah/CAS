@@ -24,7 +24,7 @@ feature_row_Sink:
     alt: "placeholder image 2"
     title: "Social Ecological systems"
     excerpt: "Great acceleration, Quadrupel squeeze, urbanizations, technorevolution, energy-turnover, the social change, use of resources (minerals + food)"
-    url: "/_pages/Scale"
+    url: "/_pages/SocialEcologicalSystems"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
