@@ -30,9 +30,9 @@ feature_row_Sink:
 
 feature_row_Traits:
   - image_path: /images/settingTheScene.jpeg
-    title: "Changing perspectives"
+    title: "Transdisciplinary"
     excerpt: "Fishing trends, plastic, currents, jellyfish"
-    url: "/_pages/Response"
+    url: "/_pages/ItSS/Perspectives/Transdisciplinary"
     btn_label: "Explore"
     btn_class: "btn--inverse"
 
