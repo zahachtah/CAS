@@ -14,4 +14,6 @@ excerpt: "The Holocene is the only state of the planet that we know can sustain 
   <figcaption>This is a figure caption.</figcaption>
 </figure>
 
+<iframe src="https://ourworldindata.org/grapher/child-mortality-vs-population-growth?time=1950..2015" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+
 <iframe width="640" height="360" src="https://www.youtube.com/embed/gKYhLEaOgKs?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
