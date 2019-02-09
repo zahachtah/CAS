@@ -1,0 +1,1578 @@
+{
+  "Introduction to sustainability science": {
+    "id": "iss",
+    "title": "Sustainability science",
+    "media": {
+      "type": "image",
+      "alturl": "https://zahachtah.github.io/CAS/images/derek-mack-738285-unsplash.jpg",
+      "url": "https://zahachtah.github.io/CAS/images/alex-shutin-204369-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Understanding how we can shape our common future",
+    "Conclude": "learning and knowledge and knowing ourselves joey-kyber-115166-unsplash.jpg",
+    "tags": ["learning", "biology", "video", "equation"],
+    "showDisqus": true,
+    "content": [{
+        "preface": " <h1>Welcome</h1><p>I wish you a very warm welcome to this course! This year I am using a new platform and while I have put much effort into making it as good as I can, there may still be unforeseen obstacles that I may have to resolve as we go. Thus, some aspects of the website might change and feedback is much appreciated. Any comments and suggestions to the overall course experience can be written in the comments section on this page! </p><p>You can access all content for this course from this site. The navigation is simple: the large image at the top is the current topic. Below it is a row of smaller images that are sub-parts of the current topic (if there are many you will see an arrow indicating this so you need to swipe or click the arrow to access these). Clicking them makes them the current topic with sometimes with their own subtopics. To go back to the parent topic use the links at the very top left of the large image.</p><p>I will be on the forums at the bottom of each main page to check your questions and insights related to each part during the course. Don’t hesitate to ask and/or contribute!</p><p> To check out the timeplan of the course and ask questions about administrative issues, head over to the <b>Course Admin</b> section. The course will be released in four parts, i.e. all parts mentioned below are not available from start. This is to keep a similar but flexible pace for all students such that sharing your insights is most usefull for all.</p><p>Here's a quick reminder of the requirements for passing this course:<br><ul><li>You need to log in to the comments provider (see bottom of this page) using your prefered provider. Make sure your profile displays your name correctly please.</li><li>Present yourself and your educational background and why you want to take this course at the bottom comments section on this page </li><li>Under each main section, e.g. <b>Anthropocene</b> I want you to write down your own reflection, what triggered your understanding or insights from your personal perspective. Thus, I don't want a summary of  the topic, but your personal insights based on the educational background you have. By sharing these amongs each other we all learn by taking different perspectives.</li><li>There will be two essays to write, and I provide detailed instructions as we approach the dates for these (see Course Admin). Note the weeks for essay writing, these are the ones that you might set aside some time in your schedule for!</li></ul></p>"
+      },
+      {
+        "text": "<h1>Introduction</h1>Sustainability was put on the global agenda in the 1987 Brundtland report on sustainable development, titled: “Our common future”. We have come a long way since the Brundtland report, for example through the process of establishing the UN sustainable development goals."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/SustainabilityBruntlandandSDG.png",
+          "caption": "The 1987 Brundtland report \"Our common future\" that propelled sustainability into international focus and the sustanabile development goals which provides the current roadmap for sustainability agreed upon by UN nations."
+        }
+      },
+      {
+        "text": "<br>Since the Bruntland report, the situation has  become more severe, as outlined in the module about the <b>Anthropocene</b>, new threats are now on the agenda and the complexities of the solutions have become more apparent. However, with a better understanding of the problems, the solutions have also become more clear, albeit workable ways to implement the solutions are often still lacking. Our fundamental understanding today is that human development and the health of the environment are interlinked and inseparable. Humanity must reconnect to the biosphere at all levels, not just locally. We will devote one part of the course to <b>Reconnecting</b> to the biosphere."
+      },
+      {
+        "text": "This course gives an introduction into both social and ecological aspects of sustainability science. In the module <b>Sustainability</b> we will focus on what this term means, how it is can be envisioned from different perspectives, and what indicators are provided to guide the effort of achieving it. To guide you through the complexities of social-ecological systems, we are using several case studies to exemplify the core concepts and how they fit together. The course is very transdisciplinary and you will encounter aspects of food web ecology, governance, economic decision-making and social network theory, among others. A common idea that links these different systems is that they are complex adaptive systems, and as such, they may display dynamics that are at times difficult to predict and provide additional challenges to governance. In the module <b>Systems</b> we will talk about this and also how resilience thinking has become a core approach to dealing with these complexities."
+      },
+      {
+        "text": "Many different forms of governance are and can be used to promote sustainable use of planetary resources. In the module <b>Options</b> we will go through different approaches to creating change in social ecological systems, you will familiarize yourself with adaptive management, co-management, tax incentives and stakeholder participation among many others. Then in modules <b>Adaptive</b> and <b>Transformative</b>, from understanding the challenges of the Anthropocene, to understanding the governmental aspects of creating opportunities for sustainable living on a planet under continuously increasing pressure, we put the pieces together. We will look at how change is created, by adaptive governance, creating knowledge through stakeholder participation or connecting social networks through bridging or brokering agents."
+      },
+      {
+        "text":"The concepts are being taught by instructors at the Stockholm Resilience Centre that have many years of research in both the specific topic they teach as well as in how to apply it in a transdisciplinary setting. The goal is to broaden the mind in regards to the problems as well as solutions to the human quest of living on this planet, to learn how one can start to address these and to provide knowledge that you can apply in everyday work and leisure settings. I'll leave you with a good reason to learn about these issues:"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/arctic_vir_2012147_lrg.png",
+          "caption": ""
+        }
+      },
+      {
+        "link": {
+          "label": "Admin",
+          "open": "1",
+          "id": "admin"
+        }
+      },
+      {
+        "link": {
+          "label": "Anthropocene",
+          "id": "atpcne"
+        }
+      },
+      {
+        "link": {
+          "label": "Perspectives",
+          "id": "prsts"
+        }
+      },
+      {
+        "link": {
+          "label": "Sustainability",
+          "id": "sstblt"
+        }
+      },
+      {
+        "link": {
+          "label": "Systems",
+          "id": "sstms"
+        }
+      },
+      {
+        "link": {
+          "label": "next parts",
+          "id": "nxtprts"
+        }
+      }
+    ]
+  },
+  "Admin": {
+    "id": "admin",
+    "title": "Course Admin",
+    "Purpose": "Course info and management",
+    "Conclude": "Help you work with the course",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/mimi-thian-737729-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["cas", "learning", "biology"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": "<p>The course will be made available in four parts (see schedule below). There will be two essay assignments, one at the end of Part 2 and one at the end of Part 4. The instructions for the essay assignment will be available on the MONDO platform at the time they are announced. You are also required to share your insights for each section of the course in the comment section, except for this page (admin). For any administrative question you might have, please use the comments section on this page so everyone can see both questions and answers. I hope you will enjoy this course as much as we have enjoyed making it! <p></p>"
+      },
+      {
+        "text": "<h1>Schedule</h1><b>Part 1</b> will be available on <b>14 January</b>. This part will set the scene to provide an understanding of the predicament humanity faces, the history of human development in the Holocene, as well as providing an overview of the perspectives needed to seek and identify solutions. These include a social-ecological system perspective and transdisciplinary approaches."
+      },
+      {
+        "tags": ["cas", "learning", "biology"],
+        "text": "<b>Part 2</b> will be available on <b>28 January</b>. This part will start looking at how to set the goal of sustainability and to get an understanding of ecosystem services and the role of urbanization. Then we will take a closer look at what sustainability means, how to define it and different approaches to implementing it into governance. You will also get an introduction to systems thinking, particularly understanding system dynamics and the nature of change. This is a perspective that is invaluable to understanding the challenges of sustainability."
+      },
+      {
+        "text": "<b>Essay 1 assignment</b> will be assigned on the <b>11 February</b>. You will have one week to complete this essay and it should be handed in no later than the <b>18 February</b>. Detailed instructions about this assignment will be made available to you on the <b>11th of February</b>."
+      },
+      {
+        "text": "<b>Part 3</b> will be available on the <b>18 February</b>. In this part we will use systems thinking to analyse how we need and can reconnect to our life support systems. Then we will start to look at the tools for implementing change, including markets, taxes and subsidies, institutions, stewardship and stakeholder participation."
+      },
+      {
+        "text": "<b>Part 4</b> will be available on the <b>4 March</b> In this part we will look at how to invoke change, through adaptive governance, knowledge creation, creating common goals and social network management. Part four is divided into section <b>Adaptive</b> vs <b>Transformative</b> which relate to fundamentally different but complementaty approaches to achieving change. We end the course content with some thoughts on scenarios for the future."
+      },
+      {
+        "text": "<b>Essay 2</b> assignment will be assigned on the <b>4 March</b>.This will be your second essay assignment, you will have around two weeks to complete it and it should be handed in no later than the <b>18th of March</b>. Detailed instructions about this assignment will be given on the <b>4th of March</b>."
+      },
+      {
+        "text": "<b>Participation grade</b>. All sections of this course have a corresponding discussion forum, in which you are required to make a summary of your personal important insights. You should make one summary for each section of the course, so 9 in total. Participation in this discussion is required to receive full credit for the course and I <b>will</b> keep track of participation. But when you participate is up to you as long as it is within the two-week timeframe of that part of the course"
+      },
+      {
+        "title": "Required reading",
+        "text": "<h1>Required reading</h1>The following is a list of the <b>required reading</b> material required for this course: <p><ul><li><b>Part 1</b>: <a href=\"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3357752/ \">Steffen et al. 2003</a>, <a href=\"http://www.ecologyandsociety.org/vol14/iss2/art32/ \">Rockström et al. 2009</a></li><li><b>Part 2:</b>: <a href = \" https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3357749/ \" >Folke 2011</a>, <a href= \" https://sustainabledevelopment.un.org/content/documents/844naturesjournal.pdf\"> Griggs et al. 2013</a>, and comment by SRC centre researchers: <a href= \" https://zahachtah.github.io/ItSS/assets/Pdf/SocialChangeVital.pdf\"> Norström et al. 2013</a></li><li><b>Part 3: </b> <a href=\"https://lms-sdsn-new-infra.edcastcloud.com/c4x/sdsn/464pb/asset/Regime_Shifts..pdf\">Rocha 2014</a>, <a href=\"http://research-legacy.arch.tamu.edu/epsru/Course_Readings/Ldev671MARS689/LDEV671_Readings/AdaptiveGiv_annurev.energy.30.050504.144511.pdf\">Folke et al. 2005</a></li></ul>"
+      }
+    ]
+  },
+  "Anthropocene": {
+    "id": "atpcne",
+    "title": "Anthropocene",
+    "Purpose": "Understanding where we came from",
+    "Conclude": "Our history has shaped our adaptive capacity",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/jean-marie-grange-21067-unsplash.jpg",
+      "urlAlt1": "https://zahachtah.github.io/CAS/images/ishan-seefromthesky-118580-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": "<h1>The human era,</h1>There are two aspects of human evolution from animals that stand out: <ol><li> Our ability to plan into the future and purposefully affect the environment</li> <li> Our ability to create abstract entities that we can relate to and communicate about</li></ol> The ability to plan into the future has largely contributed to our ability to build infrastructure which affects the way our environment works and how predictable it varies over time. Our ability to create abstract entities has allowed us to coordinate activities at scales greater than any other species This topic is about how these abilities have propelled us into the situation we are in today, which is both more prosperous, healthy, happy, well-fed and peaceful than ever, but also dangerously ignorant of the momentum of our development and lacking effective instruments to address humanities greatest challenges at the scale at which they fundamentally manifest themselves. <p><br> </p>"
+      },
+      {
+        "link": {
+          "label": "Holocene",
+          "id": "hlcn"
+        }
+      },
+      {
+        "text": "<h1>and the human predicament...</h1>To understand the predicament of the Anthropocene, we need to understand the environment that created the opportunities that lead to humn societies of today. For most of human pre-history we adapted to and considered us to be part of nature. Relatively fast climatic changes made the nomadic lifestyle particularly successfull. Then started the Holocene..."
+      },
+      {
+        "link": {
+          "label": "Disconnecting",
+          "id": "dcnnctngfrmntr"
+        }
+      },
+
+      {
+        "text": "A stable climatic period started some 11 thousand years ago which allowed people to stay longer in one spot, which may have been the preconditions needed to start building and relying on infrastructure. The greatest and most earth-transforming of these was agriculture."
+      },
+      {
+        "link": {
+          "label": "Great Acceleration",
+          "id": "grtcclrtn"
+        }
+      },
+
+      {
+        "text": "Fuelled by the increasing predictable environment that infrastructures provide, trade and economic growth as well as population size grew exponentially. At some point a global awareness began to grow that this might not only be for the good"
+      },{
+        "text":"<h1><p>Take-Home after reading about the Anthropocene:</h1>In this section of the course you’ve been introduced to the planetary boundaries concept. You should have also gotten a good idea about: how humanity has become the driving force on the planet, how this has created new challenges for sustainability as we face increased population size as well as per capita pressure on the planetary resources and finally how ecosystems are in peril of having reduced capacity to provide the necessary services that we humans need. Furthermore, climate change is real and the impacts are becoming more evident. Together, these pressures create a planetary system which is unpredictable due to reduced resilience and increases in indirect feedbacks. We can expect many surprises in the future.</p><p>This calls for understanding the main limits of the planetary system that human activities need to be scaled within, if we want to be able to sustain human development. Those planetary boundaries provide a unique opportunity for change. For the first time in the history of humanity, we are on a scientific level aware of them, we have become stewards of the entire planet and thus governance needs to shift to the planetary level for these crucial targets.</p><p>Lastly, you should have gained an understanding that human globalization has created long-distance feedbacks, called “teleconnections”, between social and ecological system. Examples of such feedbacks include, changes in preferences in urban systems that drive global markets which can change local exploitation patterns, and climate feedbacks, such as deforestation leading to changed precipitation patterns that may change vegetation patterns in other parts of the world.</p>"
+      }
+    ]
+  },
+  "Perspectives": {
+    "id": "prsts",
+    "title": "Perspectives",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/ales-dusa-1201709-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": "This section is abouthow we from our human perspective can understand both the earth system, as society as ourselves. This involves understanding the current situation and the path that has led us to it. An important prerequisite to finding a constructive path forward is the deep understanding that society and nature are one interlinked system, a social-ecological system. This is crucial as it lifts the perspective of a solution from the support system to the people that are part of the system as well as the connections with external systems. Carl Folke will tell us more about this."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/AONZkofXko4",
+          "caption": "something"
+        }
+      },
+      {
+        "text": "To understand and govern social ecological systems requires a <b>transdisciplinary</b> approach. This entails not only understandings from different scientific disciplines but also the combination of different kinds of knowledge. The true value of trans-disciplinary approach comes not only from the meeting of people with different perspectives, but the deeper understanding that is created when one person engages in other peoples perspectives."
+      },
+      {
+        "text": "Before you move on, I now want to share a wonderful gem from the vast library of TED talks. While somewhat nerdy, I think main message, that understanding is about changing perspective, is well worth thinking about. Also, the endpoint is one of the best and most charming crescendos of a TED talk. Enjoy!"
+      },
+      {
+        "video": {
+          "url": "https://embed.ted.com/talks/roger_antonsen_math_is_the_hidden_secret_to_understanding_the_world",
+          "caption": "something"
+        }
+      },
+      {
+        "link": {
+          "label": "Transdisciplinarity",
+          "id": "trnsdcplrt"
+        }
+      },
+      {
+        "link": {
+          "label": "Social Concepts",
+          "id": "sclcnspts"
+        }
+      },
+      {
+        "link": {
+          "label": "Social Concepts",
+          "id": "scnccncpts"
+        }
+      }
+    ]
+  },
+  "Sustainability": {
+    "id": "sstblt",
+    "title": "Sustainability",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/Saga_Norberg.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": "<b> Note, for some reason the topics don't start with the first so you have to swipe to find the first topic (Directions) at left-most. Sorry, am investigating</b><br>We have now spent most of our time getting a grip of the problem, from planetary boundaries to our disconnection from the biosphere. We will now start taking aim at the goal. The concept of sustainability captures this in a general way, but in this module of the course we will get into the details of what to sustain, how to find indices that can guide actions and how to agree on which indices to use. This section focuses mostly on the big picture view of sustainability from a national governance perspective. This involves understanding the interactions between the components that provide well-being, and the effect of human actions on these components. In later modules we will look at more bottom up approaches to achieve the same goals. We will end this module by taking a look at the debate about how to value the future; something that is largely a controversial issue for national and international governance."
+      },
+      {
+        "text":"In this section I want to provide a broad view and in depth understanding of some of the main issues related to sustainability and hopefully make you think about where some of the goals and aims of sustainability come from. Take the time to reflect on this section and grapple with some of the key concepts we have used. Particularly I want you to reflect on:<ul><li>The foundational perspective of social, economic embeddedness in the environment</li><li>The diversity of efforts to implement this, e.g. doughnut economics.</li><li>The main general goals of sustainability</li><li>The complexities of agreeing on components of well-being</li><li>The problems of measuring sustainability indicators</li><li>The meaning of integrated future well-being (IFW)</li><li>The idea that the rate of change of IFW must not decrease over time</li></ul>If you have any questions about what we have touch upon in this module don’t hesitate to write a message in the discussion board. "
+      },
+      {
+        "link": {
+          "label": "Directions",
+          "id": "drctns"
+        }
+      },
+      {
+        "link": {
+          "label": "Well-being",
+          "id": "wllbng"
+        }
+      },
+      {
+        "link": {
+          "label": "Defining Sustainability",
+          "id": "dfnngstblt"
+        }
+      },
+      {
+        "link": {
+          "label": "Discounting",
+          "id": "dscntng"
+        }
+      }
+    ]
+  },
+  "Systems": {
+    "id": "sstms",
+    "title": "Systems",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/denys-nevozhai-1202809-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": "<b> Note, for some reason the topics don't start with the first so you have to swipe to find the first topic (Interdependence) at left-most. Sorry, am investigating</b><br>In this topic we are going back to understanding how systems behave. While it may at times feel rather abstract, understanding general system dynamics is at the core of the new paradigms in sustainability science. There are three main reasons for this.<ul><li>Living systems are interdependent at many different scales. Understanding this interdependence, and the consequences of focusing on a subsystem embedded in a larger context is pivotal.</li><li>Living systems have variation among components and interactions at all levels. This variation is the base on which selective processes act and are thus fundamental of any adaptive process such as learning or adaptive management.</li><li>Living systems are non-linear and thus exhibit a wide range of dynamics. Understanding change in complex adaptive systems is important for understanding how to manage these.This topic is both the most complex and abstract of all in this course. Nevertheless, it is also at the core of how to think about both problems and solutions in the Anthropocene.</li></ul>"
+      },
+      {
+        "link": {
+          "label": "Interdependence",
+          "id": "ntrdpdnc"
+        }
+      },
+      {
+        "link": {
+          "label": "Regime shifts",
+          "id": "rgmshfts"
+        }
+      },
+      {
+        "link": {
+          "label": "Feedbacks",
+          "id": "fdbcks"
+        }
+      },
+      {
+        "link": {
+          "label": "Change",
+          "id": "chng"
+        }
+      },
+      {
+        "link": {
+          "label": "Resilience",
+          "id": "rslnc"
+        }
+      },
+      {
+        "text": "Here's a ovierview of what this topic is about:"
+      },
+      {
+        "text": "Defining the system: The way we look at a system implicitly means that we define its border and treat the outside components as external. We do this because the rationale is that within system interactions are stronger than those to the external components. But this is a subjective border of the observer. Nevertheless, subjectively defined borders can improve focus on key mechanisms and help create an understanding of when external processes matter as drivers or even disturbances."
+      },
+      {
+        "text": "System dynamics: Most systems of interactions can be grouped differently depending on the unit of measure. A consequence of complex systems and the fact that we put a subjective boundary for it is that it is prone to unexpected dynamics. One of the key properties of complex systems is the phenomenon of regime shifts, which essentially is a change in the dominance of different feedback loops. This has very large implications for management as it requires a focus on the interactions in the system rather than a focus on the actual state of the system. Many of these feedback loops are modulated by slow variables, changes in the ecosystem that occur through either slow integrative changes, through compositional change or through incremental changes in the network structure of the system. These can then trigger fast dynamics. But so can external factors which do not necessarily have to be governed by feedback loops, but through interdependence of different systems. A system that has undergone disturbance and disorganization is open for reorganization. Understanding resilience for the planetary scale creates a new challenge for governance due to its cross-national interdependence of feedback loops. "
+      }
+    ]
+  },
+  "nextParts": {
+    "id": "nxtprts",
+    "title": "Next: 18 Feb",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/photo-1482784160316-6eb046863ece.jpeg",
+      "caption": ""
+    },
+    "Purpose": "Information on next parts of course",
+    "Conclude": "a landing place",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "content": [{
+        "preface": "The next topics are:<ul><li><b>Reconnecting</b>, which will go into depth about how we can need to create feedbacks between our lifesupport systems and our decision making.</li><li><b>Options</b>, that will give you a deeper understanding of general tools of governance and management</li></ul>"
+      },
+      {
+        "text":"<br> Just a very beautiful video if you have some spare time to enjoy:"
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/f7hbWvHKns0",
+          "url2": "https://player.vimeo.com/video/149251718?autoplay=1&title=0&byline=0&portrait=0&badge=0"
+        }
+      }
+    ]
+  },
+  "Reconnecting": {
+    "id": "rcnctg",
+    "title": "Reconnecting",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/yavor-punchev-347831-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": ""
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/sdgs-food-azote.jpg",
+          "caption": "something"
+        }
+      },
+      {
+        "text": ""
+      }
+    ]
+  },
+  "Options": {
+    "id": "ptns",
+    "title": "Options",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/todd-quackenbush-701-unsplash.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": ""
+      },
+      {
+        "component": "NewBoid"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/sdgs-food-azote.jpg",
+          "caption": "something"
+        }
+      },
+      {
+        "text": ""
+      }
+    ]
+  },
+  "Adaptive": {
+    "id": "dptv",
+    "title": "Adaptive",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/himesh-kumar-behera-221100-unsplash.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": ""
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/sdgs-food-azote.jpg",
+          "caption": "something"
+        }
+      },
+      {
+        "component": "NewBoid"
+      },
+      {
+        "text": ""
+      }
+    ]
+  },
+  "Transformation": {
+    "id": "trnsfmtn",
+    "title": "Transformative",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/basket-court.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": ""
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/sdgs-food-azote.jpg",
+          "caption": "something"
+        }
+      },
+      {
+        "text": ""
+      }
+    ]
+  },
+  "Futures": {
+    "id": "ftrs",
+    "title": "Futures",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/Futures.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "iss", "title": "Sustainability science"}],
+    "showDisqus": true,
+    "content": [{
+        "preface": ""
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/sdgs-food-azote.jpg",
+          "caption": "something"
+        }
+      },
+      {
+        "text": ""
+      }
+    ]
+  },
+  "Holocene": {
+    "id": "hlcn",
+    "title": "Holocene",
+    "Purpose": "Did the prehistoric environment affect how we developed human society?",
+    "Conclude": "Larce scale interconnections are only resilient in stable environments with small scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/Lascaux.jpg",
+      "caption": "Paintings of lions from Lascaux cave in France, an estimated 17,000 years old (pre-Holocene)"
+    },
+    "tags": ["biology", "equation"],
+    "parents": [{"id": "atpcne", "title": "Anthropocene"}],
+    "content": [{
+        "preface": "The Holocene environment in which humans sustained themselves was perceived as local, diverse and driven but natural variation. The nomadic lifestyle responded to variation of climate and resources by moving the ”home” to a better place due to climatic reasons, or to new areas where large animals where still plentiful. The primary mode of dealing with natural variation was responding to it by adaptation.  The more frequently environmental conditions became unfavorable and forced the group to move, the more the group became adept at tailoring its way of life to repeated breaking up, scouting for new living areas and making the transition. Likely, there were seasonal cycles in relocations that were predictable and relying on memorized locations. On top of these seasonal cycles however, where the longer term climatic changes within one or a few decades that forced groups of people to explore new areas at the cost of uncertaincy and unpredictability<p><br></p> "
+      },
+      {
+        "text": "The degree of adaptability will to some degree reflect the degree of environmental variation. The major source of environmental variation where the perpetual change of climatic conditions, driven primarily glaciation cycles but also local climatic feedbacks as well as shifts in oceanic currents. These, in turn, drove plant and animal population changes over both space and time. Looking at global temperature reconstructions for prehistoric times one can spot a shift from large fluctuations to a period of remarkably stable trends in global temperatures during the Holocene."
+      },
+      {
+        "image":{
+          "url": "https://zahachtah.github.io/CAS/images/HoloceneTempSeries.jpg",
+          "caption": "The remarkable transition at the beginning of the holocene some 11 thousand years ago from large fluctuations and colder climates to a period of remarkably stable and warmth"
+        }
+      },
+      {
+        "text": "<br><p>This had a big impact on human choices. Humans ability to plan into the future is the prime reason we build infrastructures to increase the predictability and efficiency of desired processes. For example, to hunt animals at distances humans created spears and ”slungor” and to drive herds into traps one had to clear areas, build fences or obstacles that routed the fleeing animals into the desired spot. These infrastructures worked for a in the pre-holocene mobile lifestyle as they could be brought along or used seasonally. Infrastructure’s primary purpose is to increase the predictability and efficiency of desired outcomes. Having a spear increases the probability of killing an animal, while fences, cleared pathways and obstacles increases the probability of getting animals to where you want them to be. Building a small dam in a stream increases the probability of plentiful water being available when needed. All in all, we use infrastructure to increase the predictability of resource provisioning. This amounts to decreasing the variability or at least to move the variability into a different time-domain, for example, there is a low chance that a dam bursts but a high chance it will provide benefits at any given time. Howeever, building infrastructure does come with a trade-off. Physical infrastructures are enteties that need to be either transported or abandoned (at least temporarily) in a nomadic lifestyle. <p>"
+        },
+        {
+          "image": {
+            "url": "https://zahachtah.github.io/CAS/images/NativeAmericanHorseTipi-small.jpg",
+            "caption": "Relatively recent nomadic lifestyles and the adaptation to low-cost-high-mobility infrastructure. Blackfoot native americans."
+          }
+        },
+        {
+          "text":"<br><p>This means that the more one invest locally in infrastructure to reduce environmental variability, the higher the cost when one needs to move. On the other hand, the less often you have to move, the more you will invest in infrastructure which reduces the impact of environmental variability. Thus one has a situation with circular reinforcements, high variability leads to less infrastructure with leads to high relocation proneness (less cost in lost infrastructure). Low variability leads to higher investment in infrastructure which reduces environmental variability. At some point, environmental variability is compensated for by infrastructure and the group sees less value in breaking up than in continuing building infrastructure. Fire and furs is a great way to compensate temperatures and is easily movable but a hut provides superior warmth and shelter but is place-bound. In terms of time invested, a fire may be one hour of wood collection, a fur a couple of days of skin preparation and a hut a couple of weeks of construction.</p>"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/Infrastructure-cost-benefits.svg",
+          "caption": "Modern humans have had the cognitive capacity to understand that infrastructure can be used to affect desired outcomes long before the Holocene. Even though, agriculture was invented in uncennected areas all over the world around the early Holocene. A possible explanation is that the cost of investing in infrastructure was generally too high in relation to the expected timeframe before a relocation had to be done as long as climatic variability was too high. Once the stable period of the Holocene started, any infrastructure that was build could be used longer, thereby reducing both the cost of relocation as well as reducing the reason for relocating, i.e. the variability in desired outcomes such as food produciton or water provisioning"
+        }
+      },
+      {
+        "text": "<p><br></p>Agriculture is often said to have provided the ultimate reason for abandoning nomadic lifestyles. We cannot say for sure, but agriculture certainly has the ingredients of infrastructure systems: investing in making a plot, redirecting a stream, improving soil, and storage for produce and next years seeds all serve to reduce environmental variability while making the cost of translocating higher. Wether or not this was in our best interest can certainly be questioned, the lifestyle of a farmer is in many respects far harder and unhealthier than that of a nomadic person. "
+      },
+      {
+        "text": "<span style=\"color:orange\">\"Humans have a variety of different mechanisms that can allow them to increase their resilience in times of less than desirable agricultural production. Long-term social memory can allow humans to return to, or exploit with renewed intensity, foraged resources. Humans can use strategies based on diversification such as growing additional crops, developing fields in new environments, or using combined agropastoral systems that allow humans to exploit a variety of different niches . Humans can also combat risk by intensifying their agricultural production—producing surplus or by investing in landesque capital such as irrigation systems that can aid in buffering against one aspect of fluctuating climate and changing rainfall. Last, humans can also increase their resilience by specializing and by engaging in increasing networks of exchange such as those that developed during the early Silk Road or through state-sponsored technological innovations such as the Grand Canal\". <br><i>Guedes, Jade d’Alpoim, and R. Kyle Bocinsky. 2018. “Climate Change Stimulated Agricultural Innovation and Exchange across Asia.” Science Advances 4 (10): eaar4491.</i></span>"
+      },
+      {
+        "text": "One can conclude that at some time during the holocene humans made the critical transition from dealing with environmental variability through mobility, to dealing with environmental variability with infrastructure. Once we made this transition, the only feasible way to deal with environmental variation was with more infrastructure."
+      },
+      {
+        "text": "The second conclusion is that infrastructure is build to address a certain level of an environmental factor and its degree of variability. The cost of environmental variability can be said to be moved from one domain into another. For example, most cities are along the coast and infrastructures such as roads, buildings, sewage systems, energy production systems are adapted to the expected level and variation of the sea. The infrastructure ensures that the city can keep functioning without any concern while sea levels vary with expected tides or storms. When the nature of the environmental variation changes, e.g. due to an unforeseen trend such as continuously rising sea levels due to polar glacier melting and thermal expansion of the oceans  or an increase in storm severity, the cost are immense unless adaptation is built into the infrastructure system for this temporal scale."
+      },
+      {
+        "text": "In the following video Johan Rockström will  talk about the extraordinary stable period that provided the right conditions for development into today’s societies. The Holocene period, is the ONLY climatic condition we know of that supports humanity at this scale and ALL our infrastructure that we have invested to date is adapted to this climatic regime. The Holocene is sometimes referred to as, “the period of grace.” When entering the Anthropocene, we need to understand what changes compared to this period of grace, since leaving it may critically undermine future human development and well-being."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/gKYhLEaOgKs"
+        }
+      },
+      {
+        "text": "<ul><li>Were you aware about the very unique climate conditions that are the basis for today’s human world?</li><li>Does this insight change the way you think about sustainability, the scale of effort needed to ensure it?</li></ul>"
+      }
+    ]
+  },
+  "Disconnecting from Nature": {
+    "id": "dcnnctngfrmntr",
+    "title": "Disconnecting",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/peter-nguyen-128476-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology", "equation"],
+    "parents": [{"id": "atpcne", "title": "Anthropocene"}],
+    "content": [{
+        "preface": "One of humans great abilities is to create abstract entities that we can relate to and communicate about. Without this ability humans would not have been able to become such a dominating force on earth simply because we would not be able to cooperate at these large scales. Just like physical infrastructure, abstract entities are cognitive infrastructure that improve the efficiency of cognitive transactions. Group identity is one such construct which is build in deep in human behavior. We can use symbols to identify groups of people which helps us choose appropriate behavior without having to inquire about the inner nature of each person. It also creates biassed behavior and expectations (justified or not) for people not belonging to certain groups. While the group identity can be physically based, such as genetic heritage of a family, it often is just a label reflecting certain behaviors or positions of authority. One treats a person in police uniform differently than a person with no uniform without actually knowing for sure if he/she is a police. "
+      },
+      {
+        "text": "<br><h1>Distancing from nature</h1>The most profound cognitive construct, and the one with the highest impact for our home-planet, has been the cognitive construct of money which is an extension and consequence of trade which, in turn, is based of our notion of value.  A simple way to think about value is benefit per effort. Trade is plausible when value is perceived differently between two parties. This difference can be due to perceived utility or due to the effort of attaining it. If we think about products, knowledge how to manufacture and infrastructure to simplify decreases effort of production. Thus it is easy to understand that two items with similar benefits but different production effort for person A and B respectively lend themselves to trade as perceived benefit per effort increases by the exchange."
+      },
+      {
+        "text": "This notion of trade by exchanging goods (bartering) involves social contact, which inevitably leads to building of a social connection and conduct if this is repeated. Thus, when going from everyone providing every neccessety by themselves, such as water, food, shelter, to goods and service exchange, it involves adding one more link between these neccesseties. If two people exchange e.g. food for construction material, based on their differences in value per effort, the personal experience of producing one of these items are lost for each person respectively. But since a social connection is established an indirect link still exists, one may for example ask how the harvest of wheat was this year and exchange some smalltalk on how far one has to walk these days to find decent wood for construction. With the introduction of currency around 600 BC the ease at which multiple links could be established in the trade-chain increased greatly. And thus began humans path to disconnecting from it resurce base."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/earlyCoins.png",
+          "caption": "Some of the earlies know coins, A 640 BC one-third stater coin from Lydia (left) and Greek drachm of Aegina, after 404 BC"
+        }
+      },
+      {
+        "text": "<br>A even more important part of trade is that just as physical infrastructure often reduces environmental variability, trade as mediated by middlemen traders reduces price fluctuations since the trader can average over multiple producers. Price is a very efficient tool to gather information about supply and demand, or even, as discussed above, to supply per unit effort. This information holds vital information about the production capacity, or health, of the resource system."
+      },
+      {
+        "text": "Consider a simple regenerating resource for which the harvest produce is sold on a local market. Lets further assume that demand fluctuates due to population density changes or because of changing preferences. Resulting from supply and demand mechanics the price will fluctuate resulting in changing demand as well as effort invested in production. While this mechanism does not lead to sustainable use of the resource by itself, the price does contain vital information that can potentially be used to govern the resource. But when middlemen aggregate multiple production locations before bringing the produce to consumers, this information becomes increasingly lost. The consequence is that trade-markets become insensitive to local resource use markets as the potential for bidirectional feedbacks is removed."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/MaskedMarkets.png",
+          "caption": "The chain of disconnection between abundances over time to price of fish. a) actual biomasses, b) catch landed in local harbor, c) regoinal market supply, d) total global catch of that species, e) actual price in retail"
+        }
+      },
+      {
+        "text": "<br>For humans this is generally perceived as a positive thing. Prices as well as supply stabilize over time and space such that independent of season fresh apples or fish are always available. At least until the trade-network hits the ultimate boundary at the planetary scale, as is happening with e.g. fish stocks. The stabilization of price and supply comes at the cost of lost feedback through information or disconnection. The feedback between producer and consumer is broken such that everyday naive choices create collapses of populations or ecosystems in areas totally disconnected from the consumer."
+      },
+      {
+        "text": "The fundamental cause for the breaking of planetary boundaries of impact for e.g. CO2, eutrophication, chemical pollutants etc all are rooted in this disconnect caused by infrastructure and trade. Johan Rockström will now give his perspective on the main causes for driving the anthropocene."
+      },
+      {
+        "text": "Johan Rockström is well known for being part of a group introducing the planetary boundaries concept in 2009. This concept provides a list of the main limits for planet earth and the current state of how close we are to surpassing these, or how much we already have done so."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/dAu2HDqFmd0"
+        }
+      },
+      {
+        "text": "<ul><li>Try to relate your own style of living into the planetary boundaries concepts. Which of the boundaries are you probably most contributing to?</li><li>Which ones could you most easily contribute to relaxing the pressure on?</li></ul>"
+      },
+      {
+        "text": "A statement that we have nine planetary boundaries that humanity must manage safely is a strong statement. Have we selected the right ones? Did we miss some? Here, Johan justifies the selection of these boundaries and presents the process that has led to this selection."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/mMe0HcdpAII"
+        }
+      },
+      {
+        "text": "<ul><li>Which of the planetary boundaries where you least aware of?</li><li>Go to the original paper and read about the boundary you were most unaware of. Try to think about how it relates to your own activities or how it might impact you.</li></ul>"
+      }
+    ]
+  },
+  "Disconnecting the Neighborhood": {
+    "id": "dcnnctngfrmthnghbrhd",
+    "title": "New Neighbors",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/neighborhood.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": [{"id": "atpcne", "title": "Anthropocene"}],
+    "content": [{
+        "preface": "Market forces generate incentives that are bad for everyone. What are healthy land use changes, what is unhealthy? When large scale changes go directly against the interest of the people living there."
+      },
+      {
+        "text": "As long as nomadic groups moved together, cognitive infrastructure moved together. Rituals, habits, code of conduct moved along. "
+      },
+      {
+        "text": "Text on social changes due to information flows and change in social network structures"
+      },
+      {
+        "text": "We have created the notion of a nation, which is just a collective agreement to behave in a certain way based on wether you belong to this nation or not. Some will sacrifice their life for strangers because we have agreed upon a entirely cognitive construct, the nation state. "
+      },
+      {
+        "video": {
+          "url": "https://ourworldindata.org/grapher/child-mortality-vs-population-growth?time=1950..2015",
+          "caption": "something"
+        }
+      }
+    ]
+  },
+  "Animistic to Humanistic": {
+    "id": "nmstcthmnstc",
+    "title": "Humanism",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/aindrilla-mukherjee-444713-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": ["atpcne"],
+    "content": [{
+        "preface": "Since this chapter concerns the historical path leading to the current human predicament I will also go into some paths of the cognitive development. Western liberal humanism (freedom foremost) reigns today, having shrugged off challenges from Soviet socialist humanism (equality foremost) and Nazi evolutionary humanism (fittest foremost) "
+      },
+      {
+        "text": "The change in perception from being responsible towards spirits of nature to being responsible to the preference of humans or even individuals very much echos the story of human disconnection from nature through physical and trade infrastructures. "
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/lionman.jpg",
+          "caption": "The oldes archeological find that shows human-animal spiritual relationship, the Lion Man, 40 000 years old. Ulmer Museum."
+        }
+      },
+      {
+        "text": "I think it is important to emphasize that the solution does not lie in recreating the animistic hunter-gather societies but that new an innovative solutions must be instantiated which connect resource use dynamics to consumer actions to externalities thereof without loosing the location specific information. While I have no blueprint for this in this course, I hope that by combining some proposed ideas to address these issue with your different backgrounds and perspectives and open minds a seed and the willingness to work towards these goals can be encouraged."
+      }
+    ]
+  },
+  "Leftovers": {
+    "id": "lftvrs",
+    "title": "Leftovers",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/aindrilla-mukherjee-444713-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": ["atpcne"],
+    "content": [{
+        "text": "Money is a way to value effort. In a society where most people have similar occupation, e.g. farming, husbandry, workmanship the time difference (effort) per utility produced may not be very different. By this I mean no one produces a product or service which utility as perceived by others is very disproportionate to the time it takes to produce this service or product. This is just a different way of saying that the money one receives per unit time spent in ones profession is about the same in a community with basic professions and un-hierarchical structures. "
+      },
+      {
+        "link": {
+          "label": "New Neighbors",
+          "id": "dcnnctngfrmthnghbrhd"
+        }
+      },
+
+      {
+        "text": "As long as nomadic groups moved together, cognitive infrastructure moved together. Rituals, habits, code of conduct all moved along. When groups became nomadic, land use had to spread out from the habitation"
+      },
+      {
+        "text": "During the early agricultural period when bartering was the main economic transaction, but even after the invention of currencies some 600years BC, prices where largely linked to regional production. most people up until the 19'th century seldomly traveled outside of their home region. Today our social network spans the entire globe, and prices are set by global markets"
+      },
+      {
+        "text": "All truth is one in this light: may science and religion endeavor here for the steady evolution of mankind from darkness to light, from narrowness to broadmindedness, from prejudice to tolerance. It is the voice of life which calls us to come and learn. (Inscription on bell in Hayes Hall Bell Tower at SUNY Buffalo, brought to attention by Cliffort Stoll)"
+      },
+      {
+        "link": {
+          "label": "Humanism",
+          "id": "nmstcthmnstc"
+        }
+      },
+
+      {
+        "text": "When you are part of something greater you relate to yourself and to the environment differently than when you consider yourself the greatest. Humans have during most of our history related to other organisms on a equal level, with animistic beleifs dominating the ritualistic archeological findings. But with the enlightenment we became so encouraged by our understanding of nature and our ability to control it that we became masters of the environment. This is today reflected in our deeply humanistic and even individualistic values, such as the human rights"
+      },
+      {
+        "link": {
+          "label": "Sustainability",
+          "id": "sstblt"
+        }
+      },
+      {
+        "link": {
+          "label": "Reconnecting",
+          "id": "rcnctg"
+        }
+      },
+      {
+        "link": {
+          "label": "Systems",
+          "id": "sstms"
+        }
+      },
+      {
+        "link": {
+          "label": "Options",
+          "id": "ptns"
+        }
+      },
+      {
+        "link": {
+          "label": "Adaptive",
+          "id": "dptv"
+        }
+      },
+      {
+        "link": {
+          "label": "Transformation",
+          "id": "trnsfmtn"
+        }
+      },
+      {
+        "link": {
+          "label": "Futures",
+          "id": "ftrs"
+        }
+      }
+    ]
+  },
+  "Transdisciplinarity": {
+    "id": "trnsdcplrt",
+    "title": "Transdisciplinarity",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/cris-dinoto-346886-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": [{"id": "prsts", "title": "Perspectives"}],
+    "content": [{
+        "text": "In this course you will encounter many terms and concepts. You are likely wonder at times why there are so many terms describing similar things and that the same term is used to describe quite different things. This is due to the trans-disciplinary nature of sustainability science. Within disciplines, terminology and use of language emerges that facilitates communication and problem formulation between participants. Often similar problems are analysed in several disciplines but different languages have developed. Sometimes, the same term can mean different things in different disciplines."
+      },
+      {
+        "text": "While transdisciplinarity seems like a sensible and natural approach, it is often very expensive and complicated. The development of languages, methods and problem formulation within and between disciplines differ, and one needs to be aware of the bases and assumptions of these in order to address differences in interpretations of problem formulation, research design and interpretation of results."
+      },
+      {
+        "text": "These questions even have its own discipline - the philosophy of science - and while it is beyond our scope to go into this here, it is important to have thought about this to be self-critical of one’s own “baggage” but also to be able to identify sources of differences in understanding you will come across in this field and with your classmates. The philosophy of science is also largely restricted to the academic approach to sciences, but there are other types of knowledge that we will also touch upon in later parts of the course, such as local or traditional knowledge."
+      },
+      {
+        "text": "You will be interacting with course material and classmates that come from different fields to your own. It will help you better understand the information exchanged if you take some time to think about: What is the discipline(s) that is(are) behind the information/researchers? How similar or different is that from your own? How might your own background be influencing your understanding of the material in question?"
+      },
+      {
+        "text": "The videos below provide some definitions of what transdisciplinarity means and when it is needed and why sustainability science in the Anthropocene often needs to have this approach as well as examples of this."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/cRv78EDki6A",
+          "caption": ""
+        }
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/W49IIgf_H90",
+          "caption": ""
+        }
+      }
+    ]
+  },
+  "Sociology Concepts": {
+    "id": "sclcnspts",
+    "title": "Sociology Concepts",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/PsalmerFRanKoket.jpg",
+      "caption": "The picture is a still from a wonderful norwegian/swedish movie \"Psalmer från köket\" which portraits swedish social science research in the 50'th to improve kitchen workflow. The scientists (in the high chair in case there was any doubt) was supposed to not partake in the study but only observe the system without influencing it...... That was the idea at least... "
+    },
+    "tags": ["biology"],
+    "parents": [{"id": "prsts", "title": "Perspectives"}],
+    "content": [
+      {
+        "text":"<h1>Some useful definitions:</h1> Below are some definitions that will be used in the course. If you don't have a background in the corresponding discipline please take some time to read these and reflect on it."
+      },
+      {
+        "text": "<b>Governance</b> are the actions and processes that arise from interactions between (groups of) people, which give rise to persistent practices such as institutions (including norms and treaties) and organisational structures which in turn affect peoples behavioral patterns. Such practices can be formal institutions, e.g. laws, with formal sanctioning, or informal norms embedded in the community and enforced through social sanctioning (see institutions)."
+      },
+      {
+        "text": "<b>Collective action</b> refers to the mobilization of a group of people for a common goal fueled by perceived injustice, sense of identity and a belief that action can provide relief. The creation of a democratic state organization from dictatorships is one example of this. Others are the struggle for recognized rights by indigenous people or the mobilization of local fishermen for regulations to prevent harvests from external actors. Collective action thus is the precursor of governance."
+      },
+      {
+        "text": "<b>Institutions</b> are any kind of practices or organizations put in place or emergent from past interactions that affect all forms of repetitive and structured interactions between people."
+      },
+      {
+        "text": "<b>Management</b> relates to the goal-directed decisions people make when interacting with a shared resource. In its simplest sense, there is one group or one individual with a shared goal. With this definition, management is a subset of governance at a smaller scale and with a shared goal. Natural resource management means managing the way in which people and natural landscapes interact."
+      },
+      {
+        "text": "<b>Value</b> is the degree that a goods or service is desired. It can be positive or negative. It only occurs in the interaction between humans and a particular goods or service. It is subjective as it varies between people and it may change over time. A person may not realize a value until it is articulated. For example, green spaces in urban areas may be undervalued until, for example, NGO’s promote the knowledge that green spaces enhance air quality and that they promote subconscious mental health benefits in terms of stress relief. Most choices involve explicit or implicit valuations."
+      },
+      {
+        "text": "<b>Capital assets</b> are the parts of human or natural world that produce goods and/or services that are of value for humans. Commonly, one distinguishes between natural capital (e.g. land used for food or timber production), human capital (e.g. labor) or social capital (e.g. trust)"
+      },
+      {
+        "text": "<b>Consumption flows</b> are the use of goods and services provided by capital assets that can be measured in physical or monetary terms"
+      },
+      {
+        "text": "<b>Utility</b> is a measure of the benefits derived from using valued consumption flows from capital assets"
+      },
+      {
+        "text": "<b>Discounting</b> represents the fact that humans prefer to receive benefits in the short term more than receiving the same benefit in the future. The rate of discounting depends on many things, such as the timeframe, the perspective (personal or government) and the state of the economy."
+      },
+      {
+        "text": "<b>Externality</b> is the cost or benefit that affects a party who did not choose to incur that cost or benefit."
+      },
+      {
+        "text": "<b>Normative statement</b> means relating to an ideal standard of or model, or being based on what is considered to be the normal or correct way of doing something. Normative statements are characterised by the modal verbs “should”, “would” or “could”."
+      },
+      {
+        "text": "<b>Positive statement</b> concerns what “is”, “was” or “will be” and does not make any judgement on whether this is good or bad. Positive statements should be testable."
+      },
+      {
+        "text": "<b>Opportunity costs</b> is the cost of a choice, i.e. the benefit forgone of the next best option when choosing the perceived best option."
+      }
+    ]
+  },
+  "Science Concepts": {
+    "id": "scnccncpts",
+    "title": "Science Concepts",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/jonathan-francisca-606247-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": [{"id": "prsts", "title": "Perspectives"}],
+    "content": [
+      {
+        "text":"<h1>Some useful definitions:</h1> Below are some definitions that will be used in the course. If you don't have a background in the corresponding discipline please take some time to read these and reflect on it."
+      },
+      {
+        "text": "<b>Species</b> are genetically distinct organisms that can successfully interbreed"
+      },
+      {
+        "text": "<b>Populations</b> are spatially or temporally defined subsets of species that may interact with other populations and disperse or move between other subsets of that species"
+      },
+      {
+        "text": "<b>Predator prey interactions</b> Consume or being consumed by organisms of other species within a food web. The degree of this interaction is determined by the functional response."
+      },
+      {
+        "text": "<b>Food webs</b> are spatially or temporally defined subsets of populations that interact through predator/prey interactions."
+      },
+      {
+        "text": "<b>Ecosystems</b>are spatially or temporally defined food webs and the abiotic environment that the organisms interact with"
+      },
+      {
+        "text": "<b>Functional response</b>is the shape of the predator/prey relationship between two populations. The shape of this response is generally a saturating function, i.e. a predator can only eat so much prey until it either becomes satiated or has to spend more time handling it prey than actually consuming it. This creates a non-linear relationship which gives rise to complex dynamics in food webs and ecosystems"
+      },
+      {
+        "text": "<b>Green water</b> is the water is the part of precipitation that returns to the atmosphere through evaporation or that drives plant growth (transpiration) and thus is a major source of water vapor released into the atmosphere and thus an important source of precipitation"
+      },
+      {
+        "text": "<b>Blue water</b> is the fresh water that accumulates in streams, rivers, lakes and ground."
+      },
+      {
+        "text": "<b>Biodiversity</b> genetic, population, species and habitat variation(s). Most commonly refers to a measure of species richness, either numbers or some abundance weighted measure to take account of the degree of dominance/rareness between species."
+      },
+      {
+        "text": "<b>Attractor</b> A set of conditions towards which a dynamical system evolves over time. An attractor is often a point, but can also be a curve, a manifold, or a more complicated set with a fractal structure known as a strange attractor. Also known as an equilibrium point."
+      },
+      {
+        "text": "<b>Regime</b> The set of system states that lead to a particular attractor, or represent fluctuations around a specific attractor. Within this set of states the system self organizes into a specific structure and behaves in essentially the same way. Also known as a domain of attraction, basin of attraction or stable state."
+      },
+      {
+        "text": "<b>Critical threshold</b> The point that separates two dynamic regimes. Also known as a tipping point or a bifurcation."
+      },
+      {
+        "text": "<b>Feedback loop</b> A set of cause and effect relationships that form a closed loop, so that a change in any particular element eventually feeds back to affect the element itself. Feedback loops can either be damping (also known as negative or balancing) or amplifying (also known as positive or reinforcing)."
+      },
+      {
+        "text": "<b>Hysteresis</b> The tendency of a system to remain in the same state when conditions change due to lag effects and system memory. As a consequence the critical threshold for a forward shift from Regime A to B often differs from the critical threshold for a return shift from Regime B to A."
+      },
+      {
+        "text": "<b>Regime shift</b> A large, abrupt, persistent change in the structure and function of a system that occurs when a critical threshold is crossed and the system shifts from one dynamic regime to another. Also known as a critical transition or a phase shift."
+      },
+      {
+        "text": "<b>Resilience</b> The magnitude of change or disturbance that a system can tolerate before undergoing a shift to an alternate regime."
+      },
+      {
+        "text": "<b>System state</b> The condition of a system at a particular point in time, described in terms of specific variables such as pH or population size."
+      }
+    ]
+  },
+  "Great Acceleration": {
+    "id": "grtcclrtn",
+    "title": "Great Acceleration",
+    "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
+    "Conclude": "Interconnected infrastructures are sensitive to large scale disturbances",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/jr-korpa-1132682-unsplash.jpg",
+      "caption": ""
+    },
+    "tags": ["biology"],
+    "parents": [{"id": "atpcne", "title": "Anthropocene"}],
+    "content": [{
+        "text": "The result of disconnecting by building infrastructures and trade has propelled development during historical times. Since about the 1950'th the effects of this development have become central to our awareness by the sheer magnitude of change (the rate in percent is actually generally not accelerating) in most global development indicators. The important insights from the figures below is that they are almost all on a path that takes us right outside of planetary capacity to sustain human civilization. The insight of this is what really started to come into awareness after the second world war. The detailes and interpretation of the trends unfortunately draws much focus from the real issue: How can we create change based on these stark insights that can counteract the momentum of the trends. Nothing short of a transformation in international Governance is needed, something that we will look at in later parts"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/great_accel-12graph-ES.png",
+          "caption": "A summary of some Earth system development indicies"
+        }
+      },
+
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/CAS/images/great_accel-12graph-SE.png",
+          "caption": "A summary of some social development indicies"
+        }
+      },
+      {
+        "text": "Johan Rockström talks here about the story of the great acceleration which has put humanity in the current predicament. He will give us a lot of data to support these conclusions."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/KHB488vzjV0",
+          "caption": ""
+        }
+      },
+      {
+        "text": "<ul><li>Even in ancient times, societies collapsed due to overuse of their regional support systems. Do you think an early understanding of their support system could have helped them manage a transformation to sustainability in time? What would have been required for this?</li><li>Which other exponentially rising technical or social solutions, besides renewable energy use, could counteract the ones contributing to unsustainability?</li></ul>"
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/XZjCtw2Ou_Q",
+          "caption": ""
+        }
+      },
+      {
+        "text": "As we try to tackle increase in<ul><li>affluence</li><li>greenhouse gases</li><li>loss of ecosystem functioning</li><li>increased risks of surprise</li></ul>which of these four pressures is likely to have the biggest impact on:<ul><li>equity related issues</li><li>the distribution of costs</li><li>benefits between the rich and the poor nations?</li></ul> No, really, think hard about this….its a central issue!"
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/l79Ct2DG6Ng",
+          "caption": ""
+        }
+      },
+      {
+        "text": "In this last talk of this module, Johan talks about the long distance, cross-system connections that drive global change. <br><ul><li>Were you aware of the strong and long distance links between global financial system and the environment?</li><li>Can you think of any teleconnections that are part of the solution to achieve sustainability?</li></ul>"
+      }
+    ]
+  },
+  "Directions": {
+    "id": "drctns",
+    "title": "Directions",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/jamie-templeton-428883-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstblt", "title": "Sustainability"}],
+    "showDisqus": false,
+    "content": [{
+        "preface": ""
+      },
+      {
+        "text": "Ever since the Brundtland report, Sustainability has been a global issue.The report deals with sustainable development and the change of politics needed for achieving it. The definition of this term in the report (“Our common future”) is quite well known and often cited:<br><i>“Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs”.</i><br>It contains two key main concepts:<ul><li>The concept of needs, in particular the essential needs of the world’s poor, to which overriding priority should be given;</li><li> The idea of limitations imposed by the state of technology and social organization on the environment’s ability to meet present and future needs.</li></ul>"
+      },
+      {
+        "text": "Furthermore, the Brundtland report made one crucial point that has in modern approaches to sustainability been even further emphasized: The sustainable use of economic, social and natural capital are inseparable. While many approaches to achieving the merging of these “spheres” are being developed in science, governments and non-governmental organizations, we will focus here on the approach used by many contemporary leading sustainability research centres around the world (examples include SRC, Beijer institute, Arizona State Univ., Tyndall, and organizations affiliated to the resilience alliance). In this approach the economic system is seen as a sub-system of the social system which in turn is a embedded in the ecosystem (biosphere). <b>Human well-being is the normative goal, while economics and social processes provide tools for achieving it and the biosphere provides non-negotiable conditions and frames.</b>"
+      },
+      {
+        "text": "Human wellbeing is a somewhat broader term than human welfare, which is the normative goal in welfare economics. While ‘welfare’ is an economic term focusing on consumption and based on utilitarianism and mathematical optimization, ‘well-being’ is more interdisciplinary and include, besides consumption, also notions of freedom, equity and perceived fairness."
+      },
+      {
+        "text": "Sustainability can thus be defined as a condition where human well-being does not decrease over time. This definition is very general. It implies, for example, that the flow of goods and services from different types of capital contributing to well-being must be sustained over time. There are four broad types of capital: <b>natural, physical, human and social. Natural capital</b> includes everything from the biosphere - ecosystem goods, services and underlying functions - as well as minerals from the lithosphere. <b>Physical capital</b> include houses, infrastructures, all things produced by people. <b>Human capital</b> means knowledge; the better knowledge we have the more value we get from using natural and physical capital. <b>Social capital</b> is the level of trust and reciprocity in a society. The higher social capital, the higher our capacity to organize ourselves to innovate, adapt and transform towards more sustainability. Hence, both human and social capital are important to get as much sustained wellbeing as possible from the natural and physical capital stocks."
+      },
+      {
+        "text": "Historically most societies have degraded natural capital to invest in physical capital. Human well-being has increased in almost all parts of the world despite a degradation of natural capital, sometimes refered to as the “<a href=\"https://academic.oup.com/bioscience/article/60/8/576/304804\"> Environmentalist’s paradox”</a>. Human capital has expanded through education. Social capital has changed in different directions and is generally associated with peace, democracy, equity, income level, income equality and low corruption. An important question is to what extent the different capital types are substitutable. How long can we continue degrading natural capital to enhance other types of capital and claim this will benefit future generations? This does not mean that all consumption included in the Gross Domestic Product (GDP) is unsustainable; some consumption patterns do not degrade natural capital. How tradeoffs are made between the different capital types in the interest of maximizing human well-being are the tasks of science and politics, or ultimately the task of every person."
+      },
+      {
+        "text": "Another important source of conflict is whether it’s ethical view ‘the environment’ as goods and services that people can consume according to their individual tastes, or if we have a moral obligation towards future generations to sustain the biosphere in a good condition.There have been various approaches used in an attempt to value nature. Scientific attempts to value nature are often based on the former: people are asked how much they are <i>willing to pay</i> for various environmental goods and services. This assumes two things: the full substitutability of the goods and services and that sustainable development is a matter of choice by individual consumers. The second approach to valuation assumes that sustainable development is a matter of choice by citizens and that it concerns human rights issues, just like democracy. In political science, human rights and democracy are ‘overarching ideologies’ that people can agree on regardless of if they belong to the political left or right. These constitutional rights provide direction, frame and constraints to other legislation which in turn provide direction, frame and constraints to policy options as well as choices by consumers. Sustainable development has a very strong ethical foundation and it could, if we want, have the potential to be put in the same ‘constitutional’ category as democracy and human rights."
+      },
+      {
+        "text": "<h1>The sustainable development road map</h1>In 2012, the United Nations Rio+20 summit in Brazil committed governments to create a set of sustainable development goals (SDGs) that would be integrated into the follow-up to the Millennium Development Goals (MDGs). In an important paper in 2013, this was expanded to a unified framework to combine the goal of ending poverty and hunger within the constraints of the planetary system to provide the resources for this transition. It uses the important paradigm of integrated social-ecological systems that we presented in the previous section and provides a new roadmap for development towards 2030."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/SDgoals.png",
+          "caption": "A unified framework for millenium development goals and sustainable development goals using the concepts of planetary boundaries and a social-ecological systems perspective (Griggs et al 2013)"
+        }
+      },
+      {
+        "text": "<h1>The sustainable development goals</h1>This road map leads up to 17 ambitious sustainable development goals that in concert may provide the foundations for humanity in the anthropocene:"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/E_2016_SDG_Poster_all_sizes_without_UN_emblem_Letter.png",
+          "caption": "In 2015 the sustainable development goals were launched as a set of 17 goals that together make a roadmap towards a globally just and prosperous society within the planetary boundaries. The process to these goals was more inclusive and participatory than ever before for a global agreement of this sort. Now the process of understanding and overcoming the difficulties"
+        }
+      },
+      {
+        "text": "What is unique about these goals is the heavy focus on participatory approaches and stakeholder engagement during and after their establishment. Already in the Rio +20 meeting it was decided to pay particular reference to participation of vulnerable groups, such as women, developing countries, including African countries, least developed countries, land-locked developing countries, small-island developing States and middle-income countries to the decision-making process."
+      },
+      {
+        "text": "The ambitiousness has of course also gathered some critique, e.g. that the over 150 subtargets are way too many to be effectively monitored and that some need more aggressive pace since they are foundations for many of the other goals. Nevertheless, these goals provide an unprecedented collective effort for a sustainable future. Have a deep look the <a href=\"https://sustainabledevelopment.un.org/topics/sustainabledevelopmentgoals\">UN site for the SDG</a> and their descriptions (scroll down to have a look at all 17, click on them to expand their descriptions)"
+      },
+      {
+        "text": "<h1>Tangible Sustainability goals</h1>In this short Interview with Jeffrey Sachs, Director of The Earth Institute at Columbia University, he puts the new sustainability goals into a context and presents some of the challenges. Professor Jeffrey Sachs is widely considered to be the world’s leading expert on economic development and the fight against poverty. His work has been focused on ending poverty, promoting economic growth, fighting hunger and disease, and promoting sustainable environmental practices."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/d4A62XrtpJM",
+          "caption": ""
+        }
+      }
+    ]
+  },
+  "Well-Being": {
+    "id": "wllbng",
+    "title": "Well-Being",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/hermes-rivera-255601-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstblt", "title": "Sustainability"}],
+    "showDisqus": false,
+    "content": [{
+        "preface": "Wellbeing may well be one of the most difficult concepts in sustainability science due to its inherent subjective nature. Not only does it differ for every person, we have as humans a surprisingly bad insight into what constitutes our own wellbeing. Thus, even the subjective well-being cannot be entirely trusted. And even though, at some fundamental level, its the only thing we have to truly guide human development."
+      },
+      {
+        "text": "A fundamental goal of sustainability science is to maintain or increase today’s as well as future human well-being. This goes well beyond current economic welfare measures, even those that add social and environmental values to the traditional GDP main development index. Well-being is a concept that includes many more aspects than have traditionally been used. For example, the <a href=\"http://www.gallup.com/businessjournal/126884/five-essential-elements-wellbeing.aspx\" >Gallup institute</a> uses measures of physical, social, financial, career and community."
+      },
+      {
+        "text": "National accounts of wellbeing is an effort by University of Cambridge and New Economics Foundation in the UK compiled accounts of wellbeing for 22 European countries. Data on subjective well-being were collected in a major 2006/2007 European cross-national survey through a detailed module of 47 questions, estimating: emotional well-being; life satisfaction (“happiness”); vitality; self-esteem and resilience; positive functioning (including freedom and meaning); positive relationships; and trust and belonging. Denmark came out as the country of the highest well-being and the other Nordic countries were all in the top, whereas the former communist countries were at the bottom Link."
+      },
+      {
+        "text": "Research on happiness regard human wellbeing as the ultimate objective. Subjective information, such as the initiative by Cambridge University above, is usually combined with objective data on life expectancy, education, income distribution, etc. The inclusive wealth index (IWI) by UNEP is an attempt to create an inclusive wealth index that relies on indexes that are objectively measured by available data. It supplements GDP with indicators of the economically most important natural capital, such as forests, fisheries, agricultural land, fossil fuels and minerals. Countries exhausting their natural capital may increase their GDP but are “punished” by the IWI. The index measures an asset’s wider value to society, and not only the price for which it could be bought or sold."
+      },
+      {
+        "text": "However, IWI does not include biodiversity or regulating ecosystem services because these are hard to quantify. The IWI hence focuses on the economic aspects of sustainability (GDP adjusted by some natural resources) whereas research on well-being focuses on social aspects. It seems to be more difficult to agree on, and measure, what issues of environmental sustainability one should include."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/doughnutEconomyRound.jpg",
+          "caption": "The Doughnut economics framework, creating a desired doughnut space limited by planetary boundaries in how our actions affect our life-support system and how lack in fullfillment of needs and well-being restricts our inner space"
+        }
+      },
+      {
+        "text": "The eleven social foundations in doughnut economy are also similar to the variables emphasised in a recent report called the Stiglitz commission:<br><i>\"To define what well-being means, a multidimensional definition has to be used. Based on academic research and a number of concrete initiatives developed around the world, the Commission has identified the following key dimensions that should be taken into account when defining what well-being means. At least in principle, these dimensions should be considered simultaneously:<ul><li>Material living standards (income, consumption and wealth)</li><li>Health</li><li>Education</li>Personal activities including work</li><li>Political voice and governance</li><li>Social connections and relationships</li><li>Environment (present and future conditions)</li><li>Insecurity, of an economic as well as a physical nature.</i> \" </li></ul>"
+      },
+      {
+        "text": "<h1>How to measure Well-being?</h1>While a consensus understanding is emerging that sustainability based on well-being is a multidimensional effort that requires both social, environmental and economic aspects, the details of what and how to include different aspects into the concept is still an ongoing debate. However, even if a consensus understanding could be reached on what indicators should be included, a major obstacle would be <b>how to measure these.</b>"
+      },
+      {
+        "text": "If sustained human well-being is accepted to be the ultimate normative goal, then the eight dimensions emphasized by the Stiglitz Commission are instrumental to this goal. Some of these goals may also hold intrinsic value, e.g. health and political voice (freedom & democracy). The natural environment has a fundamental value because it provides life-supporting services to people and some loss of it may have negative and irreversible effects on human well-being. Material living standard is important but can be seen as included in social objectives of security, freedom, health, etc. Furthermore, an economic recession is not irreversible although it may decrease the options for well-being such as health, jobs, etc. <b>Economic growth is often regarded as the main instrument to achieve social goals but one should not confuse the means (instruments) with the goals.</b>"
+      },
+      {
+        "text": "As mentioned before, sustainable development is about sustaining human well-being and this requires safeguarding sustained services from the environment. <i>The economic dimension of sustainable development is about securing the social and ecological systems (social and natural capital) which in turn are needed to sustain economic activities</i>. Thus, it makes little sense to equate economic sustainability with economic growth, especially if GDP is growing at the expense of social or ecological sustainability. There is a general agreement among economists that economic growth is not a good indicator of well-being, but at the same time, there is a general agreement among politicians that economic growth is important to provide the means for various political goals."
+      },
+      {
+        "text": "Subjective well-being is measured by questionnaires, like the National Accounts of Wellbeing, discussed above. <i>Many components of well-being are not easily quantifiable from existing and objective data. Freedom, happiness or resilience are a few examples</i>. Although the issues to include and the exact formulations are supported by rigorous psychological and sociological research, there is something hypothetical about questionnaires; they do not reveal the actual choices by people, only stated preferences (Kiron 1997). Objective social data can be gathered through income, income distribution, health (sick-days or life expectancy), education (proportion of population with a secondary education, results in school tests, money spent on education), etc. However, although these are objective data it can be questioned to what extent they really reflect well-being."
+      },
+      {
+        "text": "Measuring wellbeing by a set of indicators therefore seems to be a very complex task. This can be illustrated by the EU which has identified over 100 sustainability indicators to measure changes in sustainability within ten dimensions. Twelve of these indicators have been chosen as head indicators (the dimension “Climate change and Energy” got three of these twelve)."
+      },
+      {
+        "text": "You will probably find that some of these head indicators are not important to you and ask why other indicators are not emphasized. But this is unavoidable since the whole concept of well-being, just like to standard economic definition of utility or welfare, is essentially subjective."
+      }
+    ]
+  },
+  "Defining": {
+    "id": "dfnngstblt",
+    "title": "Defining",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/beth-rufener-403296-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstblt", "title": "Sustainability"}],
+    "showDisqus": false,
+    "content": [{
+        "preface": "Sustainability is a very broad concept as shown in the goals it attempts to solve. To implement sustainability in policies, our concepts and goals need to be more operational and specific. Making a general concept more specific will undoubtedly also make it easier to disagree on the definition. This process is crucial in science, as knowing WHAT to disagree on is fundamental in discovering new understanding or perspectives. Thus, as we begin to make sustainability more specific using different approaches from different disciplines, we are also able to highlight and hopefully resolve important controversies. Sustainability is, however, not definable as a positive statement, since there can be as many indices of sustainability as there are normative definitions of what we want to sustain. The concept itself thus becomes a democratic and highly diverse concept defined over scales of global, national and local communities."
+      },
+      {
+        "text": "<br><h1>Human centred</h1>Humans are the dominating force on the planet. No ecosystem is pristine anymore in the sense that it is not affected by human activities. The conservation paradigm of many decades ago to preserve nature from humans is far gone. We need nature and nature is shaped by us. However, since we can establish that human well-being is intrinsically linked to healthy ecosystems, the goal of sustaining human well-being over time is also a quest to maintain ecosystem functioning and goods and services they provide for society. By incorporating these goods and services in human well-being we can begin to define the goal of sustainability. Note, however, that this view of linked social-ecological systems is only recently becoming more recognized, as you will hear in the TED talk below by Kate Raworth."
+      },
+      {
+        "text": "<h1>Sustainable human well-being</h1>Let us for now assume that we have a measure of well-being for humanity, or of people in one particular region and let’s call that W. For now, we will assume that we got it right so that W actually captures everything that contributes to human well-being. Let’s also assume that W depends on many things (as we discussed in the previous section), but let’s begin by grouping this into financial (F), human (H), natural (N), social (S) or physical (P) capital such that we can define well-being as W(F,H,N,S,P). With this sweeping simplification Ken Arrow and colleagues argue that to calculate intergenerational well-being, i.e. from now and into the future, we just sum the well-being over time and add a discounting rate (d) so that well-being in the near future is valued higher than well-being in the more distant future."
+      },
+      {
+        "equation": "$$IW=\\int_t^\\inf W(F,H,N,S,P) e^{-d*t} dt$$"
+      },
+      {
+        "text": "We will discuss discount rates in the next section, but for very low d, we would value the future almost as much as today. With high values of d, we won’t care so much to receive any benefits in the future. Arrow and colleagues now make a simple but powerful statement. Sustainability is defined as \"the rate of change of integrated future well-being must never be negative\"."
+      },
+      {
+        "text": "So there, a mathematically precise definition of sustainability….or rather, we have defined general criteria for knowing when you have it. W(F,H,N,S,P) represents the flow of utility from your capital stocks at any point in time. We are, however, left with the quite complicated task of actually defining W(F,H,N,S,P), as well as how the capital stocks work and relate to each other. We have already hinted at the issue of what extent different capital types are substitutable. How much can we continue degrading natural capital to enhance other types of capital and claim this will benefit the wellbeing of future generations? According to the ‘strong’ definition of sustainable development, the stock of natural capital must not be reduced over time. The argument is that the goods and services from natural capital can only to a small extent be replaced by other forms of capital. The ‘weak’ definition of sustainable development is that the sum of all capital stocks should not be reduced. This allows for substitution between the capital types. The argument is that as long as we avoid thresholds, we can continue degrading natural capital if the negative human well-being effect is more than compensated for by increasing other types of capital. This is what we have done all throughout our history and surely our well-being today is higher than hundred years ago. But will it continue to be so? Have we already passed some irreversible threshold setting future well-being on a declining trajectory?<br>In the next section, valuing the future will talk more about the use of discounting rates to estimate the potential value of goods and services in the future."
+      },
+      {
+        "text": "<h1>Interlinked capital stock management</h1>Up until now defining sustainability doesn’t look all that complicated, but we have left out some of the details until now. When we defined intergenerational well-being above it looked very static. In reality, human actions change the flow from capital stocks, some intentionally, some unintentionally and some through interdependency between capital stocks. For example, to ensure efficient human capital, people need to be healthy and productive. However, if you take production capital into consideration, such as machines, energy or information, production may produce pollutants, and as a side effect reduce human capital through reducing life expectancy or increasing extended sick leaves. Thus, in reality,the production units of the different capital types form an entangled and sometimes very complex web of interactions. Unraveling this web, piece by piece, through scientific studies of important linkages is an ongoing research field. Notable efforts include the DICE and RICE models, the PAGE model used in the Stern review PAGE, as well as IMAGE. These models attempt to include some of the main complexities that have been highlighted as crucial (see IMAGE flow chart below), but they are still extremely simplified (DICE/PAGE more so than IMAGE)."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/IMAGEcomponents.png",
+          "caption": "The main flow chart of interactions between different activities and production units used in the integrated assessment model IMAGE, Source: IMAGE"
+        }
+      },
+      {
+        "text": "Most indexes of human well-being mix economic, social and environmental variables and are thus a weak measures of sustainability. Ideally, <i> \"a sustainability index should be derived from a physical-economic model predicting future interactions between the economy and the environment in a reliable way, to send us correct forewarnings of non-sustainability” (Stiglitz).\"</i> "
+      },
+      {
+        "text": "<h1>Human needs require resources</h1>As you will hear in the talk by Kate Raworth below, human needs and well-being require resources, and using these resources affects the planet’s support system. Understanding the concept of sustainability described above, and the complexities of interrelations among production units of this well-being, is important for policy-making. While some attempts are made at integrated models as mentioned above, the scientific community is working on many of these relationships with a narrower focus. For example, the role of water for producing food but also for regulating the climate; or the impact of land use change on biodiversity but also on the importance of biodiversity to enhance production, such as through pollinated crops or multiple ecosystem services in forestry. Thus, from many lines of research, important conclusions are communicated to policymakers which may add up to enough evidence to implement changes. Biodiversity is such an example, which, although being an extremely complex issue, has gained enough support to make its value heard in global governance, which has resulted in several major treaties that concern biodiversity conservation, for example the UN Convention on Biodiversity. Thus, while we may lack a completely integrated picture, the adaptive multi-level nature of governance and the continuous dialog between science, policymakers, NGO’s and the public, is working towards a new understanding of human development from the bottom up. But as Kate Raworth tells us in the talk below, the main language that drives global human activity today is economics and it is thus of paramount importance that the crucial insights of planetary boundaries and linked social-ecological systems are acknowledged in economic theory and applications."
+      },
+      {
+        "video": {
+          "url":"https://www.youtube.com/embed/1BHOflzxPjI",
+          "caption":"Undertanding Doughnut economics"
+        }
+      },
+      {
+        "text": "Ask yourself: <ul><li>What is your own definition of sustainability. Does it match with any of the definitions presented above? If it is different, why do you think that is so?</li><li>Can you explain the difference between sustainability and well-being?</li></ul>"
+      }
+    ]
+  },
+  "Discounting": {
+    "id": "dscntng",
+    "title": "Discounting",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/aaron-burden-71492-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstblt", "title": "Sustainability"}],
+    "showDisqus": false,
+    "content": [{
+        "preface": "First off, why would we want to delve into such a dry economic concept as the discount rate? Well, as we already saw in the part on defining sustainability, the discount rate determines the intergenerational well-fare to a very large degree. It therefor directly determines economic policy and the actions that are taken today. As we will see below, there can be major consequences through the choice of value for the discount rate and a real challenge is that the discount rate is to some degree subjective involving aspects of morale and personality."
+      },
+      {
+        "text": "<br><h1>Valuing the future</h1>Valuing the future is about how we discount the future. The “right” numerical value of the discount rate is a source of much discussion. A blunt approach is simply to use the current economic discount rate, e.g. used by federal banks. This implies that any amount of money (or time that could have been spent earning money) could instead have been invested in a bank account to receive the benefit of the interest rate over time. On the other hand, one can argue that for public goods (such as biodiversity, climate stabilization, poverty alleviation), future value should be equal or even higher than contemporary value in order to promote sustainable development and for ethical responsibility towards future generations. So, do we use a positive, negative or zero discount rate? A positive discount rate is appropriate for infrastructure that has a limited technical life-time, whereas investments in natural capital have no such inherent limitation. Furthermore, investments in natural capital and poverty alleviation can be regarded as a transfer of wealth to the future, rather than an investment to enhance the wealth of the present generation. If we believe future generations should be at least as wealthy as we are today it makes sense to use <b>zero discount rate</b> for such investments. Doing so will make these investments in sustainable development look more profitable in economic analyses, because future benefits are not discounted. In his famous study from 2006, Nicholas Stern used a lower than usual (but not zero) discount rate on investments for reducing fossil fuels and was therefore able to show that this kind of investment would be very profitable."
+      },
+      {
+        "text": "<h1>The discounting debate</h1>A sure sign that sustainability is to a large degree an ethical question can be traced by the very active debate on how to value future costs and benefits. The debate was invigorated by the <a href=\"https://en.wikipedia.org/wiki/Stern_Review\">Stern review</a> that attempted to provide a cost analysis for climate change impact. This was done to support decision making about whether the reduction of future costs due to climate change could be justified by the perceived high cost of immediate mitigation investments, i.e. answering the question: is it economically effective to curb climate change today in order to avoid future costs?"
+      },
+      {
+        "text": "Since we can be almost certain that the future costs will be much higher than potential remedies today it begs the question why this is an issue at all. The reason lies in how we perceive the future. There are at least two aspects to this: First, uncertainty about the future. Do we know what will happen? How will economic development proceed? how big will the climate impact will actually be? and more importantly will we live to see the future? Secondly, IF we know all this, how much is some benefit worth today if you would receive it some time in the future? This last point is also highly subjective and depends on the framing and context of the question. For example:<ul><li>How much would I have to give you in one year for you to wait that time if you could instead get 1000SEK today?</li><li>How much would I have to give you in one+10 years for you to wait that time if you could instead get 1000SEK in ten years?</li><li>How much would I have to give your children in 20 years for you to decline an offer of 1000SEK today?</li></ul>If you can imagine a number for each of these 3 questions you could calculate your own discount rate and most likely, it would differ between each of the three scenarios. Thus, we can state that the value of the future depends on who makes the decision, who gets the benefits, and the time scale of the problem.<br> Let us look at these questions by looking more deeply into the vibrant debate following the Stern report:"
+      },
+      {
+        "text": "<h1>The discounting formula</h1>National economics generally uses a formula for the discount rate based on the “Ramsey” equation:d=g+nC, Where d is the social discount rate, g is the pure rate of time preference, n determines the relative importance of economic growth, C. The higher the d value that we end up with, the less importance is placed on future costs or benefits. There are two main terms, the rate of pure time preference, g, and the wealth-based component, n C. The first one asks an ethical question: how important are future generations compared to the current one? Zero would mean of equal importance, negative would mean more important and positive would mean less important."
+      },
+      {
+        "text": "Stern argued for equal worth, equal rights and living conditions for all generations of people, implying that the pure time preference should be zero. However, he added a small term of 0.1% to account for the fact that potentially, humans might not even exist in the future due to manmade or natural disasters! Other economists argue that the pure time preference can be revealed by our current behavior, i.e. if g would really be zero, wouldn’t we save a lot more of our current income for the future?"
+      },
+      {
+        "text": "Partha Dasgupta frames the “Ramsey” equation in a somewhat different way: He suggest thinking of, g, as the tradeoff between current and future generations, and n to be the tradeoff between the rich and the poor, a higher, n, meaning a greater discern for the poor. Note, however, that a higher n in conjunction with a high growth rate of the economy gives a higher total discount rate. Thus, even though we try to be more equitable by choosing a higher, n, we would actually invest less in the future since we value it lower! This comes from the fact that due to the assumption of economic growth, future generations will be “richer” than we are today, thus we can compensate for this by investing less in the future. BUT this hinges on a crucial assumption: positive economic growth. What if we have reached peak-growth? What if the effects of the Great Acceleration are now catching up, reducing the total production base and creating a world in which the economy is constant or even reduces? This will largely depend on how we calculate economic growth; particularly whether we include social and environmental stocks as we have discussed in the previous sections. In fact, if the economy would start to shrink, the total discount rate might easily become negative suggesting that we should invest heavily now for the future."
+      },
+      {
+        "text": "Kenneth Arrow, a Nobel laureate in economics adds to the debate that according to the calculations in the Stern report, climate mitigation would be efficient as long as the discount rate is less than 8.5%, which is higher than most suggest. Creating a debate about exact numbers seems somewhat obsolete in the face of actually getting to work. There remain to be questions surrounding the debate on pure time preference. In response to supporters of higher pure time preferences, Stern suggests that the result of a time preference even as large as 1.5% would be basically be the same as anyone with grandchildren telling them that their lives are only half as important as your own."
+      },
+      {
+        "text": "Ask yourself: <ul><li>Run through the thought exercises above. When thinking about the future generation would you use a negative, positive or zero discount rate? Justify why?</li></ul>"
+      }
+    ]
+  },
+  "Interdependence": {
+    "id": "ntrdpdnc",
+    "title": "Interdependence",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/robert-anasch-761606-unsplash.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstms", "title": "Systems"}],
+    "showDisqus": false,
+    "content": [{
+        "preface": " <i><h2>\" Everything depends on everything else \" </h2></i> This daunting truism could have been the bane of any scientific study if it wasn’t for systems theory. Everything we study is a subsystem of something greater, bigger, more diverse. By focusing on one subset of the system, we make the assumption that the strength of internal interactions in relation to those that we declare to be entities outside of the system is relatively stronger and thus motivate us to try to think of a set of components as one system, constrained by external factors. For example, we can study one organism, which is a system of organs, and its relation to the external environment, like temperature. In theory, a warm blooded organism does also affect the environmental temperature, but we determine that the interaction strength going from the organism to the environment is sufficiently low as to treat is as an external factor. Another common reason for studying systems is an interest in interactions between components, or an interest in a phenomenon that is a consequence of the collective dynamics of the parts. A good example of the later is the study of trust between people which can only arise through repeated interactions and which is an emergent property of the social interaction system."
+      },
+      {
+        "text": "Since everything depends on everything else we know two things about any living system we choose to study:<ul><li>It is made up of interacting components</li><li>it (and thus its components) interact with other components that are by more or less subjective definition external to our choice of system.</li></ul>"
+      },
+      {
+        "text": "<h1>Determining sub-groups or modules</h1>Say we are given a network as shown in the picture below. Think of the nodes as people and the links as frequencies of interactions. This particular network is based on te play le Miserables and the interactions are when characters are in the same scene. Assume you want to 1) know how many groups are in the network, and 2) study each group individually. How would you go about this? If you kept nodes with strong interactions close to each other and nodes with weak interactions as far away from each other as possible, you would start to see a pattern emerge as we do in this graph. But the whole system is still one system, everyone is somehow interacting with everyone else. But together, they create an overlapping story."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/ForceLayout.png",
+          "caption": "A network of relationships, from the interactions of characters in the play Le Miserables. Evryone truly depends on everyone else, but there emerges clusters of intenser interactions. One can study these clusters as components that interact with other components. The external vs internal does always have a subjective component. It is a tool of the mind, to simplify analysis."
+        }
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/Bottlenose.jpg",
+          "caption": "Bottlenose dolphins that create social groups through interactions."
+        }
+      },
+      {
+        "text": "There are other methods to determine how to define a subsystem. For example, one can use advanced network algorithms to identify clusters. Many of these algorithms come from social science that studies groups and clique formations in social networks. An example of this is provided by Daura-Jorge et al. (2012) who analysed social structure in dolphins in Laguna, southern Brazil which use a foraging tactic involving cooperative interactions with local, beach-casting fishermen. Interestingly, dolphins that had learned to cooperate with fishermen, also interacted more closely with each other"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/dolphinModules.jpg",
+          "caption": "Social network of dolphins from Laguna, Brazil, with three modules defined by the foraging tactic of cooperation with artisanal fishermen. Module 1 (white nodes) comprises cooperative dolphins (circles), module 2 (grey nodes) almost entirely comprises non-cooperative dolphins (squares) (except for dolphin ‘20’) and module 3 (black nodes) comprises only non-cooperative dolphins (squares)."
+        }
+      },
+      {
+        "text": "Another way to establish what is internal vs external to a system is to analyse time-series of the dynamics of each individual node. The degree to which nodes influence each other is reflected in the correlation over time which can then be used as a measure of interaction strength. This requires very intensive data sampling though."
+      },
+      {
+        "text": "<h1>Social networks in natural resource management</h1>If we would ask what boundaries we would set in order to study a person’s social network we would typically think about the frequency of interactions a person has with other persons. This is what we would think of as the “horizontal” scale of the focus, the person. Increasing this scale would e.g. be to allow to include the interactions of the persons that our focus person interacts with, i.e. to follow the social network two steps. But we could also focus on understanding what groups of people the person interacts with. These could be, for example, work, family and sports activities. This is a shift in scale in the “aggregated” direction. We can increase the vertical or aggregated scale to look at which interaction a person has with people from 1) different neighborhoods, 2) municipalities, 3) countries. Lower scales for social networks than a single person are non-sensical, but for other questions, we can scale a person down by looking at organs, cells, molecules etc."
+      },
+      {
+        "text": "The point here is that we not only decide on a scale to focus on in the horizontal level (interactions with other people), but often make implicit assumptions on the vertical scale we are focusing on. To be aware of the aggregated scales of systems is important, as we will see in later sections, since they often have different time-scales also and interactions between systems with different time scales generate important phenomenon that are very relevant to understand some of the most intriguing dynamics displayed by CAS."
+      },
+      {
+        "text": "<h1>An example from a rural fishing village in Kenya</h1>Beatrice Crona and co-workers (Crona and Bodin, 2006) conducted a survey among villagers in a rural fishing village in Kenya. Besides asking what their main occupation was they also surveyed the self-reported social ties between these villagers. The analysis was done at two levels. First, the ties between people belonging to certain occupational groups was mapped, revealing that e.g. gill net fishers and farmers were strongly connected whereas these had almost no ties to seine net fishermen. At the individual level (focusing on social structure only), one could see that even though clusters, (or modules) where distinctively different from each other, they also showed occupational diversity."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/CronaFig2.png",
+          "caption": "Multidimensional scaling plot of group structure based solely on relations reported by respondents. The position of each individual node is estimated based on both within-group relations as well as relations to other individuals outside the individual’s own group. Groups are distinguishable as spatially clustered sets of nodes. Colors indicate the occupational category of each individual."
+        }
+      },
+      {
+        "text": "Results showed that communication occurs primarily between fishermen who use the same gear type, which may inhibit exchange of ecological knowledge within the community. This may partly explain why the community has been unsuccessful in regulating resource extraction, especially since potentially influential groups of non-fishermen have a limited communication with the various fisher groups. Analysis of network structure also shows that groups most central, and hence potentially most influential, are dominated in numbers by migrant deep sea fishermen, hypothetically less motivated to initiate collective action for resource management. Hence, we conclude that a lack of collective action to remedy an unsustainable situation may be attributed to various different but distinct aspects of the specific structure of the social network."
+      },
+      {
+        "text": "<h1>Coupled social-ecological systems</h1>Social ecological systems present a particular challenge. There are very tight interactions within the social and ecological system warranting a traditionally separate analysis of the processes within these systems. But, as we have seen throughout this course (particularly in “reconnecting to the biosphere”) our dependence on ecosystem services and the enormous impact of human activities on the ecological system make it a necessity to understand them as one interconnected system. How to do this, is scientifically only in its beginning phase."
+      },
+      {
+        "text": "Bodin and Tengö (2012) introduced a very useful idea in order to start to understand what interactions are particularly common and following from that, which might be particularly important to understand for management. The idea is based on a minimal network of a social ecological system, with two human components (SOC: people or groups) and two ecological components (ECO: species or ecosystems). From these, they extracted all possible sub-networks and clustered them into network families."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/BodinTengoFig2.jpg",
+          "caption": "Seven different SES motif families (I–VII). The different motifs in each family are, where applicable, sorted according to their level of social, ecological and social and ecological connectivity (A–D). Families I–IV on the left are characterized by symmetric resource access, while the resource access for the families V–VII on the right is asymmetric."
+        }
+      },
+      {
+        "text": "Next, they used a network based on the Madagascar case which we have described earlier in the topic on land use change to highlight potential links between the forest patches based on dispersal by animal vectors, as well as links between the social groups based on social relations. Lastly, they used surveys to assess which groups used which patches of forests. The resulting social-ecological network is seen in the figure below"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/BodinTengoFig3.jpg",
+          "caption": "A rural agricultural system in Madagascar described as a social–ecological network. The map shows where the different clans are located in the landscape along with their social relationships (circular nodes and red links). Each clan is represented as a single settlement. The two nodes with a white cross represent clans without any clearly defined physical location in the landscape. The forest patches and the ecological links are shown as light grey nodes and green links. The social–ecological links are dark grey."
+        }
+      },
+      {
+        "text": "They proceeded by using a statistical method to determine the random occurrence of the particular sub-networks and compared this to the actual network they had established based on data (Figure below). First, they found that shared forest access (competition) generally implies social connectivity (II.B, III.D, V.B and V.D are overrepresented whereas II.A, II.C, IIIA, and V.A are underrepresented). This can be interpreted as resource sharing and competition is, in this study area, often accompanied with social connectivity that increases the potential for negotiating and regulating resource use. Secondly, the motif with all possible connections among the four nodes being realized (III.D) is also overrepresented. Hence, if the clans are sharing two patches, these patches are relatively often also ecologically connected, as are the clans. Thus, highly interconnected clusters of clans and forest patches are relatively common in the network. Taken together, by analyzing the motif-based SES fingerprint of the social–ecological network defining the study area, they were able to come up with some pending hypotheses that could partly explain the successful governance of the biodiversity rich forest patches. The clans are organized in relation to the forest patches so that shared forests are combined with social connectivity, which is a cornerstone of successful common-pool resource management as discussed earlier. Furthermore, there are several indications of a good fit in terms of social and ecological connectivity although this pattern is less pronounced."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/BodinTengoFig4.jpg",
+          "caption": "Frequency of SES motif occurrences in the studied social–ecological network. The solid line corresponds to the real social–ecological network, whereas the bars come from 10,000 random networks. If the solid line significantly deviates from the distribution of bars (e.g. II.A), the title is marked with one or two plus or minus sign (5 and 1% significance levels, respectively). The numbers in the titles refer to the number of motifs in the real social–ecological network."
+        }
+      }
+    ]
+  },
+  "Regime shifts": {
+    "id": "rgmshfts",
+    "title": "Regime shifts",
+    "media": {
+      "type": "image",
+      "url": "https://raw.githubusercontent.com/zahachtah/CAS/gh-pages/images/PeterPaulAerial_2015.jpg?token=AE__9r3wQe3xAh0GO4uFI0zIjvV23CYsks5cVXarwA%3D%3D",
+      "url2": "https://zahachtah.github.io/CAS/images/PeterPaulAerial_2015.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstms", "title": "Systems"}],
+    "showDisqus": false,
+    "content": [{
+        "preface": "Regime shifts are large, abrupt, persistence changes in the function and structure of systems (Biggs et al. 2009). They have been documented in a wide range of systems including financial markets, climate, the brain, social networks and ecosystems. Regime shifts in ecosystems are policy relevant because they can affect the flow of ecosystem services that societies rely upon, they are very difficult to predict and often hard to impossible to reverse (Rocha et al. 2012)."
+      },
+      {
+        "text": "These critical transitions have been documented on a broad range of marine, terrestrial and polar ecosystems (Scheffer 2009, Scheffer et al. 2001). Two well studied examples include the eutrophication of lakes, when they turn from clear to murky water affecting fishing productivity and on extreme cases human health (Carpenter 2003); or the transition of coral reefs from coral dominated to macro-algae dominated reefs, loosing the provision of services related to tourism, coastal protection and food (Bellwood et al. 2004). Controversial examples include dryland degradation or the shift from forest to savannas, where we know they can happen but we do not fully understand their mechanisms and there are disagreements about their drivers. Proposed examples of regime shifts includes the weakening of the Indian Monsoon or the weakening of the Thermohaline circulation in the ocean. We know both can happen from paleological records, but to what extent they are likely under present conditions is less understood."
+      },
+      {
+        "text": "What these phenomena have in common is that their scientific understanding relies on the same mathematical theory of dynamic systems. The behavior of a system can be described by a set of equations that define all possible values of their variables, for instance coral cover or fish abundance. These systems tend to fluctuate around regions of the parameter space that are called equilibrium or basins of attraction. Systems prone to regime shifts have more than one domain of attraction; this means that roughly under the same parameter values they can suddenly shift from one domain to another when a critical threshold is crossed. Note that these domains of attraction or regimes are not punctuated equilibriums, they are dynamic, they fluctuate within the boundaries of the basin of attraction. Thus for example, a forest is never the same forest twice: the species composition, their abundance and distribution is always changing as the forest endures fires, hard winters, storms or pests outbreaks. Yet its identity can always be characterized as a forest. The same can be said of any regime."
+      },
+      {
+        "text": "However, a regime shift does not imply any change of an ecosystem, it has to affect the feedback structure of the system that maintain its stability and emergent properties; this is, a change that effects its identity (eg. Forest, coral reef, mangrove). Scientist when they refer to regime shifts often emphasize that they are abrupt and persistent changes. It worth noticing that the abruptness and persistence are relative to the dynamics defining the system’s identity. Back to the forest example, one generation of trees can last hundreds of years, then a change over the time span of a decade is abrupt from the forest perspective."
+      },
+      {
+        "text": "<h1>History of the concept and evidence</h1>First notions of systems that can have multiple attractors date back to 1885 when Henri Poincaré first described bifurcations. However, only until late 1960s these mathematical developments were introduced to ecology when leading scientist debated about stability in ecosystems (Holling 1973, Lewontin 1969), which lead to the first theoretical developments, often models, of potential regime shifts in fisheries, disease outbreaks, and grazing – harvesting systems. These early developments were criticized by the lack of empirical evidence in the 1980s, but by early 2000s enough evidence have accumulated on systems such as coral reefs and lakes, validating the existence of regime shifts and igniting further research on their detection and management (Scheffer et al. 1001, Folke et al 2004, Scheffer and Carpenter 2003)). Nowadays there are still some differences on how the concept is used across disciplinary fields. For example, while oceanographers consider a regime shift a phenomenon on the scales of decades that has to be driven by climate, marine biologist focus on the time span of key species life cycles."
+      },
+      {
+        "text": "Evidence of regime shifts has accrued in the last two decades. It comprises empirical evidence when experimentation is possible, observational evidence from long-term time series data, paleological records from sediments and ice cores, as well as mathematical models that explore the possible mechanisms explaining such observations. Table 1 presents a summary of some regime shifts with impacts on society. More information about regime shifts can be found at the regime shifts database www.regimeshifts.org"
+      },
+      {
+        "text": "<h2>Table 1. Examples of well-known regime shifts and their impacts on ecosystem services.</h2><table><thead><tr><th>Regime shift</th><th>Regime A</th><th>Regime B</th><th>Impacts of shift from A to B</th><th>Evidence</th><th>Source of evidence</th></tr></thead><tbody><tr><td>Freshwater eutrophication</td><td>Non-eutrophic</td><td>Eutrophic</td><td>Reduced access to recreation, reduced drinking water quality, risk of fish loss</td><td>Strong</td><td>Observations, experiments, models</td></tr><tr><td>Bush encroachment</td><td>Open grassland</td><td>Closed woodland</td><td>Reduced grazing for cattle, reduced mobility, increased fuelwood</td><td>Medium</td><td>Observations, experiments, models</td></tr><tr><td>Soil salinisation</td><td>High productivity</td><td>Low productivity</td><td>Yield declines, salt damage to infrastructure and ecosystems, contamination of drinking water</td><td>Strong</td><td>Observations, experiments, models</td></tr><tr><td>Coral reef degradation</td><td>Diverse coral reef</td><td>Reef dominated by macro-algae</td><td>Reduced tourism, fisheries, biodiversity</td><td>Strong</td><td>Observations, experiments, models</td></tr><tr><td>Coastal hypoxia</td><td>Non-hypoxic</td><td>Hypoxic</td><td>Fishery decline, loss of marine biodiversity, toxic algae</td><td>Strong</td><td>Observations, models</td></tr><tr><td>River channel position</td><td>Old channel</td><td>New channel</td><td>Damage to trade and infrastructure</td><td>Strong</td><td>Observations, models</td></tr><tr><td>Wet savanna- Dry savanna</td><td>Wet Savanna</td><td>Dry savanna or desert</td><td>Loss of productivity, yield declines, droughts/dry spells</td><td>Medium</td><td>Models</td></tr></tbody></table>"
+      },
+      {
+        "text": "<h1>Why are regime shifts hard to detect and costly to reverse?</h1>Empirical and theoretical developments have shown that regime shifts are hard to detect and sometimes hard or impossible to reverse. Change in slow variables (e.g. temperature in coral reefs, nutrients accumulation in lakes) often shrinks the basin of attraction, making the system more susceptible to shifting when exposed to shock events (e.g. hurricanes, storms) or the action of external drivers. When the shift occur the strength of feedbacks change and some times new feedbacks mechanism come to place, making difficult to restore the original system state. This difficulty is often termed ‘hysteresis’; this mean that the critical tipping point at which the system flip from one regime to another is not the same at which the system is expected to flip back."
+      },
+      {
+        "text": "An illustrative example is eutrophication, the shift from clear to murky waters in lakes. The most common driver of eutrophication is the accumulation of nutrients such as nitrogen and phosphorous, although it has been reported that it can also by caused by climate change alone. Excess of nutrients in the water often come from the use of fertilizers when growing food. Nutrients are naturally present in the soil and in combination with other indirect drivers such as deforestation, nutrient inputs both natural and anthropogenic can accelerate when rain comes and wash the soils. Nutrients accumulate on lake sediments and are kept by rooted plants. But when a threshold of nutrients on the water is transpassed, microalgae growth explodes creating algae booms. These booms reduce light penetration to the bottom of the lake, which reduces the ability of rooted plants to survive. With less rooted plants the nutrients accumulated on sediments are resuspended on the water column, reinforcing the original cause of the algae blooms. This is a new reinforcing feedback in place that makes the regime shift hard to reverse. Figure 1 shows the structure of the system by summarizing the key feedbacks that maintain the clear water regime or the eutrophic state respectively."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/Regimeshift1.png",
+          "caption": "Changes in the strength and balance between competing feedback loops in a shallow lake shift the system from one domain of attraction to another (shown as the blue low nutrient and plant regime and green shaded turbid, no-plants regime). B) The clear water regime is characterized by the dominance of feedback D1 (shown in red). As phosphorous levels increase, D1 weakens, and the amplifying feedback A (green) starts to dominate, driving the system into a eutrophic state limited by feedback D2 (blue). From Biggs et al. 2012."
+        }
+      },
+      {
+        "text": "Detecting regime shifts is a challenging task. First one needs to clearly define the boundaries of the system and select focus variables that serve as indicators of the system state. Data requirements will depend directly on the spatial and temporal scales at which the underlying feedback mechanisms operate. Sometimes regime shifts are identifiable from historical data by looking at jumps on the time series; however statistical techniques are required to test whether it was a real regime shift. Amongst the most common test used are the principal component analysis, which compresses several time series of related variables into few uncorrelated ones; chronological clustering, sequential t-tests. Recent efforts on improving prediction rather than detection from past events have been focusing on the development of early warning signals (Scheffer et al 2012). They are based on the statistical signature of a system approaching a regime shift called critical slowing down which can be observed on the increased autocorrelation (temporal or spatial) and skewness while decrease in variance."
+      },
+      {
+        "text": "<h1>How to manage regime shifts?</h1>Managing regime shifts implies both reversing the shift and avoiding them. In order to restore the system one has to manage the slow variables and bring them to a point well bellow the critical tipping point in order to broaden again the basin of attraction. In addition, active management is needed to weaken the feedbacks that keep the system locked on the undesirable regime while strengthening the feedbacks that will provide stability on the desirable one. Back to the example of eutrophication, lake management often requires reducing nutrient inputs to a level lower than originally required for the system to flip. This not only means reduction of fertilizers use, it also means locking nitrogen already present in the lake by using other substances such as iron to waken the nutrient recycling feedback. Other options include bio-manipulation, this is artificially increasing the abundance of species that will consume microalgae to avoid the likelihood of more algae blooms; or direct removal of sediments by dragging."
+      },
+      {
+        "text": "Improving resilience to regime shifts requires enhancing diversity. From the biological perspective it is often translated into functional groups, this is, set of species that perform more or less the same function on an ecosystem. On the eutrophication example, by increasing the abundance of species that feed on microalgae and reducing the species that feed on rooted plants, one can promote a shift back from a eutrophic state. Two important components of functional groups are response diversity and redundancy: while the former is the different responses that species have to environmental change, the later refers to the ability of certain species to replace others. But these basic notions of diversity are not only applicable to biological systems, one can think of diversity in society as an important component to build resilience to regime shifts. It translates to diversity of livelihoods, or different types of knowledge taken into account in decision-making."
+      },
+      {
+        "text": "Another important component to build resilience is spatial heterogeneity. The influence of drivers and some times feedback strength is not homogeneous in space, providing the opportunity to use spatial heterogeneity to reduce risk. For example, degraded coral reefs that have shifted to algae-dominated could be recolonized by adjacent coral patches. Similarly, fishermen who spread their pressure on marine systems across space and let areas protected or closed for recovery are less likely to collapse their resources."
+      }
+    ]
+  },
+  "Feedbacks": {
+    "id": "fdbcks",
+    "title": "Feebacks",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/thomas-lambert-407374-unsplash.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstms", "title": "Systems"}],
+    "showDisqus": false,
+    "content": [
+      {
+        "text": "In the following lectures, Garry Peterson will talk about how feedbacks give rise to ecological surprises as well as complex system dynamics. Understanding this concept is crucial for understanding resilience and how to manage it."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/bCD7tuwK594",
+          "caption": ""
+        }
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/nhUWa6JjqMw",
+          "caption": ""
+        }
+      }
+    ]
+  },
+  "Change": {
+    "id": "chng",
+    "title": "Change",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/chris-lawton-154388-unsplash.jpg",
+      "caption": ""
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstms", "title": "Systems"}],
+    "showDisqus": false,
+    "content": [
+      {
+        "preface": "Change in complex adaptive systems can be very heterogeneous both in time and space. In this topic we are going to look at some different ways in which change occurs in CAS."
+      },
+      {
+        "text": "To understand change one needs to be able to measure it. A measure of a system is aggregative and thus determined by the choice of scale and perspective. It could for example be total carbon release, diversity of species, number of social groups or economic turnover. Change can thus only be measured by a partial view of the system. Which part we choose is thus crucial."
+      },
+      {
+        "text": "In order to be able to compare across systems one needs to have sufficiently general measures that can be applied to different kinds of systems. So, for example, biological systems can be compared by their total biomass, energy throughput or number of species irrespective of the actual species in the system. Income distributions or life expectancy can be used to compare nations irrespective of the type of livelihoods that exists."
+      },
+      {
+        "text": "Sometimes we are interested only in the dynamics of a sub-system within a larger system, for example the amount of phytoplankton biomass in a lake ecosystem. Phytoplankton is a complex adaptive system in itself, embedded in the food web of the lake, and the geophysical processes as well as the watershed. In this case, we are interested in the dynamics within a CAS. A similar thinking goes for focussing on e.g. information technology (IT) shares in the stockmarket as the IT industry is embedded in the larger economy."
+      },
+      {
+        "text": "These aspects come together when we try to think of the temporal scale of change. Some measures change slower than others, or sometimes, they change slowly only to have a short episode of fast change. The temperature change in the Holocene was a remarkably stable period, and we know that today, as before the Holocene, temperatures changed at a much faster rate. Forest biomass accumulates slowly, while phytoplankton biomass can have several bloom and die-offs in one season. Is there a general way of understanding such dynamics in systems? To understand this, we will have to look at what mechanisms drive change."
+      },
+      {
+        "text": "<h1>Slow change</h1><h2>Integrative or accumulative change.</h2>The most fundamental slow variable in systems is the integration of some quantity over time by small additions. For example, lakes receive nutrient input e.g. from fertilizer use in the surrounding agricultural land within the drainage basin thus increasing the primary production in the lake. Nutrients are trapped in biomass and eventually living organisms die and the dead material settle to the bottom and become part of the sediment. Over time, the total stock of nutrients in the sediment increases and some fraction is regenerated into the water. This process is much slower than the dynamics of the phytoplankton. A lake with high nutrient release from the sediment become more prone to algal blooms than one that does not have a large sediment nutrient reservoir. Thus, the dynamics of the lake changes over time, driven by a slow variable, the nutrient content of the sediment. As we will see below, this can trigger fast changes and lead to critical transitions."
+      },
+      {
+        "text": "Other potential integrative or accumulative changes include wealth, experience and knowledge, regulations (think of the ever increasing size of most nations law books, or the bureaucratization of many organizations over time), urban populations etc. All of these examples constitute changes that are almost un-noticeable with each increment, but will change the system properties and behavior in the long term."
+      },
+      {
+        "text": "<h2>Adaptive or compositional change</h2>When a selective process slowly acts to change the components of a system according to some non-random scheme, the nature of the system is fundamentally altered, albeit slowly and in incremental steps. In contrast to the integrative change mentioned above, the characteristics of adaptive change is by replacement, rather than addition. Markets are a good example that experience adaptive change through competition. Given a certain demand some products are more desired than others. People make a choice, rather than accumulating all products. This led to the rise to a higher percentage of SUV cars in the whole car fleet in the last decade. Similarly, species compete for limited resources and as the environment changes, the species community may change without changing the total number of individuals."
+      },
+      {
+        "text": "Consider again, the car fleet of a city. Different policies affect the decision of car buyers and the range of cars buyers can choose from. Many cities that restrict fuel-inefficient cars and provide incentives for efficient or even electric cars are slowly changing the economic infrastructure. The market adapts and starts to provide electric fueling stations. In the hopefully not too distant future, the choice of an electric car will overcome the impracticality and cost hurdle of owning a car that needs special stations for fueling and that has a larger upfront cost. The slow variable is the increasing demand for electric fueling stations and the marked responds with increasing supply, thus lowering the price and increasing the availability. It is not unforeseeable that when the next oil crisis strikes, these cities will be among the first that experience a dramatic shift as the cost/benefit ratio for different car types. The difference to the integrative change mentioned above is that this change can occur even if the total quantity of cars does not change, just the composition of the car fleet. We can think of this as competitive or exclusionary change, as the choice of one type of car by one buyer excludes the choice on another type."
+      },
+      {
+        "text": "<h2>Network structure changes</h2>The next slow variable concerns the dynamics of network structures. The measure of interest here are network related properties, such as average link density, mean path length, compartmentalization or other network scale indices. When networks form, either through new interactions (links) and/or new agents (nodes), the structure of the network changes and can have profound effects on the inherent dynamics of the system itself. A good example is the spread of epidemics, e.g. both biological and computer viruses. As link densities in the network of human physical interactions increase (more people to encounter) as well as the distances we travel, simple models of epidemic spread predict more rapid spread and a larger proportion of the global population being infected. In 2010, roughly 30 percent of the western population could afford to travel long distance and only 5% of the non-western population. In 2030 this is going to change to 40% of the western population and a staggering 2 billion people from the non-western countries. This change in the travel network structure of the human population has vast implications for the human-infectious disease system"
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/MobilityNetwork.jpg",
+          "caption": "Travel network of humans in 2010"
+        }
+      },
+      {
+        "text": "The shrinking of the world phenomenon through online connections is another example of network structure changes having fundamental impact on how local societies see their part in the global society and thus adapt their behavior. While this change has happened very fast on the scale of a generation, for one individual the day to day change has been small increments as new tools such as email, websites, text messages, facebook, twitter slowly but surely have shrunk the mean distance between any two people on the planet at least on a cognitive level."
+      },
+      {
+        "text": "<h1>Fast dynamics</h1><h2>Maximal growth</h2>When resources are largely available, such as when new markets emerge (think for example the iphone app store when it opened) or when a forest is clear cut and thus light and nutrient competition from trees is removed, an opportunity exists for entities to capitalize on these. When the iphone was first released and the app store opened its doors to independent developers, the news where full of dramatic success stories: simple ingenious applications where bought by masses and provided earnings unheard of for independent developers. In forest clearcut, plants, such as the Fireweed, can quickly spread into the area and become dominant. It is well know from organizational research that often the phase just after creating a new organization with a new purpose will be the most productive and creative. Few constraints are in place, little competition for funding, space etc hinders organizational members for being at their full potential. In this situation, it is the initial setup of people that determines the performance of the whole organization. As competitive processes come into play (space, money, leadership), and members are exchanged according to group-determined or leadership criteria, many organizations become burdened by the transactions cost of dealing with the tensions of these competitive processes and lose momentum, slowly transitioning into the slow change dynamics outlined above. Thus, fast change triggered by reduced limitations is a fundamental system dynamics phenomena."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/mjolkort.jpg",
+          "caption": "Fireweed, or great willow-herb, stand rapidly establish in a clearcut area"
+        }
+      },
+      {
+        "text": "<h2>Critical transitions</h2>Critical transitions, or regime shifts, which are often very fast and unexpected, are triggered by a change in the dominant nonlinear feedback in the system and are not necessarily triggered by sudden release of resources as in the previous example. These feedbacks can involve one or many components of the system. Conditions for a critical transition occur when two different feedbacks interact and are in oppositional effect on some shared component."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/Regimeshift1.png",
+          "caption": "Changes in the strength and balance between competing feedback loops in a shallow lake shift the system from one domain of attraction to another (shown as the blue low nutrient and plant regime and green shaded turbid, no-plants regime). B) The clear water regime is characterized by the dominance of feedback D1 (shown in red). As phosphorous levels increase, D1 weakens, and the amplifying feedback A (green) starts to dominate, driving the system into a eutrophic state limited by feedback D2 (blue). From Biggs et al. 2012."
+        }
+      },
+      {
+        "text": "In the example above we have two types of organisms competing. The phytoplankton can suppress the rooted plant through shading, stopping them from acquiring nutrients and thus further increasing the available nutrients for growth of phytoplankton leading to more turbidity and thus less light for rooted plants. Rooted plants can suppress phytoplankton if they are established by efficiently locking the nutrients available, thereby decreasing phytoplankton and turbidity giving rooted plants even more light for growth. There are very many examples of such competing feedbacks collected in the <a href=\"http://www.regimeshifts.org/\">regime shifts database.</a>"
+      },
+      {
+        "text": "A somewhat easier way to think about these is the ball and cup analogy as used in the figure below."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/RegimeShift2.png",
+          "caption": "Regime shifts are usually due to a combination of a) A shock such as a drought or flood, and b) slow changes in underlying variables and internal feedbacks that change the domains of attraction (or resilience) of the different regimes. Gradual changes in underlying variables can lead to the disappearance of some domains of attraction, or the appearance of new domains of attraction that did not previously exist. The critical thresholds that separate different regimes are typically determined by multiple underlying variables, rather than a single variable. From Biggs et al 2012."
+        }
+      },
+      {
+        "text": "Think of each valley or cup as one feedback loop, and the depth of the cup as the strength of that particular feedback loop. Depending on where the ball starts out it will remain in the cup unless any of the shifts are triggered as explained in the figure above. Read more about this in the <a href=\"https://zahachtah.github.io/ItSS/assets/images/Regime_Shifts_Intro1.pdf\">regime shifts introduction</a>"
+      },
+      {
+        "text": "<h2>Disturbance</h2>Disturbance of a system has to do with external drivers or a cascade of interactions within the system such as a regime shift which can in turn be triggered by external shocks or by a slow variable, such as a slow integrative process, crossing a threshold. But since we know that any system is only a subsystem that always is influenced by external factors we cannot count every change in drivers as a disturbance. We can take the example of weather vs climate change. A plant community is structured by the historical long term climate conditions at its location. But weather varies largely around these within and between years. This variation is to a large extent internalized into the community and plants have adapted strategies to cope with short term changes in precipitation and temperatures. While year to year changes in weather will have effect on the next year composition of the community, seed banks and overwintering plant tissue buffers these variations. It is when the change persists long enough, or climate changes directionally that we can start to speak about a disturbance. Thus, one needs to define disturbance in relation to the capacity of the system to adapt to the change in question. The rate of climate change, varies for different biomes and locations around the planet."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/SpeedOfClimateChange.jpg",
+          "caption": "A map of biomes and histograms of the speed of temperature change within each biome. Histograms are ordered by increasing velocity according to their geometric means. Loarie et al 2009"
+        }
+      },
+      {
+        "text": "In the figure above we can see the expected rates of change expressed in km/year. Whether species will be able to follow this changing environmental conditions. The rate of northward tree migration during the Holocene is estimated at about 1 km yr-1 after the last glacial maximum in Europe and North America. The apparent paradox of such a fast migration rate relative to the limitations on plant dispersal is possible by rare long-distance migration events or high latitude refugia reseeding the landscape. The latter means that post-glacial re-colonization velocities may have been as much as an order of magnitude slower than previously thought (~0.1 km yr-1). For the latter estimate one can see that many biomes around the globe are experiencing a climate change disturbance."
+      },
+      {
+        "text": "Another example is the occasional fires that occur in most forests. In boreal forests, this happens in small enough patches at long enough intervals that most species have not special adaptations to this. In the australian eucalyptus forests that regularly burn over large areas, species are adapted to this particular disturbance. In fact, the eucalypt tree itself, “encourages” fires by producing highly flammable oil and its seed only grow when heated by flames."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/EucalyptFire.jpg",
+          "caption": "Eucalupt forest burning in the northern territory in Australia, Photo: Teddy Fotiou creative commons licence"
+        }
+      },
+      {
+        "text": "<h2>Disorganization</h2>Over time, systems self organize through the slow changes mentioned above. Biomass is accumulated, new species enter the system and become part of the food-web network and abiotic components such as soil, nutrients, water are affected. Rainforests, for example, have established a very tight feedback for nutrients and also function as self-reinforcing the precipitation due to the enormous evapotranspiration from leaf biomass. Thus, every species becomes dependent on the system properties. Evolutionary specialization over long time scales create very specific interactions between particular species, fostering diversity but also interdependence. When large disturbances occur, such as deforestation of the Amazon forest, disrupting nutrient and water cycling, the network unravels. Such disturbances, when ignoring the fact that in this case it is an undesired act, also open opportunities for new species which can shape the local environment into new ecosystem types. In social systems, revolutions are social disturbances, triggered by resentment and collective action. When governments fall, and nations enter a disorganized state, the system is open for new actors that build new systems of power and governance. That this process not always goes as anticipated, is well examplified by the <a href=\"http://en.wikipedia.org/wiki/Arab_Spring\">arab spring.</a>"
+      },
+      {
+        "text": "Small scale disturbances can sometimes trigger larger scale changes. For example, in a study of two different food webs, researchers found that extinctions of certain species would either causing cascading extinctions in the food web or the extinction could be mitigated by the remaining species and their interactions."
+      },
+      {
+        "image": {
+          "url": "https://zahachtah.github.io/ItSS/assets/images/NetworkCascade.jpg",
+          "caption": "Extinctions or mitigations can occur when certain species are extinct from food webs Sahasrabudhe, S., & Motter 2011"
+        }
+      },
+      {
+        "text": "<h2>Reorganization</h2>When a disturbance has hit a system it is often open for reorganization. But legacies may persist that reduce the chance of another system configuration to emerge. Seed banks are like a memory of species past and can be activated by large changes. When hot temperatures kill coral reefs, coral skeletons increase the change of establishment of new corals. But sometimes, these legacies are not enough and new configurations emerge. Disturbances and reorganizations are not per se a negative change. Sometimes a social ecological system can be trapped in an undesired state and one can use disturbance and reorganization to transition into a more desired regime. In southern Sweden, there is a town called Kristianstad. It’s an old military town which is known for heavy industry. When the military compound was shut down, and industries moved out, the town region experienced a disturbance. In its region there was a lot of wetland areas generally thought of as a “water sick” area of little use. Nature conservationists had already before the disturbance organized into social networks covering both horizontal (among people and conservation organizations) and vertical (into government) scales. When the disturbance hit, the system was sensitive to a reorganization. Through lobbying, the notion of Kristianstad as a “Water-kingdom” was established and its beautiful wetlands are now one of its signature marks."
+      }
+    ]
+  },
+  "Resilience": {
+    "id": "rslnc",
+    "title": "Resilience",
+    "media": {
+      "type": "image",
+      "url": "https://zahachtah.github.io/CAS/images/joel-jasmin-forestbird-506723-unsplash.jpg",
+      "caption": "something"
+    },
+    "Purpose": "Showing how human empathy and knowledge gathering works",
+    "Conclude": "What we do depends on how we learn",
+    "tags": ["cas", "learning", "biology", "video"],
+    "parents": [{"id": "sstms", "title": "Systems"}],
+    "showDisqus": true,
+    "content": [
+      {
+        "text": "In the first lecture, Johan Rockström talks about what the resilience concept means at the planetary scale. This follows by a lecture by Garry Peterson on non-linear thinking in the Anthropocene, on the consequences of feedbacks and the complex dynamics invoked by nonlinear interactions has for solution thinking."
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/_E3uybzgEro",
+          "caption": ""
+        }
+      },
+      {
+        "video": {
+          "url": "https://www.youtube.com/embed/VA8Ypbkmue0",
+          "caption": ""
+        }
+      }
+    ]
+  }
+}
