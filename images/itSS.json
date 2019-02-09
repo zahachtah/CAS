@@ -565,7 +565,7 @@
       }
     ]
   },
-  "Disconnecting from Nature": {
+  "Disconnecting": {
     "id": "dcnnctngfrmntr",
     "title": "Disconnecting",
     "Purpose": "Show how human infrastructure building purpose is to make nature more predictable",
@@ -1333,7 +1333,7 @@
     "title": "Regime shifts",
     "media": {
       "type": "image",
-      "url": "https://raw.githubusercontent.com/zahachtah/CAS/gh-pages/images/PeterPaulAerial_2015.jpg?token=AE__9r3wQe3xAh0GO4uFI0zIjvV23CYsks5cVXarwA%3D%3D",
+      "url": "https://zahachtah.github.io/CAS/images/PeterPaulAerial_2015.jpg",
       "url2": "https://zahachtah.github.io/CAS/images/PeterPaulAerial_2015.jpg",
       "caption": ""
     },
