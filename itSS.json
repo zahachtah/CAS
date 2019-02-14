@@ -75,7 +75,7 @@
       },
       {
         "link": {
-          "label": "next parts",
+          "label": "Next parts",
           "id": "nxtprts"
         }
       }
@@ -331,7 +331,7 @@
       }
     ]
   },
-  "nextParts": {
+  "Next parts": {
     "id": "nxtprts",
     "title": "Next: 18 Feb",
     "media": {
