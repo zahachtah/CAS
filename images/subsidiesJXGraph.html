@@ -1,0 +1,104 @@
+<html>
+<head>
+<script src="https://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+</head>
+<body>
+<div id="boxTax"></div>
+<style>
+#boxTax {
+    width:700px;
+    height:500px;
+    margin: 0 4em 1em 0;
+    float: left;
+}
+#boxSub {
+    width:700px;
+    height:500px;
+    margin: 0 4em 1em 0;
+    float: left;
+}
+  .JXGtext {
+    background-color:transparent;
+    font-family: Arial, Helvetica, Geneva;
+    font-size:11px;
+    padding:0px;
+    margin:0px;
+  }
+</style>
+
+<script>
+//remeber to set on load in jsfiddle
+
+
+JXG.Options.axis.ticks.majorHeight = 40; // removes larger grid
+JXG.Options.axis.ticks.drawLabels = false;
+JXG.Options.axis.ticks.insertTicks = false;
+JXG.Options.axis.lastArrow = false;
+var b = JXG.JSXGraph.initBoard('boxSub', {boundingbox: [-0.05, 1.1, 1.1, -0.2], axis: true,showNavigation:false,showCopyright:false});
+
+
+
+var q=2
+var col1='silver'
+var col2='grey'
+var polygonColor='#1f78b4'
+var helperColor=false//'#888888'//false
+var helperLabel=false
+var slideFactor=10
+var taxRevCol='#ff7f00'
+var prodSurCol='#6a3d9a'
+var conSurCol='#b2df8a'
+var welfOpac=0.5
+
+    u = b.createElement('slider', [
+        [0.0, -0.12],
+        [1.0, -0.12],
+        [0, 0, 1]
+    ], {
+
+        strokeColor: 'black',
+        fillColor: 'black'
+    });
+
+    ut = b.createElement('text', [0.45, -0.18, "Subsidy"], {fixed: true, strokecolor:'green'});
+
+    PublicD = b.createElement('text', [0.1, 0.94, "Public demand"], {fixed: true, strokecolor:'red'});
+
+
+
+farmerMC = b.createElement('text', [0.83, 0.8, "Farmer Cost"], {fixed: true, strokecolor:'blue'});
+
+    Xlabel = b.createElement('text', [0.9, -0.05, "Grasslands (ha)"], {fixed: true});
+
+var p1 = b.create('point',[0,1],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
+var p2 = b.create('point',[1,0],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
+var p3 = b.create('point',[1,1],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
+var p4 = b.create('point',[0,0.05],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
+var p5 = b.create('point',[0,0.1],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
+var p6 = b.create('point',[1,0.0],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
+var p7 = b.create('point',[function(){ return (p5.X());},function(){ return (p5.Y()*(1+slideFactor*u.Value()));}],{size:0,strokeColor:col1,fillColor:col1,withLabel:false});
+
+
+var SDemand = b.create('segment', [p1,p2],{strokecolor:'red', strokeWidth:1});
+var Supply = b.create('segment', [p3,p4],{strokecolor:'blue', strokeWidth:2});
+var FDemand = b.create('segment', [p5,p6],{strokecolor:'red', strokeWidth:1});
+var FTDemand = b.create('segment', [p7,p6],{strokecolor:'green', strokeWidth:1, dash: 2});
+
+
+var IF = b.create('intersection', [Supply, FDemand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel});
+var IS = b.create('intersection', [Supply, SDemand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel});
+var I1 = b.create('intersection', [Supply, FTDemand, 0],{size:3,strokeColor:false,fillColor:'green',withLabel:helperLabel});
+
+
+var LineIF = b.create('segment', [IF,[function (){return IF.X()},0]],{strokecolor:'grey', strokeWidth:2, dash: 2});
+
+var LineIS = b.create('segment', [IS,[function (){return IS.X()},0]],{strokecolor:'grey', strokeWidth:2, dash: 2});
+
+var LineI1 = b.create('segment', [I1,[function (){return I1.X()},0]],{strokecolor:'green', strokeWidth:2});
+
+var FarmerGrass = b.create('point',[function (){return I1.X()},0],{size:1,strokeColor:col1,fillColor:col1,withLabel:true,name:"F_{grassland}(ha)"});
+
+    farmerD = b.createElement('text', [function (){return 0.03+I1.X()}, function (){return 0.01+I1.Y()}, "Farmer demand"], {fixed: true, strokecolor:'green'});
+
+
+</script>
