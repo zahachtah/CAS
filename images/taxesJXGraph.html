@@ -1,0 +1,140 @@
+<html>
+<head>
+<script src="https://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+</head>
+<body>
+<div id="boxTax"></div>
+<style>
+#boxTax {
+    width:700px;
+    height:500px;
+    margin: 0 4em 1em 0;
+    float: left;
+}
+#boxSub {
+    width:700px;
+    height:500px;
+    margin: 0 4em 1em 0;
+    float: left;
+}
+  .JXGtext {
+    background-color:transparent;
+    font-family: Arial, Helvetica, Geneva;
+    font-size:11px;
+    padding:0px;
+    margin:0px;
+  }
+</style>
+
+<script>
+JXG.Options.axis.ticks.majorHeight = 40; // removes larger grid
+JXG.Options.axis.ticks.drawLabels = false;
+JXG.Options.axis.ticks.insertTicks = false;
+JXG.Options.axis.lastArrow = false;
+var b = JXG.JSXGraph.initBoard('boxTax', {boundingbox: [-0.2, 1.1, 1.1, -0.2], axis: true,showNavigation:false,showCopyright:false});
+
+    u = b.createElement('slider', [
+        [0.0, -0.05],
+        [1.0, -0.05],
+        [0, 0, 1]
+    ], {
+        name: '&epsilon;',
+        strokeColor: 'black',
+        fillColor: 'black'
+    });
+    ut = b.createElement('text', [0.5, -0.1, "Tax"], {
+        fixed: true
+    });
+
+
+
+
+//The value of s is"+s.Value().toFixed(2)
+
+//var checkbox = b.create('checkbox', [0.25, 0.5, 'Change Y'], {});
+
+    var chk = b.create('text', [0.01,-0.1,
+            '<input type="checkbox" id="showU" onchange="toggleUpper()" unchecked/>  Welfare benefit<br/>'
+                               ],{strokeColor:'#1f78b4'});
+
+    var upperVisible = true;
+    var toggleUpper = function() {
+            upperVisible = !upperVisible;
+        if (upperVisible==true) {
+            h.setProperty({fillOpacity:0.5});
+            h.setProperty({strokeColor:false});
+        }
+        else
+        {
+            h.setProperty({fillOpacity:1});
+            h.setProperty({strokeColor:true});
+        }
+        };
+
+var q=2
+var col1='silver'
+var col2='grey'
+var polygonColor='#1f78b4'
+var helperColor=false//'#888888'//false
+var helperLabel=false
+var slideFactor=1.5
+var taxRevCol='#ff7f00'
+var prodSurCol='#6a3d9a'
+var conSurCol='#b2df8a'
+var welfOpac=0.5
+
+
+
+
+var p1 = b.create('point',[0,1],{size:1,strokeColor:col1,fillColor:col1,withLabel:false});
+var p2 = b.create('point',[1,0],{size:1,strokeColor:col1,fillColor:col1,withLabel:false});
+var p3 = b.create('point',[1,1],{size:1,strokeColor:col1,fillColor:col1,withLabel:false});
+var p4 = b.create('point',[0,0.3],{size:1,strokeColor:col1,fillColor:col1,withLabel:false});
+var q1 = b.create('point',[0.6,0.3],{size:5,fillColor:'red', name:'Demand', labelColor:col2,face:'+',label:{strokeColor:'red'}});
+var q2 = b.create('point',[0.6,0.6],{size:5,fillColor:'blue',strokeColor:'blue', name:'Supply',face:'+',label:{strokeColor:'blue'}});
+
+var p4TS = b.create('point',[function(){ return (p4.X());},function(){ return (p4.Y()*(1+slideFactor*u.Value()));}],{size:0,strokeColor:col1,fillColor:col1,withLabel:false});
+var p3TS = b.create('point',[function(){ return (p3.X());},function(){ return (p3.Y()*(1+slideFactor*u.Value()));}],{size:0,strokeColor:col1,fillColor:col1,withLabel:false});
+var q2TS = b.create('point',[function(){ return (q2.X());},function(){ return (q2.Y()*(1+slideFactor*u.Value()));}],{size:0,strokeColor:col1,fillColor:col1,withLabel:false});
+
+
+var Demand = b.create('curve', JXG.Math.Numerics.bezier([p1,q1,q1,p2]),{strokecolor:'red', strokeWidth:3});
+var Supply = b.create('curve', JXG.Math.Numerics.bezier([p3,q2,q2,p4]),{strokecolor:'blue', strokeWidth:3});
+var SupplyTS = b.create('curve', JXG.Math.Numerics.bezier([p3TS,q2TS,q2TS,p4TS]),{strokecolor:'blue', strokeWidth:2, dash:2});
+
+
+var SD = b.create('intersection', [Supply, Demand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SD'});
+var SD0 = b.create('point',[function(){ return (SD.X());},0],{name:'Q_{no tax}',size:3,withLabel:false});
+var SDY = b.create('point',[0,function(){ return (SD.Y());}],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDY'});
+var SD0S=b.create('segment',[SD,SDY],{strokeColor:helperColor,dash:2})
+
+var SDTS = b.create('intersection', [SupplyTS, Demand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTS'});
+var SDTS0=b.create('point',[function(){ return (SDTS.X());},0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:true,name:'q_{produced}'});
+var QstarLine=b.create('segment',[SDTS,SDTS0],{strokeColor:helperColor,dash:2})
+var pProd=b.create('intersection',[QstarLine,Supply],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd'});
+var pProd0=b.create('point',[0,function(){ return (pProd.Y());}],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd0'});
+var pProdS=b.create('segment',[pProd,pProd0],{strokeColor:helperColor,dash:2})
+
+var XYZ=b.create('intersection',[SD0S,QstarLine],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'XYZ'});
+
+var Pstar=b.create('point',[0,function(){ return (SDTS.Y());}],{size:3,strokeColor:false,fillColor:helperColor,withLabel:true,name:'P_{consumer}'});
+var PstarLine=b.create('segment',[Pstar,SDTS],{strokeColor:helperColor,dash:2})
+
+var helpLine=b.create('line',[SD,SD0],{strokeColor:helperColor,dash:2})
+var SDTSh = b.create('intersection', [SupplyTS, helpLine, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTSh'});
+var Int2 = b.create('intersection', [SupplyTS, SD0S, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'Int2'});
+
+
+var h = b.create('polygon', [SD, SDTS, SDTSh,SD],{name:'h',size:3,fillcolor:polygonColor, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
+var d = b.create('polygon', [SD, XYZ, SDTS,SD],{name:'d',size:3,fillcolor:polygonColor, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
+var e = b.create('polygon', [SD, XYZ, pProd],{name:'e',size:3,fillcolor:polygonColor, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
+var conSur = b.create('polygon', [SDTS, Pstar, p1],{name:'conSur',size:3,fillcolor:conSurCol, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
+
+var taxRev = b.create('polygon', [pProd, SDTS, Pstar,pProd0],{name:'TaxRev',size:3,fillcolor:taxRevCol, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
+
+var prodSur = b.create('polygon', [pProd, p4, pProd0],{name:'prodSur',size:3,fillcolor:prodSurCol, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
+
+    taxT = b.createElement('text', [0.05, -0.15, function(){return (h.Area()*100).toFixed(2);}], {
+        fixed: true
+    });
+</script>
