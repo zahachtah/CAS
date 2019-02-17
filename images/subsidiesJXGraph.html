@@ -79,10 +79,10 @@ var p6 = b.create('point',[1,0.0],{size:1,strokeColor:col1,fillColor:col1,withLa
 var p7 = b.create('point',[function(){ return (p5.X());},function(){ return (p5.Y()*(1+slideFactor*u.Value()));}],{size:0,strokeColor:col1,fillColor:col1,withLabel:false});
 
 
-var SDemand = b.create('segment', [p1,p2],{strokecolor:'red', strokeWidth:1});
+var SDemand = b.create('segment', [p1,p2],{strokecolor:'red', strokeWidth:2});
 var Supply = b.create('segment', [p3,p4],{strokecolor:'blue', strokeWidth:2});
-var FDemand = b.create('segment', [p5,p6],{strokecolor:'red', strokeWidth:1});
-var FTDemand = b.create('segment', [p7,p6],{strokecolor:'green', strokeWidth:1, dash: 2});
+var FDemand = b.create('segment', [p5,p6],{strokecolor:'green', strokeWidth:2});
+var FTDemand = b.create('segment', [p7,p6],{strokecolor:'green', strokeWidth:2, dash: 2});
 
 
 var IF = b.create('intersection', [Supply, FDemand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel});
