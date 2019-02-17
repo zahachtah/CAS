@@ -134,7 +134,13 @@ var taxRev = b.create('polygon', [pProd, SDTS, Pstar,pProd0],{name:'TaxRev',size
 
 var prodSur = b.create('polygon', [pProd, p4, pProd0],{name:'prodSur',size:3,fillcolor:prodSurCol, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
 
-    taxT = b.create('text', [0.05, -0.15, function(){return (h.Area()*100).toFixed(2);}], {
+taxT = b.create('text', [0.05, -0.15, function(){return (h.Area()*100).toFixed(2);}], {
         fixed: true
     });
+var resize = function () {
+            b.resizeContainer(board.containerObj.clientWidth, board.containerObj.clientHeight, true);
+            b.fullUpdate();
+        };
+
+window.onresize = resize;
 </script>
