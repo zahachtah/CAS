@@ -103,12 +103,12 @@ var Supply = b.create('curve', JXG.Math.Numerics.bezier([p3,q2,q2,p4]),{strokeco
 var SupplyTS = b.create('curve', JXG.Math.Numerics.bezier([p3TS,q2TS,q2TS,p4TS]),{strokecolor:'blue', strokeWidth:2, dash:2});
 
 
-var SD = b.create('intersection', [Supply, Demand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SD'});
+var SD = b.create('intersection', [Supply, Demand, 0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SD'});
 var SD0 = b.create('point',[function(){ return (SD.X());},0],{name:'Q_{no tax}',size:0,withLabel:false});
-var SDY = b.create('point',[0,function(){ return (SD.Y());}],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDY'});
+var SDY = b.create('point',[0,function(){ return (SD.Y());}],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDY'});
 var SD0S=b.create('segment',[SD,SDY],{strokeColor:helperColor,dash:2})
 
-var SDTS = b.create('intersection', [SupplyTS, Demand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTS'});
+var SDTS = b.create('intersection', [SupplyTS, Demand, 0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTS'});
 var SDTS0=b.create('point',[function(){ return (SDTS.X());},0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:true,name:'q_{produced}'});
 var QstarLine=b.create('segment',[SDTS,SDTS0],{strokeColor:helperColor,dash:2})
 var pProd=b.create('intersection',[QstarLine,Supply],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd'});
