@@ -111,18 +111,18 @@ var SD0S=b.create('segment',[SD,SDY],{strokeColor:helperColor,dash:2})
 var SDTS = b.create('intersection', [SupplyTS, Demand, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTS'});
 var SDTS0=b.create('point',[function(){ return (SDTS.X());},0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:true,name:'q_{produced}'});
 var QstarLine=b.create('segment',[SDTS,SDTS0],{strokeColor:helperColor,dash:2})
-var pProd=b.create('intersection',[QstarLine,Supply],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd'});
+var pProd=b.create('intersection',[QstarLine,Supply],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd'});
 var pProd0=b.create('point',[0,function(){ return (pProd.Y());}],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd0'});
 var pProdS=b.create('segment',[pProd,pProd0],{strokeColor:helperColor,dash:2})
 
-var XYZ=b.create('intersection',[SD0S,QstarLine],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'XYZ'});
+var XYZ=b.create('intersection',[SD0S,QstarLine],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'XYZ'});
 
 var Pstar=b.create('point',[0,function(){ return (SDTS.Y());}],{size:0,strokeColor:false,fillColor:helperColor,withLabel:true,name:'P_{consumer}'});
 var PstarLine=b.create('segment',[Pstar,SDTS],{strokeColor:helperColor,dash:2})
 
 var helpLine=b.create('line',[SD,SD0],{strokeColor:helperColor,dash:2})
 var SDTSh = b.create('intersection', [SupplyTS, helpLine, 0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTSh'});
-var Int2 = b.create('intersection', [SupplyTS, SD0S, 0],{size:3,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'Int2'});
+var Int2 = b.create('intersection', [SupplyTS, SD0S, 0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'Int2'});
 
 
 var h = b.create('polygon', [SD, SDTS, SDTSh,SD],{name:'h',size:3,fillcolor:polygonColor, strokeColor:false,withLabel:helperLabel, fillOpacity:0.5});
