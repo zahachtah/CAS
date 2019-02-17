@@ -68,8 +68,8 @@ var welfOpac=0.5
 
 farmerMC = b.create('text', [0.83, 0.8, "Farmer Cost"], {fixed: true, strokecolor:'blue'});
 
-    Xlabel = b.create('text', [0.9, -0.05, "Grasslands (ha)"], {fixed: true});
-  Xlabel = b.create('text', [0.0, -0.05, "Croplands (ha)"], {fixed: true});
+    Xlabel = b.create('text', [0.9, -0.05, "Grasslands"], {fixed: true});
+  Xlabel = b.create('text', [0.01, -0.05, "Croplands"], {fixed: true});
 
 var p1 = b.create('point',[0,1],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
 var p2 = b.create('point',[1,0],{size:1,strokeColor:col1,fillColor:col1,withLabel:helperLabel});
@@ -101,7 +101,7 @@ var FarmerGrass = b.create('point',[function (){return I1.X()},0],{size:1,stroke
 
     farmerD = b.create('text', [function (){return 0.03+I1.X()}, function (){return 0.01+I1.Y()}, "Farmer demand + subsidy"], {fixed: true, strokecolor:'green'});
 
-var grassland = b.create('segment', [[1.0,0.0],[function (){return I1.X()},0.0]],{strokecolor:'green', strokeWidth:4});
-var cropland = b.create('segment', [[0.0,0.0],[function (){return I1.X()},0.0]],{strokecolor:'orange', strokeWidth:4});
+var grassland = b.create('segment', [[1.0,0.0],[function (){return I1.X()},-0.01]],{strokecolor:'green', strokeWidth:8});
+var cropland = b.create('segment', [[0.0,0.0],[function (){return I1.X()},-0.01]],{strokecolor:'orange', strokeWidth:8});
   
 </script>
