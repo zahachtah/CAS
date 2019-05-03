@@ -2215,7 +2215,7 @@
 			}
 		]
 	},
-	"Land use change": {
+	"Land-use change": {
 		"id": "lndschng",
 		"title": "Land use change",
 		"Purpose": "Did the prehistoric environment affect how we developed human society?",
