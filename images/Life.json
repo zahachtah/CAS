@@ -40,6 +40,11 @@
         "link": {
           "id": "0d0e06eb-726c-495b-bf5b-0b33d0859b59"
         }
+      },
+      {
+        "link": {
+          "id": "54b24486-118d-4992-83c1-9aa9747febcd"
+        }
       }
 
     ]
@@ -80,13 +85,19 @@
     ]
   },
   "af2da8c4-76c8-4b16-abd1-6acf3581ccc1": {
-    "name": "History",
+    "name": "Past",
     "content": [
       {"text": "test"}
     ]
   },
   "6e4df0b5-5333-4c43-ada3-a0a4be2b4fe4": {
     "name": "Papers",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "54b24486-118d-4992-83c1-9aa9747febcd": {
+    "name": "Goals",
     "content": [
       {"text": "test"}
     ]
