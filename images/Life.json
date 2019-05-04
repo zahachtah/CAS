@@ -57,7 +57,8 @@
       {"link": {"id": "dafc4995-a721-4dde-bd25-d2f50465d163"}},
       {"link": {"id": "72b6fcf0-53bc-414e-8555-fdc3ea27c457"}},
       {"link": {"id": "9c6669aa-30b9-45d7-9b57-3d63638c8a40"}},
-      {"link": {"id": "f6797828-980c-4b75-bf7b-d18ddf30bc9c"}}
+      {"link": {"id": "f6797828-980c-4b75-bf7b-d18ddf30bc9c"}},
+      {"link": {"id": "0ddfda47-51ae-42a4-8653-26f49abd5cd6"}}
     ]
   },
   "55a6ac9b-66d7-4ad5-ad33-c1f9aa6af403": {
@@ -121,7 +122,13 @@
     ]
   },
   "f6797828-980c-4b75-bf7b-d18ddf30bc9c": {
-    "name": "d3.js",
+    "name": "D3",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "0ddfda47-51ae-42a4-8653-26f49abd5cd6": {
+    "name": "Babylon",
     "content": [
       {"text": "test"}
     ]
