@@ -1,0 +1,626 @@
+{
+  "name": "Life",
+  "children": [{
+      "name": "thoughtCraft",
+      "children": [{
+          "name": "Structure view",
+          "children": [{
+              "name": "Radial tree",
+              "size": 3938
+            },
+            {
+              "name": "Nested menu",
+              "size": 3812
+            },
+            {
+              "name": "Sunburst",
+              "size": 6714
+            },
+            {
+              "name": "Horizontal tree",
+              "children": [{
+                  "name": "Update for D3 v5",
+                  "size": 3534,
+                  "done": true
+                },
+                {
+                  "name": "Embed in vue",
+                  "size": 5731
+                },
+                {
+                  "name": "move/add/delete",
+                  "size": 5731
+                },
+                {
+                  "name": "focus and expand",
+                  "size": 5731
+                }
+              ]
+            },
+            {
+              "name": "treemap",
+              "size": 743
+            },
+            {
+              "name": "Purpose/implication structure",
+              "size": 743
+            }
+          ]
+        },
+        {
+          "name": "Content view",
+          "children": [{
+              "name": "Edit view",
+              "size": 3534
+            },
+            {
+              "name": "Content types",
+              "size": 5731
+            },
+            {
+              "name": "Conceptual visualizations",
+              "children": [{
+                  "name": "Market dynamics",
+                  "size": 3534
+                },
+                {
+                  "name": "Market averaging",
+                  "size": 3534
+                },
+                {
+                  "name": "Systems causalities",
+                  "size": 5731
+                },
+                {
+                  "name": "Human Actors",
+                  "size": 5731
+                },
+                {
+                  "name": "interactive Paleoclimate",
+                  "size": 5731
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Interface",
+          "children": [{
+              "name": "FireBase sync",
+              "size": 7074
+            },
+            {
+              "name": "Keybindings",
+              "size": 7074
+            },
+            {
+              "name": "Perspectives",
+              "size": 7074
+            },
+            {
+              "name": "css json config and edit",
+              "size": 7074
+            },
+            {
+              "name": "json choice and load",
+              "size": 7074
+            },
+            {
+              "name": "Standalone with firebase server",
+              "size": 7074
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Javascript",
+      "children": [{
+          "name": "Networks",
+          "children": [{
+              "name": "Causal loop",
+              "size": 3938
+            },
+            {
+              "name": "Dynamic systems",
+              "size": 3812
+            }
+          ]
+        },
+        {
+          "name": "Babylon",
+          "children": [{
+            "name": "Globe",
+            "size": 3534
+          }]
+        },
+        {
+          "name": "VegaLite",
+          "children": [{
+              "name": "LineGraphs",
+              "size": 3534
+            },
+            {
+              "name": "Interactivity",
+              "size": 3534
+            }
+          ]
+        },
+        {
+          "name": "Firebase",
+          "children": [{
+            "name": "Local serve test",
+            "size": 3534
+          }]
+        },
+        {
+          "name": "D3",
+          "children": [{
+              "name": "FireBase sync",
+              "size": 7074
+            },
+            {
+              "name": "Keybindings",
+              "size": 7074
+            },
+            {
+              "name": "Perspectives",
+              "size": 7074
+            }
+          ]
+        },
+        {
+          "name": "SVG",
+          "children": [{
+              "name": "Deep learning display",
+              "size": 7074
+            },
+            {
+              "name": "Governance example",
+              "size": 7074
+            },
+            {
+              "name": "Perspectives",
+              "size": 7074
+            }
+          ]
+        },
+        {
+          "name": "JSXGraph",
+          "children": [{
+              "name": "Taxes",
+              "size": 7074
+            },
+            {
+              "name": "Markets",
+              "size": 7074
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Julia",
+      "children": [{
+          "name": "HumanActors",
+          "children": [{
+              "name": "Multi-actor runs",
+              "size": 721
+            },
+            {
+              "name": "Environmental interfaces",
+              "size": 4294
+            },
+            {
+              "name": "Visualizations",
+              "size": 9800
+            },
+            {
+              "name": "Implement cognitive load constraint!",
+              "size": 1314
+            },
+            {
+              "name": "implement do unto others...",
+              "size": 2220
+            }
+          ]
+        },
+        {
+          "name": "Trait-based",
+          "children": [{
+              "name": "multiscaleArrays",
+              "size": 1983
+            },
+            {
+              "name": "multiscaleMatrix",
+              "size": 1983
+            },
+            {
+              "name": "performance test",
+              "size": 1983
+            },
+            {
+              "name": "cases",
+              "children": [{
+                  "name": "fixed spatial positions",
+                  "size": 1983
+                },
+                {
+                  "name": "dynamic spatial positions",
+                  "size": 1983
+                },
+                {
+                  "name": "populations",
+                  "size": 1983
+                },
+                {
+                  "name": "individual-based",
+                  "size": 1983
+                },
+                {
+                  "name": "complex food-webs",
+                  "size": 1983
+                },
+                {
+                  "name": "abiotic landscapes",
+                  "size": 1983
+                },
+                {
+                  "name": "genetic algorithm",
+                  "size": 1983
+                },
+                {
+                  "name": "cell division",
+                  "size": 1983
+                },
+                {
+                  "name": "quantitative genetics forward diff",
+                  "size": 1983
+                },
+                {
+                  "name": "fixed trait plan",
+                  "size": 1983
+                },
+                {
+                  "name": "dynamic trait plan",
+                  "size": 1983
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "House",
+      "children": [{
+          "name": "Badrum",
+          "size": 8833
+        },
+        {
+          "name": "Skafferi",
+          "size": 1732
+        },
+        {
+          "name": "Tomt",
+          "size": 3623
+        },
+        {
+          "name": "Gästrum",
+          "size": 10066
+        }
+      ]
+    },
+    {
+      "name": "Agency",
+      "children": [{
+          "name": "Life Objectives",
+          "size": 8833
+        },
+        {
+          "name": "Emotional feedbacks",
+          "children": [{
+              "name": "Joy",
+              "size": 8833
+            },
+            {
+              "name": "Contentment",
+              "size": 1732
+            },
+            {
+              "name": "Worry, environmental anxiety",
+              "size": 3623
+            },
+            {
+              "name": "Shame, social anxiety",
+              "size": 10066
+            },
+            {
+              "name": "Recognition",
+              "size": 10066
+            },
+            {
+              "name": "do unto others...",
+              "size": 10066
+            },
+            {
+              "name": "Concientiousness",
+              "size": 10066
+            },
+            {
+              "name": "Sexual",
+              "size": 10066
+            },
+            {
+              "name": "Pride",
+              "size": 10066
+            },
+            {
+              "name": "Selfawareness",
+              "size": 10066
+            }
+          ]
+        },
+        {
+          "name": "File structure and backup",
+          "size": 3623
+        },
+        {
+          "name": "Routines",
+          "size": 10066
+        }
+      ]
+    },
+    {
+      "name": "Ekonomi",
+      "children": [{
+          "name": "Inkomster",
+          "size": 8833
+        },
+        {
+          "name": "Lån",
+          "size": 8833
+        },
+        {
+          "name": "Räkningar",
+          "size": 1732
+        },
+        {
+          "name": "Utgifter",
+          "size": 3623
+        },
+        {
+          "name": "Mervärde",
+          "size": 10066
+        },
+        {
+          "name": "Framtidsberäkning",
+          "size": 10066
+        }
+      ]
+    },
+    {
+      "name": "Leisure",
+      "children": [{
+          "name": "Paragliding",
+          "size": 8833
+        },
+        {
+          "name": "Nature",
+          "children": [{
+              "name": "Hiking",
+              "size": 8833
+            },
+            {
+              "name": "Kayaking",
+              "size": 1732
+            }
+          ]
+        },
+        {
+          "name": "Horses",
+          "size": 3623
+        }
+      ]
+    },
+    {
+      "name": "Social",
+      "children": [{
+          "name": "Vega",
+          "size": 4116
+        },
+        {
+          "name": "Saga",
+          "size": "4116345t"
+        },
+        {
+          "name": "Tim",
+          "size": "41163dfsg45t"
+        },
+        {
+          "name": "MaPa",
+          "size": "41163dfsg45t"
+        },
+        {
+          "name": "Izak",
+          "size": "41163dfsg45t"
+        },
+        {
+          "name": "Zion",
+          "size": "41163dfsg45t"
+        },
+        {
+          "name": "Släkt",
+          "size": "41163dfsg45t"
+        },
+        {
+          "name": "Vänner",
+          "size": "41163dfsg45t"
+        }
+      ]
+    },
+    {
+      "name": "Papers",
+      "children": [{
+          "name": "Cross-scale",
+          "size": 1082
+        },
+        {
+          "name": "BENN-Norms",
+          "size": 1336
+        },
+        {
+          "name": "HumanActors",
+          "children": [{
+              "name": "Cross-scale",
+              "size": 1082
+            },
+            {
+              "name": "BENN-Norms",
+              "size": 1336
+            },
+            {
+              "name": "HumanActors",
+              "size": 319
+            },
+            {
+              "name": "LucaModel",
+              "size": 10498
+            },
+            {
+              "name": "Infrastructure",
+              "size": 104968
+            }
+          ]
+        },
+        {
+          "name": "GloDiv",
+          "size": 5842
+        },
+        {
+          "name": "Meta Eco-Evo Linköping",
+          "children": [{
+            "name": "Implement in Julia",
+            "size": 1983
+          }]
+        },
+        {
+          "name": "LucaModel",
+          "children": [{
+              "name": "Link normfun to log-logit fun",
+              "size": 1082
+            },
+            {
+              "name": "Coexistence => stochastic death rates",
+              "size": 1336
+            },
+            {
+              "name": "HumanActors",
+              "size": 319
+            },
+            {
+              "name": "LucaModel",
+              "size": 10498
+            },
+            {
+              "name": "Infrastructure",
+              "size": 104968
+            }
+          ]
+        },
+        {
+          "name": "Infrastructure",
+          "size": 104968
+        }
+      ]
+    },
+    {
+      "name": "Game",
+      "children": [{
+          "name": "Websocket json transfers",
+          "size": 1616
+        },
+        {
+          "name": "Client display",
+          "size": 1027
+        },
+        {
+          "name": "Game logic",
+          "size": 3891
+        },
+        {
+          "name": "world impact forces",
+          "size": 891
+        },
+        {
+          "name": "Movement interpolation",
+          "size": 2893
+        },
+        {
+          "name": "Caves",
+          "size": 5103
+        },
+        {
+          "name": "World Dynamics",
+          "children": [{
+              "name": "Erosion and uplift",
+              "size": 593
+            },
+            {
+              "name": "Water runoff",
+              "size": 330
+            },
+            {
+              "name": "Species Spatio-temporal dynamics",
+              "size": 330
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "children": [{
+          "name": "1969",
+          "size": 1616
+        },
+        {
+          "name": "1998",
+          "size": 1027
+        },
+        {
+          "name": "2000",
+          "size": 3891
+        },
+        {
+          "name": "2001",
+          "size": 891
+        },
+        {
+          "name": "2002",
+          "size": 2893
+        },
+        {
+          "name": "2003",
+          "size": 5103
+        },
+        {
+          "name": "2017",
+          "children": [{
+              "name": "January",
+              "size": 593
+            },
+            {
+              "name": "February",
+              "size": 330
+            },
+            {
+              "name": "March",
+              "size": 330
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
