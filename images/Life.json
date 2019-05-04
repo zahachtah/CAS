@@ -53,7 +53,11 @@
   "f39af8e5-2b08-4006-b117-febdef0f62a03": {
     "name": "Programming",
     "content": [
-      {"text": "test"}
+      {"text": "test"},
+      {"link": {"id": "dafc4995-a721-4dde-bd25-d2f50465d163"}},
+      {"link": {"id": "72b6fcf0-53bc-414e-8555-fdc3ea27c457"}},
+      {"link": {"id": "9c6669aa-30b9-45d7-9b57-3d63638c8a40"}},
+      {"link": {"id": "f6797828-980c-4b75-bf7b-d18ddf30bc9c"}},
     ]
   },
   "55a6ac9b-66d7-4ad5-ad33-c1f9aa6af403": {
@@ -88,6 +92,36 @@
   },
   "0d0e06eb-726c-495b-bf5b-0b33d0859b59": {
     "name": "Social",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "6e4df0b5-5333-4c43-ada3-a0a4be2b4fe4": {
+    "name": "Papers",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "dafc4995-a721-4dde-bd25-d2f50465d163": {
+    "name": "Julia",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "72b6fcf0-53bc-414e-8555-fdc3ea27c457": {
+    "name": "Svelte",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "9c6669aa-30b9-45d7-9b57-3d63638c8a40": {
+    "name": "Vega-Lite",
+    "content": [
+      {"text": "test"}
+    ]
+  },
+  "f6797828-980c-4b75-bf7b-d18ddf30bc9c": {
+    "name": "d3.js",
     "content": [
       {"text": "test"}
     ]
