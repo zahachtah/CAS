@@ -35,11 +35,11 @@ h1 {
   background-size: cover;
   background-repeat: none;
   transition: flex 0.8s ease;
-  filter: grayscale(100%);
+  //filter: grayscale(100%);
 }
 .item:hover {
   flex: 12;
-  filter: grayscale(0%);
+  //filter: grayscale(0%);
 }
 
 .item:hover .text {
