@@ -33,6 +33,7 @@ JXG.Options.axis.ticks.drawLabels = false;
 JXG.Options.axis.ticks.insertTicks = false;
 JXG.Options.axis.lastArrow = false;
 var b = JXG.JSXGraph.initBoard('boxTax', {boundingbox: [-0.2, 1.1, 1.1, -0.2], axis: true,showNavigation:false,showCopyright:false});
+b.options.elements.strokeColor = 'white'; 
 
     u = b.create('slider', [
         [0.0, -0.05],
