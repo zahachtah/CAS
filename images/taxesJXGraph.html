@@ -32,16 +32,16 @@ JXG.Options.axis.ticks.majorHeight = 40; // removes larger grid
 JXG.Options.axis.ticks.drawLabels = false;
 JXG.Options.axis.ticks.insertTicks = false;
 JXG.Options.axis.lastArrow = false;
-JXG.Options.line.strokeColor = 'white';
-JXG.Options.axis.strokeColor = 'white';
-JXG.Options.line.highlightStrokeColor = 'white';
-JXG.Options.axis.highlightStrokeColor = 'white';
-JXG.Options.slider.baseline.strokeColor = 'white';
-JXG.Options.slider.baseline.highlightStrokeColor = 'white'; 
-JXG.Options.slider.highline.strokeColor = 'white';
-JXG.Options.slider.highline.highlightStrokeColor = 'white'; 
-JXG.Options.slider.ticks.strokeColor = 'white';
-JXG.Options.slider.ticks.highlightStrokeColor = 'white'; 
+JXG.Options.line.strokeColor = 'black';
+JXG.Options.axis.strokeColor = 'black';
+JXG.Options.line.highlightStrokeColor = 'black';
+JXG.Options.axis.highlightStrokeColor = 'black';
+JXG.Options.slider.baseline.strokeColor = 'black';
+JXG.Options.slider.baseline.highlightStrokeColor = 'black'; 
+JXG.Options.slider.highline.strokeColor = 'black';
+JXG.Options.slider.highline.highlightStrokeColor = 'black'; 
+JXG.Options.slider.ticks.strokeColor = 'black';
+JXG.Options.slider.ticks.highlightStrokeColor = 'black'; 
 var b = JXG.JSXGraph.initBoard('boxTax', {boundingbox: [-0.2, 1.1, 1.1, -0.2], axis: true,showNavigation:false,showCopyright:false});
 
     u = b.create('slider', [
@@ -50,12 +50,12 @@ var b = JXG.JSXGraph.initBoard('boxTax', {boundingbox: [-0.2, 1.1, 1.1, -0.2], a
         [0, 0, 1]
     ], {
         name: '&epsilon;',
-        label:{strokeColor: 'white'},
-        fillColor: 'white'
+        label:{strokeColor: 'black'},
+        fillColor: 'black'
     });
     ut = b.create('text', [0.5, -0.1, "Tax"], {
         fixed: true,
-      strokeColor:'white'
+      strokeColor:'black'
     });
 
 
@@ -121,7 +121,7 @@ var SDY = b.create('point',[0,function(){ return (SD.Y());}],{size:0,strokeColor
 var SD0S=b.create('segment',[SD,SDY],{strokeColor:helperColor,dash:2})
 
 var SDTS = b.create('intersection', [SupplyTS, Demand, 0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'SDTS'});
-var SDTS0=b.create('point',[function(){ return (SDTS.X());},0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:true,name:'q_{produced}', label:{strokeColor:'white'}});
+var SDTS0=b.create('point',[function(){ return (SDTS.X());},0],{size:0,strokeColor:false,fillColor:helperColor,withLabel:true,name:'q_{produced}', label:{strokeColor:'black'}});
 var QstarLine=b.create('segment',[SDTS,SDTS0],{strokeColor:helperColor,dash:2})
 var pProd=b.create('intersection',[QstarLine,Supply],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd'});
 var pProd0=b.create('point',[0,function(){ return (pProd.Y());}],{size:0,strokeColor:false,fillColor:helperColor,withLabel:helperLabel,name:'pProd0'});
