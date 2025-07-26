@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Context Menu</title>
+  <style>
+    body { font-family: sans-serif; }
+    #my-target {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 200px;
+      background-color: #f0f0f0;
+      border: 2px dashed #ccc;
+      user-select: none;
+    }
+    .custom-menu {
+      position: fixed;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 5px 0;
+      margin: 0;
+      list-style: none;
+      z-index: 1000;
+    }
+    .menu-item { padding: 8px 15px; cursor: pointer; }
+    .menu-item:hover { background-color: #007bff; color: white; }
+    .menu-item-separator { height: 1px; background-color: #eee; margin: 4px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>Custom Context Menu Example</h1>
+  <p>Right-click inside the dashed box.</p>
+
+  <div id="my-target">Right-click me!</div>
+
+  <ul id="custom-menu" class="custom-menu">
+    <li class="menu-item">Copy</li>
+    <li class="menu-item">Paste</li>
+    <li class="menu-item-separator"></li>
+    <li class="menu-item">Delete</li>
+  </ul>
+
+  <script>
+    const targetElement = document.getElementById('my-target');
+    const menu = document.getElementById('custom-menu');
+
+    // 1. Listen for the 'contextmenu' event
+    targetElement.addEventListener('contextmenu', (event) => {
+      // 2. Prevent the default browser menu
+      event.preventDefault();
+
+      // 3. Position the custom menu
+      // Basic positioning:
+      menu.style.top = `${event.clientY}px`;
+      menu.style.left = `${event.clientX}px`;
+      
+      // Optional: Add boundary detection to prevent the menu from going off-screen
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const menuWidth = menu.offsetWidth;
+      const menuHeight = menu.offsetHeight;
+
+      if ((event.clientX + menuWidth) > windowWidth) {
+        menu.style.left = `${windowWidth - menuWidth}px`;
+      }
+      if ((event.clientY + menuHeight) > windowHeight) {
+        menu.style.top = `${windowHeight - menuHeight}px`;
+      }
+
+      // 4. Show the menu
+      menu.style.display = 'block';
+    });
+
+    // 5. Hide the menu when clicking anywhere else
+    window.addEventListener('click', () => {
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      }
+    });
+
+    // Optional: Add click handlers to your menu items
+    menu.addEventListener('click', (e) => {
+      if (e.target.matches('.menu-item')) {
+        console.log(`Action: ${e.target.textContent}`);
+      }
+    });
+  </script>
+
+</body>
+</html>
