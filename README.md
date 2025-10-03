@@ -18,7 +18,7 @@ flowchart LR
   %% Servo
   subgraph SERVO[Hobby Servo]
     SV[Signal]
-    S5[Vcc 5V]
+    S5[5V]
     SG[GND]
   end
 
@@ -26,18 +26,16 @@ flowchart LR
   subgraph ESP[ESP8266 D1 Mini]
     E3[3V3]
     EG[GND]
-    D2[D2 / GPIO4  (Servo PWM)]
-    D5[D5 / GPIO14 (1-Wire)]
+    D2[D2 GPIO4 Servo PWM]
+    D5[D5 GPIO14 OneWire]
   end
 
   %% DS18B20 bus (about 10 sensors)
-  subgraph BUS[DS18B20 Sensors (x10)]
+  subgraph BUS[DS18B20 Sensors x10]
     B1[Data]
-    Bp1[Vdd 3.3V]
-    Bg1[GND]
     B2[Data]
-    Bp2[Vdd 3.3V]
-    Bg2[GND]
+    Bp[Vdd 3.3V]
+    Bg[GND]
   end
 
   %% Servo power (separate 5V rail)
@@ -45,10 +43,8 @@ flowchart LR
   G0 --> SG
 
   %% Bulk capacitor near servo (470-1000uF, >=10V)
-  subgraph CAP[Electrolytic Capacitor]
-    Cpos[Cap +]
-    Cneg[Cap -]
-  end
+  Cpos((Cap +))
+  Cneg((Cap -))
   V5 --- Cpos
   G0 --- Cneg
 
@@ -56,22 +52,21 @@ flowchart LR
   G0 --- EG
 
   %% ESP power (5V -> 3.3V regulator)
-  V5 -. to 3.3V regulator .-> E3
+  V5 -.-> E3
 
   %% Servo control wire
   D2 --> SV
 
   %% 1-Wire bus and pull-up
+  PU[4k7 Pull-up]
   D5 --- B1
   D5 --- B2
-  E3 --- PU[4k7 Pull-up]
+  E3 --- PU
   PU --- D5
 
   %% DS18B20 normal powered (not parasite)
-  E3 --- Bp1
-  E3 --- Bp2
-  EG --- Bg1
-  EG --- Bg2
+  E3 --- Bp
+  EG --- Bg
 
 ```
 
