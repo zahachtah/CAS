@@ -9,66 +9,70 @@ Minimal Mistakes is a flexible two-column Jekyll theme. Perfect for hosting your
 
 ```mermaid
 flowchart LR
+  %% Power
   subgraph PWR[5V Power Supply]
     V5[+5V]
     G0[GND]
   end
 
+  %% Servo
   subgraph SERVO[Hobby Servo]
     SV[Signal]
     S5[Vcc 5V]
     SG[GND]
   end
 
+  %% ESP8266 board (D1 Mini)
   subgraph ESP[ESP8266 D1 Mini]
     E3[3V3]
-    EG[G]
-    D2[D2 / GPIO4  ← Servo Signal]
-    D5[D5 / GPIO14 ← 1-Wire Bus]
+    EG[GND]
+    D2[D2 / GPIO4  (Servo PWM)]
+    D5[D5 / GPIO14 (1-Wire)]
   end
 
-  subgraph BUS[DS18B20 Sensors (x~10)]
+  %% DS18B20 bus (about 10 sensors)
+  subgraph BUS[DS18B20 Sensors (x10)]
     B1[Data]
     Bp1[Vdd 3.3V]
     Bg1[GND]
     B2[Data]
     Bp2[Vdd 3.3V]
     Bg2[GND]
-    %% repeat as needed...
   end
 
   %% Servo power (separate 5V rail)
   V5 --> S5
   G0 --> SG
 
-  %% Bulk capacitor near servo (470–1000µF, ≥10V)
+  %% Bulk capacitor near servo (470-1000uF, >=10V)
   subgraph CAP[Electrolytic Capacitor]
-    C+[+]
-    C-[-]
+    Cpos[Cap +]
+    Cneg[Cap -]
   end
-  V5 --- C+
-  G0 --- C-
+  V5 --- Cpos
+  G0 --- Cneg
 
   %% Common ground
   G0 --- EG
 
-  %% ESP power (from same 5V via onboard/extern regulator)
-  V5 -.to 3.3V regulator.-> E3
+  %% ESP power (5V -> 3.3V regulator)
+  V5 -. to 3.3V regulator .-> E3
 
-  %% Servo control
+  %% Servo control wire
   D2 --> SV
 
   %% 1-Wire bus and pull-up
   D5 --- B1
   D5 --- B2
-  E3 --- PU[[4.7 kΩ Pull-up]]
+  E3 --- PU[4k7 Pull-up]
   PU --- D5
 
-  %% DS18B20 power & ground (normal powered, not parasite)
+  %% DS18B20 normal powered (not parasite)
   E3 --- Bp1
   E3 --- Bp2
-  EG  --- Bg1
-  EG  --- Bg2
+  EG --- Bg1
+  EG --- Bg2
+
 ```
 
 
