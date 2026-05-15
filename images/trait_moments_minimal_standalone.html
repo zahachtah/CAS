@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trait Moments Minimal Standalone</title>
+        <style>
+            :root {
+                --ink: #1a1a1a;
+                --muted: #666;
+            }
+
+            html,
+            body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: #fff;
+                color: var(--ink);
+                font-family:
+                    "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+                    Palatino, Georgia, serif;
+            }
+
+            .sim-shell {
+                position: relative;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            .sim-canvas {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                box-sizing: border-box;
+            }
+
+            .sim-meta {
+                display: none;
+            }
+
+            .sim-control {
+                position: absolute;
+                top: 10px;
+                right: 44px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 0.2em;
+                font-size: 0.54em;
+                color: var(--muted);
+                user-select: none;
+                z-index: 2;
+            }
+
+            .sim-control div {
+                background: rgba(255, 255, 255, 0.88);
+                padding: 0.1em 0.35em;
+            }
+
+            .sim-equations {
+                position: absolute;
+                top: 10px;
+                left: 2px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2em;
+                font-size: 0.68em;
+                color: #222;
+                user-select: none;
+                z-index: 3;
+                pointer-events: none;
+            }
+
+            .sim-equations div {
+                display: none;
+                background: rgba(255, 255, 255, 0.88);
+                padding: 0.18em 0.45em;
+                white-space: normal;
+            }
+
+            .help-hint {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                z-index: 4;
+                font-size: 11px;
+                color: rgba(70, 70, 70, 0.8);
+                background: rgba(255, 255, 255, 0.82);
+                padding: 3px 6px;
+                letter-spacing: 0.01em;
+                user-select: none;
+            }
+
+            .sim-help {
+                position: absolute;
+                left: 12px;
+                bottom: 34px;
+                z-index: 5;
+                display: none;
+                width: min(420px, calc(100vw - 24px));
+                max-height: min(72vh, 720px);
+                overflow: auto;
+                background: rgba(255, 255, 255, 0.95);
+                color: #222;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 10px 12px;
+                box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            }
+
+            .sim-help.show {
+                display: block;
+            }
+
+            .sim-help-title {
+                font-size: 13px;
+                font-weight: 600;
+                margin: 0 0 8px;
+            }
+
+            .sim-help-grid {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 4px 10px;
+                font-size: 12px;
+                line-height: 1.35;
+            }
+
+            .sim-help-key {
+                font-family:
+                    "SF Mono", "JetBrains Mono", "IBM Plex Mono", "Menlo",
+                    monospace;
+                color: #111;
+                white-space: nowrap;
+            }
+
+            .sim-help-desc {
+                color: #333;
+            }
+        </style>
+        <script>
+            window.MathJax = {
+                svg: { fontCache: "global" },
+            };
+        </script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        ></script>
+    </head>
+    <body>
+        <div class="sim-shell live-sim-panel live-sim-slide">
+            <div class="sim-equations">
+                <div id="eq-5">\[\dot C_i=\Big[r\left(1-\frac{(z_{\mathrm{opt}}(t)-z_i)^2}{w}\right)\left(1-\frac{(1-a)C_i+aC_T}{K}\right)-m\Big]C_i+I_i\]</div>
+                <div id="eq-6">\[L(t)=z_{\mathrm{opt}}(t)-M1(t)\]</div>
+                <div id="eq-7">\[\dot M_j=\sum_{n\ge 0}f_n\Big(M_{n+j}-M_nM_j-jM_{j-1}M_{n+1}\Big)\]</div>
+                <div id="eq-8">\[\dot M_2\approx f_1M_3+f_2\big(M_4-M_2^2\big)\]</div>
+                <div id="eq-9">\[X(t)=A\frac{t^2}{k^2+t^2}\]</div>
+            </div>
+            <div class="sim-control">
+                <div id="state-change" style="display:none;">change</div>
+                <div id="state-noise" style="display:none;">noise</div>
+                <div id="state-pulse" style="display:none;">pulse</div>
+                <div id="state-sine" style="display:none;">sine</div>
+                <div id="state-manual" style="display:none;">manual</div>
+                <div id="state-peaks" style="display:none;">peaks</div>
+                <div id="state-m0" style="display:none; color:#7f8c8d;">biomass 0.00%</div>
+                <div id="state-m1" style="display:none; color:#000;">Lag 0.00</div>
+                <div id="state-m2" style="display:none; color:#d32f2f;">M2 0.00</div>
+                <div id="state-m3" style="display:none; color:#8e44ad;">M3 0.00</div>
+                <div id="state-m4" style="display:none; color:#c97a00;">M4 0.00</div>
+                <div id="state-log" style="display:none;">log</div>
+                <div id="state-q" style="display:none;">growth</div>
+                <div id="state-r" style="display:none;">r x0.5</div>
+                <div id="state-a" style="display:none;">comp 1.0</div>
+                <div id="state-t" style="display:none;">auto y</div>
+                <div id="state-slow" style="display:none;">slow</div>
+                <div id="state-immigration" style="display:none;">no immigration</div>
+            </div>
+            <div class="help-hint">press h for help</div>
+            <div id="sim-help" class="sim-help">
+                <div class="sim-help-title">Keys</div>
+                <div class="sim-help-grid">
+                    <div class="sim-help-key">h</div><div class="sim-help-desc">toggle help</div>
+                    <div class="sim-help-key">Space</div><div class="sim-help-desc">toggle slow mode</div>
+                    <div class="sim-help-key">n</div><div class="sim-help-desc">toggle reddened noise</div>
+                    <div class="sim-help-key">s</div><div class="sim-help-desc">cycle sine forcing speed</div>
+                    <div class="sim-help-key">m</div><div class="sim-help-desc">toggle manual center; move mouse to place it</div>
+                    <div class="sim-help-key">c</div><div class="sim-help-desc">cycle climate drift: off, x1, x2, x4</div>
+                    <div class="sim-help-key">x</div><div class="sim-help-desc">hold, then release to trigger a climate pulse</div>
+                    <div class="sim-help-key">i</div><div class="sim-help-desc">cycle immigration mode</div>
+                    <div class="sim-help-key">a</div><div class="sim-help-desc">cycle competition mixing coefficient</div>
+                    <div class="sim-help-key">r</div><div class="sim-help-desc">scale demographic rates by 0.5</div>
+                    <div class="sim-help-key">t</div><div class="sim-help-desc">toggle auto y scaling</div>
+                    <div class="sim-help-key">l</div><div class="sim-help-desc">toggle log y view</div>
+                    <div class="sim-help-key">q</div><div class="sim-help-desc">toggle growth curve</div>
+                    <div class="sim-help-key">y</div><div class="sim-help-desc">toggle peak markers</div>
+                    <div class="sim-help-key">0-4</div><div class="sim-help-desc">toggle M0 to M4 indicators</div>
+                    <div class="sim-help-key">5-9</div><div class="sim-help-desc">toggle equation overlays</div>
+                    <div class="sim-help-key">+ / -</div><div class="sim-help-desc">grow or shrink overlay fonts</div>
+                </div>
+            </div>
+            <canvas id="trait-sim-canvas" class="sim-canvas"></canvas>
+            <div class="sim-meta">
+                <span id="trait-sim-status"></span>
+            </div>
+        </div>
+
+        <script>
+            (() => {
+                const canvas = document.getElementById("trait-sim-canvas");
+                const status = document.getElementById("trait-sim-status");
+                const simWrap = document.querySelector(".sim-shell");
+                const helpPanel = document.getElementById("sim-help");
+                if (!canvas || !status || !simWrap) return;
+
+                const stateLabels = {
+                    change: document.getElementById("state-change"),
+                    noise: document.getElementById("state-noise"),
+                    pulse: document.getElementById("state-pulse"),
+                    sine: document.getElementById("state-sine"),
+                    manual: document.getElementById("state-manual"),
+                    peaks: document.getElementById("state-peaks"),
+                    m0: document.getElementById("state-m0"),
+                    m1: document.getElementById("state-m1"),
+                    m2: document.getElementById("state-m2"),
+                    m3: document.getElementById("state-m3"),
+                    m4: document.getElementById("state-m4"),
+                    log: document.getElementById("state-log"),
+                    q: document.getElementById("state-q"),
+                    r: document.getElementById("state-r"),
+                    a: document.getElementById("state-a"),
+                    t: document.getElementById("state-t"),
+                    slow: document.getElementById("state-slow"),
+                    immigration: document.getElementById("state-immigration"),
+                };
+                const equationLabels = {
+                    5: document.getElementById("eq-5"),
+                    6: document.getElementById("eq-6"),
+                    7: document.getElementById("eq-7"),
+                    8: document.getElementById("eq-8"),
+                    9: document.getElementById("eq-9"),
+                };
+                const simControl = document.querySelector(".sim-control");
+                const simEquations = document.querySelector(".sim-equations");
+
+                const ctx = canvas.getContext("2d");
+                let width = 1200;
+                let height = 820;
+
+                const state = {
+                    bins: 200,
+                    zmin: 0,
+                    zmax: 40,
+                    dt: 0.045,
+                    substeps: 3,
+                    traitMin: 0,
+                    traitMax: 40,
+                    r0Base: 1.12,
+                    mBase: 0.14,
+                    growthSlowOn: false,
+                    w: 35.714285714285715,
+                    a: 1.0,
+                    imigRate: 0.006,
+                    immigrationMode: 2,
+                    spatialInputSd: 1.0,
+                    beta: 2.8,
+                    thetaMean: 20,
+                    thetaSd: 4.0,
+                    noiseOn: true,
+                    climateDriftPerStep: 0.005,
+                    climateMode: 0,
+                    pulseActive: false,
+                    pulseStartTime: 0,
+                    pulseHalfTime: 5.0,
+                    pulseAmplitude: 0,
+                    pulseKeyDownAt: null,
+                    slowMode: false,
+                    sinusoidMode: 0,
+                    sinusoidAmp: 10.0,
+                    sinusoidPeriod: 18.0,
+                    manualDriverOn: false,
+                    manualTheta: 20,
+                    multipeakOn: false,
+                    aDirection: -1,
+                    momentIndicators: [false, false, false, false, false],
+                    equationIndicators: [false, false, false, false, false],
+                    autoScaleOn: false,
+                    fixedHeightRef: 1,
+                    logScaleOn: false,
+                    showGrowthCurve: false,
+                    overlayScale: 1,
+                    helpOpen: false,
+                    logFloorRatio: 1e-6,
+                    time: 0,
+                    frame: 0,
+                    running: true,
+                };
+
+                const immigrationModes = [
+                    { label: "no immigration", short: "none" },
+                    { label: "constant across z", short: "constant" },
+                    { label: "local + spatial broadening", short: "broadened" },
+                ];
+
+                function makeRng(seed) {
+                    let s = seed >>> 0;
+                    return () => {
+                        s = (1664525 * s + 1013904223) >>> 0;
+                        return s / 4294967296;
+                    };
+                }
+
+                function gaussianPdf(x, mu, sigma) {
+                    const u = (x - mu) / sigma;
+                    return Math.exp(-0.5 * u * u) / (sigma * Math.sqrt(2 * Math.PI));
+                }
+
+                function trapzUniform(y, dx) {
+                    let sum = 0;
+                    for (let i = 0; i < y.length - 1; i++) sum += 0.5 * (y[i] + y[i + 1]);
+                    return sum * dx;
+                }
+
+                function normalizeProfile(profile) {
+                    const norm = trapzUniform(profile, state.dz);
+                    if (norm <= 0) return;
+                    for (let i = 0; i < profile.length; i++) profile[i] /= norm;
+                }
+
+                function updateImplementedImmigrationProfile(mu, M2) {
+                    const sigma = Math.sqrt(
+                        Math.max(M2, 1e-9) + state.spatialInputSd * state.spatialInputSd,
+                    );
+                    for (let i = 0; i < state.bins; i++) {
+                        state.implementedImig[i] = gaussianPdf(state.z[i], mu, sigma);
+                    }
+                    normalizeProfile(state.implementedImig);
+                }
+
+                function currentImmigrationProfile(mu, M2) {
+                    if (state.immigrationMode === 0) return null;
+                    if (state.immigrationMode === 1) return state.constantImig;
+                    updateImplementedImmigrationProfile(mu, M2);
+                    return state.implementedImig;
+                }
+
+                function buildDriverSpectrum() {
+                    const rng = makeRng(11);
+                    const nModes = 120;
+                    const driverPeriod = 140;
+                    const amplitudes = new Float64Array(nModes);
+                    const phases = new Float64Array(nModes);
+                    for (let q = 1; q <= nModes; q++) {
+                        amplitudes[q - 1] = Math.pow(q, -state.beta / 2);
+                        phases[q - 1] = 2 * Math.PI * rng();
+                    }
+
+                    let mean = 0;
+                    let sumsq = 0;
+                    const nSamples = 4000;
+                    for (let k = 0; k < nSamples; k++) {
+                        const t = k * state.dt;
+                        let y = 0;
+                        for (let q = 1; q <= nModes; q++) {
+                            y +=
+                                amplitudes[q - 1] *
+                                Math.sin((2 * Math.PI * q * t) / driverPeriod + phases[q - 1]);
+                        }
+                        mean += y;
+                        sumsq += y * y;
+                    }
+                    mean /= nSamples;
+                    const variance = Math.max(sumsq / nSamples - mean * mean, 1e-12);
+                    return {
+                        nModes,
+                        driverPeriod,
+                        amplitudes,
+                        phases,
+                        mean,
+                        sd: Math.sqrt(variance),
+                    };
+                }
+
+                function driverAt(time) {
+                    let y = 0;
+                    for (let q = 1; q <= state.driver.nModes; q++) {
+                        y +=
+                            state.driver.amplitudes[q - 1] *
+                            Math.sin(
+                                (2 * Math.PI * q * time) / state.driver.driverPeriod +
+                                    state.driver.phases[q - 1],
+                            );
+                    }
+                    return state.thetaMean + (state.thetaSd * (y - state.driver.mean)) / state.driver.sd;
+                }
+
+                function setupSimulation() {
+                    state.z = new Float64Array(state.bins);
+                    state.C = new Float64Array(state.bins);
+                    state.dCdt = new Float64Array(state.bins);
+                    state.constantImig = new Float64Array(state.bins);
+                    state.implementedImig = new Float64Array(state.bins);
+                    state.initialImig = new Float64Array(state.bins);
+                    state.driver = buildDriverSpectrum();
+
+                    const dz = (state.zmax - state.zmin) / (state.bins - 1);
+                    state.dz = dz;
+
+                    for (let i = 0; i < state.bins; i++) {
+                        const z = state.zmin + i * dz;
+                        state.z[i] = z;
+                        state.constantImig[i] = 1;
+                        state.initialImig[i] = gaussianPdf(z, 20, 5.5);
+                    }
+                    normalizeProfile(state.constantImig);
+                    normalizeProfile(state.initialImig);
+                    updateImplementedImmigrationProfile(state.thetaMean, 5.5 * 5.5);
+                    for (let i = 0; i < state.bins; i++) {
+                        state.C[i] =
+                            0.9 * state.initialImig[i] +
+                            0.015 * gaussianPdf(state.z[i], 18, 1.6);
+                    }
+
+                    state.lastTheta = state.thetaMean;
+                    state.lastMu = state.thetaMean;
+                    state.prevMu = state.thetaMean;
+                    state.lastMuDot = 0;
+                    state.lastVariance = 0;
+                    state.lastMean = state.thetaMean;
+                    state.lastSkewness = 0;
+                    state.lastKurtosis = 0;
+                    state.lastCT = 0;
+                }
+
+                function moments() {
+                    const CT = trapzUniform(state.C, state.dz);
+                    let muNumer = 0;
+                    for (let i = 0; i < state.bins; i++) muNumer += state.z[i] * state.C[i];
+                    const mu = (muNumer * state.dz) / CT;
+                    let m2Numer = 0;
+                    let m3Numer = 0;
+                    let m4Numer = 0;
+                    for (let i = 0; i < state.bins; i++) {
+                        const x = state.z[i] - mu;
+                        m2Numer += x * x * state.C[i];
+                        m3Numer += x * x * x * state.C[i];
+                        m4Numer += x * x * x * x * state.C[i];
+                    }
+                    const M2 = (m2Numer * state.dz) / CT;
+                    const M3 = (m3Numer * state.dz) / CT;
+                    const M4 = (m4Numer * state.dz) / CT;
+                    return { CT, mu, M2, M3, M4 };
+                }
+
+                function applyClimateDrift() {
+                    let drift = 0;
+                    if (state.climateMode > 0) {
+                        const factor = state.climateMode === 1 ? 1 : state.climateMode === 2 ? 2 : 4;
+                        drift += factor * state.climateDriftPerStep;
+                    }
+                    if (state.pulseActive) {
+                        const tau = state.time - state.pulseStartTime;
+                        if (tau >= 0) {
+                            const k2 = state.pulseHalfTime * state.pulseHalfTime;
+                            const x0 = state.pulseAmplitude * (tau * tau) / (k2 + tau * tau);
+                            const tau1 = tau + state.dt;
+                            const x1 = state.pulseAmplitude * (tau1 * tau1) / (k2 + tau1 * tau1);
+                            drift += x1 - x0;
+                            if (tau > 8 * state.pulseHalfTime) {
+                                state.pulseActive = false;
+                            }
+                        }
+                    }
+                    if (drift <= 0) return;
+                    for (let i = 0; i < state.bins; i++) state.z[i] -= drift;
+                    while (state.z[0] < state.zmin) {
+                        for (let i = 0; i < state.bins - 1; i++) {
+                            state.z[i] = state.z[i + 1];
+                            state.C[i] = state.C[i + 1];
+                            state.dCdt[i] = state.dCdt[i + 1];
+                        }
+                        state.z[state.bins - 1] = state.zmax;
+                        state.C[state.bins - 1] = 0;
+                        const { mu, M2 } = moments();
+                        const immigrationProfile = currentImmigrationProfile(mu, M2);
+                        state.C[state.bins - 1] = immigrationProfile
+                            ? state.imigRate * immigrationProfile[state.bins - 1]
+                            : 0;
+                        state.dCdt[state.bins - 1] = 0;
+                    }
+                }
+
+                function startPulse(amplitude) {
+                    state.pulseActive = true;
+                    state.pulseStartTime = state.time;
+                    state.pulseAmplitude = amplitude;
+                }
+
+                function updateModel() {
+                    for (let step = 0; step < state.substeps; step++) {
+                        const thetaCenter = state.manualDriverOn
+                            ? state.manualTheta
+                            : state.thetaMean;
+                        let theta =
+                            thetaCenter +
+                            (state.noiseOn ? driverAt(state.time) - state.thetaMean : 0);
+                        if (state.sinusoidMode > 0) {
+                            const period =
+                                state.sinusoidMode === 1
+                                    ? state.sinusoidPeriod
+                                    : state.sinusoidMode === 2
+                                      ? 2 * state.sinusoidPeriod
+                                      : 4 * state.sinusoidPeriod;
+                            theta +=
+                                state.sinusoidAmp *
+                                Math.sin((2 * Math.PI * state.time) / period);
+                        }
+                        const { CT, mu, M2, M3, M4 } = moments();
+                        const immigrationProfile = currentImmigrationProfile(mu, M2);
+                        const next = new Float64Array(state.bins);
+                        for (let i = 0; i < state.bins; i++) {
+                            const scale = state.growthSlowOn ? 0.5 : 1.0;
+                            const effectiveR0 = scale * state.r0Base;
+                            const effectiveM = scale * state.mBase;
+                            const crowding = (1 - state.a) * state.C[i] + state.a * CT;
+                            const growth =
+                                effectiveR0 *
+                                    (1 -
+                                        ((state.z[i] - theta) * (state.z[i] - theta)) /
+                                            state.w) *
+                                    (1 - crowding) -
+                                effectiveM;
+                            const dC =
+                                growth * state.C[i] +
+                                (immigrationProfile ? state.imigRate * immigrationProfile[i] : 0);
+                            state.dCdt[i] = dC;
+                            next[i] = Math.max(0, state.C[i] + state.dt * dC);
+                        }
+                        state.C = next;
+                        if (state.climateMode > 0 || state.pulseActive) applyClimateDrift();
+                        state.time += state.dt;
+                        state.lastTheta = theta;
+                        state.prevMu = state.lastMu;
+                        state.lastMu = mu;
+                        state.lastMean = mu;
+                        state.lastMuDot = (state.lastMu - state.prevMu) / state.dt;
+                        state.lastVariance = M2;
+                        state.lastSkewness = M2 > 0 ? M3 / Math.pow(M2, 1.5) : 0;
+                        state.lastKurtosis = M2 > 0 ? M4 / (M2 * M2) : 0;
+                        state.lastCT = CT;
+                    }
+                    state.frame += 1;
+                }
+
+                function currentMaxAbundance() {
+                    let maxVal = 0;
+                    for (let i = 0; i < state.C.length; i++) maxVal = Math.max(maxVal, state.C[i]);
+                    return Math.max(maxVal, 1e-9);
+                }
+
+                function colorFromRate(rate, scale) {
+                    const x = Math.max(-1, Math.min(1, rate / scale));
+                    if (x >= 0) {
+                        const t = x;
+                        const r = Math.round(150 - 104 * t);
+                        const g = Math.round(150 + 46 * t);
+                        const b = Math.round(150 - 63 * t);
+                        return `rgb(${r},${g},${b})`;
+                    }
+                    const t = -x;
+                    const r = Math.round(150 - 103 * t);
+                    const g = Math.round(150 - 39 * t);
+                    const b = Math.round(150 + 87 * t);
+                    return `rgb(${r},${g},${b})`;
+                }
+
+                function findDoublePeakIndices() {
+                    const edgeCutoff = 1.6;
+                    const minPeakSeparation = 0.8;
+                    const peaks = [];
+                    for (let i = 1; i < state.bins - 1; i++) {
+                        const c = state.C[i];
+                        if (c > state.C[i - 1] && c > state.C[i + 1]) peaks.push({ i, value: c });
+                    }
+                    if (peaks.length < 2) return null;
+                    peaks.sort((a, b) => b.value - a.value);
+                    const selected = [];
+                    for (const peak of peaks) {
+                        if (state.climateMode > 0 && state.immigrationMode === 0 && state.z[peak.i] <= edgeCutoff) continue;
+                        if (
+                            selected.length > 0 &&
+                            Math.abs(state.z[peak.i] - state.z[selected[0]]) < minPeakSeparation
+                        ) continue;
+                        selected.push(peak.i);
+                        if (selected.length === 2) break;
+                    }
+                    return selected.length === 2 ? selected.sort((a, b) => a - b) : null;
+                }
+
+                function drawDistributionPanel(x0, y0, w, h) {
+                    const maxVal = state.autoScaleOn ? currentMaxAbundance() : Math.max(state.fixedHeightRef, 1e-9);
+                    let maxRate = 0;
+                    for (let i = 0; i < state.bins; i++) maxRate = Math.max(maxRate, Math.abs(state.dCdt[i]));
+                    maxRate = Math.max(maxRate, 1e-9);
+
+                    const barW = (state.dz / (state.traitMax - state.traitMin)) * w;
+                    ctx.save();
+                    for (let i = 0; i < state.bins; i++) {
+                        const x =
+                            x0 +
+                            ((state.z[i] - state.traitMin) / (state.traitMax - state.traitMin)) * w -
+                            0.5 * barW;
+                        const ratio = state.C[i] / maxVal;
+                        const scaledValue = state.logScaleOn
+                            ? ratio <= state.logFloorRatio
+                                ? 0
+                                : (Math.log10(ratio) - Math.log10(state.logFloorRatio)) /
+                                  (0 - Math.log10(state.logFloorRatio))
+                            : ratio;
+                        const barH = scaledValue * (h * 0.92);
+                        const y = y0 + h - barH;
+                        ctx.fillStyle = colorFromRate(state.dCdt[i], maxRate);
+                        ctx.fillRect(x, y, Math.max(barW - 1, 1), barH);
+                    }
+                    ctx.restore();
+
+                    if (state.showGrowthCurve) {
+                        const scale = state.growthSlowOn ? 0.5 : 1.0;
+                        const effectiveR0 = scale * state.r0Base;
+                        const effectiveM = scale * state.mBase;
+                        const growthTop = y0 + 96;
+                        const growthBottom = y0 + h;
+                        const growthHeight = Math.max(growthBottom - growthTop, 1);
+                        const fixedGrowthMax = Math.max(effectiveR0 - effectiveM, 1e-9);
+
+                        ctx.save();
+                        ctx.strokeStyle = "rgba(196, 102, 0, 0.85)";
+                        ctx.lineWidth = 6;
+                        ctx.setLineDash([]);
+                        let segmentOpen = false;
+                        for (let i = 0; i < state.bins; i++) {
+                            const trait = state.z[i];
+                            const crowding =
+                                (1 - state.a) * state.C[i] +
+                                state.a * state.lastCT;
+                            const growth =
+                                effectiveR0 *
+                                    (1 - ((trait - state.lastTheta) * (trait - state.lastTheta)) / state.w) *
+                                    (1 - crowding) -
+                                effectiveM;
+                            const x =
+                                x0 +
+                                ((trait - state.traitMin) / (state.traitMax - state.traitMin)) * w;
+                            if (growth > 0) {
+                                const y = growthBottom - (growth / fixedGrowthMax) * growthHeight;
+                                if (!segmentOpen) {
+                                    ctx.beginPath();
+                                    ctx.moveTo(x, y);
+                                    segmentOpen = true;
+                                } else {
+                                    ctx.lineTo(x, y);
+                                }
+                            } else if (segmentOpen) {
+                                ctx.stroke();
+                                segmentOpen = false;
+                            }
+                        }
+                        if (segmentOpen) ctx.stroke();
+                        ctx.restore();
+                    }
+
+                    const drawMarker = (traitValue, color, dash = []) => {
+                        const x = x0 + ((traitValue - state.traitMin) / (state.traitMax - state.traitMin)) * w;
+                        ctx.save();
+                        ctx.strokeStyle = color;
+                        ctx.setLineDash(dash);
+                        ctx.lineWidth = 6;
+                        ctx.beginPath();
+                        ctx.moveTo(x, y0 + 80);
+                        ctx.lineTo(x, y0 + h);
+                        ctx.stroke();
+                        ctx.restore();
+                    };
+
+                    drawMarker(state.lastTheta, "#2e8b57");
+                    drawMarker(state.lastMu, "#000", [8, 7]);
+
+                    const thetaX =
+                        x0 +
+                        ((state.lastTheta - state.traitMin) / (state.traitMax - state.traitMin)) * w;
+                    const muX =
+                        x0 +
+                        ((state.lastMu - state.traitMin) / (state.traitMax - state.traitMin)) * w;
+                    const centerX = x0 + 0.5 * w;
+                    const biomassScale = state.lastCT;
+                    const biomassLen = (h - 80) * biomassScale;
+                    const skewScale = Math.max(-1, Math.min(1, state.lastSkewness / 2));
+                    const skewLen = 0.18 * w * Math.abs(skewScale);
+                    const kurtScale = Math.max(0, state.lastKurtosis / 6);
+                    const kurtLen = 0.22 * w * kurtScale;
+                    const varianceScale = state.lastVariance / 3;
+                    const varianceLen = w * 0.22 * varianceScale;
+
+                    if (state.momentIndicators[0]) {
+                        const biomassX = width - 12;
+                        ctx.save();
+                        ctx.strokeStyle = "#7f8c8d";
+                        ctx.lineWidth = 8;
+                        ctx.beginPath();
+                        ctx.moveTo(biomassX, y0 + h);
+                        ctx.lineTo(biomassX, y0 + h - Math.min(biomassLen, h - 80));
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                    if (state.momentIndicators[4]) {
+                        ctx.save();
+                        ctx.strokeStyle = "#c97a00";
+                        ctx.lineWidth = 8;
+                        ctx.beginPath();
+                        ctx.moveTo(centerX - 0.5 * kurtLen, y0 + 38);
+                        ctx.lineTo(centerX + 0.5 * kurtLen, y0 + 38);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                    if (state.momentIndicators[3]) {
+                        ctx.save();
+                        ctx.strokeStyle = "#8e44ad";
+                        ctx.lineWidth = 8;
+                        ctx.beginPath();
+                        ctx.moveTo(centerX, y0 + 52);
+                        ctx.lineTo(centerX + Math.sign(skewScale || 1) * skewLen, y0 + 52);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                    if (state.momentIndicators[2]) {
+                        ctx.save();
+                        ctx.strokeStyle = "#d32f2f";
+                        ctx.lineWidth = 8;
+                        ctx.beginPath();
+                        ctx.moveTo(centerX - 0.5 * varianceLen, y0 + 66);
+                        ctx.lineTo(centerX + 0.5 * varianceLen, y0 + 66);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                    if (state.momentIndicators[1]) {
+                        ctx.save();
+                        ctx.strokeStyle = "#000";
+                        ctx.lineWidth = 8;
+                        ctx.beginPath();
+                        ctx.moveTo(thetaX, y0 + 80);
+                        ctx.lineTo(muX, y0 + 80);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+
+                    const peakPair = state.multipeakOn ? findDoublePeakIndices() : null;
+                    if (peakPair) {
+                        ctx.save();
+                        ctx.strokeStyle = "#d32f2f";
+                        ctx.setLineDash([10, 8]);
+                        ctx.lineWidth = 6;
+                        for (const idx of peakPair) {
+                            const x =
+                                x0 +
+                                ((state.z[idx] - state.traitMin) / (state.traitMax - state.traitMin)) * w;
+                            ctx.beginPath();
+                            ctx.moveTo(x, y0);
+                            ctx.lineTo(x, y0 + h);
+                            ctx.stroke();
+                        }
+                        ctx.restore();
+                    }
+                }
+
+                function draw() {
+                    ctx.clearRect(0, 0, width, height);
+                    ctx.fillStyle = "#fff";
+                    ctx.fillRect(0, 0, width, height);
+
+                    const padX = width * 0.05;
+                    const padY = height * 0.06;
+                    drawDistributionPanel(
+                        padX,
+                        padY,
+                        width - 2 * padX,
+                        height - 2 * padY,
+                    );
+
+                    status.textContent = "";
+                    syncStateLabels();
+                }
+
+                function syncStateLabels() {
+                    if (stateLabels.change) stateLabels.change.style.display = state.climateMode > 0 ? "block" : "none";
+                    if (stateLabels.noise) stateLabels.noise.style.display = state.noiseOn ? "block" : "none";
+                    if (stateLabels.pulse) stateLabels.pulse.style.display = state.pulseActive ? "block" : "none";
+                    if (stateLabels.sine) stateLabels.sine.style.display = state.sinusoidMode > 0 ? "block" : "none";
+                    if (stateLabels.manual) stateLabels.manual.style.display = state.manualDriverOn ? "block" : "none";
+                    if (stateLabels.peaks) stateLabels.peaks.style.display = state.multipeakOn ? "block" : "none";
+                    if (stateLabels.m0) {
+                        const biomassPercent = 100 * state.lastCT;
+                        stateLabels.m0.style.display = state.momentIndicators[0] ? "block" : "none";
+                        stateLabels.m0.textContent = `biomass ${biomassPercent.toFixed(2)}%`;
+                    }
+                    if (stateLabels.m1) {
+                        const lag = state.lastTheta - state.lastMu;
+                        stateLabels.m1.style.display = state.momentIndicators[1] ? "block" : "none";
+                        stateLabels.m1.textContent = `Lag ${lag.toFixed(2)}`;
+                    }
+                    if (stateLabels.m2) {
+                        stateLabels.m2.style.display = state.momentIndicators[2] ? "block" : "none";
+                        stateLabels.m2.textContent = `M2 ${state.lastVariance.toFixed(2)}`;
+                    }
+                    if (stateLabels.m3) {
+                        stateLabels.m3.style.display = state.momentIndicators[3] ? "block" : "none";
+                        stateLabels.m3.textContent = `M3 ${state.lastSkewness.toFixed(2)}`;
+                    }
+                    if (stateLabels.m4) {
+                        stateLabels.m4.style.display = state.momentIndicators[4] ? "block" : "none";
+                        stateLabels.m4.textContent = `M4 ${state.lastKurtosis.toFixed(2)}`;
+                    }
+                    if (stateLabels.log) stateLabels.log.style.display = state.logScaleOn ? "block" : "none";
+                    if (stateLabels.q) stateLabels.q.style.display = state.showGrowthCurve ? "block" : "none";
+                    if (stateLabels.r) stateLabels.r.style.display = state.growthSlowOn ? "block" : "none";
+                    if (stateLabels.a) {
+                        stateLabels.a.style.display = state.a < 1.0 ? "block" : "none";
+                        stateLabels.a.textContent = `comp ${state.a.toFixed(1)}`;
+                    }
+                    if (stateLabels.t) stateLabels.t.style.display = state.autoScaleOn ? "block" : "none";
+                    if (stateLabels.slow) stateLabels.slow.style.display = state.slowMode ? "block" : "none";
+                    if (stateLabels.immigration) {
+                        const mode = immigrationModes[state.immigrationMode];
+                        stateLabels.immigration.style.display = "block";
+                        stateLabels.immigration.textContent = `immigration: ${mode.short}`;
+                    }
+                    for (let i = 5; i <= 9; i++) {
+                        if (equationLabels[i]) {
+                            equationLabels[i].style.display = state.equationIndicators[i - 5]
+                                ? "block"
+                                : "none";
+                        }
+                    }
+                    if (helpPanel) helpPanel.classList.toggle("show", state.helpOpen);
+                }
+
+                function resizeCanvas() {
+                    const rect = simWrap.getBoundingClientRect();
+                    const dpr = window.devicePixelRatio || 1;
+                    const nextWidth = Math.max(320, Math.round(rect.width * dpr));
+                    const nextHeight = Math.max(240, Math.round(rect.height * dpr));
+                    if (canvas.width !== nextWidth || canvas.height !== nextHeight) {
+                        canvas.width = nextWidth;
+                        canvas.height = nextHeight;
+                        width = nextWidth;
+                        height = nextHeight;
+                        ctx.setTransform(1, 0, 0, 1, 0, 0);
+                        draw();
+                    }
+                }
+
+                function typesetEquationOverlay() {
+                    if (window.MathJax && window.MathJax.typesetPromise) {
+                        window.MathJax.typesetPromise([
+                            document.querySelector(".sim-equations"),
+                        ]).catch(() => {});
+                    }
+                }
+
+                function applyOverlayScale() {
+                    if (simControl) simControl.style.fontSize = `${0.54 * state.overlayScale}em`;
+                    if (simEquations) simEquations.style.fontSize = `${0.68 * state.overlayScale}em`;
+                    typesetEquationOverlay();
+                }
+
+                function tick() {
+                    if (state.running) {
+                        if (state.slowMode) {
+                            if (state.frame % 4 === 0) updateModel();
+                        } else {
+                            updateModel();
+                        }
+                        draw();
+                    }
+                    requestAnimationFrame(tick);
+                }
+
+                canvas.addEventListener("mousemove", (event) => {
+                    if (!state.manualDriverOn) return;
+                    const rect = canvas.getBoundingClientRect();
+                    const frac = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+                    state.manualTheta = state.traitMin + frac * (state.traitMax - state.traitMin);
+                });
+
+                setupSimulation();
+                window.addEventListener("keydown", (event) => {
+                    const key = event.key;
+                    if (
+                        key === " " ||
+                        key === "Spacebar" ||
+                        key === "0" ||
+                        key === "1" ||
+                        key === "2" ||
+                        key === "3" ||
+                        key === "4" ||
+                        key === "5" ||
+                        key === "6" ||
+                        key === "7" ||
+                        key === "8" ||
+                        key === "9" ||
+                        key === "n" || key === "N" ||
+                        key === "i" || key === "I" ||
+                        key === "c" || key === "C" ||
+                        key === "a" || key === "A" ||
+                        key === "m" || key === "M" ||
+                        key === "r" || key === "R" ||
+                        key === "t" || key === "T" ||
+                        key === "+" || key === "=" ||
+                        key === "-" || key === "_" ||
+                        key === "q" || key === "Q" ||
+                        key === "y" || key === "Y" ||
+                        key === "l" || key === "L" ||
+                        key === "s" || key === "S" ||
+                        key === "x" || key === "X" ||
+                        key === "h" || key === "H"
+                    ) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    if ((key === "x" || key === "X") && !event.repeat) {
+                        state.pulseKeyDownAt = performance.now();
+                        return;
+                    }
+                    if (key === "h" || key === "H") {
+                        state.helpOpen = !state.helpOpen;
+                    } else if (key === "n" || key === "N") {
+                        state.noiseOn = !state.noiseOn;
+                    } else if (key === "0") {
+                        state.momentIndicators[0] = !state.momentIndicators[0];
+                    } else if (key === "1") {
+                        state.momentIndicators[1] = !state.momentIndicators[1];
+                    } else if (key === "2") {
+                        state.momentIndicators[2] = !state.momentIndicators[2];
+                    } else if (key === "3") {
+                        state.momentIndicators[3] = !state.momentIndicators[3];
+                    } else if (key === "4") {
+                        state.momentIndicators[4] = !state.momentIndicators[4];
+                    } else if (key === "5") {
+                        state.equationIndicators[0] = !state.equationIndicators[0];
+                    } else if (key === "6") {
+                        state.equationIndicators[1] = !state.equationIndicators[1];
+                    } else if (key === "7") {
+                        state.equationIndicators[2] = !state.equationIndicators[2];
+                    } else if (key === "8") {
+                        state.equationIndicators[3] = !state.equationIndicators[3];
+                    } else if (key === "9") {
+                        state.equationIndicators[4] = !state.equationIndicators[4];
+                    } else if (key === "i" || key === "I") {
+                        state.immigrationMode = (state.immigrationMode + 1) % immigrationModes.length;
+                    } else if (key === "c" || key === "C") {
+                        state.climateMode = (state.climateMode + 1) % 4;
+                    } else if (key === "a" || key === "A") {
+                        let nextA = +(state.a + 0.1 * state.aDirection).toFixed(1);
+                        if (nextA <= 0.0) {
+                            nextA = 0.0;
+                            state.aDirection = 1;
+                        } else if (nextA >= 1.0) {
+                            nextA = 1.0;
+                            state.aDirection = -1;
+                        }
+                        state.a = nextA;
+                    } else if (key === "m" || key === "M") {
+                        state.manualDriverOn = !state.manualDriverOn;
+                    } else if (key === "r" || key === "R") {
+                        state.growthSlowOn = !state.growthSlowOn;
+                    } else if (key === "t" || key === "T") {
+                        state.autoScaleOn = !state.autoScaleOn;
+                        if (!state.autoScaleOn) state.fixedHeightRef = 1.6 * currentMaxAbundance();
+                    } else if (key === "+" || key === "=") {
+                        state.overlayScale = Math.min(2.5, +(state.overlayScale + 0.1).toFixed(2));
+                        applyOverlayScale();
+                    } else if (key === "-" || key === "_") {
+                        state.overlayScale = Math.max(0.5, +(state.overlayScale - 0.1).toFixed(2));
+                        applyOverlayScale();
+                    } else if (key === "q" || key === "Q") {
+                        state.showGrowthCurve = !state.showGrowthCurve;
+                    } else if (key === "y" || key === "Y") {
+                        state.multipeakOn = !state.multipeakOn;
+                    } else if (key === "l" || key === "L") {
+                        state.logScaleOn = !state.logScaleOn;
+                    } else if (key === " " || key === "Spacebar") {
+                        state.slowMode = !state.slowMode;
+                    } else if (key === "s" || key === "S") {
+                        state.sinusoidMode = (state.sinusoidMode + 1) % 4;
+                    }
+                    syncStateLabels();
+                }, true);
+
+                window.addEventListener("keyup", (event) => {
+                    const key = event.key;
+                    if (key === "x" || key === "X") {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        if (state.pulseKeyDownAt !== null) {
+                            const holdSeconds = Math.max(
+                                0,
+                                (performance.now() - state.pulseKeyDownAt) / 1000,
+                            );
+                            state.pulseKeyDownAt = null;
+                            startPulse(5 * holdSeconds);
+                            syncStateLabels();
+                        }
+                    }
+                }, true);
+
+                for (let i = 0; i < 80; i++) updateModel();
+                if (!state.autoScaleOn) state.fixedHeightRef = 1.6 * currentMaxAbundance();
+                applyOverlayScale();
+                typesetEquationOverlay();
+                resizeCanvas();
+                draw();
+                syncStateLabels();
+                window.addEventListener("resize", resizeCanvas);
+                tick();
+            })();
+        </script>
+    </body>
+</html>
