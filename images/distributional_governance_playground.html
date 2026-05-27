@@ -11,6 +11,20 @@
       --ink: #1f2933;
       --muted: #697386;
       --line: #d7dce3;
+      --subtle: #fbfcfd;
+      --input: #ffffff;
+      --canvas: #ffffff;
+      --grid: #eef1f5;
+      --axis: #cfd6df;
+      --plotText: #697386;
+      --rangeTrack: #e5e7eb;
+      --rangeFill: #f2a65c;
+      --rangeThumb: #ffffff;
+      --rangeThumbBorder: #cfd6df;
+      --switch: #f3f5f7;
+      --switchInactive: #a4acb8;
+      --switchActive: #ffffff;
+      --switchActiveInk: #111827;
       --orange: #f28c28;
       --blue: #3973b7;
       --green: #2f9e73;
@@ -19,6 +33,38 @@
       --baseline: #8a94a6;
       --baselineLight: #c6ccd5;
       --shadow: 0 8px 24px rgba(31, 41, 51, 0.08);
+      --modalShade: rgba(31, 41, 51, 0.42);
+    }
+
+    body[data-theme="dark"] {
+      --bg: #0e1218;
+      --panel: #151a22;
+      --ink: #f1f5f9;
+      --muted: #98a4b4;
+      --line: #2a3340;
+      --subtle: #1a212b;
+      --input: #10161d;
+      --canvas: #10161d;
+      --grid: rgba(170, 188, 210, 0.09);
+      --axis: rgba(181, 196, 216, 0.24);
+      --plotText: #8692a3;
+      --rangeTrack: #2b3442;
+      --rangeFill: #d99a54;
+      --rangeThumb: #dce4ee;
+      --rangeThumbBorder: #4a5665;
+      --switch: #111821;
+      --switchInactive: #6f7b8b;
+      --switchActive: #243041;
+      --switchActiveInk: #f8fafc;
+      --orange: #e7a24f;
+      --blue: #6ca6e8;
+      --green: #6ac59a;
+      --red: #e87973;
+      --purple: #a78bfa;
+      --baseline: #a1adbd;
+      --baselineLight: #5f6b7c;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+      --modalShade: rgba(3, 7, 12, 0.62);
     }
 
     * { box-sizing: border-box; }
@@ -34,6 +80,27 @@
       background: var(--bg);
       line-height: 1.35;
       overflow: hidden;
+      color-scheme: light;
+    }
+
+    body[data-theme="dark"] { color-scheme: dark; }
+
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 25;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      border-radius: 999px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      font: 800 1rem system-ui, sans-serif;
+      box-shadow: var(--shadow);
+      cursor: pointer;
     }
 
     main {
@@ -103,7 +170,7 @@
       border-radius: 8px;
       padding: 6px 8px;
       margin: 6px 0 8px;
-      background: #fbfcfd;
+      background: var(--subtle);
     }
 
     label.control {
@@ -125,7 +192,59 @@
     label.control input[type="range"] {
       grid-column: 1 / -1;
       width: 100%;
-      accent-color: var(--orange);
+      height: 20px;
+      margin: 2px 0;
+      appearance: none;
+      -webkit-appearance: none;
+      background: transparent;
+      accent-color: var(--rangeFill);
+      --range-progress: 50%;
+    }
+
+    label.control input[type="range"]::-webkit-slider-runnable-track {
+      height: 5px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--rangeFill) 0 var(--range-progress), var(--rangeTrack) var(--range-progress) 100%);
+    }
+
+    label.control input[type="range"]::-webkit-slider-thumb {
+      width: 16px;
+      height: 16px;
+      margin-top: -5.5px;
+      border: 1px solid var(--rangeThumbBorder);
+      border-radius: 50%;
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--rangeThumb);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    label.control input[type="range"]::-moz-range-track {
+      height: 5px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--rangeTrack);
+    }
+
+    label.control input[type="range"]::-moz-range-progress {
+      height: 5px;
+      border-radius: 999px;
+      background: var(--rangeFill);
+    }
+
+    label.control input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--rangeThumbBorder);
+      border-radius: 50%;
+      background: var(--rangeThumb);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    label.control input[type="range"]:focus-visible::-webkit-slider-thumb {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
     }
 
     label.control select { grid-column: 1 / -1; }
@@ -143,7 +262,7 @@
       border-radius: 8px;
       padding: 6px 8px;
       font: inherit;
-      background: #fff;
+      background: var(--input);
       color: var(--ink);
     }
 
@@ -164,23 +283,25 @@
       padding: 2px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: #f3f5f7;
+      background: var(--switch);
       min-width: 170px;
     }
+
+    .mode-switch[hidden] { display: none; }
 
     .mode-switch button {
       border: 0;
       border-radius: 6px;
       padding: 4px 8px;
       background: transparent;
-      color: #a4acb8;
+      color: var(--switchInactive);
       font: 700 0.76rem system-ui, sans-serif;
       cursor: pointer;
     }
 
     .mode-switch button[aria-pressed="true"] {
-      background: #fff;
-      color: #111827;
+      background: var(--switchActive);
+      color: var(--switchActiveInk);
       box-shadow: 0 1px 4px rgba(31, 41, 51, 0.10);
     }
 
@@ -188,7 +309,7 @@
 
     .icon-button {
       border: 1px solid var(--line);
-      background: #fff;
+      background: var(--input);
       color: var(--muted);
       border-radius: 999px;
       width: 30px;
@@ -233,6 +354,33 @@
       flex: 0 0 auto;
     }
 
+    .chart-tools {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .chart-tools[hidden], .chart-select[hidden] { display: none; }
+
+    .chart-select {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .chart-select select {
+      width: min(190px, 34vw);
+      padding: 4px 7px;
+      border-radius: 7px;
+      font-size: 0.78rem;
+    }
+
     .mini-toggle {
       display: inline-flex;
       align-items: center;
@@ -261,7 +409,7 @@
       width: 100%;
       min-height: 0;
       flex: 1 1 auto;
-      background: #fff;
+      background: var(--canvas);
       border: 1px solid var(--line);
       border-radius: 10px;
     }
@@ -278,7 +426,7 @@
 
     .metric {
       border: 1px solid var(--line);
-      background: #fbfcfd;
+      background: var(--subtle);
       border-radius: 7px;
       padding: 4px 5px;
       min-width: 0;
@@ -342,7 +490,7 @@
       display: grid;
       place-items: center;
       padding: 18px;
-      background: rgba(31, 41, 51, 0.42);
+      background: var(--modalShade);
     }
 
     .modal-backdrop[hidden] { display: none; }
@@ -351,7 +499,7 @@
       width: min(680px, 100%);
       max-height: min(760px, calc(100vh - 36px));
       overflow: auto;
-      background: #fff;
+      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 10px;
       box-shadow: 0 20px 70px rgba(31, 41, 51, 0.25);
@@ -392,6 +540,7 @@
   </style>
 </head>
 <body>
+  <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light/dark mode">☾</button>
   <main>
     <aside class="panel controls">
       <h2>Controls</h2>
@@ -457,33 +606,9 @@
       </div>
 
       <div class="section">
-        <h2>Display</h2>
-        <label class="control">
-          <span>Income sort</span><span class="value" data-value-for="incomeSort"></span>
-          <select id="incomeSort">
-            <option value="total">Total income</option>
-            <option value="incentive">Incentive threshold</option>
-            <option value="impact">Impact capacity</option>
-            <option value="resource">Resource use</option>
-            <option value="active">Active status</option>
-          </select>
-        </label>
-        <div class="display-options">
-          <label class="mini-toggle">
-            <input id="showDensities" type="checkbox" />
-            <span>Densities</span>
-          </label>
-          <label class="mini-toggle">
-            <input id="showTrajectory" type="checkbox" checked />
-            <span>Trajectory</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="section">
         <div class="section-head mode-head">
           <h2 id="policySectionTitle">Policy</h2>
-          <div class="mode-switch" role="group" aria-label="Policy view mode">
+          <div id="policyModeSwitch" class="mode-switch" role="group" aria-label="Policy view mode" hidden>
             <button id="instrumentMode" type="button" aria-pressed="true">Instrument</button>
             <button id="scanMode" type="button" aria-pressed="false">Scan</button>
           </div>
@@ -604,6 +729,16 @@
       <div class="panel chart-card">
         <div class="chart-head">
           <h2 id="phaseTitle">Phase diagram</h2>
+          <div id="phaseDisplayTools" class="chart-tools">
+            <label class="mini-toggle">
+              <input id="showDensities" type="checkbox" />
+              <span>Densities</span>
+            </label>
+            <label class="mini-toggle">
+              <input id="showTrajectory" type="checkbox" checked />
+              <span>Trajectory</span>
+            </label>
+          </div>
         </div>
         <canvas id="phaseCanvas"></canvas>
         <div class="legend" id="phaseLegend">
@@ -616,7 +751,19 @@
       </div>
 
       <div class="panel chart-card">
-        <h2 id="incomeTitle">Income distribution at the attractor</h2>
+        <div class="chart-head">
+          <h2 id="incomeTitle">Income distribution at the attractor</h2>
+          <label id="incomeSortControl" class="chart-select">
+            <span>Sort</span>
+            <select id="incomeSort">
+              <option value="total">Total income</option>
+              <option value="incentive">Incentive threshold</option>
+              <option value="impact">Impact capacity</option>
+              <option value="resource">Resource use</option>
+              <option value="active">Active status</option>
+            </select>
+          </label>
+        </div>
         <canvas id="incomeCanvas"></canvas>
         <div class="legend" id="incomeLegend">
           <span><i class="swatch" style="background: var(--baseline)"></i>Open access total income</span>
@@ -680,12 +827,16 @@
     const incomeTitle = document.getElementById("incomeTitle");
     const phaseLegend = document.getElementById("phaseLegend");
     const incomeLegend = document.getElementById("incomeLegend");
+    const phaseDisplayTools = document.getElementById("phaseDisplayTools");
+    const incomeSortControl = document.getElementById("incomeSortControl");
     const settingsToggle = document.getElementById("settingsToggle");
     const settingsDrawer = document.getElementById("settingsDrawer");
     const scanControls = document.getElementById("scanControls");
     const policySectionTitle = document.getElementById("policySectionTitle");
+    const policyModeSwitch = document.getElementById("policyModeSwitch");
     const instrumentMode = document.getElementById("instrumentMode");
     const scanMode = document.getElementById("scanMode");
+    const themeToggle = document.getElementById("themeToggle");
     const policyHelp = document.getElementById("policyHelp");
     const policyModal = document.getElementById("policyModal");
     const policyModalTitle = document.getElementById("policyModalTitle");
@@ -772,6 +923,8 @@
     };
 
     function params() {
+      const policyType = el.policyType.value;
+      if (policyType === "none") el.policyScan.checked = false;
       return {
         nActors: +el.nActors.value,
         seed: +el.seed.value,
@@ -783,7 +936,7 @@
         totalImpact: +el.totalImpact.value,
         impactInequality: +el.impactInequality.value,
         correlation: +el.correlation.value,
-        policyType: el.policyType.value,
+        policyType,
         excludeFraction: +el.excludeFraction.value,
         excludeMode: el.excludeMode.value,
         impactCap: +el.impactCap.value,
@@ -798,7 +951,7 @@
         incomeSort: el.incomeSort.value,
         showDensities: el.showDensities.checked,
         showTrajectory: el.showTrajectory.checked,
-        policyScan: el.policyScan.checked,
+        policyScan: policyType !== "none" && el.policyScan.checked,
         scanResolution: +el.scanResolution.value,
         goalResource: +el.goalResource.value,
         goalTotal: +el.goalTotal.value,
@@ -855,6 +1008,9 @@
         block.hidden = p.policyType !== name;
       }
       policySectionTitle.textContent = "Policy";
+      policyModeSwitch.hidden = p.policyType === "none";
+      phaseDisplayTools.hidden = p.policyScan && p.policyType !== "none";
+      incomeSortControl.hidden = p.policyScan && p.policyType !== "none";
       instrumentMode.setAttribute("aria-pressed", String(!p.policyScan));
       scanMode.setAttribute("aria-pressed", String(p.policyScan));
       scanControls.hidden = !p.policyScan || p.policyType === "none";
@@ -1618,7 +1774,7 @@
 
     function drawAxes(ctx, plot, xLabel, yLabel) {
       ctx.save();
-      ctx.strokeStyle = "#cfd6df";
+      ctx.strokeStyle = cssColor("--axis");
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(plot.x0, plot.y1);
@@ -1627,7 +1783,7 @@
       ctx.lineTo(plot.x0, plot.y1);
       ctx.stroke();
 
-      ctx.fillStyle = "#697386";
+      ctx.fillStyle = cssColor("--plotText");
       ctx.font = "12px system-ui, sans-serif";
       ctx.textAlign = "center";
       ctx.fillText(xLabel, (plot.x0 + plot.x1) / 2, plot.y1 + 35);
@@ -1640,12 +1796,12 @@
       ctx.textAlign = "center";
       for (let t = 0; t <= 1.0001; t += 0.25) {
         const x = plot.x(t);
-        ctx.strokeStyle = "#eef1f5";
+        ctx.strokeStyle = cssColor("--grid");
         ctx.beginPath();
         ctx.moveTo(x, plot.y0);
         ctx.lineTo(x, plot.y1);
         ctx.stroke();
-        ctx.fillStyle = "#697386";
+        ctx.fillStyle = cssColor("--plotText");
         ctx.fillText(t.toFixed(2), x, plot.y1 + 18);
       }
       ctx.textAlign = "right";
@@ -1655,12 +1811,12 @@
         : Array.from({ length: 5 }, (_, i) => plot.yMin + ((plot.yMax - plot.yMin) * i) / 4);
       for (const t of yTicks) {
         const y = plot.y(t);
-        ctx.strokeStyle = "#eef1f5";
+        ctx.strokeStyle = cssColor("--grid");
         ctx.beginPath();
         ctx.moveTo(plot.x0, y);
         ctx.lineTo(plot.x1, y);
         ctx.stroke();
-        ctx.fillStyle = "#697386";
+        ctx.fillStyle = cssColor("--plotText");
         ctx.fillText(unitAxis ? t.toFixed(2) : t.toFixed(0), plot.x0 - 8, y + 4);
       }
       ctx.restore();
@@ -1700,7 +1856,8 @@
     }
 
     function cssColor(name) {
-      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+      return getComputedStyle(document.body).getPropertyValue(name).trim() ||
+        getComputedStyle(document.documentElement).getPropertyValue(name).trim();
     }
 
     function openAccessParams(p) {
@@ -1763,7 +1920,7 @@
 
       const [x0, y0] = pts[0];
       ctx.globalAlpha = 0.72;
-      ctx.strokeStyle = "#ffffff";
+      ctx.strokeStyle = cssColor("--canvas");
       ctx.fillStyle = color;
       ctx.lineWidth = 1.4;
       ctx.beginPath();
@@ -1877,7 +2034,7 @@
 
     function drawScanAxes(ctx, plot, xLabel, yLabel, xMin, xMax, yMin, yMax, yFmt = x => x.toFixed(2)) {
       ctx.save();
-      ctx.strokeStyle = "#cfd6df";
+      ctx.strokeStyle = cssColor("--axis");
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(plot.x0, plot.y1);
@@ -1886,7 +2043,7 @@
       ctx.lineTo(plot.x0, plot.y1);
       ctx.stroke();
 
-      ctx.fillStyle = "#697386";
+      ctx.fillStyle = cssColor("--plotText");
       ctx.font = "12px system-ui, sans-serif";
       ctx.textAlign = "center";
       ctx.fillText(xLabel, (plot.x0 + plot.x1) / 2, plot.y1 + 35);
@@ -1899,12 +2056,12 @@
       for (let i = 0; i <= 4; i++) {
         const f = i / 4;
         const x = plot.x(f);
-        ctx.strokeStyle = "#eef1f5";
+        ctx.strokeStyle = cssColor("--grid");
         ctx.beginPath();
         ctx.moveTo(x, plot.y0);
         ctx.lineTo(x, plot.y1);
         ctx.stroke();
-        ctx.fillStyle = "#697386";
+        ctx.fillStyle = cssColor("--plotText");
         ctx.fillText((xMin + (xMax - xMin) * f).toFixed(2), x, plot.y1 + 18);
       }
       ctx.textAlign = "right";
@@ -1912,12 +2069,12 @@
         const f = i / 4;
         const value = yMin + (yMax - yMin) * f;
         const y = plot.y(f);
-        ctx.strokeStyle = "#eef1f5";
+        ctx.strokeStyle = cssColor("--grid");
         ctx.beginPath();
         ctx.moveTo(plot.x0, y);
         ctx.lineTo(plot.x1, y);
         ctx.stroke();
-        ctx.fillStyle = "#697386";
+        ctx.fillStyle = cssColor("--plotText");
         ctx.fillText(yFmt(value), plot.x0 - 8, y + 4);
       }
       ctx.restore();
@@ -1992,7 +2149,7 @@
       const color = spec.color;
 
       ctx.save();
-      ctx.strokeStyle = "#eef1f5";
+      ctx.strokeStyle = cssColor("--grid");
       ctx.lineWidth = 1;
       ctx.strokeRect(plot.x0, plot.y0, plot.x1 - plot.x0, plot.y1 - plot.y0);
       for (let i = 1; i < 4; i++) {
@@ -2032,11 +2189,11 @@
       ctx.arc(scanX(plot, scan, best.x), plot.y(best[spec.key]), 3.6, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.fillStyle = "#1f2933";
+      ctx.fillStyle = cssColor("--ink");
       ctx.font = "700 12px system-ui, sans-serif";
       ctx.textAlign = "left";
       ctx.fillText(spec.label, plot.x0 + 6, plot.y0 + 15);
-      ctx.fillStyle = "#697386";
+      ctx.fillStyle = cssColor("--plotText");
       ctx.font = "11px system-ui, sans-serif";
       ctx.textAlign = "right";
       ctx.fillText(spec.format(yMax), plot.x1 - 5, plot.y0 + 14);
@@ -2049,7 +2206,7 @@
         { key: "resourceLevel", label: "Resource level", color: cssColor("--blue"), unit: true, best: "max", format: x => x.toFixed(2) },
         { key: "participation", label: "Participation", color: cssColor("--orange"), unit: true, best: "min", format: fmt.pct },
         { key: "resourceIncome", label: "Resource income", color: cssColor("--green"), unit: false, best: "max", format: x => x.toFixed(0) },
-        { key: "totalIncome", label: "Total income", color: "#1f2933", unit: false, best: "max", format: x => x.toFixed(0) },
+        { key: "totalIncome", label: "Total income", color: cssColor("--ink"), unit: false, best: "max", format: x => x.toFixed(0) },
         { key: "inequality", label: "Gini", color: cssColor("--red"), unit: true, best: "min", format: x => x.toFixed(2) },
         { key: "governanceNorm", label: "Weighted goals", color: cssColor("--purple"), unit: true, best: "max", format: fmt.pct }
       ];
@@ -2084,7 +2241,7 @@
       });
 
       ctx.save();
-      ctx.fillStyle = "#697386";
+      ctx.fillStyle = cssColor("--plotText");
       ctx.font = "12px system-ui, sans-serif";
       ctx.textAlign = "center";
       ctx.fillText(scan.axis.label, width / 2, height - 10);
@@ -2211,7 +2368,7 @@
 
       if (plot.yMin < 0) {
         ctx.save();
-        ctx.strokeStyle = "#9aa4b2";
+        ctx.strokeStyle = cssColor("--axis");
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(plot.x0, plot.y(0));
@@ -2253,7 +2410,7 @@
       }
 
       ctx.save();
-      ctx.fillStyle = "#697386";
+      ctx.fillStyle = cssColor("--plotText");
       ctx.font = "12px system-ui, sans-serif";
       ctx.textAlign = "right";
       const label = showPolicy
@@ -2289,7 +2446,7 @@
         return `
           <div class="metric">
             <div class="name">${name}</div>
-            <div class="number"><span class="open">${formatter(openValue)}</span> → <span class="policy">${formatter(policyValue)}</span> <span class="delta-value ${deltaClass}">(${deltaFormatter(delta)})</span></div>
+            <div class="number"><span class="policy">${formatter(policyValue)}</span> <span class="delta-value ${deltaClass}">(${deltaFormatter(delta)})</span></div>
           </div>
         `;
       }).join("");
@@ -2309,6 +2466,42 @@
     function closePolicyModal() {
       policyModal.hidden = true;
       policyHelp.focus();
+    }
+
+    function storedTheme() {
+      try {
+        return localStorage.getItem("dg-theme");
+      } catch {
+        return null;
+      }
+    }
+
+    function saveTheme(theme) {
+      try {
+        localStorage.setItem("dg-theme", theme);
+      } catch {
+      }
+    }
+
+    function setTheme(theme) {
+      const next = theme === "dark" ? "dark" : "light";
+      document.body.dataset.theme = next;
+      themeToggle.textContent = next === "dark" ? "☀" : "☾";
+      themeToggle.setAttribute("aria-label", next === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      saveTheme(next);
+    }
+
+    function syncRangeProgress(node) {
+      if (!node || node.type !== "range") return;
+      const min = Number(node.min || 0);
+      const max = Number(node.max || 100);
+      const value = Number(node.value || min);
+      const pct = max === min ? 0 : clamp((value - min) / (max - min), 0, 1) * 100;
+      node.style.setProperty("--range-progress", `${pct}%`);
+    }
+
+    function syncAllRangeProgress() {
+      document.querySelectorAll('input[type="range"]').forEach(syncRangeProgress);
     }
 
     let scheduled = false;
@@ -2354,15 +2547,32 @@
     ids.forEach(id => {
       const node = el[id];
       if (!node) return;
-      node.addEventListener("input", renderSoon);
-      node.addEventListener("change", renderSoon);
+      node.addEventListener("input", () => {
+        syncRangeProgress(node);
+        renderSoon();
+      });
+      node.addEventListener("change", () => {
+        syncRangeProgress(node);
+        renderSoon();
+      });
     });
 
     scanWeightIds.forEach(id => {
       const node = el[id];
       if (!node) return;
-      node.addEventListener("input", refreshScanWeightsOnly);
-      node.addEventListener("change", refreshScanWeightsOnly);
+      node.addEventListener("input", () => {
+        syncRangeProgress(node);
+        refreshScanWeightsOnly();
+      });
+      node.addEventListener("change", () => {
+        syncRangeProgress(node);
+        refreshScanWeightsOnly();
+      });
+    });
+
+    themeToggle.addEventListener("click", () => {
+      setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
+      renderSoon();
     });
 
     settingsToggle.addEventListener("click", () => {
@@ -2377,6 +2587,7 @@
       renderSoon();
     });
     scanMode.addEventListener("click", () => {
+      if (el.policyType.value === "none") return;
       if (el.policyScan.checked) return;
       el.policyScan.checked = true;
       renderSoon();
@@ -2390,6 +2601,8 @@
       if (event.key === "Escape" && !policyModal.hidden) closePolicyModal();
     });
     window.addEventListener("resize", renderSoon);
+    setTheme(storedTheme() || "light");
+    syncAllRangeProgress();
     renderSoon();
   </script>
 </body>
