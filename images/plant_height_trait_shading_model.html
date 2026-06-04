@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Height Trait Density Dependence</title>
+  <style>
+    :root {
+      --bg: #f4f1e8;
+      --ink: #1f2521;
+      --muted: #657066;
+      --line: #c9d0c0;
+      --panel: #fffdf6;
+      --accent: #2f7d5a;
+      --accent-2: #bd5d2a;
+      --accent-3: #356b9a;
+      --danger: #9c3434;
+      --shadow: 0 18px 50px rgba(30, 40, 30, 0.14);
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.74), rgba(244,241,232,0.92)),
+        radial-gradient(circle at 80% 10%, rgba(200, 224, 213, 0.8), transparent 34rem),
+        var(--bg);
+      color: var(--ink);
+    }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+    }
+
+    header {
+      padding: 24px 28px 14px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      border-bottom: 1px solid rgba(114, 125, 105, 0.28);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      max-width: 980px;
+    }
+
+    .subtitle {
+      margin: 0;
+      max-width: 940px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .formula {
+      justify-self: end;
+      max-width: 520px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(114, 125, 105, 0.34);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #283228;
+    }
+
+    .overview {
+      padding: 14px 28px 4px;
+    }
+
+    .overview-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+      gap: 18px;
+      align-items: start;
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      border: 1px solid rgba(114, 125, 105, 0.34);
+      background: rgba(255,253,246,0.78);
+      box-shadow: 0 12px 34px rgba(30, 40, 30, 0.08);
+    }
+
+    .overview h2 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .overview p {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .overview ol {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .overview-math {
+      display: grid;
+      gap: 6px;
+      color: #303a31;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .overview-defs {
+      display: grid;
+      gap: 4px;
+      margin: -2px 0 6px;
+      padding: 8px 10px;
+      background: rgba(248,250,242,0.72);
+      border-left: 3px solid rgba(47,125,90,0.55);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .overview-math mjx-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+    }
+
+    .layout {
+      min-height: 0;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    aside {
+      min-height: 0;
+      background: rgba(255,253,246,0.92);
+      border: 1px solid rgba(114, 125, 105, 0.34);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      overflow: auto;
+    }
+
+    .stage {
+      min-width: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: minmax(340px, 1.2fr) minmax(270px, 0.8fr);
+      gap: 18px;
+    }
+
+    .panel {
+      min-width: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      background: rgba(255,253,246,0.92);
+      border: 1px solid rgba(114, 125, 105, 0.34);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(114, 125, 105, 0.28);
+    }
+
+    .panel-title {
+      font-weight: 750;
+      font-size: 14px;
+      color: #263128;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      width: min(680px, 100%);
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 7px 8px;
+      border: 1px solid rgba(114, 125, 105, 0.28);
+      background: rgba(248,250,242,0.86);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .viz-grid {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .plot-wrap {
+      height: calc(100% - 45px);
+      min-height: 210px;
+    }
+
+    .controls {
+      display: grid;
+      gap: 14px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    button {
+      border: 1px solid rgba(57, 90, 66, 0.38);
+      background: #f9fbf4;
+      color: #243027;
+      height: 38px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid rgba(47,125,90,0.25);
+      outline-offset: 2px;
+    }
+
+    .control {
+      display: grid;
+      gap: 6px;
+    }
+
+    .control label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #303a31;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .control output {
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    .model-note {
+      border-top: 1px solid rgba(114, 125, 105, 0.28);
+      padding-top: 14px;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .math-panel {
+      border-top: 1px solid rgba(114, 125, 105, 0.28);
+      padding-top: 14px;
+      display: grid;
+      gap: 10px;
+      color: #303a31;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .math-panel h2 {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .math-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .equation-note {
+      margin-top: -4px;
+      padding: 8px 10px;
+      background: rgba(248,250,242,0.72);
+      border-left: 3px solid rgba(47,125,90,0.55);
+      color: var(--muted);
+    }
+
+    .rhs-box {
+      padding: 10px;
+      border: 1px solid rgba(114, 125, 105, 0.34);
+      background: rgba(255,255,255,0.56);
+    }
+
+    .math-panel mjx-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .key {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swatch {
+      width: 16px;
+      height: 3px;
+      display: inline-block;
+      background: var(--accent);
+    }
+
+    .swatch.orange { background: var(--accent-2); }
+    .swatch.blue { background: var(--accent-3); }
+    .swatch.red { background: var(--danger); }
+
+    @media (max-width: 1050px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+      .formula {
+        justify-self: stretch;
+      }
+      .overview-inner {
+        grid-template-columns: 1fr;
+      }
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      aside {
+        order: 2;
+      }
+      .stage {
+        order: 1;
+        grid-template-rows: 420px auto;
+      }
+      .viz-grid {
+        grid-template-columns: 1fr;
+      }
+      .plot-wrap {
+        height: 270px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header { padding: 18px 16px 10px; }
+      .overview { padding: 12px 12px 0; }
+      .layout { padding: 12px; gap: 12px; }
+      .metric-row { grid-template-columns: 1fr 1fr; }
+      .stage { grid-template-rows: 360px auto; gap: 12px; }
+      .panel-head { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Height as a Trait: Shading, Variance, and Binary Mortality</h1>
+      <p class="subtitle">An individual-plant sketch of Savage-style density dependence: plant performance depends on height, the environment, total stand state, and the surrounding height distribution.</p>
+    </div>
+    <div class="formula">
+      D_i = mean(max(0, h_j - h_i)) / (sigma_h + 1)<br>
+      P_i = q D_i + (1 - q) S_i<br>
+      light_i = exp(-s P_i (1 + v CV_h))<br>
+      hazard_i = m_0 + m_tall h_i^alpha wind_t + m_shade(1 - light_i)
+    </div>
+  </header>
+
+  <section class="overview" aria-label="How the model works">
+    <div class="overview-inner">
+      <div>
+        <h2>How the Model Works</h2>
+        <p>The simulation starts by generating \(N\) individual plants, each with a height \(h_i\). The spatial-looking stand is only a visualization: the model itself is mean-field, so plant interactions depend on the stand-level height distribution, not on horizontal distance. At each time step that distribution determines light availability, then every living plant is updated in two steps.</p>
+        <p>Light availability \(L_i\) is the key density-dependent quantity. It is calculated from the trait distribution before the plant grows: a plant loses light when much of the stand is taller than it, and that loss is amplified when the height distribution has high variation.</p>
+        <ol>
+          <li>Calculate a height-growth increment \(\Delta h_i=G_i\), so small plants grow faster and large plants slow down.</li>
+          <li>Calculate a mortality hazard \(\lambda_i\), then draw a Bernoulli event to decide whether plant \(i\) survives or dies.</li>
+        </ol>
+        <p>The Bernoulli draw is where stochastic binary mortality enters: the plant is either retained in the distribution or removed from it. The full equations and definitions are at the bottom.</p>
+      </div>
+      <div class="overview-math">
+        <div>
+          \[
+            D_i =
+            \frac{1}{N_t\max(1,\sqrt{V_h})}
+            \sum_{j=1}^{N_t}\max(0,h_j-h_i),
+            \qquad
+            S_i=\max\left(0,\frac{\bar h-h_i}{\max(1,\sqrt{V_h})}\right)
+          \]
+        </div>
+        <div>
+          \[
+            P_i=qD_i+(1-q)S_i,
+            \qquad
+            L_i=\max\left(0.03,\exp\{-sP_i(1+vCV_h)\}\right)
+          \]
+        </div>
+        <div class="overview-defs">
+          <div><strong>\(D_i\):</strong> taller-plant pressure, the average amount by which other individuals are taller than plant \(i\).</div>
+          <div><strong>\(S_i\):</strong> below-mean penalty, measuring how far plant \(i\) sits below the current mean height.</div>
+          <div><strong>\(P_i\):</strong> total suppression pressure, with slider \(q\) controlling the weight on \(D_i\) versus \(S_i\).</div>
+          <div><strong>\(L_i\):</strong> light availability after suppression; \(1\) is full light and \(0.03\) is the imposed minimum.</div>
+        </div>
+        <p>\(D_i\) and \(S_i\) are both trait-based, but they use different levels of approximation. \(D_i\) is the more mechanistic individual-distribution term: it asks how much taller biomass sits above plant \(i\). \(S_i\) is a moment-level approximation: it asks whether plant \(i\) is simply below the canopy center. The slider \(q\) lets you decide how much the model relies on the full individual distribution versus the moment proxy.</p>
+        <div>
+          \[
+            \Delta h_i = G_i(h_i,L_i)
+            =
+            0.34
+            \frac{1}{1+0.075 h_i^{1.35}}
+            \left[1-\left(\frac{h_i}{42}\right)^{1.65}\right]_+
+            e^{-0.026 h_i^{1.18}}L_i
+          \]
+        </div>
+        <div>
+          \[
+            \lambda_i =
+            0.0025
+            +m_{\mathrm{tall}}
+            \left(\frac{h_i}{42}\right)^{2.55}
+            (0.45+W_t^{1.4})
+            +0.012(1-L_i)^{2.3}
+          \]
+        </div>
+        <div>
+          \[
+            \Pr(\mathrm{death}_i)=1-e^{-\lambda_i}
+          \]
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside>
+      <div class="controls">
+        <div class="buttons">
+          <button id="play" class="primary" type="button">Pause</button>
+          <button id="reset" type="button">Reset</button>
+        </div>
+
+        <div class="control">
+          <label for="shade">Shading strength <output id="shadeOut"></output></label>
+          <input id="shade" type="range" min="0" max="4" value="1.55" step="0.05" />
+        </div>
+
+        <div class="control">
+          <label for="varShade">Variance effect <output id="varShadeOut"></output></label>
+          <input id="varShade" type="range" min="0" max="4" value="1.35" step="0.05" />
+        </div>
+
+        <div class="control">
+          <label for="blendQ">D versus S weight q <output id="blendQOut"></output></label>
+          <input id="blendQ" type="range" min="0" max="1" value="0.72" step="0.01" />
+        </div>
+
+        <div class="control">
+          <label for="tallMort">Tall mortality <output id="tallMortOut"></output></label>
+          <input id="tallMort" type="range" min="0" max="0.09" value="0.024" step="0.001" />
+        </div>
+
+        <div class="control">
+          <label for="wind">Wind forcing <output id="windOut"></output></label>
+          <input id="wind" type="range" min="0" max="2.5" value="1.1" step="0.05" />
+        </div>
+
+        <div class="control">
+          <label for="recruit">Recruitment <output id="recruitOut"></output></label>
+          <input id="recruit" type="range" min="0" max="1" value="0.74" step="0.01" />
+        </div>
+
+        <div class="control">
+          <label for="nPlants">Plants <output id="nPlantsOut"></output></label>
+          <input id="nPlants" type="range" min="80" max="520" value="300" step="20" />
+        </div>
+
+        <div class="model-note">
+          <div><strong>Trait state:</strong> the stand is the empirical distribution C(h) over individual plant heights.</div>
+          <div><strong>Density dependence:</strong> taller plants reduce light for plants below them in trait space; the penalty increases when height variance creates strong canopy stratification.</div>
+          <div><strong>Spatial position:</strong> the horizontal position is only used for visualization. Competition is non-spatial and depends on the stand-level height distribution.</div>
+          <div><strong>Mortality:</strong> death is a Bernoulli event, with hydraulic and wind costs rising for tall plants and suppression costs rising in deep shade.</div>
+        </div>
+
+        <div class="math-panel">
+          <h2>Model Sketch</h2>
+          <p>The horizontal coordinate in the drawing is not part of the model. Each individual feels the whole stand-level height distribution.</p>
+          <div>
+            \[
+              C(h,t) = \sum_{i=1}^{N_t} \delta(h-h_i(t))
+            \]
+          </div>
+          <div class="equation-note">The community state is an empirical trait distribution: one spike at each living plant height.</div>
+          <div>
+            \[
+              \bar h = \frac{1}{N_t}\sum_i h_i,\qquad
+              V_h = \frac{1}{N_t}\sum_i (h_i-\bar h)^2,\qquad
+              CV_h=\frac{\sqrt{V_h}}{\bar h}
+            \]
+          </div>
+          <div class="equation-note">These moments summarize the stand. Mean height gives the canopy center; variance and coefficient of variation describe canopy stratification.</div>
+          <div>
+            \[
+              D_i =
+              \frac{1}{N_t\max(1,\sqrt{V_h})}
+              \sum_{j=1}^{N_t}\max(0,h_j-h_i)
+            \]
+          </div>
+          <div class="equation-note">\(D_i\) is taller-plant pressure. It is kept because shading is asymmetric: short plants are suppressed by taller plants, but tall plants are not equally suppressed by short plants.</div>
+          <div>
+            \[
+              S_i=\max\left(0,\frac{\bar h-h_i}{\max(1,\sqrt{V_h})}\right),
+              \qquad
+              P_i=qD_i+(1-q)S_i
+            \]
+          </div>
+          <div class="equation-note">\(S_i\) is the below-mean penalty. It is kept because it is a simple moment-based proxy for canopy position: a plant below \(\bar h\) is likely to experience less light, even without calculating every pairwise height difference. The slider \(q\) sets the blend: \(q=1\) uses only \(D_i\), while \(q=0\) uses only \(S_i\).</div>
+          <div>
+            \[
+              L_i=\max\left(0.03,\exp\{-sP_i(1+vCV_h)\}\right)
+            \]
+          </div>
+          <div class="equation-note">Light availability declines with suppression \(P_i\). The variance multiplier makes shading stronger when the canopy has a wide height distribution.</div>
+          <div>
+            \[
+              G_i =
+              0.34
+              \frac{1}{1+0.075 h_i^{1.35}}
+              \left[1-\left(\frac{h_i}{42}\right)^{1.65}\right]_+
+              e^{-0.026 h_i^{1.18}}L_i
+            \]
+          </div>
+          <div class="equation-note">This is the deterministic height-growth RHS before stochasticity: height growth slows with size, approaches an architectural upper limit, pays hydraulic cost, and is reduced by light limitation.</div>
+          <div>
+            \[
+              h_i^\star =
+              \mathrm{clip}_{[0.25,42]}
+              \left(h_i + G_i(1+0.055\varepsilon_i)\right),
+              \qquad
+              \varepsilon_i\sim\mathcal N(0,1)
+            \]
+          </div>
+          <div class="equation-note">The model is discrete-time. The height update happens first, with small multiplicative growth noise.</div>
+          <div>
+            \[
+              \lambda_i =
+              0.0025
+              + m_{\mathrm{tall}}
+              \left(\frac{h_i^\star}{42}\right)^{2.55}
+              (0.45+W_t^{1.4})
+              +0.012(1-L_i)^{2.3}
+              +0.004\,\mathbf{1}_{\mathrm{age}_i>900}
+            \]
+          </div>
+          <div class="equation-note">Mortality is a hazard, not a smooth biomass loss. Tall plants pay wind/hydraulic risk; shaded plants pay suppression risk.</div>
+          <div class="rhs-box">
+            <p><strong>Exact one-plant RHS used by the simulation:</strong></p>
+            <div>
+              \[
+                A_i(t+1)\sim \mathrm{Bernoulli}\left(e^{-\lambda_i}\right),
+                \qquad
+                h_i(t+1)=
+                \begin{cases}
+                  h_i^\star, & A_i(t+1)=1,\\
+                  \varnothing, & A_i(t+1)=0.
+                \end{cases}
+              \]
+            </div>
+          </div>
+          <div>
+            \[
+              \Pr(\mathrm{death}_i)=1-e^{-\lambda_i}
+            \]
+          </div>
+          <div class="equation-note">If the plant dies it is removed from \(C(h,t)\). Recruitment then adds new small individuals independently, as a separate immigration/resting-stage-like input.</div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="stage">
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">Individual Stand</div>
+          <div class="metric-row">
+            <div class="metric"><span>Mean height</span><strong id="meanMetric">0</strong></div>
+            <div class="metric"><span>Variance</span><strong id="varMetric">0</strong></div>
+            <div class="metric"><span>Biomass proxy</span><strong id="bioMetric">0</strong></div>
+            <div class="metric"><span>Deaths</span><strong id="deathMetric">0</strong></div>
+          </div>
+        </div>
+        <canvas id="forest" width="1400" height="720"></canvas>
+      </div>
+
+      <div class="viz-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Trait Distribution C(h)</div>
+            <div class="legend">
+              <span class="key"><span class="swatch"></span>log height density</span>
+              <span class="key"><span class="swatch orange"></span>mean</span>
+            </div>
+          </div>
+          <div class="plot-wrap"><canvas id="hist" width="820" height="360"></canvas></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Moment and Ecosystem Signals</div>
+            <div class="legend">
+              <span class="key"><span class="swatch"></span>mean</span>
+              <span class="key"><span class="swatch blue"></span>variance</span>
+              <span class="key"><span class="swatch orange"></span>biomass</span>
+              <span class="key"><span class="swatch red"></span>wind</span>
+            </div>
+          </div>
+          <div class="plot-wrap"><canvas id="series" width="820" height="360"></canvas></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [["\\(", "\\)"], ["$", "$"]], displayMath: [["\\[", "\\]"]] },
+    svg: { fontCache: "global" }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<script>
+(() => {
+  const forest = document.getElementById("forest");
+  const hist = document.getElementById("hist");
+  const series = document.getElementById("series");
+  const fctx = forest.getContext("2d");
+  const hctx = hist.getContext("2d");
+  const sctx = series.getContext("2d");
+
+  const ui = {
+    play: document.getElementById("play"),
+    reset: document.getElementById("reset"),
+    shade: document.getElementById("shade"),
+    varShade: document.getElementById("varShade"),
+    blendQ: document.getElementById("blendQ"),
+    tallMort: document.getElementById("tallMort"),
+    wind: document.getElementById("wind"),
+    recruit: document.getElementById("recruit"),
+    nPlants: document.getElementById("nPlants"),
+    shadeOut: document.getElementById("shadeOut"),
+    varShadeOut: document.getElementById("varShadeOut"),
+    blendQOut: document.getElementById("blendQOut"),
+    tallMortOut: document.getElementById("tallMortOut"),
+    windOut: document.getElementById("windOut"),
+    recruitOut: document.getElementById("recruitOut"),
+    nPlantsOut: document.getElementById("nPlantsOut"),
+    meanMetric: document.getElementById("meanMetric"),
+    varMetric: document.getElementById("varMetric"),
+    bioMetric: document.getElementById("bioMetric"),
+    deathMetric: document.getElementById("deathMetric"),
+  };
+
+  const maxH = 42;
+  let plants = [];
+  let history = [];
+  let running = true;
+  let time = 0;
+  let totalDeaths = 0;
+  let lastDeaths = 0;
+
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  function clamp(x, lo, hi) {
+    return Math.max(lo, Math.min(hi, x));
+  }
+
+  function params() {
+    return {
+      shade: +ui.shade.value,
+      varShade: +ui.varShade.value,
+      blendQ: +ui.blendQ.value,
+      tallMort: +ui.tallMort.value,
+      wind: +ui.wind.value,
+      recruit: +ui.recruit.value,
+      nPlants: +ui.nPlants.value,
+    };
+  }
+
+  function syncOutputs() {
+    const p = params();
+    ui.shadeOut.value = p.shade.toFixed(2);
+    ui.varShadeOut.value = p.varShade.toFixed(2);
+    ui.blendQOut.value = p.blendQ.toFixed(2);
+    ui.tallMortOut.value = p.tallMort.toFixed(3);
+    ui.windOut.value = p.wind.toFixed(2);
+    ui.recruitOut.value = p.recruit.toFixed(2);
+    ui.nPlantsOut.value = String(p.nPlants);
+  }
+
+  function newPlant(seedBias = 1) {
+    const h = clamp(0.7 + Math.exp(0.25 + 0.55 * randn()) * seedBias, 0.35, 5.5);
+    return {
+      h,
+      x: Math.random(),
+      crown: clamp(0.16 + Math.random() * 0.5, 0.12, 0.7),
+      age: 0,
+      light: 1,
+      deadFlash: 0,
+    };
+  }
+
+  function reset() {
+    syncOutputs();
+    const p = params();
+    plants = Array.from({ length: p.nPlants }, () => {
+      const plant = newPlant(1.2);
+      plant.h = clamp(Math.exp(1.35 + 0.52 * randn()), 0.5, 22);
+      return plant;
+    });
+    history = [];
+    time = 0;
+    totalDeaths = 0;
+    lastDeaths = 0;
+    draw();
+  }
+
+  function moments() {
+    const n = plants.length || 1;
+    const mean = plants.reduce((a, p) => a + p.h, 0) / n;
+    const variance = plants.reduce((a, p) => a + (p.h - mean) ** 2, 0) / n;
+    const sigma = Math.sqrt(variance);
+    const cv = sigma / Math.max(1, mean);
+    const biomass = plants.reduce((a, p) => a + p.h ** 1.72, 0);
+    return { n, mean, variance, sigma, cv, biomass };
+  }
+
+  function windDriver(p) {
+    const seasonal = 0.42 + 0.36 * Math.sin(time / 58) + 0.16 * Math.sin(time / 19 + 1.8);
+    return clamp(p.wind * seasonal, 0, 2.2);
+  }
+
+  function shadingIndex(sortedHeights, h, sigma) {
+    let tallerSum = 0;
+    let tallerCount = 0;
+    for (let k = sortedHeights.length - 1; k >= 0; k--) {
+      const diff = sortedHeights[k] - h;
+      if (diff <= 0) break;
+      tallerSum += diff;
+      tallerCount++;
+    }
+    const exposure = tallerCount ? tallerSum / sortedHeights.length : 0;
+    return exposure / Math.max(1, sigma);
+  }
+
+  function step() {
+    const p = params();
+    syncOutputs();
+
+    while (plants.length > p.nPlants) plants.splice(Math.floor(Math.random() * plants.length), 1);
+    while (plants.length < p.nPlants) plants.push(newPlant(1));
+
+    const m = moments();
+    const heights = plants.map(p => p.h).sort((a, b) => a - b);
+    const wind = windDriver(p);
+    let deaths = 0;
+
+    for (const plant of plants) {
+      plant.age += 1;
+      const D = shadingIndex(heights, plant.h, m.sigma);
+      const momentShade = Math.max(0, (m.mean - plant.h) / Math.max(1, m.sigma));
+      const distributionPenalty = p.blendQ * D + (1 - p.blendQ) * momentShade;
+      const varianceMultiplier = 1 + p.varShade * m.cv;
+      const light = Math.exp(-p.shade * distributionPenalty * varianceMultiplier);
+      plant.light = clamp(light, 0.03, 1);
+
+      const sizeSlowdown = 1 / (1 + 0.075 * plant.h ** 1.35);
+      const architecturalLimit = clamp(1 - (plant.h / maxH) ** 1.65, 0, 1);
+      const hydraulicCost = Math.exp(-0.026 * plant.h ** 1.18);
+      const growth = 0.34 * sizeSlowdown * architecturalLimit * hydraulicCost * plant.light;
+      const noise = 1 + 0.055 * randn();
+      plant.h = clamp(plant.h + growth * noise, 0.25, maxH);
+
+      const hNorm = plant.h / maxH;
+      const tallCost = p.tallMort * hNorm ** 2.55 * (0.45 + wind ** 1.4);
+      const shadeCost = 0.012 * (1 - plant.light) ** 2.3;
+      const base = 0.0025;
+      const senescence = plant.age > 900 ? 0.004 : 0;
+      const hazard = base + tallCost + shadeCost + senescence;
+      const deathProb = 1 - Math.exp(-hazard);
+      if (Math.random() < deathProb) {
+        plant.dead = true;
+        deaths++;
+      }
+    }
+
+    if (deaths) {
+      plants = plants.filter(p => !p.dead);
+      totalDeaths += deaths;
+    }
+    const recruits = Math.round(deaths * p.recruit + (Math.random() < 0.08 * p.recruit ? 1 : 0));
+    for (let i = 0; i < recruits && plants.length < p.nPlants; i++) plants.push(newPlant(1));
+    while (plants.length < p.nPlants && Math.random() < p.recruit) plants.push(newPlant(1));
+
+    const nextM = moments();
+    history.push({
+      t: time,
+      mean: nextM.mean,
+      variance: nextM.variance,
+      biomass: nextM.biomass,
+      wind,
+      deaths,
+    });
+    if (history.length > 340) history.shift();
+    time += 1;
+    lastDeaths = deaths;
+  }
+
+  function fitCanvas(canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const ratio = window.devicePixelRatio || 1;
+    const w = Math.max(1, Math.round(rect.width * ratio));
+    const h = Math.max(1, Math.round(rect.height * ratio));
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    return { w: rect.width, h: rect.height };
+  }
+
+  function roundedRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function drawForest() {
+    const { w, h } = fitCanvas(forest);
+    fctx.clearRect(0, 0, w, h);
+    const sky = fctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#edf4f5");
+    sky.addColorStop(0.58, "#f8f4e7");
+    sky.addColorStop(1, "#d7ddc2");
+    fctx.fillStyle = sky;
+    fctx.fillRect(0, 0, w, h);
+
+    const groundY = h * 0.88;
+    fctx.fillStyle = "#c8c997";
+    fctx.fillRect(0, groundY, w, h - groundY);
+    fctx.fillStyle = "rgba(65,92,49,0.16)";
+    for (let i = 0; i < 34; i++) {
+      const y = groundY + Math.random() * (h - groundY);
+      fctx.fillRect(Math.random() * w, y, 12 + Math.random() * 42, 1);
+    }
+
+    const m = moments();
+    const sorted = [...plants].sort((a, b) => a.h - b.h);
+    for (const plant of sorted) {
+      const x = 24 + plant.x * (w - 48);
+      const plantH = (plant.h / maxH) * (h * 0.73);
+      const y = groundY - plantH;
+      const stemW = clamp(1.2 + plant.h * 0.055, 1.2, 5.8);
+      const crownR = clamp(6 + plant.h * plant.crown, 5, 34);
+      const shade = 1 - plant.light;
+      const hue = 103 + plant.light * 26;
+      const lightness = 26 + plant.light * 26;
+
+      fctx.strokeStyle = `rgba(91, 74, 46, ${0.55 + 0.25 * plant.light})`;
+      fctx.lineWidth = stemW;
+      fctx.beginPath();
+      fctx.moveTo(x, groundY);
+      fctx.lineTo(x + Math.sin(plant.age * 0.03 + x) * 3, y + crownR * 0.35);
+      fctx.stroke();
+
+      fctx.fillStyle = `hsla(${hue}, 46%, ${lightness}%, 0.88)`;
+      fctx.beginPath();
+      fctx.ellipse(x, y, crownR * (1.05 + shade * 0.25), crownR * 0.75, 0, 0, Math.PI * 2);
+      fctx.fill();
+    }
+
+    const meanY = groundY - (m.mean / maxH) * (h * 0.73);
+    fctx.strokeStyle = "rgba(189, 93, 42, 0.9)";
+    fctx.lineWidth = 2;
+    fctx.setLineDash([7, 6]);
+    fctx.beginPath();
+    fctx.moveTo(14, meanY);
+    fctx.lineTo(w - 14, meanY);
+    fctx.stroke();
+    fctx.setLineDash([]);
+    fctx.fillStyle = "rgba(255,253,246,0.84)";
+    roundedRect(fctx, 14, meanY - 28, 124, 22, 4);
+    fctx.fill();
+    fctx.fillStyle = "#7a3e22";
+    fctx.font = "700 12px Inter, system-ui";
+    fctx.fillText("mean height", 24, meanY - 13);
+
+    ui.meanMetric.textContent = m.mean.toFixed(1);
+    ui.varMetric.textContent = m.variance.toFixed(1);
+    ui.bioMetric.textContent = compact(m.biomass);
+    ui.deathMetric.textContent = String(lastDeaths);
+  }
+
+  function compact(x) {
+    if (x >= 1000000) return (x / 1000000).toFixed(1) + "M";
+    if (x >= 1000) return (x / 1000).toFixed(1) + "k";
+    return x.toFixed(0);
+  }
+
+  function axes(ctx, w, h, pad) {
+    ctx.strokeStyle = "rgba(72,84,68,0.35)";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(pad.l, pad.t);
+    ctx.lineTo(pad.l, h - pad.b);
+    ctx.lineTo(w - pad.r, h - pad.b);
+    ctx.stroke();
+  }
+
+  function drawHist() {
+    const { w, h } = fitCanvas(hist);
+    hctx.clearRect(0, 0, w, h);
+    hctx.fillStyle = "#fffdf6";
+    hctx.fillRect(0, 0, w, h);
+    const pad = { l: 42, r: 18, t: 18, b: 36 };
+    axes(hctx, w, h, pad);
+    const bins = 28;
+    const counts = Array(bins).fill(0);
+    for (const p of plants) {
+      const idx = clamp(Math.floor((p.h / maxH) * bins), 0, bins - 1);
+      counts[idx]++;
+    }
+    const maxLogC = Math.max(1, ...counts.map(c => Math.log1p(c)));
+    const plotW = w - pad.l - pad.r;
+    const plotH = h - pad.t - pad.b;
+    const bw = plotW / bins;
+    for (let i = 0; i < bins; i++) {
+      const scaled = Math.log1p(counts[i]) / maxLogC;
+      const bh = scaled * plotH;
+      const x = pad.l + i * bw + 1;
+      const y = h - pad.b - bh;
+      hctx.fillStyle = `rgba(47,125,90,${0.30 + 0.52 * scaled})`;
+      hctx.fillRect(x, y, Math.max(1, bw - 2), bh);
+    }
+    const m = moments();
+    const meanX = pad.l + (m.mean / maxH) * plotW;
+    hctx.strokeStyle = "#bd5d2a";
+    hctx.lineWidth = 2;
+    hctx.beginPath();
+    hctx.moveTo(meanX, pad.t);
+    hctx.lineTo(meanX, h - pad.b);
+    hctx.stroke();
+    hctx.fillStyle = "#657066";
+    hctx.font = "12px Inter, system-ui";
+    hctx.fillText("0", pad.l - 4, h - 12);
+    hctx.fillText(String(maxH), w - pad.r - 24, h - 12);
+    hctx.save();
+    hctx.translate(14, h * 0.55);
+    hctx.rotate(-Math.PI / 2);
+    hctx.fillText("log(1 + density)", 0, 0);
+    hctx.restore();
+    hctx.fillText("height trait", w * 0.48, h - 12);
+  }
+
+  function drawLine(ctx, values, color, minVal, maxVal, pad, w, h, width = 2) {
+    const plotW = w - pad.l - pad.r;
+    const plotH = h - pad.t - pad.b;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.beginPath();
+    values.forEach((v, i) => {
+      const x = pad.l + (i / Math.max(1, values.length - 1)) * plotW;
+      const y = h - pad.b - ((v - minVal) / Math.max(1e-6, maxVal - minVal)) * plotH;
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+  }
+
+  function drawSeries() {
+    const { w, h } = fitCanvas(series);
+    sctx.clearRect(0, 0, w, h);
+    sctx.fillStyle = "#fffdf6";
+    sctx.fillRect(0, 0, w, h);
+    const pad = { l: 42, r: 18, t: 18, b: 36 };
+    axes(sctx, w, h, pad);
+    if (history.length < 2) return;
+
+    const mean = history.map(d => d.mean);
+    const variance = history.map(d => d.variance);
+    const biomass = history.map(d => d.biomass);
+    const wind = history.map(d => d.wind);
+
+    const norm = arr => {
+      const min = Math.min(...arr);
+      const max = Math.max(...arr);
+      return arr.map(v => (v - min) / Math.max(1e-6, max - min));
+    };
+
+    drawLine(sctx, norm(mean), "#2f7d5a", 0, 1, pad, w, h, 2.5);
+    drawLine(sctx, norm(variance), "#356b9a", 0, 1, pad, w, h, 2.5);
+    drawLine(sctx, norm(biomass), "#bd5d2a", 0, 1, pad, w, h, 2.5);
+    drawLine(sctx, norm(wind), "#9c3434", 0, 1, pad, w, h, 1.8);
+
+    sctx.fillStyle = "#657066";
+    sctx.font = "12px Inter, system-ui";
+    sctx.fillText("recent time", w * 0.45, h - 12);
+    sctx.save();
+    sctx.translate(14, h * 0.62);
+    sctx.rotate(-Math.PI / 2);
+    sctx.fillText("scaled values", 0, 0);
+    sctx.restore();
+  }
+
+  function draw() {
+    drawForest();
+    drawHist();
+    drawSeries();
+  }
+
+  function loop() {
+    if (running) {
+      for (let i = 0; i < 2; i++) step();
+    }
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  ui.play.addEventListener("click", () => {
+    running = !running;
+    ui.play.textContent = running ? "Pause" : "Play";
+    ui.play.classList.toggle("primary", running);
+  });
+  ui.reset.addEventListener("click", reset);
+  for (const input of [ui.shade, ui.varShade, ui.blendQ, ui.tallMort, ui.wind, ui.recruit]) {
+    input.addEventListener("input", syncOutputs);
+  }
+  ui.nPlants.addEventListener("change", reset);
+  window.addEventListener("resize", draw);
+
+  reset();
+  loop();
+})();
+</script>
+</body>
+</html>
