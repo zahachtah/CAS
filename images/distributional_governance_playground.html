@@ -13,7 +13,7 @@
       --line: #d7dce3;
       --subtle: #fbfcfd;
       --input: #ffffff;
-      --canvas: #ffffff;
+      --canvas: var(--panel);
       --grid: #eef1f5;
       --axis: #cfd6df;
       --plotText: #697386;
@@ -44,7 +44,7 @@
       --line: #2a3340;
       --subtle: #1a212b;
       --input: #10161d;
-      --canvas: #10161d;
+      --canvas: var(--panel);
       --grid: rgba(170, 188, 210, 0.09);
       --axis: rgba(181, 196, 216, 0.24);
       --plotText: #8692a3;
@@ -134,26 +134,80 @@
     }
 
     .section {
-      border-top: 1px solid var(--line);
-      padding-top: 9px;
-      margin-top: 9px;
+      --section-color: var(--muted);
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0 10px 9px 12px;
+      margin-top: 10px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--section-color) 8%, transparent), transparent 44%),
+        var(--panel);
     }
 
-    .section:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-      margin-top: 0;
+    .section::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--section-color);
+      opacity: 0.95;
     }
+
+    .section:first-of-type { margin-top: 0; }
 
     .section-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 4px;
+      margin: 0 -10px 8px -12px;
+      padding: 8px 10px 8px 12px;
+      border-bottom: 1px solid color-mix(in srgb, var(--section-color) 22%, var(--line));
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--section-color) 16%, transparent), transparent 74%),
+        var(--subtle);
     }
 
     .section-head h2 { margin: 0; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 7px;
+    }
+
+    .section-index {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: var(--section-color);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .section-copy {
+      display: grid;
+      min-width: 0;
+      gap: 1px;
+    }
+
+    .section-copy span {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 700;
+      line-height: 1.1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     .mode-head {
       justify-content: flex-start;
@@ -171,6 +225,145 @@
       padding: 6px 8px;
       margin: 6px 0 8px;
       background: var(--subtle);
+    }
+
+    .population-section { --section-color: var(--green); }
+
+    .policy-section {
+      --section-color: var(--purple);
+    }
+
+    .population-settings {
+      border-style: dashed;
+      background: var(--subtle);
+    }
+
+    .policy-settings {
+      border-left: 3px solid var(--purple);
+      padding-left: 10px;
+      background: transparent;
+    }
+
+    .learning-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .learning-menu {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--subtle);
+      min-width: 0;
+    }
+
+    .learning-menu[open] {
+      background: var(--panel);
+      box-shadow: 0 4px 16px rgba(31, 41, 51, 0.06);
+    }
+
+    .learning-menu summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 6px 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .learning-menu summary::-webkit-details-marker { display: none; }
+
+    .learning-menu summary::after {
+      content: "+";
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .learning-menu[open] summary::after { content: "-"; }
+
+    .submenu {
+      display: grid;
+      gap: 4px;
+      padding: 0 6px 6px;
+    }
+
+    .submenu-item {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--input);
+      color: var(--ink);
+      padding: 6px 8px;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+      min-width: 0;
+    }
+
+    .submenu-item strong {
+      display: block;
+      font-size: 0.78rem;
+      line-height: 1.1;
+    }
+
+    .submenu-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.68rem;
+      line-height: 1.18;
+      margin-top: 2px;
+    }
+
+    .submenu-item:hover,
+    .submenu-item:focus-visible,
+    .submenu-item[aria-pressed="true"] {
+      border-color: var(--orange);
+      background: var(--panel);
+    }
+
+    .submenu-item[aria-pressed="true"] strong { color: var(--orange); }
+
+    .control-group {
+      --group-color: var(--muted);
+      --rangeFill: var(--group-color);
+      border-left: 3px solid var(--group-color);
+      padding: 5px 0 4px 10px;
+      margin: 8px 0;
+    }
+
+    .control-group.exit-incentives { --group-color: var(--orange); }
+    .control-group.impacts { --group-color: var(--blue); }
+    .control-group.pairing { --group-color: var(--purple); }
+
+    .control-group-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px;
+      color: var(--group-color);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .control-group-title span {
+      color: var(--muted);
+      font-size: 0.68rem;
+      text-transform: none;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .control-group label.control {
+      margin: 5px 0;
     }
 
     label.control {
@@ -266,14 +459,36 @@
       color: var(--ink);
     }
 
-    .policy-row {
+    .policy-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 32px;
-      gap: 8px;
-      align-items: end;
+      align-items: center;
+      gap: 6px 8px;
+      margin-bottom: 6px;
     }
 
-    .policy-row label.control { margin-bottom: 0; }
+    .policy-head h2 {
+      margin: 0;
+    }
+
+    .policy-head .section-title {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .policy-head .icon-button {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    .policy-select {
+      grid-column: 1 / -1;
+      min-width: 0;
+      width: 100%;
+      padding: 5px 8px;
+      font-size: 0.84rem;
+    }
 
     .mode-switch {
       display: grid;
@@ -332,7 +547,7 @@
 
     .viz {
       display: grid;
-      grid-template-rows: minmax(0, 1.25fr) minmax(0, 0.8fr) auto;
+      grid-template-rows: minmax(0, 1.25fr) auto minmax(0, 0.8fr);
       gap: 10px;
       min-width: 0;
       min-height: 0;
@@ -354,6 +569,36 @@
       flex: 0 0 auto;
     }
 
+    .chart-title {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      min-width: 0;
+    }
+
+    .chart-title h2 {
+      margin: 2px 0 8px;
+      flex: 0 0 auto;
+    }
+
+    .phase-moments {
+      display: inline-flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 10px;
+      min-width: 0;
+      margin: 2px 0 8px;
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.2;
+    }
+
+    .phase-moments[hidden] { display: none; }
+    .phase-moments .incentive { color: var(--orange); }
+    .phase-moments .impact { color: var(--blue); }
+
     .chart-tools {
       display: inline-flex;
       align-items: center;
@@ -364,6 +609,10 @@
     }
 
     .chart-tools[hidden], .chart-select[hidden] { display: none; }
+
+    #phaseDisplayTools {
+      padding-right: 30px;
+    }
 
     .chart-select {
       display: inline-flex;
@@ -379,6 +628,10 @@
       padding: 4px 7px;
       border-radius: 7px;
       font-size: 0.78rem;
+    }
+
+    .chart-tools .chart-select select {
+      width: min(170px, 30vw);
     }
 
     .mini-toggle {
@@ -397,6 +650,18 @@
       accent-color: var(--orange);
     }
 
+    .phase-guide {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin: -2px 0 6px;
+      line-height: 1.25;
+    }
+
+    .phase-guide .incentive { color: var(--orange); font-weight: 700; }
+    .phase-guide .impact { color: var(--blue); font-weight: 700; }
+    .phase-guide .crossing { color: var(--ink); font-weight: 700; }
+
     .display-options {
       display: flex;
       flex-wrap: wrap;
@@ -410,18 +675,30 @@
       min-height: 0;
       flex: 1 1 auto;
       background: var(--canvas);
-      border: 1px solid var(--line);
-      border-radius: 10px;
+      border: 0;
+      border-radius: 0;
     }
 
     #phaseCanvas, #incomeCanvas { height: auto; }
+
+    .metrics-panel {
+      padding: 6px;
+      flex: 0 0 auto;
+    }
+
+    .metrics-title {
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0 0 4px;
+    }
 
     .metrics {
       display: grid;
       grid-template-columns: repeat(7, minmax(0, 1fr));
       gap: 4px;
-      padding: 6px;
-      flex: 0 0 auto;
     }
 
     .metric {
@@ -434,12 +711,11 @@
 
     .metric .name {
       color: var(--muted);
-      font-size: 0.58rem;
+      font-size: 0.56rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      letter-spacing: 0.03em;
+      line-height: 1.05;
+      min-height: 1.15rem;
     }
 
     .metric .number {
@@ -464,7 +740,7 @@
     .delta-value.zero { color: var(--muted); }
 
     .legend {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
       gap: 10px 16px;
       color: var(--muted);
@@ -535,7 +811,8 @@
       .viz { display: block; margin-top: 12px; }
       .chart-card { min-height: 520px; margin-bottom: 12px; }
       canvas { min-height: 330px; }
-      .metrics { grid-template-columns: repeat(2, minmax(130px, 1fr)); margin-bottom: 12px; }
+      .metrics-panel { margin-bottom: 12px; }
+      .metrics { grid-template-columns: repeat(2, minmax(130px, 1fr)); }
     }
   </style>
 </head>
@@ -543,14 +820,71 @@
   <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle light/dark mode">☾</button>
   <main>
     <aside class="panel controls">
-      <h2>Controls</h2>
+      <nav class="learning-nav" aria-label="Guided examples and walkthrough">
+        <details id="examplesMenu" class="learning-menu">
+          <summary>Examples</summary>
+          <div class="submenu">
+            <button class="submenu-item" type="button" data-preset="fragile">
+              <strong>Fragile cluster</strong>
+              <span>Many actors sit near the attractor.</span>
+            </button>
+            <button class="submenu-item" type="button" data-preset="stayers">
+              <strong>High-impact stayers</strong>
+              <span>Large users remain active at low stock.</span>
+            </button>
+            <button class="submenu-item" type="button" data-preset="rights">
+              <strong>Tradable rights</strong>
+              <span>A quota price shifts exit incentives.</span>
+            </button>
+            <button class="submenu-item" type="button" data-preset="spillover">
+              <strong>Spillover closure</strong>
+              <span>A closure changes access and impact.</span>
+            </button>
+          </div>
+        </details>
+        <details id="walkthroughMenu" class="learning-menu">
+          <summary>Walkthrough</summary>
+          <div class="submenu">
+            <button class="submenu-item" type="button" data-walkthrough="population">
+              <strong>1. Population</strong>
+              <span>Set exit incentives and impacts.</span>
+            </button>
+            <button class="submenu-item" type="button" data-walkthrough="curves">
+              <strong>2. Curves</strong>
+              <span>Read crossings and distributions.</span>
+            </button>
+            <button class="submenu-item" type="button" data-walkthrough="trajectory">
+              <strong>3. Dynamics</strong>
+              <span>Follow the path to equilibrium.</span>
+            </button>
+            <button class="submenu-item" type="button" data-walkthrough="policy">
+              <strong>4. Policy</strong>
+              <span>Compare instrument outcomes.</span>
+            </button>
+            <button class="submenu-item" type="button" data-walkthrough="income">
+              <strong>5. Income</strong>
+              <span>Connect activity to distribution.</span>
+            </button>
+            <button class="submenu-item" type="button" data-walkthrough="scan">
+              <strong>6. Scan</strong>
+              <span>Explore policy strength.</span>
+            </button>
+          </div>
+        </details>
+      </nav>
 
-      <div class="section">
+      <div class="section population-section">
         <div class="section-head">
-          <h2>Population</h2>
+          <div class="section-title">
+            <span class="section-index">1</span>
+            <div class="section-copy">
+              <h2>Population</h2>
+              <span>Actors, exits, impacts</span>
+            </div>
+          </div>
           <button id="settingsToggle" class="icon-button" type="button" aria-label="Show simulation settings" aria-expanded="false">⚙</button>
         </div>
-        <div id="settingsDrawer" class="settings-drawer" hidden>
+        <div id="settingsDrawer" class="settings-drawer population-settings" hidden>
           <label class="control">
             <span>Actors</span><span class="value" data-value-for="nActors"></span>
             <input id="nActors" type="range" min="100" max="1000" step="50" value="500" />
@@ -568,9 +902,9 @@
             <small>Adaptive RK uses accepted variable-size timesteps and fixed output samples for the trajectory.</small>
           </label>
           <label class="control">
-            <span>Trajectory spacing</span><span class="value" data-value-for="trajectorySpacing"></span>
-            <input id="trajectorySpacing" type="range" min="0" max="0.02" step="0.0005" value="0.0005" />
-            <small>Minimum change in resource level or participation before adding another trajectory point.</small>
+            <span>Path step length</span><span class="value" data-value-for="trajectorySpacing"></span>
+            <input id="trajectorySpacing" type="range" min="0.001" max="0.200" step="0.001" value="0.010" />
+            <small>Maximum plotted distance in resource-participation space; solver steps are unchanged.</small>
           </label>
         </div>
         <label class="control">
@@ -579,55 +913,76 @@
             <option value="random">Random sample</option>
             <option value="ordered" selected>Ordered quantiles</option>
           </select>
-          <small>Ordered quantiles use deterministic ranks for both incentives and impacts, matching clean pedagogical figures.</small>
+          <small>Ordered quantiles use deterministic ranks with the same marginals and target correlation; random sampling adds finite-sample wiggle.</small>
         </label>
-        <label class="control">
-          <span>Mean incentive threshold</span><span class="value" data-value-for="meanTheta"></span>
-          <input id="meanTheta" type="range" min="0.05" max="0.95" step="0.01" value="0.45" />
-          <small>Higher values mean actors need higher resource abundance before harvesting is worthwhile.</small>
-        </label>
-        <label class="control">
-          <span>Incentive heterogeneity</span><span class="value" data-value-for="thetaSpread"></span>
-          <input id="thetaSpread" type="range" min="0.05" max="3.00" step="0.01" value="1.00" />
-        </label>
-        <label class="control">
-          <span>Total maximum impact</span><span class="value" data-value-for="totalImpact"></span>
-          <input id="totalImpact" type="range" min="0.05" max="2.50" step="0.01" value="1.10" />
-        </label>
-        <label class="control">
-          <span>Impact inequality</span><span class="value" data-value-for="impactInequality"></span>
-          <input id="impactInequality" type="range" min="0.00" max="2.50" step="0.01" value="0.90" />
-        </label>
-        <label class="control">
-          <span>Correlation: threshold ↔ impact</span><span class="value" data-value-for="correlation"></span>
-          <input id="correlation" type="range" min="-0.95" max="0.95" step="0.01" value="-0.30" />
-          <small>Negative values put high-impact actors among those most likely to keep harvesting at low resource levels.</small>
-        </label>
+        <div class="control-group exit-incentives">
+          <div class="control-group-title">
+            <strong>Exit incentives</strong>
+            <span>thresholds cᵢ</span>
+          </div>
+          <label class="control">
+            <span>Mean exit threshold</span><span class="value" data-value-for="meanTheta"></span>
+            <input id="meanTheta" type="range" min="0.00" max="2.00" step="0.01" value="0.45" />
+            <small>Thresholds are not bounded by the plotted resource axis; the cumulative curve at y = 1 can remain below 1.</small>
+          </label>
+          <label class="control">
+            <span>Exit-threshold heterogeneity</span><span class="value" data-value-for="thetaSpread"></span>
+            <input id="thetaSpread" type="range" min="0.00" max="3.00" step="0.01" value="1.00" />
+          </label>
+        </div>
+
+        <div class="control-group impacts">
+          <div class="control-group-title">
+            <strong>Impacts</strong>
+            <span>capacities ūᵢ</span>
+          </div>
+          <label class="control">
+            <span>Total maximum impact</span><span class="value" data-value-for="totalImpact"></span>
+            <input id="totalImpact" type="range" min="0.05" max="2.50" step="0.01" value="1.10" />
+          </label>
+          <label class="control">
+            <span>Impact inequality</span><span class="value" data-value-for="impactInequality"></span>
+            <input id="impactInequality" type="range" min="0.00" max="2.50" step="0.01" value="0.90" />
+          </label>
+        </div>
+
+        <div class="control-group pairing">
+          <div class="control-group-title">
+            <strong>Pairing</strong>
+            <span>cᵢ ↔ ūᵢ</span>
+          </div>
+          <label class="control">
+            <span>Correlation between incentives and impacts</span><span class="value" data-value-for="correlation"></span>
+            <input id="correlation" type="range" min="-0.95" max="0.95" step="0.01" value="-0.30" />
+            <small>Negative values put high-impact actors among those most likely to keep harvesting at low resource levels.</small>
+          </label>
+        </div>
       </div>
 
-      <div class="section">
-        <div class="section-head mode-head">
-          <h2 id="policySectionTitle">Policy</h2>
-          <div id="policyModeSwitch" class="mode-switch" role="group" aria-label="Policy view mode" hidden>
-            <button id="instrumentMode" type="button" aria-pressed="true">Instrument</button>
-            <button id="scanMode" type="button" aria-pressed="false">Scan</button>
+      <div class="section policy-section">
+        <div class="section-head mode-head policy-head">
+          <div class="section-title">
+            <span class="section-index">2</span>
+            <div class="section-copy">
+              <h2 id="policySectionTitle">Policy</h2>
+              <span>Instrument, scan, allocation</span>
+            </div>
           </div>
-        </div>
-        <div class="policy-row">
-          <label class="control">
-            <span>Policy family</span>
-            <select id="policyType">
-              <option value="none">Open access / none</option>
-              <option value="access">Exclusive access restriction</option>
-              <option value="rights">Tradable rights / impact cap</option>
-              <option value="pa">Protected area / closure</option>
-              <option value="economic">Economic instrument</option>
-            </select>
-          </label>
+          <select id="policyType" class="policy-select" aria-label="Policy">
+            <option value="none">Open access / none</option>
+            <option value="access">Exclusive access restriction</option>
+            <option value="rights">Tradable rights / impact cap</option>
+            <option value="pa">Protected area / closure</option>
+            <option value="economic">Economic instrument</option>
+          </select>
           <button id="policyHelp" class="icon-button" type="button" aria-label="Explain selected policy">?</button>
         </div>
+        <div id="policyModeSwitch" class="mode-switch" role="group" aria-label="Policy view mode" hidden>
+          <button id="instrumentMode" type="button" aria-pressed="true">Instrument</button>
+          <button id="scanMode" type="button" aria-pressed="false">Scan</button>
+        </div>
         <input id="policyScan" type="checkbox" />
-        <div id="scanControls" class="settings-drawer" hidden>
+        <div id="scanControls" class="settings-drawer policy-settings" hidden>
           <label class="control">
             <span>Scan points</span><span class="value" data-value-for="scanResolution"></span>
             <input id="scanResolution" type="range" min="12" max="64" step="4" value="32" />
@@ -649,7 +1004,7 @@
             <input id="goalEcology" type="range" min="-2" max="2" step="0.05" value="0.00" />
           </label>
           <label class="control">
-            <span>Regulation impact exponent</span><span class="value" data-value-for="goalImpact"></span>
+            <span>Policy impact exponent</span><span class="value" data-value-for="goalImpact"></span>
             <input id="goalImpact" type="range" min="-2" max="2" step="0.05" value="0.00" />
           </label>
           <small>Scans the selected policy from open access toward strict regulation and redraws the figures as outcome curves.</small>
@@ -728,52 +1083,60 @@
     <section class="viz">
       <div class="panel chart-card">
         <div class="chart-head">
-          <h2 id="phaseTitle">Phase diagram</h2>
+          <div class="chart-title">
+            <h2 id="phaseTitle">Phase diagram</h2>
+            <div id="phaseMoments" class="phase-moments" hidden></div>
+          </div>
           <div id="phaseDisplayTools" class="chart-tools">
             <label class="mini-toggle">
               <input id="showDensities" type="checkbox" />
-              <span>Densities</span>
+              <span>Show distributions</span>
             </label>
             <label class="mini-toggle">
               <input id="showTrajectory" type="checkbox" checked />
-              <span>Trajectory</span>
+              <span>Show path</span>
+            </label>
+            <label class="mini-toggle">
+              <input id="showActorScatter" type="checkbox" />
+              <span>Actor scatter</span>
             </label>
           </div>
         </div>
-        <canvas id="phaseCanvas"></canvas>
-        <div class="legend" id="phaseLegend">
-          <span><i class="swatch" style="background: var(--baseline)"></i>Open access baseline</span>
-          <span><i class="swatch" style="background: var(--orange)"></i>Policy incentive curve, Γ<sub>p</sub>(y)</span>
-          <span><i class="swatch" style="background: var(--blue)"></i>Policy impact-balance curve, Φ<sub>p</sub>(y)</span>
-          <span><i class="swatch" style="background: linear-gradient(90deg, var(--orange), var(--blue))"></i>Optional density overlays</span>
-          <span><i class="swatch" style="background: var(--red)"></i>Policy attractor</span>
+        <div class="phase-guide" id="phaseGuide">
+          <span class="incentive">Orange</span> shows exit incentives; <span class="impact">blue</span> shows ordered active-impact; the <span class="crossing">crossing</span> is the predicted outcome.
         </div>
+        <canvas id="phaseCanvas"></canvas>
+        <div class="legend" id="phaseLegend" hidden></div>
+      </div>
+
+      <div class="panel metrics-panel">
+        <div class="metrics-title" id="metricsTitle">Outcomes vs open access</div>
+        <div class="metrics" id="metrics"></div>
       </div>
 
       <div class="panel chart-card">
         <div class="chart-head">
           <h2 id="incomeTitle">Income distribution at the attractor</h2>
-          <label id="incomeSortControl" class="chart-select">
-            <span>Sort</span>
-            <select id="incomeSort">
-              <option value="total">Total income</option>
-              <option value="incentive">Incentive threshold</option>
-              <option value="impact">Impact capacity</option>
-              <option value="resource">Resource use</option>
-              <option value="active">Active status</option>
-            </select>
-          </label>
+          <div id="incomeTools" class="chart-tools">
+            <label class="chart-select">
+              <span>Sort</span>
+              <select id="incomeSort">
+                <option value="total">Total income</option>
+                <option value="incentive">Incentive threshold</option>
+                <option value="impact">Impact capacity</option>
+                <option value="resource">Resource use</option>
+                <option value="active">Active status</option>
+              </select>
+            </label>
+            <label class="mini-toggle">
+              <input id="incomeLogScale" type="checkbox" />
+              <span>Log y</span>
+            </label>
+          </div>
         </div>
         <canvas id="incomeCanvas"></canvas>
-        <div class="legend" id="incomeLegend">
-          <span><i class="swatch" style="background: var(--baseline)"></i>Open access total income</span>
-          <span><i class="swatch" style="background: var(--orange)"></i>Policy wages / outside option</span>
-          <span><i class="swatch" style="background: var(--blue)"></i>Policy resource income</span>
-          <span><i class="swatch" style="background: var(--purple)"></i>Policy trade income</span>
-        </div>
+        <div class="legend" id="incomeLegend" hidden></div>
       </div>
-
-      <div class="panel metrics" id="metrics"></div>
     </section>
   </main>
 
@@ -781,7 +1144,7 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
       <div class="modal-head">
         <h2 id="policyModalTitle"></h2>
-        <button id="policyModalClose" class="icon-button" type="button" aria-label="Close policy explanation">&times;</button>
+        <button id="policyModalClose" class="icon-button" type="button" aria-label="Close explanation">&times;</button>
       </div>
       <div id="policyModalBody" class="modal-body"></div>
     </div>
@@ -815,7 +1178,7 @@
       "excludeMode", "impactCap", "rightsTarget", "rightsAllocation",
       "historicalRights", "protectedFraction", "spillover", "compensation",
       "taxRate", "gearSubsidy", "solverMode", "trajectorySpacing", "incomeSort",
-      "showDensities", "showTrajectory", "policyScan", "scanResolution"
+      "incomeLogScale", "showDensities", "showTrajectory", "showActorScatter", "policyScan", "scanResolution"
     ];
     const scanWeightIds = ["goalResource", "goalTotal", "goalGini", "goalEcology", "goalImpact"];
 
@@ -823,12 +1186,15 @@
     const phaseCanvas = document.getElementById("phaseCanvas");
     const incomeCanvas = document.getElementById("incomeCanvas");
     const metricsEl = document.getElementById("metrics");
+    const metricsTitle = document.getElementById("metricsTitle");
     const phaseTitle = document.getElementById("phaseTitle");
+    const phaseGuide = document.getElementById("phaseGuide");
+    const phaseMoments = document.getElementById("phaseMoments");
     const incomeTitle = document.getElementById("incomeTitle");
     const phaseLegend = document.getElementById("phaseLegend");
     const incomeLegend = document.getElementById("incomeLegend");
     const phaseDisplayTools = document.getElementById("phaseDisplayTools");
-    const incomeSortControl = document.getElementById("incomeSortControl");
+    const incomeTools = document.getElementById("incomeTools");
     const settingsToggle = document.getElementById("settingsToggle");
     const settingsDrawer = document.getElementById("settingsDrawer");
     const scanControls = document.getElementById("scanControls");
@@ -842,6 +1208,8 @@
     const policyModalTitle = document.getElementById("policyModalTitle");
     const policyModalBody = document.getElementById("policyModalBody");
     const policyModalClose = document.getElementById("policyModalClose");
+    const learningMenus = [...document.querySelectorAll(".learning-menu")];
+    const walkthroughButtons = [...document.querySelectorAll("[data-walkthrough]")];
 
     const policyBlocks = {
       access: document.getElementById("accessControls"),
@@ -849,6 +1217,8 @@
       pa: document.getElementById("paControls"),
       economic: document.getElementById("economicControls")
     };
+    const presetButtons = [...document.querySelectorAll("[data-preset]")];
+    let modalReturnFocus = policyHelp;
 
     const fmt = {
       int: x => Math.round(x).toLocaleString(),
@@ -865,7 +1235,7 @@
             \\dot u_i = \\alpha_i\\,(y - c_i), \\qquad \\alpha_i=0.05, \\qquad
             \\dot y = y\\left((1-y)-\\sum_i u_i\\right)
           \\]</p>
-          <p>The orange curve is \\(\\Gamma(y)=N^{-1}\\sum_i \\mathbf{1}(c_i &lt; y)\\). The blue curve is \\(\\Phi(y)\\), the fraction of actors needed to supply ecological pressure \\(1-y\\) when actors are ordered by cost.</p>
+          <p>The orange curve is the cumulative share of actors with \\(c_i &lt; y\\): \\(N^{-1}\\sum_i \\mathbf{1}(c_i &lt; y)\\). The blue curve is ordered active-impact: the fraction of actors needed to supply ecological pressure \\(1-y\\) when actors are ordered by cost.</p>
         `
       },
       access: {
@@ -882,7 +1252,7 @@
       rights: {
         title: "Tradable use rights",
         body: `
-          <p>Rights are an aggregate effort or yield quota. They do not change each actor's maximum impact capacity \\(\\bar u_i\\), so the impact-balance curve \\(\\Phi\\) stays fixed. Instead, the rights market creates a permit price \\(\\pi\\) that shifts all harvesting thresholds additively:</p>
+          <p>Rights are an aggregate effort or yield quota. They do not change each actor's maximum impact capacity \\(\\bar u_i\\), so the ordered active-impact curve stays fixed. Instead, the rights market creates a permit price \\(\\pi\\) that shifts all harvesting thresholds additively:</p>
           <p>\\[
             c_i^{TUR} = c_i + \\pi
           \\]</p>
@@ -895,7 +1265,7 @@
           <p>\\[
             \\dot\\pi = \\kappa(D-S)
           \\]</p>
-          <p>The simulation integrates \\((u_1,\\ldots,u_N,y,\\pi)\\) until equilibrium. Trade income is \\((R_i-u_i)\\pi\\) for effort rights or \\((R_i-u_i y)\\pi\\) for yield rights. The orange curve is the cumulative distribution of shifted thresholds, \\(c_i + \\pi\\), while the blue curve remains the unmodified ecological participation curve.</p>
+          <p>The simulation integrates \\((u_1,\\ldots,u_N,y,\\pi)\\) until equilibrium. Trade income is \\((R_i-u_i)\\pi\\) for effort rights or \\((R_i-u_i y)\\pi\\) for yield rights. The orange curve is the cumulative distribution of shifted thresholds, \\(c_i + \\pi\\), while the blue curve remains the unmodified ordered active-impact curve.</p>
         `
       },
       pa: {
@@ -918,6 +1288,146 @@
             \\bar u_i' = \\bar u_i(1+s)
           \\]</p>
           <p>The incentive curve moves with costs, and the impact curve moves when the maximum effort distribution changes.</p>
+        `
+      }
+    };
+
+    const presets = {
+      fragile: {
+        policyType: "none",
+        policyScan: false,
+        samplingMode: "ordered",
+        meanTheta: 0.48,
+        thetaSpread: 0.24,
+        totalImpact: 1.12,
+        impactInequality: 0.55,
+        correlation: 0.05,
+        showDensities: true,
+        showTrajectory: true,
+        showActorScatter: false
+      },
+      stayers: {
+        policyType: "none",
+        policyScan: false,
+        samplingMode: "ordered",
+        meanTheta: 0.35,
+        thetaSpread: 1.05,
+        totalImpact: 1.55,
+        impactInequality: 1.55,
+        correlation: -0.88,
+        showDensities: true,
+        showTrajectory: true,
+        showActorScatter: false
+      },
+      rights: {
+        policyType: "rights",
+        policyScan: false,
+        samplingMode: "ordered",
+        meanTheta: 0.39,
+        thetaSpread: 1.00,
+        totalImpact: 1.24,
+        impactInequality: 0.95,
+        correlation: -0.25,
+        impactCap: 0.55,
+        rightsTarget: "effort",
+        historicalRights: false,
+        showDensities: false,
+        showTrajectory: true,
+        showActorScatter: false
+      },
+      spillover: {
+        policyType: "pa",
+        policyScan: false,
+        samplingMode: "ordered",
+        meanTheta: 0.38,
+        thetaSpread: 0.90,
+        totalImpact: 1.35,
+        impactInequality: 1.10,
+        correlation: -0.45,
+        protectedFraction: 0.25,
+        spillover: 0.75,
+        showDensities: false,
+        showTrajectory: true,
+        showActorScatter: false
+      }
+    };
+
+    const exampleDocs = {
+      fragile: {
+        title: "Example: Fragile cluster",
+        body: `
+          <p><strong>Scenario.</strong> Many users have similar exit thresholds near the predicted outcome. The averages look ordinary, but the crossing sits in a crowded part of the population.</p>
+          <p><strong>Try this.</strong> Move <em>Mean exit threshold</em> slightly left and right. Then widen <em>Exit-threshold heterogeneity</em>.</p>
+          <p><strong>Expect.</strong> With a tight cluster, small parameter changes can move many actors in or out together. With wider heterogeneity, participation changes more gradually.</p>
+        `
+      },
+      stayers: {
+        title: "Example: High-impact stayers",
+        body: `
+          <p><strong>Scenario.</strong> High-impact actors are paired with low exit thresholds, so the actors most able to exert pressure are also the ones most likely to remain active when the resource is scarce.</p>
+          <p><strong>Try this.</strong> Move <em>Correlation between incentives and impacts</em> toward zero or positive values, and compare where the crossing lands.</p>
+          <p><strong>Expect.</strong> Negative pairing steepens the consequences of the lower tail. Positive pairing makes high-impact actors exit earlier and can relieve pressure without changing average impact.</p>
+        `
+      },
+      rights: {
+        title: "Example: Tradable rights",
+        body: `
+          <p><strong>Scenario.</strong> An aggregate quota creates a permit price. That price raises the effective exit threshold for everyone, while the ordered active-impact curve stays tied to the same impact capacities.</p>
+          <p><strong>Try this.</strong> Change <em>Total quota</em>, switch between effort and yield caps, and toggle <em>Historical use rights</em>.</p>
+          <p><strong>Expect.</strong> Tighter quotas usually push the orange curve to the right through the market price. Historical allocation changes income and rents even when ecological outcomes are similar.</p>
+        `
+      },
+      spillover: {
+        title: "Example: Spillover closure",
+        body: `
+          <p><strong>Scenario.</strong> A protected area reduces open harvest area but can also reduce effective pressure through spillover. The policy therefore acts on both access and ordered active-impact.</p>
+          <p><strong>Try this.</strong> Increase <em>Protected fraction</em>, then raise and lower <em>Spillover / local benefit</em>.</p>
+          <p><strong>Expect.</strong> Weak spillover mostly excludes effort. Strong spillover can shift the ordered active-impact curve and improve the resource outcome with less loss of participation.</p>
+        `
+      }
+    };
+
+    const walkthroughDocs = {
+      population: {
+        title: "Walkthrough 1: Build the population",
+        body: `
+          <p><strong>Do.</strong> Start with ordered quantiles. Use the orange <em>Exit incentives</em> sliders to set when actors leave the resource, and the blue <em>Impacts</em> sliders to set how much pressure active actors can exert.</p>
+          <p><strong>Expect.</strong> The orange cumulative curve responds to exit thresholds. The blue ordered active-impact curve responds to impact capacities and the ordering of actors. The model outcome is where these two curves meet.</p>
+        `
+      },
+      curves: {
+        title: "Walkthrough 2: Read the phase diagram",
+        body: `
+          <p><strong>Do.</strong> Turn on <em>Show distributions</em>. Read the orange bars along the x-axis as exit thresholds and the blue bars along the y-axis as ordered active-impact mass.</p>
+          <p><strong>Expect.</strong> The orange curve need not reach one by y = 1, because some thresholds can lie outside the plotted resource range. The blue curve asks how much of the ordered population is needed to supply the pressure implied by each resource level.</p>
+        `
+      },
+      trajectory: {
+        title: "Walkthrough 3: Watch the dynamics",
+        body: `
+          <p><strong>Do.</strong> Keep <em>Show path</em> on. Open the settings gear and change <em>Path step length</em>.</p>
+          <p><strong>Expect.</strong> The open-access path starts from full resource and zero use. A policy path starts from the open-access attractor, then moves toward the policy attractor. Smaller path step length draws more points along the same simulated trajectory; it does not change the solver.</p>
+        `
+      },
+      policy: {
+        title: "Walkthrough 4: Add a policy",
+        body: `
+          <p><strong>Do.</strong> Choose a policy from the selector. Use the question-mark button beside the selector for the policy mechanics.</p>
+          <p><strong>Expect.</strong> Open access remains visible as a muted reference. The policy curves and red attractor show how the instrument changes the predicted outcome; the indicator row reports the policy value and its change from open access.</p>
+        `
+      },
+      income: {
+        title: "Walkthrough 5: Connect outcomes to income",
+        body: `
+          <p><strong>Do.</strong> Use the income plot's sort selector to order actors by total income, incentive threshold, impact capacity, resource use, or active status. Toggle <em>Log y</em> when the right tail dominates.</p>
+          <p><strong>Expect.</strong> Bars decompose income sources. The total-income line shows the sorted distribution, while active users can be separated from non-users by sorting or by the resource-use component.</p>
+        `
+      },
+      scan: {
+        title: "Walkthrough 6: Scan policy strength",
+        body: `
+          <p><strong>Do.</strong> Select any policy other than open access, then click <em>Scan</em>. Adjust the scan-point count or the goal exponents in the scan drawer.</p>
+          <p><strong>Expect.</strong> The figures switch from one instrument setting to many. The upper panel shows who is active across policy strength, while the lower panel summarizes outcome indicators and weighted goal scores.</p>
         `
       }
     };
@@ -949,8 +1459,10 @@
         taxRate: +el.taxRate.value,
         gearSubsidy: +el.gearSubsidy.value,
         incomeSort: el.incomeSort.value,
+        incomeLogScale: el.incomeLogScale.checked,
         showDensities: el.showDensities.checked,
         showTrajectory: el.showTrajectory.checked,
+        showActorScatter: el.showActorScatter.checked,
         policyScan: policyType !== "none" && el.policyScan.checked,
         scanResolution: +el.scanResolution.value,
         goalResource: +el.goalResource.value,
@@ -1010,13 +1522,44 @@
       policySectionTitle.textContent = "Policy";
       policyModeSwitch.hidden = p.policyType === "none";
       phaseDisplayTools.hidden = p.policyScan && p.policyType !== "none";
-      incomeSortControl.hidden = p.policyScan && p.policyType !== "none";
+      incomeTools.hidden = p.policyScan && p.policyType !== "none";
       instrumentMode.setAttribute("aria-pressed", String(!p.policyScan));
       scanMode.setAttribute("aria-pressed", String(p.policyScan));
       scanControls.hidden = !p.policyScan || p.policyType === "none";
       document.querySelectorAll(".scan-bound").forEach(node => {
         node.hidden = p.policyScan && p.policyType !== "none";
       });
+    }
+
+    function setControlValue(id, value) {
+      const node = el[id];
+      if (!node) return;
+      if (node.type === "checkbox") {
+        node.checked = !!value;
+      } else {
+        node.value = String(value);
+      }
+      syncRangeProgress(node);
+    }
+
+    function setActivePreset(name) {
+      presetButtons.forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.preset === name));
+      });
+    }
+
+    function applyPreset(name, options = {}) {
+      const preset = presets[name];
+      if (!preset) return;
+      for (const [id, value] of Object.entries(preset)) setControlValue(id, value);
+      syncRightsQuotaBounds();
+      syncAllRangeProgress();
+      setActivePreset(name);
+      renderSoon();
+      if (options.showModal) {
+        const doc = exampleDocs[name];
+        if (doc) openInfoModal(doc.title, doc.body, options.returnFocus || null);
+      }
     }
 
     function mulberry32(seed) {
@@ -1076,41 +1619,107 @@
         (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
     }
 
-    function vanDerCorput(index, base = 2) {
-      let n = index;
-      let denom = 1;
-      let out = 0;
-      while (n > 0) {
-        denom *= base;
-        out += (n % base) / denom;
-        n = Math.floor(n / base);
+    function orderedNormalQuantiles(n) {
+      return Array.from({ length: n }, (_, i) => normalQuantile((i + 1) / (n + 1)));
+    }
+
+    function centeredStats(values) {
+      const n = Math.max(1, values.length);
+      const mean = values.reduce((s, x) => s + x, 0) / n;
+      let ss = 0;
+      for (const x of values) ss += (x - mean) ** 2;
+      return { mean, ss, sd: Math.sqrt(ss / Math.max(1, n - 1)) };
+    }
+
+    function standardize(values) {
+      const stats = centeredStats(values);
+      const scale = Math.max(1e-12, stats.sd);
+      return values.map(x => (x - stats.mean) / scale);
+    }
+
+    function shuffledNormalQuantiles(n, seed, salt = 0) {
+      const values = orderedNormalQuantiles(n);
+      const rng = mulberry32((seed + salt * 2654435761) >>> 0);
+      const shuffleInPlace = xs => {
+        for (let i = xs.length - 1; i > 0; i--) {
+          const j = Math.floor(rng() * (i + 1));
+          [xs[i], xs[j]] = [xs[j], xs[i]];
+        }
+        return xs;
+      };
+      const blockSize = Math.max(8, Math.round(Math.sqrt(Math.max(1, n))));
+      const blockCount = Math.max(1, Math.ceil(n / blockSize));
+      const blocks = Array.from({ length: blockCount }, () => []);
+      for (let start = 0; start < n; start += blockCount) {
+        const stratum = shuffleInPlace(values.slice(start, Math.min(n, start + blockCount)));
+        for (let i = 0; i < stratum.length; i++) blocks[i % blockCount].push(stratum[i]);
       }
-      return out;
+      blocks.forEach(shuffleInPlace);
+      return blocks.flat().slice(0, n);
+    }
+
+    function permutedOrthogonalNormalScores(reference, seed, salt = 0) {
+      const n = reference.length;
+      const ref = standardize(reference);
+      const raw = shuffledNormalQuantiles(n, seed, salt);
+      const rawStats = centeredStats(raw);
+      const refStats = centeredStats(ref);
+      let cov = 0;
+      for (let i = 0; i < n; i++) cov += (raw[i] - rawStats.mean) * ref[i];
+      const projection = refStats.ss > 1e-12 ? cov / refStats.ss : 0;
+      const residual = raw.map((x, i) => (x - rawStats.mean) - projection * ref[i]);
+      return standardize(residual);
     }
 
     function generateActors(p) {
       const rng = mulberry32(p.seed);
       const normal = makeNormal(rng);
       const rho = clamp(p.correlation, -0.999, 0.999);
-      const thetaLocation = logit(clamp(p.meanTheta, 0.001, 0.999));
+      const n = Math.max(1, p.nActors);
+      const ordered = p.samplingMode === "ordered";
+      const thetaSigma = Math.max(0, p.thetaSpread);
+      let zThetaValues;
+      let zImpactValues;
+      let zStatusValues;
+
+      if (ordered) {
+        zThetaValues = orderedNormalQuantiles(n);
+        const thetaScores = standardize(zThetaValues);
+        const independentScores = permutedOrthogonalNormalScores(zThetaValues, p.seed, 11);
+        zImpactValues = standardize(thetaScores.map((z, i) =>
+          rho * z + Math.sqrt(1 - rho * rho) * independentScores[i]
+        ));
+        zStatusValues = permutedOrthogonalNormalScores(zThetaValues, p.seed, 23);
+      } else {
+        zThetaValues = new Array(n);
+        zImpactValues = new Array(n);
+        zStatusValues = new Array(n);
+        for (let i = 0; i < n; i++) {
+          const zTheta = normal();
+          const zOther = normal();
+          zThetaValues[i] = zTheta;
+          zImpactValues[i] = rho * zTheta + Math.sqrt(1 - rho * rho) * zOther;
+          zStatusValues[i] = normal();
+        }
+      }
+
       const raw = [];
       let rawImpactSum = 0;
+      let rawThetaSum = 0;
 
-      for (let i = 0; i < p.nActors; i++) {
-        const q = (i + 1) / (p.nActors + 1);
-        const ordered = p.samplingMode === "ordered";
-        const zTheta = ordered ? normalQuantile(q) : normal();
-        const zOther = ordered ? normalQuantile(q) : normal();
-        const zImpact = rho * zTheta + Math.sqrt(1 - rho * rho) * zOther;
-        const thetaBase = clamp(logistic(thetaLocation + p.thetaSpread * zTheta), 0.001, 1.75);
+      for (let i = 0; i < n; i++) {
+        const zTheta = zThetaValues[i];
+        const zImpact = zImpactValues[i];
+        const thetaRaw = Math.exp(thetaSigma * zTheta - 0.5 * thetaSigma * thetaSigma);
         const rawImpact = Math.exp(p.impactInequality * zImpact);
+        rawThetaSum += thetaRaw;
         rawImpactSum += rawImpact;
-        const zStatus = ordered ? normalQuantile(clamp((q + vanDerCorput(i + 1, 3)) / 2, 1e-6, 1 - 1e-6)) : normal();
+        const zStatus = zStatusValues[i];
         const status = clamp(logistic(0.45 * zTheta + 0.65 * zImpact + 0.35 * zStatus), 0, 1);
 
         raw.push({
           id: i,
-          thetaBase,
+          thetaRaw,
           rawImpact,
           alpha: 0.05,
           zTheta,
@@ -1122,13 +1731,16 @@
         });
       }
 
+      const thetaScale = Math.max(1e-6, p.meanTheta) / Math.max(1e-12, rawThetaSum / Math.max(1, raw.length));
       return raw.map(a => {
+        const thetaBase = Math.max(1e-6, a.thetaRaw * thetaScale);
         const limitBase = a.rawImpact / rawImpactSum * p.totalImpact;
         return {
           ...a,
+          thetaBase,
           limitBase,
-          costBase: a.thetaBase,
-          baselineCost: a.thetaBase,
+          costBase: thetaBase,
+          baselineCost: thetaBase,
           alpha: a.alpha
         };
       });
@@ -1315,12 +1927,12 @@
 
       let dPrice = 0;
       if (p.policyType === "rights") {
-        let supply = 0;
+        let netRights = 0;
         let demand = 0;
         const demandRows = [];
         for (let i = 0; i < n; i++) {
           const lim = Math.max(0, limitAt(actors[i], y, p, t));
-          supply += p.rightsTarget === "yield" ? actors[i].quota - u[i] * y : actors[i].quota - u[i];
+          netRights += p.rightsTarget === "yield" ? actors[i].quota - u[i] * y : actors[i].quota - u[i];
 
           if (du[i] > 0) {
             const availableEffort = Math.max(0, lim - u[i]);
@@ -1335,8 +1947,9 @@
           }
         }
 
-        supply = Math.max(0, supply);
-        dPrice = 0.05 * (demand - supply);
+        const supply = Math.max(0, netRights);
+        const excessUse = Math.max(0, -netRights);
+        dPrice = 0.05 * (demand + excessUse - supply);
         if (demand > supply && demand > 0) {
           demandRows.forEach(([i, indDemand]) => {
             du[i] = supply * indDemand / demand;
@@ -1386,35 +1999,76 @@
       };
     }
 
-    function simulateEquilibrium(actors, p) {
+    function simulationInitialState(actors, p, initialState = null) {
       const n = actors.length;
-      let state = { u: new Array(n).fill(0), y: 1.0, price: 0.0 };
+      const suppliedU = Array.isArray(initialState?.u) ? initialState.u : [];
+      const u = new Array(n);
+      for (let i = 0; i < n; i++) u[i] = Number.isFinite(suppliedU[i]) ? suppliedU[i] : 0;
+      const y = Number.isFinite(initialState?.y) ? initialState.y : 1.0;
+      const price = Number.isFinite(initialState?.price) ? initialState.price : 0.0;
+      return clampSimulationState({ u, y, price }, actors, p, 0);
+    }
+
+    function stateFromOpenResult(openResult, actors) {
+      if (!openResult?.actors?.length) return null;
+      const efforts = new Map(openResult.actors.map(a => [a.id, a.effort || 0]));
+      return {
+        u: actors.map(a => efforts.get(a.id) || 0),
+        y: Number.isFinite(openResult.yStar) ? openResult.yStar : 1.0,
+        price: 0.0
+      };
+    }
+
+    function simulateEquilibrium(actors, p, initialState = null) {
+      let state = simulationInitialState(actors, p, initialState);
       let t = 0.0;
       const steadyTol = 5e-8;
       const minT = 45.0;
       const maxT = 6000.0;
-      const outputDt = 0.6;
-      let nextOutput = outputDt;
-      const trajectory = [{ t, y: state.y, participation: 0, effort: 0, price: state.price }];
-      const trajectorySpacing = Math.max(0, p.trajectorySpacing || 0);
+      const pathStepLength = clamp(p.trajectorySpacing || 0.01, 0.001, 0.2);
+      const maxTrajectoryPoints = 7000;
+      const trajectory = [];
+      let lastTrajectoryState = cloneState(state);
+      let lastTrajectoryT = t;
       let converged = false;
       let steps = 0;
 
-      const pushTrajectory = (sampleState = state, sampleT = t, force = false) => {
-        const participation = normalizedParticipation(sampleState.u, actors, p, sampleState.y, sampleT);
-        const last = trajectory[trajectory.length - 1];
-        if (!force && trajectorySpacing > 0 && last) {
-          const moved = Math.max(Math.abs(sampleState.y - last.y), Math.abs(participation - last.participation));
-          if (moved < trajectorySpacing) return;
-        }
-        trajectory.push({
+      const trajectoryPoint = (sampleState = state, sampleT = t) => ({
           t: sampleT,
           y: sampleState.y,
-          participation,
+          participation: normalizedParticipation(sampleState.u, actors, p, sampleState.y, sampleT),
           effort: effortSum(sampleState.u),
           price: sampleState.price
-        });
+      });
+
+      const phaseDistance = (a, b) => Math.hypot(a.y - b.y, a.participation - b.participation);
+
+      const pushTrajectoryToward = (sampleState = state, sampleT = t, force = false) => {
+        const target = trajectoryPoint(sampleState, sampleT);
+        const last = trajectory[trajectory.length - 1];
+        const distance = last ? phaseDistance(last, target) : 0;
+        if (!force && last && distance < pathStepLength) return;
+        if (last && force && distance < 1e-10) return;
+
+        const remaining = maxTrajectoryPoints - trajectory.length;
+        if (remaining <= 0) {
+          lastTrajectoryState = cloneState(sampleState);
+          lastTrajectoryT = sampleT;
+          return;
+        }
+
+        const segments = Math.max(1, Math.ceil(distance / pathStepLength));
+        const count = Math.min(segments, remaining);
+        for (let j = 1; j <= count; j++) {
+          const f = j / segments;
+          const interpolated = interpolateState(lastTrajectoryState, sampleState, f);
+          const interpolatedT = lastTrajectoryT + (sampleT - lastTrajectoryT) * f;
+          trajectory.push(trajectoryPoint(interpolated, interpolatedT));
+        }
+        lastTrajectoryState = cloneState(sampleState);
+        lastTrajectoryT = sampleT;
       };
+      trajectory.push(trajectoryPoint(state, t));
 
       if (p.solverMode === "euler") {
         const dt = 0.05;
@@ -1422,15 +2076,10 @@
         const minSteps = Math.ceil(minT / dt);
         for (; steps < maxSteps; steps++) {
           const before = cloneState(state);
-          const tBefore = t;
           const d = derivativeAt(actors, p, state, t);
           state = combineState(state, [[dt, d]], actors, p, t + dt);
           t += dt;
-          while (t + 1e-9 >= nextOutput) {
-            const f = clamp((nextOutput - tBefore) / Math.max(1e-12, t - tBefore), 0, 1);
-            pushTrajectory(interpolateState(before, state, f), nextOutput);
-            nextOutput += outputDt;
-          }
+          pushTrajectoryToward(state, t);
           if (steps > minSteps && stateDelta(before, state) < steadyTol) {
             converged = true;
             break;
@@ -1456,15 +2105,10 @@
           const err = stateDelta(third, second);
 
           if (err <= errTol || hStep <= hMin * 1.0001) {
-            const tBefore = t;
             state = third;
             t += hStep;
             steps++;
-            while (t + 1e-9 >= nextOutput) {
-              const f = clamp((nextOutput - tBefore) / Math.max(1e-12, t - tBefore), 0, 1);
-              pushTrajectory(interpolateState(before, state, f), nextOutput);
-              nextOutput += outputDt;
-            }
+            pushTrajectoryToward(state, t);
             if (t > minT && stateDelta(before, state) < steadyTol) {
               converged = true;
               break;
@@ -1476,7 +2120,7 @@
         }
       }
 
-      if (!trajectory.length || trajectory[trajectory.length - 1].t !== t) pushTrajectory(state, t, true);
+      pushTrajectoryToward(state, t, true);
       return { u: state.u, y: state.y, price: state.price, t, steps, converged, trajectory };
     }
 
@@ -1485,6 +2129,7 @@
       const t = p.phaseTime || 0;
       let active = 0;
       for (const a of actors) if (costAt(a, p, t) + price < y) active++;
+      // True empirical CDF over all actors; intentionally not rescaled at y = 1.
       return active / Math.max(1, actors.length);
     }
 
@@ -1580,21 +2225,27 @@
       return out;
     }
 
-    function runModelFromBase(base, p) {
+    function runModelFromBase(base, p, options = {}) {
       const transformed = transformActors(base, p);
       if (p.policyType === "rights") {
         if (p.historicalRights) {
-          const historicalP = openAccessParams(p);
-          const historicalActors = transformActors(base, historicalP);
-          const historicalSim = simulateEquilibrium(historicalActors, historicalP);
-          const historicalModelP = { ...historicalP, phaseTime: historicalSim.t };
-          allocateIncome(historicalSim.y, historicalActors, historicalModelP, historicalSim.u, historicalSim.price, historicalSim.t);
-          assignRights(transformed, p, historicalActors, historicalSim.y);
+          if (options.openResult?.actors?.length) {
+            assignRights(transformed, p, options.openResult.actors, options.openResult.yStar);
+          } else {
+            const historicalP = openAccessParams(p);
+            const historicalActors = transformActors(base, historicalP);
+            const historicalSim = simulateEquilibrium(historicalActors, historicalP);
+            const historicalModelP = { ...historicalP, phaseTime: historicalSim.t };
+            allocateIncome(historicalSim.y, historicalActors, historicalModelP, historicalSim.u, historicalSim.price, historicalSim.t);
+            assignRights(transformed, p, historicalActors, historicalSim.y);
+          }
         } else {
           assignRights(transformed, p);
         }
       }
-      const sim = simulateEquilibrium(transformed, p);
+      const initialState = options.initialState ||
+        (options.startFromOpen ? stateFromOpenResult(options.openResult, transformed) : null);
+      const sim = simulateEquilibrium(transformed, p, initialState);
       const yStar = sim.y;
       const permitPrice = p.policyType === "rights" ? sim.price : 0;
       const modelP = { ...p, phaseTime: sim.t, ...(p.policyType === "rights" ? { permitPrice } : {}) };
@@ -1716,7 +2367,7 @@
         const f = i / resolution; // Julia-style scan: 0, ..., 1 - 1/m.
         const x = axis.min + (axis.max - axis.min) * f;
         const q = paramsAtScanValue(p, x);
-        const result = runModelFromBase(base, q);
+        const result = runModelFromBase(base, q, { openResult, startFromOpen: true });
         let regulationImpact = 0;
         for (const a of result.actors) regulationImpact += Math.abs((baselineEffort.get(a.id) || 0) - a.effort);
         const actorMap = new Map(result.actors.map(a => [a.id, a]));
@@ -1746,20 +2397,13 @@
 
     function setNormalFigureLabels() {
       phaseTitle.textContent = "Phase diagram";
+      phaseGuide.hidden = false;
+      phaseGuide.innerHTML = `<span class="incentive">Orange</span> shows exit incentives; <span class="impact">blue</span> shows ordered active-impact; the <span class="crossing">crossing</span> is the predicted outcome.`;
+      phaseMoments.hidden = false;
+      phaseMoments.textContent = "";
       incomeTitle.textContent = "Income distribution at the attractor";
-      phaseLegend.innerHTML = `
-        <span><i class="swatch" style="background: var(--baseline)"></i>Open access baseline</span>
-        <span><i class="swatch" style="background: var(--orange)"></i>Policy incentive curve, Γ<sub>p</sub>(y)</span>
-        <span><i class="swatch" style="background: var(--blue)"></i>Policy impact-balance curve, Φ<sub>p</sub>(y)</span>
-        <span><i class="swatch" style="background: linear-gradient(90deg, var(--orange), var(--blue))"></i>Optional density overlays</span>
-        <span><i class="swatch" style="background: var(--red)"></i>Policy attractor</span>
-      `;
-      incomeLegend.innerHTML = `
-        <span><i class="swatch" style="background: var(--baseline)"></i>Open access total income</span>
-        <span><i class="swatch" style="background: var(--orange)"></i>Policy wages / outside option</span>
-        <span><i class="swatch" style="background: var(--blue)"></i>Policy resource income</span>
-        <span><i class="swatch" style="background: var(--purple)"></i>Policy trade income</span>
-      `;
+      phaseLegend.textContent = "";
+      incomeLegend.textContent = "";
     }
 
     function setupCanvas(canvas) {
@@ -1772,7 +2416,7 @@
       return { ctx, width: rect.width, height: rect.height };
     }
 
-    function drawAxes(ctx, plot, xLabel, yLabel) {
+    function drawAxes(ctx, plot, xLabel, yLabel, options = {}) {
       ctx.save();
       ctx.strokeStyle = cssColor("--axis");
       ctx.lineWidth = 1;
@@ -1806,9 +2450,9 @@
       }
       ctx.textAlign = "right";
       const unitAxis = plot.yMin === 0 && plot.yMax === 1;
-      const yTicks = unitAxis
+      const yTicks = options.yTicks || (unitAxis
         ? [0, 0.25, 0.5, 0.75, 1]
-        : Array.from({ length: 5 }, (_, i) => plot.yMin + ((plot.yMax - plot.yMin) * i) / 4);
+        : Array.from({ length: 5 }, (_, i) => plot.yMin + ((plot.yMax - plot.yMin) * i) / 4));
       for (const t of yTicks) {
         const y = plot.y(t);
         ctx.strokeStyle = cssColor("--grid");
@@ -1817,7 +2461,8 @@
         ctx.lineTo(plot.x1, y);
         ctx.stroke();
         ctx.fillStyle = cssColor("--plotText");
-        ctx.fillText(unitAxis ? t.toFixed(2) : t.toFixed(0), plot.x0 - 8, y + 4);
+        const label = options.yFormat ? options.yFormat(t) : (unitAxis ? t.toFixed(2) : t.toFixed(0));
+        ctx.fillText(label, plot.x0 - 8, y + 4);
       }
       ctx.restore();
     }
@@ -1841,8 +2486,223 @@
       };
     }
 
-    function drawLine(ctx, points, color, width = 2, dash = []) {
+    function paddedRange(minValue, maxValue, floorAtZero = false) {
+      let lo = Number.isFinite(minValue) ? minValue : 0;
+      let hi = Number.isFinite(maxValue) ? maxValue : 1;
+      if (Math.abs(hi - lo) < 1e-12) {
+        const pad = Math.max(0.05, Math.abs(hi) * 0.1);
+        lo -= pad;
+        hi += pad;
+      }
+      const pad = (hi - lo) * 0.06;
+      lo -= pad;
+      hi += pad;
+      if (floorAtZero && lo >= -pad * 1.5) lo = 0;
+      return [lo, hi];
+    }
+
+    function makeXYPlot(width, height, xMin, xMax, yMax, yMin = 0) {
+      const margin = { left: 64, right: 24, top: 22, bottom: 58 };
+      const innerW = width - margin.left - margin.right;
+      const innerH = height - margin.top - margin.bottom;
+      const [xLo, xHi] = paddedRange(xMin, xMax, true);
+      const [yLo, yHi] = paddedRange(yMin, yMax, true);
+      const xSpan = Math.max(1e-12, xHi - xLo);
+      const ySpan = Math.max(1e-12, yHi - yLo);
+      return {
+        x0: margin.left,
+        x1: margin.left + innerW,
+        y0: margin.top,
+        y1: margin.top + innerH,
+        xMin: xLo,
+        xMax: xHi,
+        yMin: yLo,
+        yMax: yHi,
+        x: v => margin.left + ((v - xLo) / xSpan) * innerW,
+        y: v => margin.top + innerH - ((v - yLo) / ySpan) * innerH
+      };
+    }
+
+    function niceStep(rawStep) {
+      if (!Number.isFinite(rawStep) || rawStep <= 0) return 1;
+      const base = Math.pow(10, Math.floor(Math.log10(rawStep)));
+      const fraction = rawStep / base;
+      const nice = fraction <= 1 ? 1 : fraction <= 2 ? 2 : fraction <= 5 ? 5 : 10;
+      return nice * base;
+    }
+
+    function niceTicks(minValue, maxValue, count = 5) {
+      const span = maxValue - minValue;
+      if (!Number.isFinite(span) || span <= 0) return [minValue, maxValue];
+      const step = niceStep(span / Math.max(1, count - 1));
+      const start = Math.ceil(minValue / step) * step;
+      const ticks = [];
+      for (let v = start; v <= maxValue + step * 0.25; v += step) {
+        ticks.push(Number(v.toPrecision(12)));
+      }
+      if (!ticks.length) ticks.push(minValue, maxValue);
+      return ticks;
+    }
+
+    function formatAxisValue(value) {
+      if (!Number.isFinite(value)) return "";
+      if (Math.abs(value) < 1e-12) return "0";
+      const magnitude = Math.abs(value);
+      if (magnitude >= 100) return value.toFixed(0);
+      if (magnitude >= 10) return value.toFixed(1);
+      if (magnitude >= 0.01) return value.toFixed(2);
+      return value.toPrecision(2);
+    }
+
+    function drawXYAxes(ctx, plot, xLabel, yLabel) {
       ctx.save();
+      ctx.strokeStyle = cssColor("--axis");
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(plot.x0, plot.y1);
+      ctx.lineTo(plot.x1, plot.y1);
+      ctx.moveTo(plot.x0, plot.y0);
+      ctx.lineTo(plot.x0, plot.y1);
+      ctx.stroke();
+
+      ctx.fillStyle = cssColor("--plotText");
+      ctx.font = "12px system-ui, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(xLabel, (plot.x0 + plot.x1) / 2, plot.y1 + 35);
+      ctx.save();
+      ctx.translate(plot.x0 - 42, (plot.y0 + plot.y1) / 2);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText(yLabel, 0, 0);
+      ctx.restore();
+
+      ctx.textAlign = "center";
+      for (const tick of niceTicks(plot.xMin, plot.xMax, 5)) {
+        const x = plot.x(tick);
+        ctx.strokeStyle = cssColor("--grid");
+        ctx.beginPath();
+        ctx.moveTo(x, plot.y0);
+        ctx.lineTo(x, plot.y1);
+        ctx.stroke();
+        ctx.fillStyle = cssColor("--plotText");
+        ctx.fillText(formatAxisValue(tick), x, plot.y1 + 18);
+      }
+
+      ctx.textAlign = "right";
+      for (const tick of niceTicks(plot.yMin, plot.yMax, 5)) {
+        const y = plot.y(tick);
+        ctx.strokeStyle = cssColor("--grid");
+        ctx.beginPath();
+        ctx.moveTo(plot.x0, y);
+        ctx.lineTo(plot.x1, y);
+        ctx.stroke();
+        ctx.fillStyle = cssColor("--plotText");
+        ctx.fillText(formatAxisValue(tick), plot.x0 - 8, y + 4);
+      }
+      ctx.restore();
+    }
+
+    function distributionMoments(values) {
+      const clean = values.filter(Number.isFinite).sort((a, b) => a - b);
+      const n = clean.length;
+      if (n === 0) return { mean: NaN, median: NaN, variance: NaN };
+      const mean = clean.reduce((sum, value) => sum + value, 0) / n;
+      const median = n % 2 === 1
+        ? clean[(n - 1) / 2]
+        : 0.5 * (clean[n / 2 - 1] + clean[n / 2]);
+      const variance = clean.reduce((sum, value) => sum + (value - mean) ** 2, 0) / n;
+      return { mean, median, variance };
+    }
+
+    function formatMoment(value) {
+      if (!Number.isFinite(value)) return "n/a";
+      const magnitude = Math.abs(value);
+      if (magnitude > 0 && magnitude < 0.01) return value.toPrecision(2);
+      if (magnitude >= 10) return value.toFixed(1);
+      return value.toFixed(2);
+    }
+
+    function phaseDistributionStats(result, p) {
+      const actors = result.actors || [];
+      if (!actors.length) return null;
+      const t = p.phaseTime || result.phaseTime || 0;
+      const y = Number.isFinite(result.yStar) ? result.yStar : 1;
+      const price = rightsPriceAt(y, actors, p);
+      const incentives = actors.map(a => costAt(a, p, t) + price).filter(Number.isFinite);
+      const impacts = actors.map(a => limitAt(a, y, p, t)).filter(value => Number.isFinite(value) && value >= 0);
+      return {
+        incentives: distributionMoments(incentives),
+        impacts: distributionMoments(impacts)
+      };
+    }
+
+    function compactMomentTriplet(stats) {
+      return `${formatMoment(stats.mean)}/${formatMoment(stats.median)}/${formatMoment(stats.variance)}`;
+    }
+
+    function updatePhaseMoments(result, p) {
+      const stats = phaseDistributionStats(result, p);
+      if (!stats) {
+        phaseMoments.hidden = true;
+        phaseMoments.textContent = "";
+        return;
+      }
+      phaseMoments.hidden = false;
+      phaseMoments.innerHTML = `
+        <span class="incentive">exit mean/med/var ${compactMomentTriplet(stats.incentives)}</span>
+        <span class="impact">ordered active-impact mean/med/var ${compactMomentTriplet(stats.impacts)}</span>
+      `;
+    }
+
+    function signedLogValue(v) {
+      return Math.sign(v) * Math.log1p(Math.abs(v));
+    }
+
+    function signedLogInverse(v) {
+      return Math.sign(v) * Math.expm1(Math.abs(v));
+    }
+
+    function makeIncomePlot(width, height, yMax, yMin, logScale) {
+      const plot = makePlot(width, height, logScale ? signedLogValue(yMax) : yMax, logScale ? signedLogValue(yMin) : yMin);
+      if (!logScale) return plot;
+      const baseY = plot.y;
+      return {
+        ...plot,
+        rawYMax: yMax,
+        rawYMin: yMin,
+        incomeLogScale: true,
+        y: v => baseY(signedLogValue(v))
+      };
+    }
+
+    function niceLogTicks(minValue, maxValue) {
+      if (minValue >= 0) {
+        const hi = Math.max(1, maxValue);
+        const maxExp = Math.ceil(Math.log10(hi));
+        const ticks = [0];
+        for (let e = 0; e <= maxExp; e++) ticks.push(Math.pow(10, e));
+        return ticks.filter((v, i, arr) => v >= minValue && v <= maxValue * 1.0001 && arr.indexOf(v) === i);
+      }
+      const magnitude = Math.max(Math.abs(minValue), Math.abs(maxValue), 1);
+      const maxExp = Math.ceil(Math.log10(magnitude));
+      const ticks = [0];
+      for (let e = 0; e <= maxExp; e++) {
+        const v = Math.pow(10, e);
+        ticks.push(v, -v);
+      }
+      return ticks
+        .filter((v, i, arr) => v >= minValue && v <= maxValue && arr.indexOf(v) === i)
+        .sort((a, b) => a - b);
+    }
+
+    function formatIncomeTick(v) {
+      if (Math.abs(v) < 1e-9) return "0";
+      if (Math.abs(v) >= 1000) return `${v < 0 ? "-" : ""}${Math.abs(v / 1000).toFixed(0)}k`;
+      return Math.abs(v) >= 10 ? v.toFixed(0) : v.toFixed(1);
+    }
+
+    function drawLine(ctx, points, color, width = 2, dash = [], alpha = 1) {
+      ctx.save();
+      ctx.globalAlpha = alpha;
       ctx.strokeStyle = color;
       ctx.lineWidth = width;
       ctx.setLineDash(dash);
@@ -1853,6 +2713,175 @@
       });
       ctx.stroke();
       ctx.restore();
+    }
+
+    function drawInlineLabel(ctx, plot, x, y, text, color, align = "left") {
+      ctx.save();
+      ctx.font = "700 11.5px system-ui, sans-serif";
+      const padX = 5;
+      const padY = 3;
+      const textW = ctx.measureText(text).width;
+      let boxX = align === "right" ? x - textW - 2 * padX - 6 : x + 6;
+      boxX = clamp(boxX, plot.x0 + 4, plot.x1 - textW - 2 * padX - 4);
+      const boxY = clamp(y - 10, plot.y0 + 4, plot.y1 - 18);
+      ctx.globalAlpha = 0.86;
+      ctx.fillStyle = cssColor("--canvas");
+      ctx.fillRect(boxX, boxY, textW + 2 * padX, 17);
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = color;
+      ctx.textAlign = "left";
+      ctx.textBaseline = "middle";
+      ctx.fillText(text, boxX + padX, boxY + 8.5);
+      ctx.restore();
+    }
+
+    function drawPhaseCurveLabels(ctx, plot, actors, p, incentiveColor, impactColor) {
+      const xGamma = 0.73;
+      const xPhi = 0.72;
+      drawInlineLabel(
+        ctx,
+        plot,
+        plot.x(xGamma),
+        plot.y(clamp(gammaAt(xGamma, actors, p), 0, 1)),
+        "Exit incentives",
+        incentiveColor,
+        "right"
+      );
+      drawInlineLabel(
+        ctx,
+        plot,
+        plot.x(xPhi),
+        plot.y(clamp(phiAt(xPhi, actors, p), 0, 1)),
+        "Ordered active-impact",
+        impactColor,
+        "left"
+      );
+    }
+
+    function actorScatterRows(result, p) {
+      const actors = result.actors || [];
+      const t = p.phaseTime || result.phaseTime || 0;
+      const stockY = Number.isFinite(result.yStar) ? result.yStar : 1;
+      const price = rightsPriceAt(stockY, actors, p);
+      return actors.map(a => {
+        const incentive = costAt(a, p, t) + price;
+        const impact = limitAt(a, stockY, p, t);
+        const capacity = Math.max(1e-12, impact);
+        return {
+          incentive,
+          impact,
+          active: (a.effort || 0) > 1e-10,
+          effortFraction: clamp((a.effort || 0) / capacity, 0, 1)
+        };
+      }).filter(row =>
+        Number.isFinite(row.incentive) &&
+        Number.isFinite(row.impact) &&
+        row.impact >= 0
+      );
+    }
+
+    function drawActorScatterLayer(ctx, plot, rows, options = {}) {
+      const activeColor = options.activeColor || cssColor("--orange");
+      const inactiveColor = options.inactiveColor || cssColor("--plotText");
+      const activeAlpha = options.activeAlpha ?? 0.78;
+      const inactiveAlpha = options.inactiveAlpha ?? 0.22;
+      const baseRadius = options.radius || 2.3;
+      const stroke = options.stroke === undefined ? cssColor("--canvas") : options.stroke;
+
+      function drawPoint(row, active) {
+        const radius = active
+          ? baseRadius + 1.8 * Math.sqrt(row.effortFraction || 0)
+          : Math.max(1.5, baseRadius - 0.5);
+        ctx.beginPath();
+        ctx.arc(plot.x(row.incentive), plot.y(row.impact), radius, 0, Math.PI * 2);
+        ctx.fill();
+        if (active && stroke) {
+          ctx.strokeStyle = stroke;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+
+      ctx.save();
+      ctx.fillStyle = inactiveColor;
+      ctx.globalAlpha = inactiveAlpha;
+      rows.filter(row => !row.active).forEach(row => drawPoint(row, false));
+      ctx.fillStyle = activeColor;
+      ctx.globalAlpha = activeAlpha;
+      rows.filter(row => row.active).forEach(row => drawPoint(row, true));
+      ctx.restore();
+    }
+
+    function drawScatterStockLine(ctx, plot, result, color, label, offset = 0, alpha = 1) {
+      if (!Number.isFinite(result.yStar)) return;
+      const x = plot.x(result.yStar);
+      if (x < plot.x0 || x > plot.x1) return;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.3;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(x, plot.y0);
+      ctx.lineTo(x, plot.y1);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = color;
+      ctx.font = "700 12px system-ui, sans-serif";
+      ctx.textAlign = x < (plot.x0 + plot.x1) / 2 ? "left" : "right";
+      const tx = x < (plot.x0 + plot.x1) / 2 ? x + 8 : x - 8;
+      ctx.fillText(`${label} y* = ${result.yStar.toFixed(2)}`, tx, plot.y0 + 16 + offset);
+      ctx.restore();
+    }
+
+    function drawActorScatter(openResult, policyResult, openP, policyP, showPolicy, p) {
+      const { ctx, width, height } = setupCanvas(phaseCanvas);
+      ctx.clearRect(0, 0, width, height);
+      const openRows = actorScatterRows(openResult, openP);
+      const policyRows = showPolicy ? actorScatterRows(policyResult, policyP) : [];
+      const allRows = openRows.concat(policyRows);
+      const xValues = allRows.map(row => row.incentive).concat([openResult.yStar, showPolicy ? policyResult.yStar : openResult.yStar]);
+      const yValues = allRows.map(row => row.impact);
+      const xMax = Math.max(1e-9, ...xValues);
+      const yMax = Math.max(1e-9, ...yValues);
+      const plot = makeXYPlot(width, height, Math.min(0, ...xValues), xMax, yMax, 0);
+
+      phaseTitle.textContent = "Actor incentives vs impacts";
+      phaseGuide.hidden = false;
+      phaseGuide.innerHTML = `<span class="incentive">x-axis</span> is the policy-adjusted exit threshold; <span class="impact">y-axis</span> is actor impact capacity. Filled points are active at the attractor${showPolicy ? "; muted grey points show open access." : "."}`;
+      phaseLegend.textContent = "";
+      drawXYAxes(ctx, plot, "Exit incentive threshold", "Impact capacity");
+
+      if (showPolicy) {
+        drawActorScatterLayer(ctx, plot, openRows, {
+          activeColor: cssColor("--baseline"),
+          inactiveColor: cssColor("--baseline"),
+          activeAlpha: 0.24,
+          inactiveAlpha: 0.10,
+          radius: 1.8,
+          stroke: null
+        });
+        drawActorScatterLayer(ctx, plot, policyRows, {
+          activeColor: cssColor("--orange"),
+          inactiveColor: cssColor("--blue"),
+          activeAlpha: 0.82,
+          inactiveAlpha: 0.22,
+          radius: 2.4
+        });
+        drawScatterStockLine(ctx, plot, openResult, cssColor("--baseline"), "Open", 0, 0.60);
+        drawScatterStockLine(ctx, plot, policyResult, cssColor("--red"), "Policy", 16, 0.95);
+      } else {
+        drawActorScatterLayer(ctx, plot, openRows, {
+          activeColor: cssColor("--orange"),
+          inactiveColor: cssColor("--blue"),
+          activeAlpha: 0.82,
+          inactiveAlpha: 0.22,
+          radius: 2.5
+        });
+        drawScatterStockLine(ctx, plot, openResult, cssColor("--baseline"), "Open", 0, 0.90);
+      }
+
+      updatePhaseMoments(showPolicy ? policyResult : openResult, showPolicy ? policyP : openP);
     }
 
     function cssColor(name) {
@@ -1914,7 +2943,7 @@
         ctx.globalAlpha = 0.20 + 0.58 * f;
         ctx.fillStyle = color;
         ctx.beginPath();
-        ctx.arc(x, y, 1.6 + 1.4 * f, 0, Math.PI * 2);
+        ctx.arc(x, y, 0.9 + 0.8 * f, 0, Math.PI * 2);
         ctx.fill();
       });
 
@@ -1924,7 +2953,7 @@
       ctx.fillStyle = color;
       ctx.lineWidth = 1.4;
       ctx.beginPath();
-      ctx.arc(x0, y0, 3.2, 0, Math.PI * 2);
+      ctx.arc(x0, y0, 2.1, 0, Math.PI * 2);
       ctx.fill();
       ctx.stroke();
       ctx.restore();
@@ -1998,23 +3027,24 @@
         activeBins[row] += Math.max(0, a.effort || 0);
       }
 
-      const maxMass = Math.max(1e-12, ...bins);
       const cellH = (plot.y1 - plot.y0) / yBins;
       const maxW = (plot.x1 - plot.x0) * 0.16;
+      const configuredImpactMax = Number(el.totalImpact?.max || 2.5);
+      const referenceBinMass = Math.max(1e-12, configuredImpactMax / yBins);
       ctx.save();
       ctx.fillStyle = cssColor("--blue");
       ctx.globalAlpha = 0.20;
       for (let row = 0; row < yBins; row++) {
         const mass = bins[row];
         if (mass <= 0) continue;
-        const w = maxW * Math.sqrt(mass / maxMass);
+        const w = maxW * Math.sqrt(mass / referenceBinMass);
         ctx.fillRect(plot.x0, plot.y1 - (row + 1) * cellH + 0.5, w, Math.max(1, cellH - 1));
       }
       ctx.globalAlpha = 0.50;
       for (let row = 0; row < yBins; row++) {
         const mass = activeBins[row];
         if (mass <= 0) continue;
-        const w = maxW * Math.sqrt(mass / maxMass);
+        const w = maxW * Math.sqrt(mass / referenceBinMass);
         ctx.fillRect(plot.x0, plot.y1 - (row + 1) * cellH + 0.5, w, Math.max(1, cellH - 1));
       }
       ctx.globalAlpha = 0.65;
@@ -2098,10 +3128,11 @@
       const { ctx, width, height } = setupCanvas(phaseCanvas);
       ctx.clearRect(0, 0, width, height);
       phaseTitle.textContent = "Policy scan: actor participation";
-      phaseLegend.innerHTML = `
-        <span><i class="swatch" style="background: var(--orange)"></i>Effort fraction by actor</span>
-        <span><i class="swatch" style="background: var(--red)"></i>Current policy value</span>
-      `;
+      phaseGuide.hidden = false;
+      phaseGuide.innerHTML = `<span class="incentive">Orange</span> shows active use across policy strength; the dotted line is the current instrument value.`;
+      phaseMoments.hidden = true;
+      phaseMoments.textContent = "";
+      phaseLegend.textContent = "";
       const plot = makePlot(width, height, 1);
       drawScanAxes(ctx, plot, scan.axis.label, "Actors sorted by incentive", scan.axis.min, scan.axis.max, 0, 1, x => x.toFixed(2));
 
@@ -2207,7 +3238,7 @@
         { key: "participation", label: "Participation", color: cssColor("--orange"), unit: true, best: "min", format: fmt.pct },
         { key: "resourceIncome", label: "Resource income", color: cssColor("--green"), unit: false, best: "max", format: x => x.toFixed(0) },
         { key: "totalIncome", label: "Total income", color: cssColor("--ink"), unit: false, best: "max", format: x => x.toFixed(0) },
-        { key: "inequality", label: "Gini", color: cssColor("--red"), unit: true, best: "min", format: x => x.toFixed(2) },
+        { key: "inequality", label: "Income inequality", color: cssColor("--red"), unit: true, best: "min", format: x => x.toFixed(2) },
         { key: "governanceNorm", label: "Weighted goals", color: cssColor("--purple"), unit: true, best: "max", format: fmt.pct }
       ];
     }
@@ -2216,10 +3247,7 @@
       const { ctx, width, height } = setupCanvas(incomeCanvas);
       ctx.clearRect(0, 0, width, height);
       incomeTitle.textContent = "Policy scan indicators";
-      incomeLegend.innerHTML = `
-        <span><i class="swatch" style="background: var(--red)"></i>Current policy value</span>
-        <span><i class="swatch" style="background: var(--purple)"></i>Best weighted-goal point</span>
-      `;
+      incomeLegend.textContent = "";
       const specs = scanIndicatorSpecs();
       const margin = { left: 36, right: 16, top: 14, bottom: 40 };
       const gapX = 14;
@@ -2249,6 +3277,7 @@
     }
 
     function drawScanMetrics(scan) {
+      metricsTitle.textContent = "Best points in policy scan";
       const specs = scanIndicatorSpecs();
       metricsEl.innerHTML = specs.map(spec => {
         const values = scan.rows.map(row => row[spec.key]);
@@ -2258,7 +3287,7 @@
         return `
           <div class="metric">
             <div class="name">${spec.label}</div>
-            <div class="number"><span class="policy">${scan.axis.label} ${row.x.toFixed(2)}</span> <span class="delta-value positive">(${spec.format(bestValue)})</span></div>
+            <div class="number"><span class="policy">at ${row.x.toFixed(2)}</span> <span class="delta-value positive">(${spec.format(bestValue)})</span></div>
           </div>
         `;
       }).join("");
@@ -2271,6 +3300,19 @@
       const showPolicy = p.policyType !== "none";
       const policyP = { ...p, phaseTime: policyResult.phaseTime || 0, ...(p.policyType === "rights" ? { permitPrice: policyResult.permitPrice } : {}) };
       const plot = makePlot(width, height, 1);
+      const incentiveColor = cssColor("--orange");
+      const impactColor = cssColor("--blue");
+      phaseCanvas.dataset.openSteps = String(openResult.steps ?? "");
+      phaseCanvas.dataset.openTrajectoryPoints = String(openResult.trajectory?.length ?? "");
+      phaseCanvas.dataset.policySteps = String(policyResult.steps ?? "");
+      phaseCanvas.dataset.policyTrajectoryPoints = String(policyResult.trajectory?.length ?? "");
+      phaseCanvas.dataset.pathStepLength = String(p.trajectorySpacing ?? "");
+
+      if (p.showActorScatter) {
+        drawActorScatter(openResult, policyResult, openP, policyP, showPolicy, p);
+        return;
+      }
+
       drawAxes(ctx, plot, "Resource level, y", "Fraction participation");
 
       if (p.showDensities) {
@@ -2294,17 +3336,31 @@
         }
       }
 
-      drawLine(ctx, openGammaPoints, cssColor("--baseline"), 2.4);
-      drawLine(ctx, openPhiPoints, cssColor("--baselineLight"), 2.4);
+      drawLine(ctx, openGammaPoints, incentiveColor, 2.4, [], showPolicy ? 0.34 : 0.90);
+      drawLine(ctx, openPhiPoints, impactColor, 2.4, [], showPolicy ? 0.30 : 0.86);
       if (p.showTrajectory) drawTrajectory(ctx, plot, openResult, cssColor("--baselineLight"));
       drawAttractorMarker(ctx, plot, openResult, openP, cssColor("--baseline"), "Open", showPolicy ? 18 : 0);
 
       if (showPolicy) {
-        drawLine(ctx, policyGammaPoints, cssColor("--orange"), 3.0);
-        drawLine(ctx, policyPhiPoints, cssColor("--blue"), 2.8);
+        drawLine(ctx, policyGammaPoints, incentiveColor, 3.0);
+        drawLine(ctx, policyPhiPoints, impactColor, 2.8);
         if (p.showTrajectory) drawTrajectory(ctx, plot, policyResult, cssColor("--red"));
         drawAttractorMarker(ctx, plot, policyResult, policyP, cssColor("--red"), "Policy", -4);
       }
+
+      drawPhaseCurveLabels(
+        ctx,
+        plot,
+        showPolicy ? policyResult.actors : openResult.actors,
+        showPolicy ? policyP : openP,
+        incentiveColor,
+        impactColor
+      );
+
+      updatePhaseMoments(
+        showPolicy ? policyResult : openResult,
+        showPolicy ? policyP : openP
+      );
     }
 
     function drawIncome(openResult, policyResult, p) {
@@ -2341,7 +3397,8 @@
         ...policyStackValues
       ) * 1.08;
       const minIncome = Math.min(0, ...policyStackValues, ...openSorted.map(a => a.totalIncome)) * 1.08;
-      const plot = makePlot(width, height, maxIncome, minIncome);
+      const logIncome = !!p.incomeLogScale;
+      const plot = makeIncomePlot(width, height, maxIncome, minIncome, logIncome);
       const sortLabel = {
         total: "total income",
         incentive: "incentive threshold",
@@ -2349,7 +3406,10 @@
         resource: "resource use",
         active: "active status"
       }[p.incomeSort] || "total income";
-      drawAxes(ctx, plot, `Actors sorted by ${sortLabel}`, "Income, scaled units");
+      drawAxes(ctx, plot, `Actors sorted by ${sortLabel}`, logIncome ? "Income, log-scaled units" : "Income, scaled units", logIncome ? {
+        yTicks: niceLogTicks(minIncome, maxIncome),
+        yFormat: formatIncomeTick
+      } : {});
 
       function xAt(i, n) { return plot.x(i / Math.max(1, n - 1)); }
       function drawSegment(x, barW, from, to, color, alpha) {
@@ -2420,16 +3480,25 @@
       ctx.restore();
     }
 
+    function effortChange(openResult, policyResult) {
+      const openEffort = new Map(openResult.actors.map(a => [a.id, a.effort || 0]));
+      return policyResult.actors.reduce((sum, a) => {
+        return sum + Math.abs((a.effort || 0) - (openEffort.get(a.id) || 0));
+      }, 0);
+    }
+
     function drawMetrics(openResult, policyResult, p) {
+      metricsTitle.textContent = "Outcomes vs open access";
       const showPolicy = p.policyType !== "none";
+      const policyImpact = showPolicy ? effortChange(openResult, policyResult) : 0;
       const rows = [
         ["Resource level", openResult.yStar, policyResult.yStar, x => x.toFixed(2), x => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`],
         ["Participation", openResult.participation, policyResult.participation, fmt.pct, x => `${x >= 0 ? "+" : ""}${(100 * x).toFixed(0)} pp`],
-        ["Effort at attractor", openResult.totalImpact, policyResult.totalImpact, x => x.toFixed(2), x => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`],
+        ["Total resource pressure", openResult.totalImpact, policyResult.totalImpact, x => x.toFixed(2), x => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`],
         ["Resource income", openResult.resourceIncome, policyResult.resourceIncome, x => x.toFixed(0), x => `${x >= 0 ? "+" : ""}${x.toFixed(0)}`],
         ["Total income", openResult.totalIncome, policyResult.totalIncome, x => x.toFixed(0), x => `${x >= 0 ? "+" : ""}${x.toFixed(0)}`],
-        ["Inequality", openResult.inequality, policyResult.inequality, x => x.toFixed(2), x => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`],
-        ["Active actors", openResult.activeActors / Math.max(1, openResult.availableActors), policyResult.activeActors / Math.max(1, policyResult.availableActors), fmt.pct, x => `${x >= 0 ? "+" : ""}${(100 * x).toFixed(0)} pp`]
+        ["Income inequality (Gini)", openResult.inequality, policyResult.inequality, x => x.toFixed(2), x => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`],
+        ["Policy impact", 0, policyImpact, x => x.toFixed(2), x => `${x >= 0 ? "+" : ""}${x.toFixed(2)}`]
       ];
 
       metricsEl.innerHTML = rows.map(([name, openValue, policyValue, formatter, deltaFormatter]) => {
@@ -2452,10 +3521,10 @@
       }).join("");
     }
 
-    function openPolicyModal() {
-      const doc = policyDocs[el.policyType.value] || policyDocs.none;
-      policyModalTitle.textContent = doc.title;
-      policyModalBody.innerHTML = doc.body;
+    function openInfoModal(title, body, returnFocus = null) {
+      modalReturnFocus = returnFocus || document.activeElement || policyHelp;
+      policyModalTitle.textContent = title;
+      policyModalBody.innerHTML = body;
       policyModal.hidden = false;
       if (window.MathJax?.typesetPromise) {
         window.MathJax.typesetPromise([policyModalBody]).catch(() => {});
@@ -2463,9 +3532,16 @@
       policyModalClose.focus();
     }
 
+    function openPolicyModal() {
+      const doc = policyDocs[el.policyType.value] || policyDocs.none;
+      openInfoModal(doc.title, doc.body, policyHelp);
+    }
+
     function closePolicyModal() {
       policyModal.hidden = true;
-      policyHelp.focus();
+      if (modalReturnFocus && typeof modalReturnFocus.focus === "function") {
+        modalReturnFocus.focus();
+      }
     }
 
     function storedTheme() {
@@ -2525,7 +3601,9 @@
           return;
         }
         setNormalFigureLabels();
-        const policyResult = p.policyType === "none" ? openResult : runModelFromBase(base, p);
+        const policyResult = p.policyType === "none"
+          ? openResult
+          : runModelFromBase(base, p, { openResult, startFromOpen: true });
         drawMetrics(openResult, policyResult, p);
         drawPhase(openResult, policyResult, p);
         drawIncome(openResult, policyResult, p);
@@ -2548,10 +3626,12 @@
       const node = el[id];
       if (!node) return;
       node.addEventListener("input", () => {
+        setActivePreset(null);
         syncRangeProgress(node);
         renderSoon();
       });
       node.addEventListener("change", () => {
+        setActivePreset(null);
         syncRangeProgress(node);
         renderSoon();
       });
@@ -2561,12 +3641,37 @@
       const node = el[id];
       if (!node) return;
       node.addEventListener("input", () => {
+        setActivePreset(null);
         syncRangeProgress(node);
         refreshScanWeightsOnly();
       });
       node.addEventListener("change", () => {
+        setActivePreset(null);
         syncRangeProgress(node);
         refreshScanWeightsOnly();
+      });
+    });
+
+    presetButtons.forEach(button => {
+      button.addEventListener("click", () => applyPreset(button.dataset.preset, {
+        showModal: true,
+        returnFocus: button
+      }));
+    });
+
+    walkthroughButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const doc = walkthroughDocs[button.dataset.walkthrough];
+        if (doc) openInfoModal(doc.title, doc.body, button);
+      });
+    });
+
+    learningMenus.forEach(menu => {
+      menu.addEventListener("toggle", () => {
+        if (!menu.open) return;
+        learningMenus.forEach(other => {
+          if (other !== menu) other.open = false;
+        });
       });
     });
 
@@ -2583,12 +3688,14 @@
     });
     instrumentMode.addEventListener("click", () => {
       if (!el.policyScan.checked) return;
+      setActivePreset(null);
       el.policyScan.checked = false;
       renderSoon();
     });
     scanMode.addEventListener("click", () => {
       if (el.policyType.value === "none") return;
       if (el.policyScan.checked) return;
+      setActivePreset(null);
       el.policyScan.checked = true;
       renderSoon();
     });
